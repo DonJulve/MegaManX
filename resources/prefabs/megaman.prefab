@@ -1,0 +1,558 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2,
+            "sizeY": 2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Player",
+            "scaleX": 40,
+            "scaleY": 40,
+            "isTrigger": false
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "megaman.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isGrounded": {"type": "bool", "value": false},
+                "isFalling": {"type": "bool", "value": false},
+                "isMoving": {"type": "bool", "value": false},
+                "isActive": {"type": "bool", "value": false},
+                "isDashing": {"type": "bool", "value": false},
+                "isShooting": {"type": "bool", "value": false},
+                "touchingWall": {"type": "bool", "value": false},
+                "isWallJumping": {"type": "bool", "value": false},
+                "isHit": {"type": "bool", "value": false},
+                "isDead": {"type": "bool", "value": false}
+            },
+            "states": {
+                "spawn" : {
+                    "looping": false,
+                    "folder": "sprites/megaman/spawn",
+                    "duration": 0.1
+                },
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/megaman/idle", 
+                    "duration": 1
+                },
+                "idleShooting": {
+                    "looping": true,
+                    "folder": "sprites/megaman/shoot", 
+                    "duration": 0.2
+                },
+                "walk": {
+                    "looping": true,
+                    "folder": "sprites/megaman/run", 
+                    "duration": 0.06
+                },
+                "walkShooting": {
+                    "looping": false,
+                    "folder": "sprites/megaman/runShoot", 
+                    "duration": 0.12
+                },
+                "jump": {
+                    "looping": false,
+                    "folder": "sprites/megaman/jump",
+                    "duration": 0.1
+                },
+                "jumpShooting": {
+                    "looping": false,
+                    "folder": "sprites/megaman/jumpShoot",
+                    "duration": 0.1
+                },
+                "fall": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/fall",
+                    "duration": 0.1
+                },
+                "fallShooting": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/fallShoot",
+                    "duration": 0.1
+                },
+                "dash": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/dash",
+                    "duration": 0.03
+                },
+                "dashShooting": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/dashShoot",
+                    "duration": 0.1
+                },
+                "wallSlide": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/wallSlide",
+                    "duration": 0.05
+                },
+                "wallSlideShooting": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/wallSlideShoot",
+                    "duration": 0.05
+                },
+                "wallJump": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/wallJump",
+                    "duration": 0.3
+                },
+                "wallJumpShooting": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/wallJumpShoot",
+                    "duration": 0.3
+                },
+                "damage": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/damage",
+                    "duration": 0.2
+                },
+                "dead": {
+                    "looping": false,
+                    "folder" : "sprites/megaman/success",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "spawn",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isActive", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "walk",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1},
+                        {"parameter": "isMoving", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "damage",
+                    "to": "dead",
+                    "waitEndState": true,
+                    "conditions": [
+                        {"parameter": "isDead", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "damage",
+                    "to": "idle",
+                    "waitEndState": true,
+                    "conditions": [
+                        {"parameter": "isDead", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "idleShooting",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idleShooting",
+                    "to": "idle",
+                    "waitEndState": true,
+                    "conditions": []
+                },
+                {
+                    "from": "idleShooting",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idleShooting",
+                    "to": "jumpShooting",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "walkShooting",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walkShooting",
+                    "to": "walk",
+                    "waitEndState": true,
+                    "conditions": []
+                },
+                {
+                    "from": "walkShooting",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walkShooting",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isMoving", "mode": "NEQ", "value": 1},
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walkShooting",
+                    "to": "jumpShooting",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walkShooting",
+                    "to": "dash",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isMoving", "mode": "NEQ", "value": 1},
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "dash",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "walk",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isMoving", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "dashShooting",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "jump",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dashShooting",
+                    "to": "dash",
+                    "waitEndState": true,
+                    "conditions": []
+                },
+                {
+                    "from": "dashShooting",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isMoving", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dashShooting",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                                {
+                    "from": "idle",
+                    "to": "wallSlide",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1},
+                        {"parameter": "touchingWall", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                }, 
+                {
+                    "from": "jump",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "jumpShooting",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jumpShooting",
+                    "to": "fallShooting",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 1},
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+
+                    ]
+                },
+                {
+                    "from": "jumpShooting",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jumpShooting",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 1},
+                        {"parameter": "isShooting", "mode": "NEQ", "value": 1}
+
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "fallShooting",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fallShooting",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fallShooting",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "wallSlide",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "EQ", "value": 1},
+                        {"parameter": "isWallJumping", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlide",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jumpShooting",
+                    "to": "wallSlide",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "EQ", "value": 1},
+                        {"parameter": "isWallJumping", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "wallSlide",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "EQ", "value": 1},
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "wallSlide",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fallShooting",
+                    "to": "wallSlide",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlide",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlide",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlide",
+                    "to": "wallJump",
+                    "conditions": [
+                        {"parameter": "isWallJumping", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlide",
+                    "to": "wallSlideShooting",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlideShooting",
+                    "to": "wallSlide",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlideShooting",
+                    "to": "damage",
+                    "conditions": [
+                        {"parameter": "isHit", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlideShooting",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallSlideShooting",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "touchingWall", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "wallJump",
+                    "to": "jump",
+                    "keepFrame": true,
+                    "conditions": []
+                },
+                {
+                    "from": "wallJump",
+                    "to": "wallJumpShooting",
+                    "keepFrame": true,
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "spawn"
+        },
+        "Health": {
+            "maxHealth": 500
+        },
+        "MegamanController": {
+            
+        }
+    }
+}

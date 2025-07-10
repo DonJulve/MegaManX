@@ -1,0 +1,64 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 10,
+            "scaleY": 10,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 1,
+            "gravity": 0,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/raybit/bullet/bullet_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isShooting": {"type": "bool", "value": false}
+            },
+            "states": {
+                "charging": {
+                    "looping": false,
+                    "folder": "sprites/enemies/raybit/bullet",
+                    "duration": 0.07
+                },
+                "shoot": {
+                    "looping": true,
+                    "folder": "sprites/enemies/raybit/bulletFly",
+                    "duration": 0.2
+                }
+            },
+            "transitions": [
+                {
+                    "from": "charging",
+                    "to": "shoot",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "charging"
+        },
+        "RaybitBulletComponent": {
+            
+        }
+    }
+}

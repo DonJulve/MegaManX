@@ -1,0 +1,66 @@
+{
+    "components": {
+        "Transform": {
+            "posX": -200,
+            "posY": 250,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 37,
+            "scaleY": 37,
+            "isTrigger": false
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/spiky/spin/spin_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "die": {"type": "bool", "value": false}
+            },
+            "states": {
+                "spin" : {
+                    "looping": true,
+                    "folder": "./sprites/enemies/spiky/spin",
+                    "duration": 0.1
+                },
+                "die": {
+                    "looping": false,
+                    "folder": "./sprites/enemies/spiky/die", 
+                    "duration": 0.08
+                }
+            },
+            "transitions": [
+                {
+                    "from": "spin",
+                    "to": "die",
+                    "conditions": [
+                        {"parameter": "die", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "spin"
+        },
+
+        "Health": {
+            "maxHealth": 100
+        },
+        
+        "SpikyController": {
+            
+        }
+    }
+}

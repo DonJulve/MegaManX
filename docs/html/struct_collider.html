@@ -1,0 +1,798 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Referencia de la estructura Collider</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_collider.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
+<a href="#friends">Amigas</a> &#124;
+<a href="struct_collider-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la estructura Collider</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a> que maneja colisiones usando un rectángulo delimitador.  
+ <a href="#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_components_8h_source.html">Components.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencia de Collider</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_collider.png" usemap="#Collider_map" alt=""/>
+  <map id="Collider_map" name="Collider_map">
+<area href="class_component.html" title="Clase base para todos los componentes en el sistema ECS." alt="Component" shape="rect" coords="0,0,75,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aa006dad299490405ba7da671a76d4bd7" id="r_aa006dad299490405ba7da671a76d4bd7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa006dad299490405ba7da671a76d4bd7">pointInTriangle</a> (float px, float py, <a class="el" href="struct_triangle.html">Triangle</a> triangle, <a class="el" href="struct_collision_result.html">CollisionResult</a> &amp;result, const <a class="el" href="struct_vector2_d.html">Vector2D</a> &amp;velocity1, const <a class="el" href="struct_vector2_d.html">Vector2D</a> &amp;velocity2)</td></tr>
+<tr class="memdesc:aa006dad299490405ba7da671a76d4bd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determina si un punto está dentro de un triángulo.  <br /></td></tr>
+<tr class="separator:aa006dad299490405ba7da671a76d4bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a74fd44f1568a99b79e2a02367f854" id="r_ac4a74fd44f1568a99b79e2a02367f854"><td class="memItemLeft" align="right" valign="top"><a id="ac4a74fd44f1568a99b79e2a02367f854" name="ac4a74fd44f1568a99b79e2a02367f854"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>pointInRect</b> (float px, float py, <a class="el" href="struct_rect.html">Rect</a> rect, <a class="el" href="struct_collision_result.html">CollisionResult</a> &amp;result, const <a class="el" href="struct_vector2_d.html">Vector2D</a> &amp;velocity1, const <a class="el" href="struct_vector2_d.html">Vector2D</a> &amp;velocity2)</td></tr>
+<tr class="separator:ac4a74fd44f1568a99b79e2a02367f854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5e859a517ae4fdb81ac1a6fb82c6cf1" id="r_aa5e859a517ae4fdb81ac1a6fb82c6cf1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5e859a517ae4fdb81ac1a6fb82c6cf1">Collider</a> (<a class="el" href="struct_collider_parameters.html">ColliderParameters</a> cp)</td></tr>
+<tr class="memdesc:aa5e859a517ae4fdb81ac1a6fb82c6cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a> con parámetros.  <br /></td></tr>
+<tr class="separator:aa5e859a517ae4fdb81ac1a6fb82c6cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7186870221f868bbc74c3ae8609fa66" id="r_aa7186870221f868bbc74c3ae8609fa66"><td class="memItemLeft" align="right" valign="top"><a id="aa7186870221f868bbc74c3ae8609fa66" name="aa7186870221f868bbc74c3ae8609fa66"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Collider</b> ()</td></tr>
+<tr class="memdesc:aa7186870221f868bbc74c3ae8609fa66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto de <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>. <br /></td></tr>
+<tr class="separator:aa7186870221f868bbc74c3ae8609fa66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab028249b011d3de25ec0572544e17ab2" id="r_ab028249b011d3de25ec0572544e17ab2"><td class="memItemLeft" align="right" valign="top"><a id="ab028249b011d3de25ec0572544e17ab2" name="ab028249b011d3de25ec0572544e17ab2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateBoundingBox</b> ()</td></tr>
+<tr class="memdesc:ab028249b011d3de25ec0572544e17ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el rectángulo delimitador basado en el componente <a class="el" href="struct_transform.html" title="Componente Transform que representa la posición, rotación y tamaño de una entidad.">Transform</a>. <br /></td></tr>
+<tr class="separator:ab028249b011d3de25ec0572544e17ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2cd70c2772433aaba405d1fc1a5beb" id="r_afc2cd70c2772433aaba405d1fc1a5beb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc2cd70c2772433aaba405d1fc1a5beb">start</a> () override</td></tr>
+<tr class="memdesc:afc2cd70c2772433aaba405d1fc1a5beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método de inicio del componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>.  <br /></td></tr>
+<tr class="separator:afc2cd70c2772433aaba405d1fc1a5beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd99a67e32b8c4d56f5e346c06b1530" id="r_accd99a67e32b8c4d56f5e346c06b1530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accd99a67e32b8c4d56f5e346c06b1530">update</a> (float deltaTime) override</td></tr>
+<tr class="memdesc:accd99a67e32b8c4d56f5e346c06b1530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado del componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>.  <br /></td></tr>
+<tr class="separator:accd99a67e32b8c4d56f5e346c06b1530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aa98ccd83fac57e08d64ee3c0793757" id="r_a0aa98ccd83fac57e08d64ee3c0793757"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0aa98ccd83fac57e08d64ee3c0793757">getTag</a> () const</td></tr>
+<tr class="memdesc:a0aa98ccd83fac57e08d64ee3c0793757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la etiqueta del <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>.  <br /></td></tr>
+<tr class="separator:a0aa98ccd83fac57e08d64ee3c0793757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5190c84704408153719c24245f1d4e51" id="r_a5190c84704408153719c24245f1d4e51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5190c84704408153719c24245f1d4e51">setTag</a> (std::string newTag)</td></tr>
+<tr class="memdesc:a5190c84704408153719c24245f1d4e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece la etiqueta del <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>.  <br /></td></tr>
+<tr class="separator:a5190c84704408153719c24245f1d4e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92183ad8d79453936f1fa8b14db93c32" id="r_a92183ad8d79453936f1fa8b14db93c32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92183ad8d79453936f1fa8b14db93c32">addCollisionTag</a> (const std::string &amp;collisionTag)</td></tr>
+<tr class="memdesc:a92183ad8d79453936f1fa8b14db93c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega una etiqueta a la lista de colisiones.  <br /></td></tr>
+<tr class="separator:a92183ad8d79453936f1fa8b14db93c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff638994c59987491c35ada2a41177d" id="r_acff638994c59987491c35ada2a41177d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acff638994c59987491c35ada2a41177d">removeCollisionTag</a> (const std::string &amp;collisionTag)</td></tr>
+<tr class="memdesc:acff638994c59987491c35ada2a41177d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una etiqueta de la lista de colisiones.  <br /></td></tr>
+<tr class="separator:acff638994c59987491c35ada2a41177d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bac70e0e9388857708bca229eed8ca6" id="r_a6bac70e0e9388857708bca229eed8ca6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bac70e0e9388857708bca229eed8ca6">getCollisionTags</a> () const</td></tr>
+<tr class="memdesc:a6bac70e0e9388857708bca229eed8ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la lista de etiquetas de colisión.  <br /></td></tr>
+<tr class="separator:a6bac70e0e9388857708bca229eed8ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a082d390f64f403509275e4c20a706ac9" id="r_a082d390f64f403509275e4c20a706ac9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a082d390f64f403509275e4c20a706ac9">render</a> (<a class="el" href="class_entity_manager.html">EntityManager</a> &amp;entityManager, SDL_Renderer *renderer) override</td></tr>
+<tr class="memdesc:a082d390f64f403509275e4c20a706ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderiza el componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>.  <br /></td></tr>
+<tr class="separator:a082d390f64f403509275e4c20a706ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35a4d2adca58d2e003162e42cc47d18" id="r_ac35a4d2adca58d2e003162e42cc47d18"><td class="memItemLeft" align="right" valign="top"><a id="ac35a4d2adca58d2e003162e42cc47d18" name="ac35a4d2adca58d2e003162e42cc47d18"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTriangleCheck</b> (bool top, bool left, bool right, bool bottom)</td></tr>
+<tr class="memdesc:ac35a4d2adca58d2e003162e42cc47d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for triangle toggles with specified names. <br /></td></tr>
+<tr class="separator:ac35a4d2adca58d2e003162e42cc47d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad262598a281d54271daedbf2d262d27a" id="r_ad262598a281d54271daedbf2d262d27a"><td class="memItemLeft" align="right" valign="top"><a id="ad262598a281d54271daedbf2d262d27a" name="ad262598a281d54271daedbf2d262d27a"></a>
+<a class="el" href="struct_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getBoundingBox</b> ()</td></tr>
+<tr class="separator:ad262598a281d54271daedbf2d262d27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7893a2e0e43661e9fb4c30c9ace8b9d8" id="r_a7893a2e0e43661e9fb4c30c9ace8b9d8"><td class="memItemLeft" align="right" valign="top"><a id="a7893a2e0e43661e9fb4c30c9ace8b9d8" name="a7893a2e0e43661e9fb4c30c9ace8b9d8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTriggerCol</b> ()</td></tr>
+<tr class="separator:a7893a2e0e43661e9fb4c30c9ace8b9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_component')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados de <a class="el" href="class_component.html">Component</a></td></tr>
+<tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Component</b> ()=default</td></tr>
+<tr class="memdesc:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor virtual para la limpieza adecuada de clases derivadas. <br /></td></tr>
+<tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:af6d5db385fd94e53d453e038fe4d3bfa" id="r_af6d5db385fd94e53d453e038fe4d3bfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_rect.html">Rect</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d5db385fd94e53d453e038fe4d3bfa">boundingBox</a></td></tr>
+<tr class="separator:af6d5db385fd94e53d453e038fe4d3bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316074fce488c8c3012ba1232686aaec" id="r_a316074fce488c8c3012ba1232686aaec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a316074fce488c8c3012ba1232686aaec">transform</a></td></tr>
+<tr class="separator:a316074fce488c8c3012ba1232686aaec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b552fe23c0a2a62e8d9a16b02361b1" id="r_a81b552fe23c0a2a62e8d9a16b02361b1"><td class="memItemLeft" align="right" valign="top"><a id="a81b552fe23c0a2a62e8d9a16b02361b1" name="a81b552fe23c0a2a62e8d9a16b02361b1"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>scaleX</b></td></tr>
+<tr class="separator:a81b552fe23c0a2a62e8d9a16b02361b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a93c664e0195559283cb64e08ce9e61" id="r_a6a93c664e0195559283cb64e08ce9e61"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a93c664e0195559283cb64e08ce9e61">scaleY</a></td></tr>
+<tr class="separator:a6a93c664e0195559283cb64e08ce9e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3068bd0bbdb66fc93a3ef3063ac556fa" id="r_a3068bd0bbdb66fc93a3ef3063ac556fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3068bd0bbdb66fc93a3ef3063ac556fa">isTrigger</a></td></tr>
+<tr class="separator:a3068bd0bbdb66fc93a3ef3063ac556fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47553d89c2a08d0df50e2e4934572902" id="r_a47553d89c2a08d0df50e2e4934572902"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47553d89c2a08d0df50e2e4934572902">tag</a></td></tr>
+<tr class="separator:a47553d89c2a08d0df50e2e4934572902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18232b491252cf08e6451363c04338dd" id="r_a18232b491252cf08e6451363c04338dd"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18232b491252cf08e6451363c04338dd">collisionTags</a></td></tr>
+<tr class="separator:a18232b491252cf08e6451363c04338dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71173a92f1d1934e7dcfd93812b7d7b3" id="r_a71173a92f1d1934e7dcfd93812b7d7b3"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(<a class="el" href="struct_collider.html">Collider</a> *, <a class="el" href="struct_collision_result.html">CollisionResult</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71173a92f1d1934e7dcfd93812b7d7b3">onCollisionEnter</a></td></tr>
+<tr class="separator:a71173a92f1d1934e7dcfd93812b7d7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af927ff43f4f508d80c74185478a79962" id="r_af927ff43f4f508d80c74185478a79962"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(<a class="el" href="struct_collider.html">Collider</a> *, <a class="el" href="struct_collision_result.html">CollisionResult</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af927ff43f4f508d80c74185478a79962">onCollisionStay</a></td></tr>
+<tr class="separator:af927ff43f4f508d80c74185478a79962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f67913e97bca2cf5cb4f867092266aa" id="r_a4f67913e97bca2cf5cb4f867092266aa"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(<a class="el" href="struct_collider.html">Collider</a> *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f67913e97bca2cf5cb4f867092266aa">onCollisionExit</a></td></tr>
+<tr class="separator:a4f67913e97bca2cf5cb4f867092266aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853273ece82e4a579f9c7bce8cd5f390" id="r_a853273ece82e4a579f9c7bce8cd5f390"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a853273ece82e4a579f9c7bce8cd5f390">wasCollidingLastFrame</a></td></tr>
+<tr class="separator:a853273ece82e4a579f9c7bce8cd5f390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d74cd70d82b5181c7dda4838bc4f8c8" id="r_a6d74cd70d82b5181c7dda4838bc4f8c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d74cd70d82b5181c7dda4838bc4f8c8">checkTop</a></td></tr>
+<tr class="separator:a6d74cd70d82b5181c7dda4838bc4f8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1ee2688db62479a7c336adeb87030c" id="r_abc1ee2688db62479a7c336adeb87030c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc1ee2688db62479a7c336adeb87030c">checkLeft</a></td></tr>
+<tr class="separator:abc1ee2688db62479a7c336adeb87030c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57711fc9031618f91ad995fd2c3ca93b" id="r_a57711fc9031618f91ad995fd2c3ca93b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57711fc9031618f91ad995fd2c3ca93b">checkRight</a></td></tr>
+<tr class="separator:a57711fc9031618f91ad995fd2c3ca93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5294df43d2281cc8825f5c4d8d6ff725" id="r_a5294df43d2281cc8825f5c4d8d6ff725"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5294df43d2281cc8825f5c4d8d6ff725">checkBottom</a></td></tr>
+<tr class="separator:a5294df43d2281cc8825f5c4d8d6ff725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71fa8deb632053770c2c5f5428a0bc3" id="r_aa71fa8deb632053770c2c5f5428a0bc3"><td class="memItemLeft" align="right" valign="top"><a id="aa71fa8deb632053770c2c5f5428a0bc3" name="aa71fa8deb632053770c2c5f5428a0bc3"></a>
+<a class="el" href="struct_triangle.html">Triangle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>topTriangle</b></td></tr>
+<tr class="separator:aa71fa8deb632053770c2c5f5428a0bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f22e1feef7b56291ab23682005cdfb1" id="r_a5f22e1feef7b56291ab23682005cdfb1"><td class="memItemLeft" align="right" valign="top"><a id="a5f22e1feef7b56291ab23682005cdfb1" name="a5f22e1feef7b56291ab23682005cdfb1"></a>
+<a class="el" href="struct_triangle.html">Triangle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>leftTriangle</b></td></tr>
+<tr class="separator:a5f22e1feef7b56291ab23682005cdfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e7c0fc94da5529d03b4c347ba6f3e7" id="r_ab3e7c0fc94da5529d03b4c347ba6f3e7"><td class="memItemLeft" align="right" valign="top"><a id="ab3e7c0fc94da5529d03b4c347ba6f3e7" name="ab3e7c0fc94da5529d03b4c347ba6f3e7"></a>
+<a class="el" href="struct_triangle.html">Triangle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rightTriangle</b></td></tr>
+<tr class="separator:ab3e7c0fc94da5529d03b4c347ba6f3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f3999005aa54a1960fd277ef6af107" id="r_a59f3999005aa54a1960fd277ef6af107"><td class="memItemLeft" align="right" valign="top"><a id="a59f3999005aa54a1960fd277ef6af107" name="a59f3999005aa54a1960fd277ef6af107"></a>
+<a class="el" href="struct_triangle.html">Triangle</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bottomTriangle</b></td></tr>
+<tr class="separator:a59f3999005aa54a1960fd277ef6af107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70dc93529592754b6161540302b8745b" id="r_a70dc93529592754b6161540302b8745b"><td class="memItemLeft" align="right" valign="top"><a id="a70dc93529592754b6161540302b8745b" name="a70dc93529592754b6161540302b8745b"></a>
+<a class="el" href="struct_vector2_d.html">Vector2D</a>&#160;</td><td class="memItemRight" valign="bottom"><b>colPoint</b></td></tr>
+<tr class="separator:a70dc93529592754b6161540302b8745b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba91e1054329444774838f9824be600" id="r_a5ba91e1054329444774838f9824be600"><td class="memItemLeft" align="right" valign="top"><a id="a5ba91e1054329444774838f9824be600" name="a5ba91e1054329444774838f9824be600"></a>
+std::unordered_map&lt; int, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>colliderTimers</b></td></tr>
+<tr class="separator:a5ba91e1054329444774838f9824be600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04dd5a9ca75fd4171f6bb0ec389fbe52" id="r_a04dd5a9ca75fd4171f6bb0ec389fbe52"><td class="memItemLeft" align="right" valign="top"><a id="a04dd5a9ca75fd4171f6bb0ec389fbe52" name="a04dd5a9ca75fd4171f6bb0ec389fbe52"></a>
+std::set&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>activeColliders</b></td></tr>
+<tr class="separator:a04dd5a9ca75fd4171f6bb0ec389fbe52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_class_component')"><img src="closed.png" alt="-"/>&#160;Atributos públicos heredados de <a class="el" href="class_component.html">Component</a></td></tr>
+<tr class="memitem:a410bd56dfca652a5be56a4c384754845 inherit pub_attribs_class_component" id="r_a410bd56dfca652a5be56a4c384754845"><td class="memItemLeft" align="right" valign="top">
+Entity&#160;</td><td class="memItemRight" valign="bottom"><b>parent</b></td></tr>
+<tr class="memdesc:a410bd56dfca652a5be56a4c384754845 inherit pub_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">La entidad a la que pertenece este componente. <br /></td></tr>
+<tr class="separator:a410bd56dfca652a5be56a4c384754845 inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Atributos públicos estáticos</h2></td></tr>
+<tr class="memitem:ac916ffba10d08b133c8d1d01d231f556" id="r_ac916ffba10d08b133c8d1d01d231f556"><td class="memItemLeft" align="right" valign="top"><a id="ac916ffba10d08b133c8d1d01d231f556" name="ac916ffba10d08b133c8d1d01d231f556"></a>
+static const float&#160;</td><td class="memItemRight" valign="bottom"><b>COLLISION_DIST_THRESHOLD</b> = 0.001f</td></tr>
+<tr class="separator:ac916ffba10d08b133c8d1d01d231f556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Amigas</h2></td></tr>
+<tr class="memitem:a6fb7520528fab4a670001f041b872bf2" id="r_a6fb7520528fab4a670001f041b872bf2"><td class="memItemLeft" align="right" valign="top"><a id="a6fb7520528fab4a670001f041b872bf2" name="a6fb7520528fab4a670001f041b872bf2"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>PhysicsSystem</b></td></tr>
+<tr class="separator:a6fb7520528fab4a670001f041b872bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf404e756c5b9dc9e62817d6aab95559" id="r_adf404e756c5b9dc9e62817d6aab95559"><td class="memItemLeft" align="right" valign="top"><a id="adf404e756c5b9dc9e62817d6aab95559" name="adf404e756c5b9dc9e62817d6aab95559"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>CollisionSystem</b></td></tr>
+<tr class="separator:adf404e756c5b9dc9e62817d6aab95559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b786d8e0847dfe9cc15e1dea308fcd" id="r_a06b786d8e0847dfe9cc15e1dea308fcd"><td class="memItemLeft" align="right" valign="top"><a id="a06b786d8e0847dfe9cc15e1dea308fcd" name="a06b786d8e0847dfe9cc15e1dea308fcd"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>RenderSystem</b></td></tr>
+<tr class="separator:a06b786d8e0847dfe9cc15e1dea308fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec67887a9a7962e65772e760917a43dd" id="r_aec67887a9a7962e65772e760917a43dd"><td class="memItemLeft" align="right" valign="top"><a id="aec67887a9a7962e65772e760917a43dd" name="aec67887a9a7962e65772e760917a43dd"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>RaycastManager</b></td></tr>
+<tr class="separator:aec67887a9a7962e65772e760917a43dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a> que maneja colisiones usando un rectángulo delimitador. </p>
+</div><h2 class="groupheader">Documentación de constructores y destructores</h2>
+<a id="aa5e859a517ae4fdb81ac1a6fb82c6cf1" name="aa5e859a517ae4fdb81ac1a6fb82c6cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e859a517ae4fdb81ac1a6fb82c6cf1">&#9670;&#160;</a></span>Collider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Collider::Collider </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_collider_parameters.html">ColliderParameters</a></td>          <td class="paramname"><span class="paramname"><em>cp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor de <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a> con parámetros. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td>Instancia de <a class="el" href="struct_collider_parameters.html" title="Estructura que contiene parámetros para el componente Collider.">ColliderParameters</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a92183ad8d79453936f1fa8b14db93c32" name="a92183ad8d79453936f1fa8b14db93c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92183ad8d79453936f1fa8b14db93c32">&#9670;&#160;</a></span>addCollisionTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::addCollisionTag </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>collisionTag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agrega una etiqueta a la lista de colisiones. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collisionTag</td><td>Etiqueta a agregar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6bac70e0e9388857708bca229eed8ca6" name="a6bac70e0e9388857708bca229eed8ca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bac70e0e9388857708bca229eed8ca6">&#9670;&#160;</a></span>getCollisionTags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; Collider::getCollisionTags </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la lista de etiquetas de colisión. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Vector de etiquetas. </dd></dl>
+
+</div>
+</div>
+<a id="a0aa98ccd83fac57e08d64ee3c0793757" name="a0aa98ccd83fac57e08d64ee3c0793757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aa98ccd83fac57e08d64ee3c0793757">&#9670;&#160;</a></span>getTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Collider::getTag </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene la etiqueta del <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>La etiqueta como string. </dd></dl>
+
+</div>
+</div>
+<a id="aa006dad299490405ba7da671a76d4bd7" name="aa006dad299490405ba7da671a76d4bd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa006dad299490405ba7da671a76d4bd7">&#9670;&#160;</a></span>pointInTriangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::pointInTriangle </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>px</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>py</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_triangle.html">Triangle</a></td>          <td class="paramname"><span class="paramname"><em>triangle</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_collision_result.html">CollisionResult</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>result</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>velocity1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_vector2_d.html">Vector2D</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>velocity2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determina si un punto está dentro de un triángulo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">px</td><td>Coordenada X del punto. </td></tr>
+    <tr><td class="paramname">py</td><td>Coordenada Y del punto. </td></tr>
+    <tr><td class="paramname">triangle</td><td>Triángulo a verificar. </td></tr>
+    <tr><td class="paramname">result</td><td>Resultado de la colisión. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si el punto está dentro del triángulo. </dd></dl>
+
+</div>
+</div>
+<a id="acff638994c59987491c35ada2a41177d" name="acff638994c59987491c35ada2a41177d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff638994c59987491c35ada2a41177d">&#9670;&#160;</a></span>removeCollisionTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::removeCollisionTag </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>collisionTag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina una etiqueta de la lista de colisiones. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collisionTag</td><td>Etiqueta a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a082d390f64f403509275e4c20a706ac9" name="a082d390f64f403509275e4c20a706ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a082d390f64f403509275e4c20a706ac9">&#9670;&#160;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_entity_manager.html">EntityManager</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>entityManager</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *</td>          <td class="paramname"><span class="paramname"><em>renderer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Renderiza el componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityManager</td><td>Referencia al <a class="el" href="class_entity_manager.html" title="Gestiona entidades y sus componentes asociados en el sistema ECS.">EntityManager</a> que contiene los componentes. </td></tr>
+    <tr><td class="paramname">renderer</td><td>Puntero al SDL_Renderer usado para dibujar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="class_component.html#a4178a49630da72ebf6bf420e3343c7ce">Component</a>.</p>
+
+</div>
+</div>
+<a id="a5190c84704408153719c24245f1d4e51" name="a5190c84704408153719c24245f1d4e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5190c84704408153719c24245f1d4e51">&#9670;&#160;</a></span>setTag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::setTag </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>newTag</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece la etiqueta del <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newTag</td><td>Nueva etiqueta a asignar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afc2cd70c2772433aaba405d1fc1a5beb" name="afc2cd70c2772433aaba405d1fc1a5beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2cd70c2772433aaba405d1fc1a5beb">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Método de inicio del componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>. </p>
+
+<p>Reimplementado de <a class="el" href="class_component.html#ae1ca93c773f779d0a004eec46f468560">Component</a>.</p>
+
+</div>
+</div>
+<a id="accd99a67e32b8c4d56f5e346c06b1530" name="accd99a67e32b8c4d56f5e346c06b1530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accd99a67e32b8c4d56f5e346c06b1530">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Collider::update </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualiza el estado del componente <a class="el" href="struct_collider.html" title="Componente Collider que maneja colisiones usando un rectángulo delimitador.">Collider</a>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Tiempo transcurrido desde la última actualización. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="class_component.html#a3b3bee5d55446124842e5f2e229e1384">Component</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de datos miembro</h2>
+<a id="af6d5db385fd94e53d453e038fe4d3bfa" name="af6d5db385fd94e53d453e038fe4d3bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d5db385fd94e53d453e038fe4d3bfa">&#9670;&#160;</a></span>boundingBox</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_rect.html">Rect</a> Collider::boundingBox</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Rectángulo delimitador para colisiones. </p>
+
+</div>
+</div>
+<a id="a5294df43d2281cc8825f5c4d8d6ff725" name="a5294df43d2281cc8825f5c4d8d6ff725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5294df43d2281cc8825f5c4d8d6ff725">&#9670;&#160;</a></span>checkBottom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::checkBottom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Toggle for bottom triangle. </p>
+
+</div>
+</div>
+<a id="abc1ee2688db62479a7c336adeb87030c" name="abc1ee2688db62479a7c336adeb87030c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1ee2688db62479a7c336adeb87030c">&#9670;&#160;</a></span>checkLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::checkLeft</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Toggle for left triangle. </p>
+
+</div>
+</div>
+<a id="a57711fc9031618f91ad995fd2c3ca93b" name="a57711fc9031618f91ad995fd2c3ca93b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57711fc9031618f91ad995fd2c3ca93b">&#9670;&#160;</a></span>checkRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::checkRight</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Toggle for right triangle. </p>
+
+</div>
+</div>
+<a id="a6d74cd70d82b5181c7dda4838bc4f8c8" name="a6d74cd70d82b5181c7dda4838bc4f8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d74cd70d82b5181c7dda4838bc4f8c8">&#9670;&#160;</a></span>checkTop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::checkTop</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Toggle for top triangle. </p>
+
+</div>
+</div>
+<a id="a18232b491252cf08e6451363c04338dd" name="a18232b491252cf08e6451363c04338dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18232b491252cf08e6451363c04338dd">&#9670;&#160;</a></span>collisionTags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; Collider::collisionTags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lista de etiquetas con las que colisionar. </p>
+
+</div>
+</div>
+<a id="a3068bd0bbdb66fc93a3ef3063ac556fa" name="a3068bd0bbdb66fc93a3ef3063ac556fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3068bd0bbdb66fc93a3ef3063ac556fa">&#9670;&#160;</a></span>isTrigger</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::isTrigger</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indica si es un disparador. </p>
+
+</div>
+</div>
+<a id="a71173a92f1d1934e7dcfd93812b7d7b3" name="a71173a92f1d1934e7dcfd93812b7d7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71173a92f1d1934e7dcfd93812b7d7b3">&#9670;&#160;</a></span>onCollisionEnter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(<a class="el" href="struct_collider.html">Collider</a>*, <a class="el" href="struct_collision_result.html">CollisionResult</a>)&gt; Collider::onCollisionEnter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evento al iniciar colisión. </p>
+
+</div>
+</div>
+<a id="a4f67913e97bca2cf5cb4f867092266aa" name="a4f67913e97bca2cf5cb4f867092266aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f67913e97bca2cf5cb4f867092266aa">&#9670;&#160;</a></span>onCollisionExit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(<a class="el" href="struct_collider.html">Collider</a>*)&gt; Collider::onCollisionExit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evento al salir de colisión. </p>
+
+</div>
+</div>
+<a id="af927ff43f4f508d80c74185478a79962" name="af927ff43f4f508d80c74185478a79962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af927ff43f4f508d80c74185478a79962">&#9670;&#160;</a></span>onCollisionStay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(<a class="el" href="struct_collider.html">Collider</a>*, <a class="el" href="struct_collision_result.html">CollisionResult</a>)&gt; Collider::onCollisionStay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evento mientras colisiona. </p>
+
+</div>
+</div>
+<a id="a6a93c664e0195559283cb64e08ce9e61" name="a6a93c664e0195559283cb64e08ce9e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a93c664e0195559283cb64e08ce9e61">&#9670;&#160;</a></span>scaleY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Collider::scaleY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Escala en X e Y. </p>
+
+</div>
+</div>
+<a id="a47553d89c2a08d0df50e2e4934572902" name="a47553d89c2a08d0df50e2e4934572902"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47553d89c2a08d0df50e2e4934572902">&#9670;&#160;</a></span>tag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Collider::tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Etiqueta para identificar el tipo de collider. </p>
+
+</div>
+</div>
+<a id="a316074fce488c8c3012ba1232686aaec" name="a316074fce488c8c3012ba1232686aaec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316074fce488c8c3012ba1232686aaec">&#9670;&#160;</a></span>transform</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_transform.html">Transform</a>* Collider::transform</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Puntero al componente <a class="el" href="struct_transform.html" title="Componente Transform que representa la posición, rotación y tamaño de una entidad.">Transform</a> asociado. </p>
+
+</div>
+</div>
+<a id="a853273ece82e4a579f9c7bce8cd5f390" name="a853273ece82e4a579f9c7bce8cd5f390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853273ece82e4a579f9c7bce8cd5f390">&#9670;&#160;</a></span>wasCollidingLastFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Collider::wasCollidingLastFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estado de colisión del frame anterior. </p>
+
+</div>
+</div>
+<hr/>La documentación de esta estructura está generada de los siguientes archivos:<ul>
+<li>Components/<a class="el" href="_components_8h_source.html">Components.h</a></li>
+<li>Components/<b>Collider.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_collider.html">Collider</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 230,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 15,
+            "scaleY": 12,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/hoganmer/ball/ball_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isChain": {"type": "bool", "value": false}
+            },
+            "states": {
+                "ball": {
+                    "looping": true,
+                    "folder": "sprites/enemies/hoganmer/ball",
+                    "duration": 0.06
+                },
+                "chain": {
+                    "looping": true,
+                    "folder": "sprites/enemies/hoganmer/chain",
+                    "duration": 0.06
+                }
+            },
+            "transitions": [
+                {
+                    "from": "ball",
+                    "to": "chain",
+                    "conditions": [
+                        {"parameter": "isChain", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "ball"
+        },
+        "HoganmerBall": {}
+            
+    }
+}

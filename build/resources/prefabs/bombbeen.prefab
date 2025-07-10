@@ -1,0 +1,108 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY":200,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 43,
+            "scaleY": 43,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/bombBeen/fly/fly_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isCharging": {"type": "bool", "value": false},
+                "isShooting": {"type": "bool", "value": false}
+            },
+            "states": {
+                "fly": {
+                    "looping": true,
+                    "folder": "sprites/enemies/bombBeen/fly",
+                    "duration": 0.06
+                },
+                "charge": {
+                    "looping": false,
+                    "folder": "sprites/enemies/bombBeen/charge",
+                    "duration": 0.06
+                },
+                "shoot": {
+                    "looping": true,
+                    "folder": "sprites/enemies/bombBeen/shoot",
+                    "duration": 0.06
+                }
+            },
+            "transitions": [
+                {
+                    "from": "fly",
+                    "to": "charge",
+                    "conditions": [
+                        {"parameter": "isCharging", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "charge",
+                    "to": "shoot",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "fly"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "BombBeenController": {
+            
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Fly"}
+                    ]
+                },
+                {
+                    "name": "Fly",
+                    "transitions": [
+                        {"nextState": "Shoot"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Shoot",
+                    "transitions": [
+                        {"nextState": "Fly"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

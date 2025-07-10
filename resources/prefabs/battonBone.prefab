@@ -1,0 +1,96 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 400,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider" : {
+            "tag": "Enemy",
+            "scaleX": 20,
+            "scaleY": 20,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/battonBone/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters": {
+                "isFlying": {"type": "bool", "value": false}    
+            },
+            "states":{
+                "idle":{
+                    "looping": true,
+                    "folder": "sprites/enemies/battonBone/idle",
+                    "duration": 0.2
+                },
+                "fly":{
+                    "looping": true,
+                    "folder": "sprites/enemies/battonBone/fly",
+                    "duration": 0.1
+                }
+            },
+            "transitions":[
+                {
+                    "from": "idle",
+                    "to": "fly",
+                    "conditions": [
+                        {"parameter": "isFlying", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fly",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isFlying", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "BattonBoneController": {
+
+        }, 
+        "ClassicIA":{
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Attack"},
+                        {"nextState": "Die"}
+                    ]
+                },
+                {
+                    "name": "Attack",
+                    "transitions": [
+                        {"nextState": "Bye"},
+                        {"nextState": "Die"}
+                    ]
+                },
+                {
+                    "name": "Bye",
+                    "transitions": [
+                        {"nextState": "Idle"}
+                    ]
+                },
+                {
+                    "name": "Die",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

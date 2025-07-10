@@ -1,0 +1,47 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.65,
+            "sizeY": 2.65,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Penguin",
+            "scaleX": 25,
+            "scaleY": 35,
+            "isTrigger": false
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 50,
+            "gravity": 9.8,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/chillPenguin/icePenguin/icePenguin_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "states": {
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/icePenguin",
+                    "duration": 0.2
+                }
+            },
+            "initialState": "shoot"
+        },
+        "Health": {
+            "maxHealth":  100
+        },
+        "ChillPenguinPenguinComponent": {
+            
+        }
+    }
+}

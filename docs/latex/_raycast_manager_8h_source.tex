@@ -1,0 +1,55 @@
+\doxysection{Raycast\+Manager.\+h}
+\hypertarget{_raycast_manager_8h_source}{}\label{_raycast_manager_8h_source}\index{Managers/RaycastManager.h@{Managers/RaycastManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RAYCAST\_MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RAYCAST\_MANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <optional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}EntityManager.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Debug.h"{}}\ \textcolor{comment}{//\ Para\ registro\ de\ depuración}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }Ray\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ SDL\_FPoint\ \mbox{\hyperlink{struct_ray_a761c94967871c0346c1489ae8947b21e}{origin}};\ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ SDL\_FPoint\ \mbox{\hyperlink{struct_ray_aca365e8c81c3bf8eb9c96c9f0bd941d3}{direction}};\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ Ray(\textcolor{keyword}{const}\ SDL\_FPoint\&\ orig,\ \textcolor{keyword}{const}\ SDL\_FPoint\&\ dir);}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }RaycastHit\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{struct_collider}{Collider}}*\ \mbox{\hyperlink{struct_raycast_hit_a0e6e9267aa9176de136ce76364ec347e}{collider}};\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ SDL\_FPoint\ \mbox{\hyperlink{struct_raycast_hit_a0c1eb0dfa491c933410becde3c84e0f8}{point}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_raycast_hit_a8657166e88eeb24b373fadd4fe5ccd68}{distance}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ Entity\ \mbox{\hyperlink{struct_raycast_hit_a969a55ce6b08682da16abc22e79d73ab}{entity}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ RaycastHit(\mbox{\hyperlink{struct_collider}{Collider}}*\ c,\ \textcolor{keyword}{const}\ SDL\_FPoint\&\ p,\ \textcolor{keywordtype}{float}\ d,\ Entity\ e)}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_raycast_hit_a0e6e9267aa9176de136ce76364ec347e}{collider}}(c),\ \mbox{\hyperlink{struct_raycast_hit_a0c1eb0dfa491c933410becde3c84e0f8}{point}}(p),\ \mbox{\hyperlink{struct_raycast_hit_a8657166e88eeb24b373fadd4fe5ccd68}{distance}}(d),\ \mbox{\hyperlink{struct_raycast_hit_a969a55ce6b08682da16abc22e79d73ab}{entity}}(e)\ \{\}}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ray_cast_manager}{RayCastManager}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ std::optional<RaycastHit>\ \mbox{\hyperlink{class_ray_cast_manager_a991796e530890196d54ef6ee404900bb}{raycast}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ray}{Ray}}\&\ ray,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ entityManager,\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ std::numeric\_limits<float>::infinity(),\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ tags\ =\ \{\});}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ std::vector<RaycastHit>\ \mbox{\hyperlink{class_ray_cast_manager_af1a2aee7a8dbd885adaad086db97fd30}{raycastAll}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ray}{Ray}}\&\ ray,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ entityManager,\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxDistance\ =\ std::numeric\_limits<float>::infinity(),\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ tags\ =\ \{\});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ray_cast_manager_aac06291f59ec98ae2abd1d8793b55202}{renderRay}}(SDL\_Renderer*\ renderer,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ray}{Ray}}\&\ ray,\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_camera}{Camera}}\&\ camera,\ \textcolor{keywordtype}{float}\ length\ =\ 1000.0f,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SDL\_Color\ color\ =\ \{255,\ 255,\ 255,\ 255\});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ rayIntersectsRect(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ray}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rect}{Rect}}\&\ rect,\ \textcolor{keywordtype}{float}\ maxDistance,\ SDL\_FPoint\&\ hitPoint,\ \textcolor{keywordtype}{float}\&\ distance);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ rayIntersectsTriangle(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ray}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_triangle}{Triangle}}\&\ triangle,\ \textcolor{keywordtype}{float}\ maxDistance,\ SDL\_FPoint\&\ hitPoint,\ \textcolor{keywordtype}{float}\&\ distance);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ rayIntersectsSegment(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_ray}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ p2,\ \textcolor{keywordtype}{float}\ maxDistance,\ SDL\_FPoint\&\ hitPoint,\ \textcolor{keywordtype}{float}\&\ distance);}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RAYCAST\_MANAGER\_H}}
+
+\end{DoxyCode}

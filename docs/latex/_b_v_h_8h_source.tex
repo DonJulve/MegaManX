@@ -1,0 +1,47 @@
+\doxysection{BVH.\+h}
+\hypertarget{_b_v_h_8h_source}{}\label{_b_v_h_8h_source}\index{Utils/BVH.h@{Utils/BVH.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BVH\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BVH\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{struct_collider}{Collider}};\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }BVH\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{struct\ }Node\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_rect}{Rect}}\ bounds;}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::vector<Collider*>\ colliders;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Node*\ left;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Node*\ right;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Node();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \string~Node();}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ Node*\ root;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ maxCollidersPerNode;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{//\ Private\ helper\ functions}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{struct_rect}{Rect}}\ CalculateBounds(\textcolor{keyword}{const}\ std::vector<Collider*>\&\ colliders);}
+\DoxyCodeLine{00027\ \ \ \ \ Node*\ Build(std::vector<Collider*>\&\ colliders,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ GetPotentialCollisions(Node*\ node,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rect}{Rect}}\&\ target,\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Collider*>\&\ potentials);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ GetAllColliders(Node*\ node,\ std::vector<Collider*>\&\ colliders);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ BVH(\textcolor{keywordtype}{int}\ maxPerNode\ =\ 4);}
+\DoxyCodeLine{00034\ \ \ \ \ \string~BVH();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ Build(std::vector<Collider*>\&\ colliders);}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Collider*>\ GetPotentialCollisions(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rect}{Rect}}\&\ target);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ Insert(\mbox{\hyperlink{struct_collider}{Collider}}*\ collider);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BVH\_H}}
+
+\end{DoxyCode}

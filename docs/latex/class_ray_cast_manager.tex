@@ -1,0 +1,101 @@
+\doxysection{Referencia de la clase Ray\+Cast\+Manager}
+\hypertarget{class_ray_cast_manager}{}\label{class_ray_cast_manager}\index{RayCastManager@{RayCastManager}}
+
+
+Administra las operaciones de raycasting para detectar colisiones con Colliders.  
+
+
+
+
+{\ttfamily \#include $<$Raycast\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::optional$<$ \mbox{\hyperlink{struct_raycast_hit}{Raycast\+Hit}} $>$ \mbox{\hyperlink{class_ray_cast_manager_a991796e530890196d54ef6ee404900bb}{raycast}} (const \mbox{\hyperlink{struct_ray}{Ray}} \&ray, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}entity\+Manager, float max\+Distance=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity(), const std\+::vector$<$ std\+::string $>$ \&tags=\{\})
+\begin{DoxyCompactList}\small\item\em Realiza un raycast y devuelve el primer \doxylink{struct_collider}{Collider} impactado con etiquetas especificadas. \end{DoxyCompactList}\item 
+static std\+::vector$<$ \mbox{\hyperlink{struct_raycast_hit}{Raycast\+Hit}} $>$ \mbox{\hyperlink{class_ray_cast_manager_af1a2aee7a8dbd885adaad086db97fd30}{raycast\+All}} (const \mbox{\hyperlink{struct_ray}{Ray}} \&ray, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}entity\+Manager, float max\+Distance=std\+::numeric\+\_\+limits$<$ float $>$\+::infinity(), const std\+::vector$<$ std\+::string $>$ \&tags=\{\})
+\begin{DoxyCompactList}\small\item\em Realiza un raycast y devuelve todos los Colliders impactados con etiquetas especificadas. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_ray_cast_manager_aac06291f59ec98ae2abd1d8793b55202}{render\+Ray}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, const \mbox{\hyperlink{struct_ray}{Ray}} \&ray, const \mbox{\hyperlink{struct_camera}{Camera}} \&camera, float length=1000.\+0f, SDL\+\_\+\+Color color=\{255, 255, 255, 255\})
+\begin{DoxyCompactList}\small\item\em Renderiza un rayo utilizando el SDL\+\_\+\+Renderer proporcionado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Administra las operaciones de raycasting para detectar colisiones con Colliders. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_ray_cast_manager_a991796e530890196d54ef6ee404900bb}\index{RayCastManager@{RayCastManager}!raycast@{raycast}}
+\index{raycast@{raycast}!RayCastManager@{RayCastManager}}
+\doxysubsubsection{\texorpdfstring{raycast()}{raycast()}}
+{\footnotesize\ttfamily \label{class_ray_cast_manager_a991796e530890196d54ef6ee404900bb} 
+std\+::optional$<$ \mbox{\hyperlink{struct_raycast_hit}{Raycast\+Hit}} $>$ Ray\+Cast\+Manager\+::raycast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_ray}{Ray}} \&}]{ray}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{entity\+Manager}{, }\item[{float}]{max\+Distance}{ = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:infinity()}, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tags}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Realiza un raycast y devuelve el primer \doxylink{struct_collider}{Collider} impactado con etiquetas especificadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ray} & El rayo a lanzar. \\
+\hline
+{\em entity\+Manager} & Referencia al \doxylink{class_entity_manager}{Entity\+Manager} para acceder a los Colliders. \\
+\hline
+{\em max\+Distance} & Distancia máxima que el rayo debe recorrer (predeterminado\+: infinito). \\
+\hline
+{\em tags} & Vector de etiquetas para filtrar impactos (predeterminado\+: vacío, impacta todo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un std\+::optional$<$\+Raycast\+Hit$>$ si se detecta una colisión con una etiqueta coincidente, std\+::nullopt en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_ray_cast_manager_af1a2aee7a8dbd885adaad086db97fd30}\index{RayCastManager@{RayCastManager}!raycastAll@{raycastAll}}
+\index{raycastAll@{raycastAll}!RayCastManager@{RayCastManager}}
+\doxysubsubsection{\texorpdfstring{raycastAll()}{raycastAll()}}
+{\footnotesize\ttfamily \label{class_ray_cast_manager_af1a2aee7a8dbd885adaad086db97fd30} 
+std\+::vector$<$ \mbox{\hyperlink{struct_raycast_hit}{Raycast\+Hit}} $>$ Ray\+Cast\+Manager\+::raycast\+All (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_ray}{Ray}} \&}]{ray}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{entity\+Manager}{, }\item[{float}]{max\+Distance}{ = {\ttfamily std\+:\+:numeric\+\_\+limits$<$float$>$\+:\+:infinity()}, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{tags}{ = {\ttfamily \{\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Realiza un raycast y devuelve todos los Colliders impactados con etiquetas especificadas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em ray} & El rayo a lanzar. \\
+\hline
+{\em entity\+Manager} & Referencia al \doxylink{class_entity_manager}{Entity\+Manager} para acceder a los Colliders. \\
+\hline
+{\em max\+Distance} & Distancia máxima que el rayo debe recorrer (predeterminado\+: infinito). \\
+\hline
+{\em tags} & Vector de etiquetas para filtrar impactos (predeterminado\+: vacío, impacta todo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Un vector de Raycast\+Hits con todas las colisiones detectadas con etiquetas coincidentes. 
+\end{DoxyReturn}
+\Hypertarget{class_ray_cast_manager_aac06291f59ec98ae2abd1d8793b55202}\index{RayCastManager@{RayCastManager}!renderRay@{renderRay}}
+\index{renderRay@{renderRay}!RayCastManager@{RayCastManager}}
+\doxysubsubsection{\texorpdfstring{renderRay()}{renderRay()}}
+{\footnotesize\ttfamily \label{class_ray_cast_manager_aac06291f59ec98ae2abd1d8793b55202} 
+void Ray\+Cast\+Manager\+::render\+Ray (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{, }\item[{const \mbox{\hyperlink{struct_ray}{Ray}} \&}]{ray}{, }\item[{const \mbox{\hyperlink{struct_camera}{Camera}} \&}]{camera}{, }\item[{float}]{length}{ = {\ttfamily 1000.0f}, }\item[{SDL\+\_\+\+Color}]{color}{ = {\ttfamily \{255,~255,~255,~255\}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renderiza un rayo utilizando el SDL\+\_\+\+Renderer proporcionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderer} & El SDL\+\_\+\+Renderer con el que se dibujará. \\
+\hline
+{\em ray} & El rayo a renderizar. \\
+\hline
+{\em length} & Longitud del rayo a dibujar (predeterminado\+: 1000). \\
+\hline
+{\em color} & Color del rayo (predeterminado\+: blanco). \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Raycast\+Manager.\+h\item 
+Managers/Raycast\+Manager.\+cpp\end{DoxyCompactItemize}

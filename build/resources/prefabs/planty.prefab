@@ -1,0 +1,125 @@
+{
+    "components":{
+        "Transform": {
+            "posX": 300,
+            "posY": 230,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 38,
+            "scaleY": 43,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/planty/show/show_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters": {
+                "isCharging": {"type: "bool", "value": false},
+                "isShooting": {"type: "bool", "value": false},
+                "isHiding": {"type: "bool", "value": false},
+                "isShowing": {"type: "bool", "value": false}
+            },
+            "states":{
+                "idle":{
+                    "looping": true,
+                    "folder": "sprites/enemies/planty/idle",
+                    "duration": 0.06
+                },
+                "hide": {
+                    "looping": true,
+                    "folder": "sprites/enemies/planty/hide",
+                    "duration": 0.06
+                },
+                "show": {
+                    "looping": true,
+                    "folder": "sprites/enemies/planty/show",
+                    "duration": 0.06
+                },
+                "charge": {
+                    "looping": true,
+                    "folder": "sprites/enemies/planty/charge",
+                    "duration": 0.06
+                },
+                "shoot": {
+                    "looping": true,
+                    "folder": "sprites/enemies/planty/charge",
+                    "duration": 0.06
+                }
+            },
+            "transitions": [
+                {
+                    "from": "hide",
+                    "to": "show",
+                    "conditions": [
+                        {"parameter": "isShowing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "show",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isShowing", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "charge",
+                    "to": "shoot",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "shoot",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "charge",
+                    "conditions": [
+                        {"parameter": "isCharging", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "show",
+                    "conditions": [
+                        {"parameter": "isShowing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "show",
+                    "to": "hide",
+                    "conditions": [
+                        {"parameter": "isHiding", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "hide"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "PlantyController": {}
+    }
+}

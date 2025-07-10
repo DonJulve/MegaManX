@@ -1,0 +1,203 @@
+\doxysection{Referencia de la estructura Classic\+IAComponent}
+\hypertarget{struct_classic_i_a_component}{}\label{struct_classic_i_a_component}\index{ClassicIAComponent@{ClassicIAComponent}}
+
+
+Componente de inteligencia artificial clásica basado en máquina de estados.  
+
+
+
+
+{\ttfamily \#include $<$IAComponents.\+h$>$}
+
+Diagrama de herencia de Classic\+IAComponent\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{struct_classic_i_a_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state}{Classic\+IAState}}
+\begin{DoxyCompactList}\small\item\em Estructura que define un estado en la máquina de estados de la IA. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition}{Classic\+IATransition}}
+\begin{DoxyCompactList}\small\item\em Estructura que representa una transición entre estados en la IA clásica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_classic_i_a_component_ae847499c86f24bb3339cb76ef914f21e}{Classic\+IAComponent}} (\mbox{\hyperlink{struct_classic_i_a_parameters}{Classic\+IAParameters}} c\+IAp)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_classic_i_a_component}{Classic\+IAComponent}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_classic_i_a_component_aa63830c8f8e0eae7dac334774dff8ac9}{start}} () override
+\begin{DoxyCompactList}\small\item\em Inicia el componente de IA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_classic_i_a_component_a87fba2785b91cdcf5220a6b998246ee2}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado de la IA en función del tiempo transcurrido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_classic_i_a_component_a2df0e7ff3711ce7a9b1ecadf329d8c4c}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&\mbox{\hyperlink{struct_i_a_component_a6be0a729262867edeacbea534698a1c6}{entity\+Manager}}, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer) override
+\begin{DoxyCompactList}\small\item\em Renderiza el componente de IA (si aplica). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_classic_i_a_component_a7e2d6a361a476bf25fe30e5ef3553539}{set\+Initial\+State}} (const std\+::string \&state)
+\begin{DoxyCompactList}\small\item\em Establece el estado inicial de la IA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_classic_i_a_component_a2846e0a5526fbe49715f611893220bee}{register\+Action}} (const std\+::string \&name, std\+::function$<$ void(\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}, float)$>$ callback)
+\begin{DoxyCompactList}\small\item\em Registra una acción asociada a un estado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_classic_i_a_component_a68598a06f9243d248a07fa80e7a5e223}{register\+Condition}} (const std\+::string \&from, const std\+::string \&to, std\+::function$<$ bool(\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}, float)$>$ callback)
+\begin{DoxyCompactList}\small\item\em Registra una condición de transición entre dos estados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{struct_i_a_component}{IAComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries IAComponent} (const std\+::string \&type)
+\item 
+std\+::string {\bfseries get\+IAType} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos protegidos heredados de \mbox{\hyperlink{struct_i_a_component}{IAComponent}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries ia\+Type}
+\begin{DoxyCompactList}\small\item\em Tipo de IA (para identificación o depuración) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries entity\+Manager}
+\begin{DoxyCompactList}\small\item\em Puntero a \doxylink{class_entity_manager}{Entity\+Manager} para acceder a otras entidades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente de inteligencia artificial clásica basado en máquina de estados. 
+
+Hereda de \doxylink{struct_i_a_component}{IAComponent} y gestiona estados, acciones y transiciones para la lógica de IA. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_classic_i_a_component_ae847499c86f24bb3339cb76ef914f21e}\index{ClassicIAComponent@{ClassicIAComponent}!ClassicIAComponent@{ClassicIAComponent}}
+\index{ClassicIAComponent@{ClassicIAComponent}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{ClassicIAComponent()}{ClassicIAComponent()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_ae847499c86f24bb3339cb76ef914f21e} 
+Classic\+IAComponent\+::\+Classic\+IAComponent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_classic_i_a_parameters}{Classic\+IAParameters}}}]{c\+IAp}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_classic_i_a_component}{Classic\+IAComponent}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em c\+IAp} & Parámetros iniciales para configurar la IA clásica. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_classic_i_a_component_a2846e0a5526fbe49715f611893220bee}\index{ClassicIAComponent@{ClassicIAComponent}!registerAction@{registerAction}}
+\index{registerAction@{registerAction}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{registerAction()}{registerAction()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_a2846e0a5526fbe49715f611893220bee} 
+void Classic\+IAComponent\+::register\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{std\+::function$<$ void(\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}, float)$>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Registra una acción asociada a un estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre del estado. \\
+\hline
+{\em callback} & Función que define la acción a ejecutar en el estado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_classic_i_a_component_a68598a06f9243d248a07fa80e7a5e223}\index{ClassicIAComponent@{ClassicIAComponent}!registerCondition@{registerCondition}}
+\index{registerCondition@{registerCondition}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{registerCondition()}{registerCondition()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_a68598a06f9243d248a07fa80e7a5e223} 
+void Classic\+IAComponent\+::register\+Condition (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{from}{, }\item[{const std\+::string \&}]{to}{, }\item[{std\+::function$<$ bool(\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}, float)$>$}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Registra una condición de transición entre dos estados. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em from} & Nombre del estado de origen. \\
+\hline
+{\em to} & Nombre del estado de destino. \\
+\hline
+{\em callback} & Función que evalúa si se cumple la condición para la transición. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_classic_i_a_component_a2df0e7ff3711ce7a9b1ecadf329d8c4c}\index{ClassicIAComponent@{ClassicIAComponent}!render@{render}}
+\index{render@{render}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_a2df0e7ff3711ce7a9b1ecadf329d8c4c} 
+void Classic\+IAComponent\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renderiza el componente de IA (si aplica). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity\+Manager} & Referencia al administrador de entidades. \\
+\hline
+{\em renderer} & Puntero al renderizador SDL. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{Component}}.
+
+\Hypertarget{struct_classic_i_a_component_a7e2d6a361a476bf25fe30e5ef3553539}\index{ClassicIAComponent@{ClassicIAComponent}!setInitialState@{setInitialState}}
+\index{setInitialState@{setInitialState}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{setInitialState()}{setInitialState()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_a7e2d6a361a476bf25fe30e5ef3553539} 
+void Classic\+IAComponent\+::set\+Initial\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{state}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Establece el estado inicial de la IA. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state} & Nombre del estado inicial. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_classic_i_a_component_aa63830c8f8e0eae7dac334774dff8ac9}\index{ClassicIAComponent@{ClassicIAComponent}!start@{start}}
+\index{start@{start}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_aa63830c8f8e0eae7dac334774dff8ac9} 
+void Classic\+IAComponent\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Inicia el componente de IA. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_classic_i_a_component_a87fba2785b91cdcf5220a6b998246ee2}\index{ClassicIAComponent@{ClassicIAComponent}!update@{update}}
+\index{update@{update}!ClassicIAComponent@{ClassicIAComponent}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_a87fba2785b91cdcf5220a6b998246ee2} 
+void Classic\+IAComponent\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado de la IA en función del tiempo transcurrido. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización (en segundos). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/\+IA/IAComponents.\+h\item 
+Components/\+IA/Classic\+IA.\+cpp\end{DoxyCompactItemize}

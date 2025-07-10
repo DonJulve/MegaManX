@@ -1,0 +1,169 @@
+\doxysection{Referencia de la estructura Sprite\+Renderer}
+\hypertarget{struct_sprite_renderer}{}\label{struct_sprite_renderer}\index{SpriteRenderer@{SpriteRenderer}}
+
+
+Componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer} que renderiza un sprite en pantalla.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+Diagrama de herencia de Sprite\+Renderer\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_sprite_renderer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sprite_renderer_abc1e5aa4e7b07bea35f7c1cb0efa1f26}{Sprite\+Renderer}} (\mbox{\hyperlink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}} srp)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_sprite_renderer}{Sprite\+Renderer} con parámetros. \end{DoxyCompactList}\item 
+\Hypertarget{struct_sprite_renderer_a0064d27bc30985d8f02777f97e014819}\label{struct_sprite_renderer_a0064d27bc30985d8f02777f97e014819} 
+{\bfseries Sprite\+Renderer} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de \doxylink{struct_sprite_renderer}{Sprite\+Renderer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sprite_renderer_aff641050ca3902faa775f21cab759d88}{start}} () override
+\begin{DoxyCompactList}\small\item\em Método de inicio del componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sprite_renderer_ae3585cdb6bfe429286b662173dd2a381}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_sprite_renderer_a88d0c2708b33ece9c9819ba7d8c85b6e}{texture}}
+\item 
+SDL\+\_\+\+Rect \mbox{\hyperlink{struct_sprite_renderer_ae2ccdc033327387d01461af3165ea5ab}{world\+Bounds}}
+\item 
+\Hypertarget{struct_sprite_renderer_a98988caf39831bed8a9509fd18b52aba}\label{struct_sprite_renderer_a98988caf39831bed8a9509fd18b52aba} 
+int {\bfseries width}
+\item 
+int \mbox{\hyperlink{struct_sprite_renderer_a7946c386b6bc17712586f51e0634e466}{height}}
+\item 
+Anchor\+Point \mbox{\hyperlink{struct_sprite_renderer_a14e10a9b5ccaba15efc89cc9bbcd3f8e}{center\+Mode}}
+\item 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_sprite_renderer_a8bd543b1e724c6db4a7d2afa4f3a1013}{transform}}
+\item 
+SDL\+\_\+\+Renderer\+Flip \mbox{\hyperlink{struct_sprite_renderer_a7822edbf626d572c8d91c5999c4bb80c}{flip}}
+\item 
+int \mbox{\hyperlink{struct_sprite_renderer_aa1f81a2d202cd9fb381e61caf115b88d}{alpha}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer} que renderiza un sprite en pantalla. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_sprite_renderer_abc1e5aa4e7b07bea35f7c1cb0efa1f26}\index{SpriteRenderer@{SpriteRenderer}!SpriteRenderer@{SpriteRenderer}}
+\index{SpriteRenderer@{SpriteRenderer}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{SpriteRenderer()}{SpriteRenderer()}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_abc1e5aa4e7b07bea35f7c1cb0efa1f26} 
+Sprite\+Renderer\+::\+Sprite\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}}}]{srp}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_sprite_renderer}{Sprite\+Renderer} con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em srp} & Instancia de \doxylink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_sprite_renderer_aff641050ca3902faa775f21cab759d88}\index{SpriteRenderer@{SpriteRenderer}!start@{start}}
+\index{start@{start}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_aff641050ca3902faa775f21cab759d88} 
+void Sprite\+Renderer\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método de inicio del componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer}. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_sprite_renderer_ae3585cdb6bfe429286b662173dd2a381}\index{SpriteRenderer@{SpriteRenderer}!update@{update}}
+\index{update@{update}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_ae3585cdb6bfe429286b662173dd2a381} 
+void Sprite\+Renderer\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_sprite_renderer_aa1f81a2d202cd9fb381e61caf115b88d}\index{SpriteRenderer@{SpriteRenderer}!alpha@{alpha}}
+\index{alpha@{alpha}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_aa1f81a2d202cd9fb381e61caf115b88d} 
+int Sprite\+Renderer\+::alpha}
+
+Canal alfa para transparencia. \Hypertarget{struct_sprite_renderer_a14e10a9b5ccaba15efc89cc9bbcd3f8e}\index{SpriteRenderer@{SpriteRenderer}!centerMode@{centerMode}}
+\index{centerMode@{centerMode}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{centerMode}{centerMode}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_a14e10a9b5ccaba15efc89cc9bbcd3f8e} 
+Anchor\+Point Sprite\+Renderer\+::center\+Mode}
+
+Modo de centrado. \Hypertarget{struct_sprite_renderer_a7822edbf626d572c8d91c5999c4bb80c}\index{SpriteRenderer@{SpriteRenderer}!flip@{flip}}
+\index{flip@{flip}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{flip}{flip}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_a7822edbf626d572c8d91c5999c4bb80c} 
+SDL\+\_\+\+Renderer\+Flip Sprite\+Renderer\+::flip}
+
+Modo de volteo del sprite para renderizado. \Hypertarget{struct_sprite_renderer_a7946c386b6bc17712586f51e0634e466}\index{SpriteRenderer@{SpriteRenderer}!height@{height}}
+\index{height@{height}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_a7946c386b6bc17712586f51e0634e466} 
+int Sprite\+Renderer\+::height}
+
+Ancho y alto del sprite para renderizado. \Hypertarget{struct_sprite_renderer_a88d0c2708b33ece9c9819ba7d8c85b6e}\index{SpriteRenderer@{SpriteRenderer}!texture@{texture}}
+\index{texture@{texture}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_a88d0c2708b33ece9c9819ba7d8c85b6e} 
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} Sprite\+Renderer\+::texture}
+
+Textura del sprite. \Hypertarget{struct_sprite_renderer_a8bd543b1e724c6db4a7d2afa4f3a1013}\index{SpriteRenderer@{SpriteRenderer}!transform@{transform}}
+\index{transform@{transform}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_a8bd543b1e724c6db4a7d2afa4f3a1013} 
+\mbox{\hyperlink{struct_transform}{Transform}}\texorpdfstring{$\ast$}{*} Sprite\+Renderer\+::transform}
+
+Puntero al componente \doxylink{struct_transform}{Transform} asociado. \Hypertarget{struct_sprite_renderer_ae2ccdc033327387d01461af3165ea5ab}\index{SpriteRenderer@{SpriteRenderer}!worldBounds@{worldBounds}}
+\index{worldBounds@{worldBounds}!SpriteRenderer@{SpriteRenderer}}
+\doxysubsubsection{\texorpdfstring{worldBounds}{worldBounds}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_ae2ccdc033327387d01461af3165ea5ab} 
+SDL\+\_\+\+Rect Sprite\+Renderer\+::world\+Bounds}
+
+Cached world bounds in unscaled world coordinates. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Sprite\+Renderer.\+cpp\end{DoxyCompactItemize}

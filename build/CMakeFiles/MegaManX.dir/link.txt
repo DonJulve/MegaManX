@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\MegaManX.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\MegaManX.dir/objects.a @CMakeFiles\MegaManX.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe -mwindows -static -static-libgcc -static-libstdc++ -Wl,--undefined=WinMain -Wl,--whole-archive CMakeFiles\MegaManX.dir/objects.a -Wl,--no-whole-archive -o MegaManX.exe -Wl,--out-implib,libMegaManX.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MegaManX.dir\linkLibs.rsp

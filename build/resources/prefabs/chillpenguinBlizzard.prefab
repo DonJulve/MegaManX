@@ -1,0 +1,44 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 10,
+            "sizeY": 10,
+            "anchor": "TOP_LEFT"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 0,
+            "scaleY": 0,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 1,
+            "gravity": 0,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/chillPenguin/blizzard/blizzard_0.png",
+            "anchor": "TOP_LEFT"
+        },
+        "Animator": {
+            "states": {
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/blizzard",
+                    "duration": 0.2
+                }
+            },
+            "initialState": "shoot"
+        },
+        "ChillPenguinBlizzardComponent": {
+            
+        }
+    }
+}

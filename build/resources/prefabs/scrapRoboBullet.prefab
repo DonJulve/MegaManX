@@ -1,0 +1,37 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2,
+            "sizeY": 2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 20,
+            "scaleY": 10,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain",
+                "Player"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/scrapRobo/bullet/bullet_0.png",
+            "anchor": "CENTER"
+        },
+        "ScrapRoboBullet": {
+        }  
+    }
+}

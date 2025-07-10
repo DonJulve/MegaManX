@@ -1,0 +1,97 @@
+\doxysection{Referencia de la estructura UIComponent}
+\hypertarget{struct_u_i_component}{}\label{struct_u_i_component}\index{UIComponent@{UIComponent}}
+
+
+Componente de interfaz de usuario que hereda de \doxylink{class_component}{Component}.  
+
+
+
+
+{\ttfamily \#include $<$UIComponent.\+h$>$}
+
+Diagrama de herencia de UIComponent\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_u_i_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_u_i_component_a27cfef330ca76524a6e3217e0314a9a4}{UIComponent}} (\mbox{\hyperlink{struct_u_i_parameters}{UIParameters}} uip)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_u_i_component}{UIComponent}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_u_i_component_a443cdf6d4213612c0fd8a3050cd5bd1e}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer) override
+\begin{DoxyCompactList}\small\item\em Renderiza el componente UI en pantalla. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{start}} ()
+\begin{DoxyCompactList}\small\item\em Se llama cuando el componente se inicializa. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_u_i_component_aa744e2837d59ab4f6862eff732f3434b}\label{struct_u_i_component_aa744e2837d59ab4f6862eff732f3434b} 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} {\bfseries transform}
+\begin{DoxyCompactList}\small\item\em Puntero a la transformación del componente UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente de interfaz de usuario que hereda de \doxylink{class_component}{Component}. 
+
+Representa un elemento de la interfaz de usuario con una transformación asociada. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_u_i_component_a27cfef330ca76524a6e3217e0314a9a4}\index{UIComponent@{UIComponent}!UIComponent@{UIComponent}}
+\index{UIComponent@{UIComponent}!UIComponent@{UIComponent}}
+\doxysubsubsection{\texorpdfstring{UIComponent()}{UIComponent()}}
+{\footnotesize\ttfamily \label{struct_u_i_component_a27cfef330ca76524a6e3217e0314a9a4} 
+UIComponent\+::\+UIComponent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_u_i_parameters}{UIParameters}}}]{uip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \doxylink{struct_u_i_component}{UIComponent}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em uip} & Parámetros de UI que contienen la transformación inicial. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_u_i_component_a443cdf6d4213612c0fd8a3050cd5bd1e}\index{UIComponent@{UIComponent}!render@{render}}
+\index{render@{render}!UIComponent@{UIComponent}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{struct_u_i_component_a443cdf6d4213612c0fd8a3050cd5bd1e} 
+void UIComponent\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renderiza el componente UI en pantalla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity\+Manager} & Referencia al administrador de entidades que gestiona los componentes. \\
+\hline
+{\em renderer} & Puntero al renderizador SDL utilizado para dibujar el componente. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{Component}}.
+
+
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/UIComponent.\+h\item 
+Components/UIComponent.\+cpp\end{DoxyCompactItemize}

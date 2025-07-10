@@ -1,0 +1,79 @@
+\doxysection{Referencia de la clase Component\+Loader}
+\hypertarget{class_component_loader}{}\label{class_component_loader}\index{ComponentLoader@{ComponentLoader}}
+
+
+Clase \doxylink{class_component_loader}{Component\+Loader} para cargar componentes desde datos JSON.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Loader.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{Loader\+Function}} = std\+::function$<$\mbox{\hyperlink{class_component}{Component}}\texorpdfstring{$\ast$}{*}(const nlohmann\+::json\&, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\&)$>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_component_loader_aed65b07b463ff25267ff9736661b1043}{set\+Loader\+Function}} (\mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{Loader\+Function}} func)
+\begin{DoxyCompactList}\small\item\em Establece la función de carga para el \doxylink{class_component_loader}{Component\+Loader}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_component_loader_a65a23ac09753bed3e400ab6bd15f13b6}{load}} (const nlohmann\+::json \&data, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em)
+\begin{DoxyCompactList}\small\item\em Carga un componente desde datos JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_component_loader}{Component\+Loader} para cargar componentes desde datos JSON. 
+
+\doxysubsection{Documentación de los «\+Typedef» miembros de la clase}
+\Hypertarget{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}\index{ComponentLoader@{ComponentLoader}!LoaderFunction@{LoaderFunction}}
+\index{LoaderFunction@{LoaderFunction}!ComponentLoader@{ComponentLoader}}
+\doxysubsubsection{\texorpdfstring{LoaderFunction}{LoaderFunction}}
+{\footnotesize\ttfamily \label{class_component_loader_a83d2d390a35e04229bea554bfacb69c1} 
+using \mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{Component\+Loader\+::\+Loader\+Function}} = std\+::function$<$\mbox{\hyperlink{class_component}{Component}}\texorpdfstring{$\ast$}{*}(const nlohmann\+::json\&, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\&)$>$}
+
+Tipo de función para cargar componentes. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_component_loader_a65a23ac09753bed3e400ab6bd15f13b6}\index{ComponentLoader@{ComponentLoader}!load@{load}}
+\index{load@{load}!ComponentLoader@{ComponentLoader}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{class_component_loader_a65a23ac09753bed3e400ab6bd15f13b6} 
+\mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*} Component\+Loader\+::load (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{data}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{}\end{DoxyParamCaption})}
+
+
+
+Carga un componente desde datos JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em data} & Datos JSON del componente. \\
+\hline
+{\em em} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al componente cargado. 
+\end{DoxyReturn}
+\Hypertarget{class_component_loader_aed65b07b463ff25267ff9736661b1043}\index{ComponentLoader@{ComponentLoader}!setLoaderFunction@{setLoaderFunction}}
+\index{setLoaderFunction@{setLoaderFunction}!ComponentLoader@{ComponentLoader}}
+\doxysubsubsection{\texorpdfstring{setLoaderFunction()}{setLoaderFunction()}}
+{\footnotesize\ttfamily \label{class_component_loader_aed65b07b463ff25267ff9736661b1043} 
+void Component\+Loader\+::set\+Loader\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{Loader\+Function}}}]{func}{}\end{DoxyParamCaption})}
+
+
+
+Establece la función de carga para el \doxylink{class_component_loader}{Component\+Loader}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em func} & Función de carga a asignar. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/\+Scenes/Scene\+Loader.\+h\item 
+Managers/\+Scenes/Scene\+Loader.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Archivo de código fuente Utils/Debug.h</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_debug_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Debug.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_debug.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_debug.html">Debug</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27e">   15</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27e">LogLevel</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b">   16</a></span>        <a class="code hl_function" href="class_debug.html#a1c69b0423a8f8161fd8c6c203a77aeab">Log</a>,     </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa">   17</a></span>        <a class="code hl_function" href="class_debug.html#a80846605ad3c5ed5a5385762ec4b3653">Warning</a>, </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd">   18</a></span>        <a class="code hl_function" href="class_debug.html#a289533cee37962e4dab1abdbbe34c6d9">Error</a>    </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    };</div>
+</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b">Log</a>(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa">Warning</a>(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd">Error</a>(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_debug.html#ac5d597c530951c79d3ec2362d222e6aa">EnableFileLogging</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_debug.html#a93dd8afc25780886dcb1604aaa19044f">DisableFileLogging</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> WriteLog(<span class="keyword">const</span> std::string&amp; message, <a class="code hl_enumeration" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27e">LogLevel</a> level);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> std::ofstream logFile; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+</div>
+<div class="ttc" id="aclass_debug_html"><div class="ttname"><a href="class_debug.html">Debug</a></div><div class="ttdoc">Clase Debug para gestionar mensajes de depuración y registro.</div><div class="ttdef"><b>Definition</b> Debug.h:10</div></div>
+<div class="ttc" id="aclass_debug_html_a1c69b0423a8f8161fd8c6c203a77aeab"><div class="ttname"><a href="class_debug.html#a1c69b0423a8f8161fd8c6c203a77aeab">Debug::Log</a></div><div class="ttdeci">static void Log(const std::string &amp;message)</div><div class="ttdoc">Registra un mensaje informativo.</div><div class="ttdef"><b>Definition</b> Debug.cpp:6</div></div>
+<div class="ttc" id="aclass_debug_html_a289533cee37962e4dab1abdbbe34c6d9"><div class="ttname"><a href="class_debug.html#a289533cee37962e4dab1abdbbe34c6d9">Debug::Error</a></div><div class="ttdeci">static void Error(const std::string &amp;message)</div><div class="ttdoc">Registra un mensaje de error.</div><div class="ttdef"><b>Definition</b> Debug.cpp:14</div></div>
+<div class="ttc" id="aclass_debug_html_a80846605ad3c5ed5a5385762ec4b3653"><div class="ttname"><a href="class_debug.html#a80846605ad3c5ed5a5385762ec4b3653">Debug::Warning</a></div><div class="ttdeci">static void Warning(const std::string &amp;message)</div><div class="ttdoc">Registra un mensaje de advertencia.</div><div class="ttdef"><b>Definition</b> Debug.cpp:10</div></div>
+<div class="ttc" id="aclass_debug_html_a8c68d97496e49ad5e586f32421d8d27e"><div class="ttname"><a href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27e">Debug::LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdoc">Enumeración que define los niveles de registro.</div><div class="ttdef"><b>Definition</b> Debug.h:15</div></div>
+<div class="ttc" id="aclass_debug_html_a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa">Debug::LogLevel::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdef"><b>Definition</b> Debug.h:17</div></div>
+<div class="ttc" id="aclass_debug_html_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd">Debug::LogLevel::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdef"><b>Definition</b> Debug.h:18</div></div>
+<div class="ttc" id="aclass_debug_html_a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b"><div class="ttname"><a href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b">Debug::LogLevel::Log</a></div><div class="ttdeci">@ Log</div><div class="ttdef"><b>Definition</b> Debug.h:16</div></div>
+<div class="ttc" id="aclass_debug_html_a93dd8afc25780886dcb1604aaa19044f"><div class="ttname"><a href="class_debug.html#a93dd8afc25780886dcb1604aaa19044f">Debug::DisableFileLogging</a></div><div class="ttdeci">static void DisableFileLogging()</div><div class="ttdoc">Deshabilita el registro en archivo.</div><div class="ttdef"><b>Definition</b> Debug.cpp:29</div></div>
+<div class="ttc" id="aclass_debug_html_ac5d597c530951c79d3ec2362d222e6aa"><div class="ttname"><a href="class_debug.html#ac5d597c530951c79d3ec2362d222e6aa">Debug::EnableFileLogging</a></div><div class="ttdeci">static void EnableFileLogging(const std::string &amp;filename)</div><div class="ttdoc">Habilita el registro en un archivo.</div><div class="ttdef"><b>Definition</b> Debug.cpp:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_0a824aa1f70ce3b829ef378253b085da.html">Utils</a></li><li class="navelem"><b>Debug.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

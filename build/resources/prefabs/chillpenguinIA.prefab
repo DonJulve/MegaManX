@@ -1,0 +1,245 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 40,
+            "scaleY": 40,
+            "isTrigger": false
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/chillPenguin/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isGrounded": {"type": "bool", "value": true},
+                "isFalling": {"type": "bool", "value": false},
+                "isMoving": {"type": "bool", "value": false},
+                "isActive": {"type": "bool", "value": false},
+                "isDashing": {"type": "bool", "value": false},
+                "isShooting": {"type": "bool", "value": false},
+                "isIce": {"type": "bool", "value": false},
+                "isBlizzard": {"type": "bool", "value": false}
+            },
+            "states": {
+                "spawn" : {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/intro",
+                    "duration": 0.4
+                },
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/chillPenguin/idle", 
+                    "duration": 1
+                },
+                "idleShooting": {
+                    "looping": true,
+                    "folder": "sprites/chillPenguin/iceShoot", 
+                    "duration": 0.2
+                },
+                "jump": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/jump",
+                    "duration": 0.1
+                },
+                "fall": {
+                    "looping": false,
+                    "folder" : "sprites/chillPenguin/fall",
+                    "duration": 0.1
+                },
+                "dash": {
+                    "looping": false,
+                    "folder" : "sprites/chillPenguin/dash",
+                    "duration": 0.045
+                },
+                "ice": {
+                    "looping": false,
+                    "folder" : "sprites/chillPenguin/iceShoot",
+                    "duration": 0.03
+                },
+                "blizzard": {
+                    "looping": false,
+                    "folder" : "sprites/chillPenguin/ceiling",
+                    "duration": 0.035
+                }
+            },
+            "transitions": [
+                {
+                    "from": "spawn",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isActive", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "idleShooting",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idleShooting",
+                    "to": "idle",
+                    "waitEndState": true,
+                    "conditions": []
+                },
+                {
+                    "from": "idleShooting",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idleShooting",
+                    "to": "dash",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "dash",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                }, 
+                {
+                    "from": "jump",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "ice",
+                    "conditions": [
+                        {"parameter": "isIce", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "ice",
+                    "to": "idle",
+                    "waitEndState": true,
+                    "conditions": [
+                      {"parameter": "isIce", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "blizzard",
+                    "conditions": [
+                        {"parameter": "isBlizzard", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "blizzard",
+                    "to": "fall",
+                    "conditions": [
+                      {"parameter": "isBlizzard", "mode": "NEQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "spawn"
+        },
+        "Health": {
+            "maxHealth":  1500
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Shoot"},
+                        {"nextState": "Ice"},
+                        {"nextState": "Dash"},
+                        {"nextState": "JumpOrBlizzard"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Shoot",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Ice",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Dash",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "JumpOrBlizzard",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        },
+        "ChillPenguinController": {
+            
+        }
+    }
+}

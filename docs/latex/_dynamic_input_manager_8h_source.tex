@@ -1,0 +1,64 @@
+\doxysection{Dynamic\+Input\+Manager.\+h}
+\hypertarget{_dynamic_input_manager_8h_source}{}\label{_dynamic_input_manager_8h_source}\index{Managers/DynamicInputManager.h@{Managers/DynamicInputManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DYNAMICINPUTMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DYNAMICINPUTMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }json\ =\ nlohmann::ordered\_json;}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }DynamicInputManager\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a7819300d8a6d97e69eca7b4bd6e2115c}{InputBinding}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ SDL\_Scancode\ \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_ad834b46b48394137bafe24f552cf7798}{key}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Uint8\ \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a58740fea4fc0cc7b60bd692e05e9855b}{mouseButton}};\ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a6ef1e30901f0c241bae719d5ec799b85}{isMouseInput}};\ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a7819300d8a6d97e69eca7b4bd6e2115c}{InputBinding}}(SDL\_Scancode\ k\ =\ SDL\_SCANCODE\_UNKNOWN);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a7819300d8a6d97e69eca7b4bd6e2115c}{InputBinding}}(Uint8\ btn);}
+\DoxyCodeLine{00028\ \ \ \ \ \};}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ DynamicInputManager\&\ \mbox{\hyperlink{class_dynamic_input_manager_ac23c844a1aff2b7dfcc05a7532671b65}{getInstance}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ DynamicInputManager(\textcolor{keyword}{const}\ DynamicInputManager\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00035\ \ \ \ \ DynamicInputManager\&\ operator=(\textcolor{keyword}{const}\ DynamicInputManager\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00036\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dynamic_input_manager_a492edd7569e11dfc0779d4935d40a32b}{bindAction}}(\textcolor{keyword}{const}\ std::string\&\ actionName,\ SDL\_Scancode\ key);}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dynamic_input_manager_a492edd7569e11dfc0779d4935d40a32b}{bindAction}}(\textcolor{keyword}{const}\ std::string\&\ actionName,\ Uint8\ mouseButton);}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dynamic_input_manager_a88737dc4261bd45538d756f64402e349}{isActionPressed}}(\textcolor{keyword}{const}\ std::string\&\ actionName);}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dynamic_input_manager_ac00b9e48c5eb339ac33661ce46b2304d}{isActionHeld}}(\textcolor{keyword}{const}\ std::string\&\ actionName);}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dynamic_input_manager_a0f81708c2ddae55cc35b84805ff972cb}{isActionReleased}}(\textcolor{keyword}{const}\ std::string\&\ actionName);}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dynamic_input_manager_aa8fc6fb6693e6f7d284d0fd6302e4cf9}{unbindAction}}(\textcolor{keyword}{const}\ std::string\&\ actionName);}
+\DoxyCodeLine{00065\ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dynamic_input_manager_a50b6618a72dafecea2ca359becf7917a}{clearBindings}}();}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dynamic_input_manager_ae0c6bcecb9fbcbf6de8d07a6b3122ab4}{saveToJson}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00073\ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dynamic_input_manager_ae216b536f1905ad2a55ac1c858d64543}{loadFromJson}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ SDL\_Scancode\ getBind(\textcolor{keyword}{const}\ std::string\&\ actionName);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00083\ \ \ \ \ DynamicInputManager();}
+\DoxyCodeLine{00084\ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ std::unordered\_map<std::string,\ InputBinding>\ bindings;\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ mouseButtonToName(Uint8\ button);}
+\DoxyCodeLine{00091\ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{static}\ Uint8\ nameToMouseButton(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

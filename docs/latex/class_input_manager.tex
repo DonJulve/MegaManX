@@ -1,0 +1,220 @@
+\doxysection{Referencia de la clase Input\+Manager}
+\hypertarget{class_input_manager}{}\label{class_input_manager}\index{InputManager@{InputManager}}
+
+
+Clase \doxylink{class_input_manager}{Input\+Manager} para gestionar la entrada del usuario (teclado y ratón).  
+
+
+
+
+{\ttfamily \#include $<$Input\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_input_manager_af2778fb1fee0479cb7e2669a472919d1}{handle\+Events}} (SDL\+\_\+\+Event \&event)
+\begin{DoxyCompactList}\small\item\em Maneja eventos SDL relacionados con la entrada del ratón. \end{DoxyCompactList}\item 
+\Hypertarget{class_input_manager_a171b4b7aed207f5f0e7cbee71a80413e}\label{class_input_manager_a171b4b7aed207f5f0e7cbee71a80413e} 
+static void {\bfseries handle\+Keyboard} ()
+\begin{DoxyCompactList}\small\item\em Procesa el estado del teclado en tiempo real. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_manager_ab10af64d90f17ea99a8f2e3f2d1d7897}{is\+Key\+Pressed}} (SDL\+\_\+\+Scancode key)
+\begin{DoxyCompactList}\small\item\em Verifica si una tecla está presionada en el frame actual. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_manager_a69595cadce64e3d4763ecced740be681}{is\+Key\+Held}} (SDL\+\_\+\+Scancode key)
+\begin{DoxyCompactList}\small\item\em Verifica si una tecla está mantenida presionada. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_manager_a316163861a12c1848d30219d2fb82acb}{is\+Key\+Released}} (SDL\+\_\+\+Scancode key)
+\begin{DoxyCompactList}\small\item\em Verifica si una tecla ha sido soltada en el frame actual. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_manager_a5faf5d48fabea11966b58cd26adcf972}{is\+Mouse\+Button\+Pressed}} (Uint8 button)
+\begin{DoxyCompactList}\small\item\em Verifica si un botón del ratón está presionado en el frame actual. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_manager_ada9ca76b0637df3935f770a8738e5f2c}{is\+Mouse\+Button\+Held}} (Uint8 button)
+\begin{DoxyCompactList}\small\item\em Verifica si un botón del ratón está mantenido presionado. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_input_manager_ac085d4f3b6ce68d247d73cae9689330b}{is\+Mouse\+Button\+Released}} (Uint8 button)
+\begin{DoxyCompactList}\small\item\em Verifica si un botón del ratón ha sido soltado en el frame actual. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_input_manager_a1ca8cb2747f0f049060a3ba37eccedde}{get\+MouseX}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la posición X del ratón. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_input_manager_aaf44f252ea8a73bbdf66078eabedebe0}{get\+MouseY}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la posición Y del ratón. \end{DoxyCompactList}\item 
+\Hypertarget{class_input_manager_a0651576ea046ccda4b1f1e66d224b88a}\label{class_input_manager_a0651576ea046ccda4b1f1e66d224b88a} 
+static int {\bfseries get\+Scroll\+WheelX} ()
+\item 
+\Hypertarget{class_input_manager_adcbab12a1cb1070e9b61e0204b5353c2}\label{class_input_manager_adcbab12a1cb1070e9b61e0204b5353c2} 
+static int {\bfseries get\+Scroll\+WheelY} ()
+\item 
+\Hypertarget{class_input_manager_a3c150f31ea81663570d64ef0f0853660}\label{class_input_manager_a3c150f31ea81663570d64ef0f0853660} 
+static void {\bfseries update\+Previous\+State} ()
+\begin{DoxyCompactList}\small\item\em Guarda el estado previo de las entradas. \end{DoxyCompactList}\item 
+\Hypertarget{class_input_manager_ad745345a450f4ed82a36f64292cd5bee}\label{class_input_manager_ad745345a450f4ed82a36f64292cd5bee} 
+static void {\bfseries reset\+Input\+State} ()
+\begin{DoxyCompactList}\small\item\em Reinicia el estado de las entradas. \end{DoxyCompactList}\item 
+\Hypertarget{class_input_manager_ada4e57a5604f8a56a17e01206928828f}\label{class_input_manager_ada4e57a5604f8a56a17e01206928828f} 
+static SDL\+\_\+\+FPoint {\bfseries screen\+To\+World} (float mouseX, float mouseY, \mbox{\hyperlink{struct_camera}{Camera}} \&camera)
+\item 
+\Hypertarget{class_input_manager_a792690109b9c011e4372e952782c3d6f}\label{class_input_manager_a792690109b9c011e4372e952782c3d6f} 
+static SDL\+\_\+\+FPoint {\bfseries world\+To\+Screen} (float worldX, float worldY, \mbox{\hyperlink{struct_camera}{Camera}} \&camera)
+\item 
+\Hypertarget{class_input_manager_a1537ec2dbd87e9d32b3b727566ee5543}\label{class_input_manager_a1537ec2dbd87e9d32b3b727566ee5543} 
+static void {\bfseries reset\+Last\+Key} ()
+\item 
+\Hypertarget{class_input_manager_a6c1dd3fbf6efd83f3c99655a25042be2}\label{class_input_manager_a6c1dd3fbf6efd83f3c99655a25042be2} 
+static SDL\+\_\+\+Scancode {\bfseries get\+Last\+Key} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_input_manager}{Input\+Manager} para gestionar la entrada del usuario (teclado y ratón). 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_input_manager_a1ca8cb2747f0f049060a3ba37eccedde}\index{InputManager@{InputManager}!getMouseX@{getMouseX}}
+\index{getMouseX@{getMouseX}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{getMouseX()}{getMouseX()}}
+{\footnotesize\ttfamily \label{class_input_manager_a1ca8cb2747f0f049060a3ba37eccedde} 
+int Input\+Manager\+::get\+MouseX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtiene la posición X del ratón. 
+
+\begin{DoxyReturn}{Devuelve}
+Coordenada X del ratón. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_aaf44f252ea8a73bbdf66078eabedebe0}\index{InputManager@{InputManager}!getMouseY@{getMouseY}}
+\index{getMouseY@{getMouseY}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{getMouseY()}{getMouseY()}}
+{\footnotesize\ttfamily \label{class_input_manager_aaf44f252ea8a73bbdf66078eabedebe0} 
+int Input\+Manager\+::get\+MouseY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtiene la posición Y del ratón. 
+
+\begin{DoxyReturn}{Devuelve}
+Coordenada Y del ratón. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_af2778fb1fee0479cb7e2669a472919d1}\index{InputManager@{InputManager}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily \label{class_input_manager_af2778fb1fee0479cb7e2669a472919d1} 
+void Input\+Manager\+::handle\+Events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Maneja eventos SDL relacionados con la entrada del ratón. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event} & Evento SDL a procesar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_input_manager_a69595cadce64e3d4763ecced740be681}\index{InputManager@{InputManager}!isKeyHeld@{isKeyHeld}}
+\index{isKeyHeld@{isKeyHeld}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isKeyHeld()}{isKeyHeld()}}
+{\footnotesize\ttfamily \label{class_input_manager_a69595cadce64e3d4763ecced740be681} 
+bool Input\+Manager\+::is\+Key\+Held (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica si una tecla está mantenida presionada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & Código de la tecla SDL (SDL\+\_\+\+Scancode). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la tecla está mantenida, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_ab10af64d90f17ea99a8f2e3f2d1d7897}\index{InputManager@{InputManager}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily \label{class_input_manager_ab10af64d90f17ea99a8f2e3f2d1d7897} 
+bool Input\+Manager\+::is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica si una tecla está presionada en el frame actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & Código de la tecla SDL (SDL\+\_\+\+Scancode). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la tecla está presionada, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_a316163861a12c1848d30219d2fb82acb}\index{InputManager@{InputManager}!isKeyReleased@{isKeyReleased}}
+\index{isKeyReleased@{isKeyReleased}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isKeyReleased()}{isKeyReleased()}}
+{\footnotesize\ttfamily \label{class_input_manager_a316163861a12c1848d30219d2fb82acb} 
+bool Input\+Manager\+::is\+Key\+Released (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica si una tecla ha sido soltada en el frame actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em key} & Código de la tecla SDL (SDL\+\_\+\+Scancode). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la tecla fue soltada, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_ada9ca76b0637df3935f770a8738e5f2c}\index{InputManager@{InputManager}!isMouseButtonHeld@{isMouseButtonHeld}}
+\index{isMouseButtonHeld@{isMouseButtonHeld}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isMouseButtonHeld()}{isMouseButtonHeld()}}
+{\footnotesize\ttfamily \label{class_input_manager_ada9ca76b0637df3935f770a8738e5f2c} 
+bool Input\+Manager\+::is\+Mouse\+Button\+Held (\begin{DoxyParamCaption}\item[{Uint8}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica si un botón del ratón está mantenido presionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em button} & Identificador del botón del ratón (Uint8). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si el botón está mantenido, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_a5faf5d48fabea11966b58cd26adcf972}\index{InputManager@{InputManager}!isMouseButtonPressed@{isMouseButtonPressed}}
+\index{isMouseButtonPressed@{isMouseButtonPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isMouseButtonPressed()}{isMouseButtonPressed()}}
+{\footnotesize\ttfamily \label{class_input_manager_a5faf5d48fabea11966b58cd26adcf972} 
+bool Input\+Manager\+::is\+Mouse\+Button\+Pressed (\begin{DoxyParamCaption}\item[{Uint8}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica si un botón del ratón está presionado en el frame actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em button} & Identificador del botón del ratón (Uint8). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si el botón está presionado, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_input_manager_ac085d4f3b6ce68d247d73cae9689330b}\index{InputManager@{InputManager}!isMouseButtonReleased@{isMouseButtonReleased}}
+\index{isMouseButtonReleased@{isMouseButtonReleased}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{isMouseButtonReleased()}{isMouseButtonReleased()}}
+{\footnotesize\ttfamily \label{class_input_manager_ac085d4f3b6ce68d247d73cae9689330b} 
+bool Input\+Manager\+::is\+Mouse\+Button\+Released (\begin{DoxyParamCaption}\item[{Uint8}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Verifica si un botón del ratón ha sido soltado en el frame actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em button} & Identificador del botón del ratón (Uint8). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si el botón fue soltado, falso en caso contrario. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Input\+Manager.\+h\item 
+Managers/Input\+Manager.\+cpp\end{DoxyCompactItemize}

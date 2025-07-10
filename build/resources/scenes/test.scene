@@ -1,0 +1,58 @@
+{
+    "name": "test",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": 100,
+                    "posY": 100,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Camera": {
+                    "zoom": 1,
+                    "windowWidth": 800,
+                    "windowHeight": 600
+                }
+            }
+        },
+        {
+            "prefab": "megaman"
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0,
+                    "posY": 300,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Collider": {
+                    "tag": "Terrain",
+                    "scaleX": 750,
+                    "scaleY": 100,
+                    "isTrigger": false,
+                    "tag": "Terrain"
+                },
+                "Rigidbody": {
+                    "velocityX": 0,
+                    "velocityY": 0,
+                    "mass": 10000,
+                    "gravity": 9.8,
+                    "drag": 0.01,
+                    "bounceFactor": 0.01,
+                    "kinematic": true
+                },
+                "Sprite": {
+                    "texturePath": "suelo.png",
+                    "anchor": "CENTER"
+                }
+            }
+        }
+    ]
+}

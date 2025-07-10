@@ -1,0 +1,103 @@
+\doxysection{Referencia de la clase Prefab\+Manager}
+\hypertarget{class_prefab_manager}{}\label{class_prefab_manager}\index{PrefabManager@{PrefabManager}}
+
+
+Clase para gestionar y cargar prefabs en el sistema.  
+
+
+
+
+{\ttfamily \#include $<$Prefab\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_prefab_manager_a04e7d2db54a72556ca5832c6c41d598c}{load\+Prefab}} (const std\+::string \&prefab\+Name)
+\begin{DoxyCompactList}\small\item\em Carga un prefab desde un archivo. \end{DoxyCompactList}\item 
+Entity \mbox{\hyperlink{class_prefab_manager_ac93b21c2726e7659b7e34f5b0418fdd7}{instantiate\+Prefab}} (const std\+::string \&prefab\+Name, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Instancia un prefab en el \doxylink{class_entity_manager}{Entity\+Manager} proporcionado. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_prefab_manager_a9fbddd6ed554f756c446fb127a4a193c}{has\+Prefab}} (const std\+::string \&prefab\+Name) const
+\begin{DoxyCompactList}\small\item\em Verifica si un prefab está cargado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_prefab_manager}{Prefab\+Manager}} \& \mbox{\hyperlink{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia única de \doxylink{class_prefab_manager}{Prefab\+Manager} (singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase para gestionar y cargar prefabs en el sistema. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea}\index{PrefabManager@{PrefabManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!PrefabManager@{PrefabManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea} 
+static \mbox{\hyperlink{class_prefab_manager}{Prefab\+Manager}} \& Prefab\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtiene la instancia única de \doxylink{class_prefab_manager}{Prefab\+Manager} (singleton). 
+
+\begin{DoxyReturn}{Devuelve}
+Referencia a la instancia de \doxylink{class_prefab_manager}{Prefab\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{class_prefab_manager_a9fbddd6ed554f756c446fb127a4a193c}\index{PrefabManager@{PrefabManager}!hasPrefab@{hasPrefab}}
+\index{hasPrefab@{hasPrefab}!PrefabManager@{PrefabManager}}
+\doxysubsubsection{\texorpdfstring{hasPrefab()}{hasPrefab()}}
+{\footnotesize\ttfamily \label{class_prefab_manager_a9fbddd6ed554f756c446fb127a4a193c} 
+bool Prefab\+Manager\+::has\+Prefab (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefab\+Name}{}\end{DoxyParamCaption}) const}
+
+
+
+Verifica si un prefab está cargado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em prefab\+Name} & Nombre del prefab a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si el prefab existe, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_prefab_manager_ac93b21c2726e7659b7e34f5b0418fdd7}\index{PrefabManager@{PrefabManager}!instantiatePrefab@{instantiatePrefab}}
+\index{instantiatePrefab@{instantiatePrefab}!PrefabManager@{PrefabManager}}
+\doxysubsubsection{\texorpdfstring{instantiatePrefab()}{instantiatePrefab()}}
+{\footnotesize\ttfamily \label{class_prefab_manager_ac93b21c2726e7659b7e34f5b0418fdd7} 
+Entity Prefab\+Manager\+::instantiate\+Prefab (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefab\+Name}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Instancia un prefab en el \doxylink{class_entity_manager}{Entity\+Manager} proporcionado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em prefab\+Name} & Nombre del prefab a instanciar. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager} donde se creará la entidad. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+ID de la entidad creada. 
+\end{DoxyReturn}
+\Hypertarget{class_prefab_manager_a04e7d2db54a72556ca5832c6c41d598c}\index{PrefabManager@{PrefabManager}!loadPrefab@{loadPrefab}}
+\index{loadPrefab@{loadPrefab}!PrefabManager@{PrefabManager}}
+\doxysubsubsection{\texorpdfstring{loadPrefab()}{loadPrefab()}}
+{\footnotesize\ttfamily \label{class_prefab_manager_a04e7d2db54a72556ca5832c6c41d598c} 
+void Prefab\+Manager\+::load\+Prefab (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefab\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Carga un prefab desde un archivo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em prefab\+Name} & Nombre del prefab a cargar. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Prefab\+Manager.\+h\item 
+Managers/Prefab\+Manager.\+cpp\end{DoxyCompactItemize}

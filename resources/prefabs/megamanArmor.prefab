@@ -1,0 +1,271 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 150,
+            "posY": 150,
+            "rotZ": 0,
+            "sizeX": 2,
+            "sizeY": 2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Player",
+            "scaleX": 40,
+            "scaleY": 80,
+            "isTrigger": false
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/greenArmor/desactivated/desactivated_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isPlayable": {"type": "bool", "value": false},
+                "isActive": {"type": "bool", "value": false},
+                "isWalking": {"type": "bool", "value": false},
+                "isAttacking": {"type": "bool", "value": false},
+                "isJumping": {"type": "bool", "value": false},
+                "isDashing" : {"type": "bool", "value": false},
+                "isGrounded" : {"type": "bool", "value": true}
+            },
+            "states": {
+                "desactivated": {
+                    "looping": true,
+                    "folder": "sprites/greenArmor/desactivated",
+                    "duration": 0.06
+                },
+                "activation": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/activation",
+                    "duration": 0.1
+                },
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/greenArmor/idle",
+                    "duration": 0.06
+                },
+                "walk": {
+                    "looping": true,
+                    "folder": "sprites/greenArmor/walk",
+                    "duration": 0.06
+                },
+                "attack": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/attack",
+                    "duration": 0.06
+                },
+                "jump": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/jump",
+                    "duration": 0.2
+                },
+                "airborn": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/airborn",
+                    "duration": 0.2
+                },
+                "chargeDash": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/chargeDash",
+                    "duration": 0.06
+                },
+                "dash": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/dash",
+                    "duration": 0.06
+                },
+                "dischargeDash": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/dischargeDash",
+                    "duration": 0.06
+                },
+                "land": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/land",
+                    "duration": 0.03
+                },
+                "jumpAttack": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/jumpAttack",
+                    "duration": 0.06
+                },
+                "dashAttack": {
+                    "looping": false,
+                    "folder": "sprites/greenArmor/dashAttack",
+                    "duration": 0.6
+                }
+            },
+            "transitions": [
+                {
+                    "from": "desactivated",
+                    "to": "activation",
+                    "conditions": [
+                        {"parameter": "isPlayable", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "activation",
+                    "to": "idle",
+                    "waitEndState": true
+                },
+                {
+                    "from": "idle",
+                    "to": "walk",
+                    "conditions": [
+                        {"parameter": "isWalking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isWalking", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "dash",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "walk",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "airborn",
+                    "waitEndState": true
+                },
+                {
+                    "from": "jump",
+                    "to": "desactivated",
+                    "conditions": [
+                        {"parameter": "isPlayable", "mode": "NEQ", "value": 1}
+                    ]  
+                },
+                {
+                    "from": "idle",
+                    "to": "desactivated",
+                    "conditions": [
+                        {"parameter": "isPlayable", "mode": "NEQ", "value": 1}
+                    ]  
+                },
+                {
+                    "from": "walk",
+                    "to": "desactivated",
+                    "conditions": [
+                        {"parameter": "isPlayable", "mode": "NEQ", "value": 1}
+                    ]  
+                },
+                {
+                    "from": "airborn",
+                    "to": "desactivated",
+                    "conditions": [
+                        {"parameter": "isPlayable", "mode": "NEQ", "value": 1}
+                    ]  
+                },
+                {
+                    "from": "dash",
+                    "to": "walk",
+                    "conditions": [
+                        {"parameter": "isDashing", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isWalking", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "dash",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "airborn",
+                    "to": "jumpAttack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jumpAttack",
+                    "to": "airborn",
+                    "waitEndState": true
+                },
+                {
+                    "from": "idle",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "airborn",
+                    "to": "land",
+                    "conditions": [
+                        {"parameter": "isGrounded", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "land",
+                    "to": "idle",
+                    "waitEndState": true
+                }
+            ],
+            "initialState": "desactivated"
+        },
+        "Health": {
+            "maxHealth": 500
+        },
+        "MegamanArmorController": {
+
+        }
+    }
+}

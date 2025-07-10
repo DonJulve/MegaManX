@@ -1,0 +1,90 @@
+\doxysection{Referencia de la estructura Dynamic\+Input\+Manager\+::Input\+Binding}
+\hypertarget{struct_dynamic_input_manager_1_1_input_binding}{}\label{struct_dynamic_input_manager_1_1_input_binding}\index{DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}}
+
+
+Estructura que define una vinculación de entrada (tecla o botón del ratón).  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\+Input\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a7819300d8a6d97e69eca7b4bd6e2115c}{Input\+Binding}} (SDL\+\_\+\+Scancode k=SDL\+\_\+\+SCANCODE\+\_\+\+UNKNOWN)
+\begin{DoxyCompactList}\small\item\em Constructor para vinculación de tecla. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a1719d2156b07725f9bd5fa5c6ff316ea}{Input\+Binding}} (Uint8 btn)
+\begin{DoxyCompactList}\small\item\em Constructor para vinculación de botón del ratón. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Scancode \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_ad834b46b48394137bafe24f552cf7798}{key}}
+\item 
+Uint8 \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a58740fea4fc0cc7b60bd692e05e9855b}{mouse\+Button}}
+\item 
+bool \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding_a6ef1e30901f0c241bae719d5ec799b85}{is\+Mouse\+Input}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que define una vinculación de entrada (tecla o botón del ratón). 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_dynamic_input_manager_1_1_input_binding_a7819300d8a6d97e69eca7b4bd6e2115c}\index{DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}!InputBinding@{InputBinding}}
+\index{InputBinding@{InputBinding}!DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}}
+\doxysubsubsection{\texorpdfstring{InputBinding()}{InputBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{struct_dynamic_input_manager_1_1_input_binding_a7819300d8a6d97e69eca7b4bd6e2115c} 
+Dynamic\+Input\+Manager\+::\+Input\+Binding\+::\+Input\+Binding (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Scancode}]{k}{ = {\ttfamily SDL\+\_\+SCANCODE\+\_\+UNKNOWN}}\end{DoxyParamCaption})}
+
+
+
+Constructor para vinculación de tecla. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em k} & Código de la tecla SDL (por defecto SDL\+\_\+\+SCANCODE\+\_\+\+UNKNOWN). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_dynamic_input_manager_1_1_input_binding_a1719d2156b07725f9bd5fa5c6ff316ea}\index{DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}!InputBinding@{InputBinding}}
+\index{InputBinding@{InputBinding}!DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}}
+\doxysubsubsection{\texorpdfstring{InputBinding()}{InputBinding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{struct_dynamic_input_manager_1_1_input_binding_a1719d2156b07725f9bd5fa5c6ff316ea} 
+Dynamic\+Input\+Manager\+::\+Input\+Binding\+::\+Input\+Binding (\begin{DoxyParamCaption}\item[{Uint8}]{btn}{}\end{DoxyParamCaption})}
+
+
+
+Constructor para vinculación de botón del ratón. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em btn} & Identificador del botón del ratón. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_dynamic_input_manager_1_1_input_binding_a6ef1e30901f0c241bae719d5ec799b85}\index{DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}!isMouseInput@{isMouseInput}}
+\index{isMouseInput@{isMouseInput}!DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}}
+\doxysubsubsection{\texorpdfstring{isMouseInput}{isMouseInput}}
+{\footnotesize\ttfamily \label{struct_dynamic_input_manager_1_1_input_binding_a6ef1e30901f0c241bae719d5ec799b85} 
+bool Dynamic\+Input\+Manager\+::\+Input\+Binding\+::is\+Mouse\+Input}
+
+Indica si la entrada es un botón del ratón. \Hypertarget{struct_dynamic_input_manager_1_1_input_binding_ad834b46b48394137bafe24f552cf7798}\index{DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}!key@{key}}
+\index{key@{key}!DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \label{struct_dynamic_input_manager_1_1_input_binding_ad834b46b48394137bafe24f552cf7798} 
+SDL\+\_\+\+Scancode Dynamic\+Input\+Manager\+::\+Input\+Binding\+::key}
+
+Código de la tecla SDL (si aplica). \Hypertarget{struct_dynamic_input_manager_1_1_input_binding_a58740fea4fc0cc7b60bd692e05e9855b}\index{DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}!mouseButton@{mouseButton}}
+\index{mouseButton@{mouseButton}!DynamicInputManager::InputBinding@{DynamicInputManager::InputBinding}}
+\doxysubsubsection{\texorpdfstring{mouseButton}{mouseButton}}
+{\footnotesize\ttfamily \label{struct_dynamic_input_manager_1_1_input_binding_a58740fea4fc0cc7b60bd692e05e9855b} 
+Uint8 Dynamic\+Input\+Manager\+::\+Input\+Binding\+::mouse\+Button}
+
+Identificador del botón del ratón (si aplica). 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Dynamic\+Input\+Manager.\+h\item 
+Managers/Dynamic\+Input\+Manager.\+cpp\end{DoxyCompactItemize}

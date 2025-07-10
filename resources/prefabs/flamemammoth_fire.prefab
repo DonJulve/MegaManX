@@ -1,0 +1,63 @@
+{
+    "components":{
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 20,
+            "scaleY": 20,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain",
+                "Lava"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/flamemammoth/fire/fire_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "extinct": {"type": "bool", "value": false}
+            },
+            "states": {
+                "extinct": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/extinct",
+                    "duration": 0.08
+                },
+                "fire": {
+                    "looping": true,
+                    "folder": "sprites/flamemammoth/fire",
+                    "duration": 0.2
+                }
+            },
+            "transitions": [
+                {
+                    "from": "fire",
+                    "to": "extinct",
+                    "conditions": [
+                        {"parameter": "extinct", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ]
+        },
+        "FlameMammothFire": {
+        }
+    }
+}

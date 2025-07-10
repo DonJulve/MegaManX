@@ -1,0 +1,191 @@
+\doxysection{Referencia de la estructura Rigidbody}
+\hypertarget{struct_rigidbody}{}\label{struct_rigidbody}\index{Rigidbody@{Rigidbody}}
+
+
+Componente \doxylink{struct_rigidbody}{Rigidbody} que simula física básica (velocidad, aceleración, etc.).  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+Diagrama de herencia de Rigidbody\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_rigidbody}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_rigidbody_aff220ffc4de55d58f4782a5615fa7f8d}{Rigidbody}} (\mbox{\hyperlink{struct_rigidbody_parameters}{Rigidbody\+Parameters}} rbp)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_rigidbody}{Rigidbody} con parámetros. \end{DoxyCompactList}\item 
+\Hypertarget{struct_rigidbody_ab8cee0caf46b950a921acdb6bee1cfe2}\label{struct_rigidbody_ab8cee0caf46b950a921acdb6bee1cfe2} 
+{\bfseries Rigidbody} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de \doxylink{struct_rigidbody}{Rigidbody}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_rigidbody_a230405af89fc3020f0c4deb3192a814b}{Apply\+Force}} (float forceX, float forceY)
+\begin{DoxyCompactList}\small\item\em Aplica una fuerza al componente \doxylink{struct_rigidbody}{Rigidbody}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_rigidbody_abf24c797ee51c8e5daf17466485ad054}{start}} () override
+\begin{DoxyCompactList}\small\item\em Método de inicio del componente \doxylink{struct_rigidbody}{Rigidbody}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_rigidbody_aaf91a8e80c803c1c5b99f5bb399d0e07}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente \doxylink{struct_rigidbody}{Rigidbody}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_rigidbody_aaaf8bc66ca5747a0f8a0c3511d048b25}\label{struct_rigidbody_aaaf8bc66ca5747a0f8a0c3511d048b25} 
+float {\bfseries velocityX}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_aaf834ce370866b49baba861b94a132cb}{velocityY}}
+\item 
+\Hypertarget{struct_rigidbody_a389bc2868a805a42e56363c73bb36137}\label{struct_rigidbody_a389bc2868a805a42e56363c73bb36137} 
+float {\bfseries accelerationX}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_a699ce0a80b301e7c34fc8d77e1fae5ed}{accelerationY}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}{mass}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_a6d7a494de74caa68b88124ea4dc78de1}{gravity}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_a4698fce8f96262da9016222f96c1ae2a}{drag}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_a92291a6424b65eac60564c8708641fa6}{bounce\+Factor}}
+\item 
+bool \mbox{\hyperlink{struct_rigidbody_ac96d2b0119c740029ec39951cc0f5d6c}{kinematic}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente \doxylink{struct_rigidbody}{Rigidbody} que simula física básica (velocidad, aceleración, etc.). 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_rigidbody_aff220ffc4de55d58f4782a5615fa7f8d}\index{Rigidbody@{Rigidbody}!Rigidbody@{Rigidbody}}
+\index{Rigidbody@{Rigidbody}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{Rigidbody()}{Rigidbody()}}
+{\footnotesize\ttfamily \label{struct_rigidbody_aff220ffc4de55d58f4782a5615fa7f8d} 
+Rigidbody\+::\+Rigidbody (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_rigidbody_parameters}{Rigidbody\+Parameters}}}]{rbp}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_rigidbody}{Rigidbody} con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em rbp} & Instancia de \doxylink{struct_rigidbody_parameters}{Rigidbody\+Parameters}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_rigidbody_a230405af89fc3020f0c4deb3192a814b}\index{Rigidbody@{Rigidbody}!ApplyForce@{ApplyForce}}
+\index{ApplyForce@{ApplyForce}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{ApplyForce()}{ApplyForce()}}
+{\footnotesize\ttfamily \label{struct_rigidbody_a230405af89fc3020f0c4deb3192a814b} 
+void Rigidbody\+::\+Apply\+Force (\begin{DoxyParamCaption}\item[{float}]{forceX}{, }\item[{float}]{forceY}{}\end{DoxyParamCaption})}
+
+
+
+Aplica una fuerza al componente \doxylink{struct_rigidbody}{Rigidbody}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em forceX} & Fuerza en el eje X. \\
+\hline
+{\em forceY} & Fuerza en el eje Y. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_rigidbody_abf24c797ee51c8e5daf17466485ad054}\index{Rigidbody@{Rigidbody}!start@{start}}
+\index{start@{start}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_rigidbody_abf24c797ee51c8e5daf17466485ad054} 
+void Rigidbody\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método de inicio del componente \doxylink{struct_rigidbody}{Rigidbody}. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_rigidbody_aaf91a8e80c803c1c5b99f5bb399d0e07}\index{Rigidbody@{Rigidbody}!update@{update}}
+\index{update@{update}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_rigidbody_aaf91a8e80c803c1c5b99f5bb399d0e07} 
+void Rigidbody\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente \doxylink{struct_rigidbody}{Rigidbody}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_rigidbody_a699ce0a80b301e7c34fc8d77e1fae5ed}\index{Rigidbody@{Rigidbody}!accelerationY@{accelerationY}}
+\index{accelerationY@{accelerationY}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{accelerationY}{accelerationY}}
+{\footnotesize\ttfamily \label{struct_rigidbody_a699ce0a80b301e7c34fc8d77e1fae5ed} 
+float Rigidbody\+::accelerationY}
+
+Aceleración en X e Y. \Hypertarget{struct_rigidbody_a92291a6424b65eac60564c8708641fa6}\index{Rigidbody@{Rigidbody}!bounceFactor@{bounceFactor}}
+\index{bounceFactor@{bounceFactor}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{bounceFactor}{bounceFactor}}
+{\footnotesize\ttfamily \label{struct_rigidbody_a92291a6424b65eac60564c8708641fa6} 
+float Rigidbody\+::bounce\+Factor}
+
+Factor de rebote. \Hypertarget{struct_rigidbody_a4698fce8f96262da9016222f96c1ae2a}\index{Rigidbody@{Rigidbody}!drag@{drag}}
+\index{drag@{drag}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{drag}{drag}}
+{\footnotesize\ttfamily \label{struct_rigidbody_a4698fce8f96262da9016222f96c1ae2a} 
+float Rigidbody\+::drag}
+
+Resistencia del aire. \Hypertarget{struct_rigidbody_a6d7a494de74caa68b88124ea4dc78de1}\index{Rigidbody@{Rigidbody}!gravity@{gravity}}
+\index{gravity@{gravity}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily \label{struct_rigidbody_a6d7a494de74caa68b88124ea4dc78de1} 
+float Rigidbody\+::gravity}
+
+Fuerza de gravedad aplicada. \Hypertarget{struct_rigidbody_ac96d2b0119c740029ec39951cc0f5d6c}\index{Rigidbody@{Rigidbody}!kinematic@{kinematic}}
+\index{kinematic@{kinematic}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{kinematic}{kinematic}}
+{\footnotesize\ttfamily \label{struct_rigidbody_ac96d2b0119c740029ec39951cc0f5d6c} 
+bool Rigidbody\+::kinematic}
+
+Indica si el objeto es cinemático. \Hypertarget{struct_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}\index{Rigidbody@{Rigidbody}!mass@{mass}}
+\index{mass@{mass}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{mass}{mass}}
+{\footnotesize\ttfamily \label{struct_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c} 
+float Rigidbody\+::mass}
+
+Masa del objeto. \Hypertarget{struct_rigidbody_aaf834ce370866b49baba861b94a132cb}\index{Rigidbody@{Rigidbody}!velocityY@{velocityY}}
+\index{velocityY@{velocityY}!Rigidbody@{Rigidbody}}
+\doxysubsubsection{\texorpdfstring{velocityY}{velocityY}}
+{\footnotesize\ttfamily \label{struct_rigidbody_aaf834ce370866b49baba861b94a132cb} 
+float Rigidbody\+::velocityY}
+
+Velocidad en X e Y. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Rigidbody.\+cpp\end{DoxyCompactItemize}

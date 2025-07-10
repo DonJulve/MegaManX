@@ -1,0 +1,58 @@
+\doxysection{Referencia de la clase Parallax\+Layer\+Loader}
+\hypertarget{class_parallax_layer_loader}{}\label{class_parallax_layer_loader}\index{ParallaxLayerLoader@{ParallaxLayerLoader}}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_parallax_layer_parameters}{Parallax\+Layer\+Parameters}} \mbox{\hyperlink{class_parallax_layer_loader_ad488d9157d7c3c822f653c5b52348d93}{from\+JSON}} (const nlohmann\+::json \&j, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Convierte un objeto JSON en una instancia de \doxylink{struct_parallax_layer_parameters}{Parallax\+Layer\+Parameters}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_parallax_layer}{Parallax\+Layer}} \mbox{\hyperlink{class_parallax_layer_loader_af169d3256d30cbfd70edca985ff4ad4e}{create\+From\+JSON}} (const nlohmann\+::json \&j, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea un componente \doxylink{struct_parallax_layer}{Parallax\+Layer} directamente desde JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_parallax_layer_loader_af169d3256d30cbfd70edca985ff4ad4e}\index{ParallaxLayerLoader@{ParallaxLayerLoader}!createFromJSON@{createFromJSON}}
+\index{createFromJSON@{createFromJSON}!ParallaxLayerLoader@{ParallaxLayerLoader}}
+\doxysubsubsection{\texorpdfstring{createFromJSON()}{createFromJSON()}}
+{\footnotesize\ttfamily \label{class_parallax_layer_loader_af169d3256d30cbfd70edca985ff4ad4e} 
+\mbox{\hyperlink{struct_parallax_layer}{Parallax\+Layer}} Parallax\+Layer\+Loader\+::create\+From\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un componente \doxylink{struct_parallax_layer}{Parallax\+Layer} directamente desde JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Componente \doxylink{struct_parallax_layer}{Parallax\+Layer} creado. 
+\end{DoxyReturn}
+\Hypertarget{class_parallax_layer_loader_ad488d9157d7c3c822f653c5b52348d93}\index{ParallaxLayerLoader@{ParallaxLayerLoader}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!ParallaxLayerLoader@{ParallaxLayerLoader}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}}
+{\footnotesize\ttfamily \label{class_parallax_layer_loader_ad488d9157d7c3c822f653c5b52348d93} 
+\mbox{\hyperlink{struct_parallax_layer_parameters}{Parallax\+Layer\+Parameters}} Parallax\+Layer\+Loader\+::from\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convierte un objeto JSON en una instancia de \doxylink{struct_parallax_layer_parameters}{Parallax\+Layer\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de \doxylink{struct_parallax_layer_parameters}{Parallax\+Layer\+Parameters} generada desde JSON. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Parallax\+Layer.\+h\item 
+Components/Parallax\+Layer.\+cpp\end{DoxyCompactItemize}

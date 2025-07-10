@@ -1,0 +1,90 @@
+\doxysection{Referencia de la clase Sprite\+Renderer\+Loader}
+\hypertarget{class_sprite_renderer_loader}{}\label{class_sprite_renderer_loader}\index{SpriteRendererLoader@{SpriteRendererLoader}}
+
+
+Clase \doxylink{class_sprite_renderer_loader}{Sprite\+Renderer\+Loader} para cargar parámetros de \doxylink{struct_sprite_renderer}{Sprite\+Renderer} desde JSON.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_sprite_renderer_loader_a75a740ca4c507801f277d84b28fc3a68}{initialize}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Inicializa \doxylink{class_sprite_renderer_loader}{Sprite\+Renderer\+Loader} con un renderizador SDL. \end{DoxyCompactList}\item 
+\Hypertarget{class_sprite_renderer_loader_a254ded1f4baba5b1d8880321c1d3a3cc}\label{class_sprite_renderer_loader_a254ded1f4baba5b1d8880321c1d3a3cc} 
+static void {\bfseries cleanup} ()
+\begin{DoxyCompactList}\small\item\em Limpia la instancia de \doxylink{class_texture_manager}{Texture\+Manager}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}} \mbox{\hyperlink{class_sprite_renderer_loader_ae13188737c5ecd3d0a7a7a3589865fbf}{from\+JSON}} (const nlohmann\+::json \&j, const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Convierte un objeto JSON en una instancia de \doxylink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_sprite_renderer}{Sprite\+Renderer}} \mbox{\hyperlink{class_sprite_renderer_loader_ad38d15f7e5d05e63a9687ee1d4048ac4}{create\+From\+JSON}} (const nlohmann\+::json \&j, const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea un componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer} directamente desde JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_sprite_renderer_loader}{Sprite\+Renderer\+Loader} para cargar parámetros de \doxylink{struct_sprite_renderer}{Sprite\+Renderer} desde JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_sprite_renderer_loader_ad38d15f7e5d05e63a9687ee1d4048ac4}\index{SpriteRendererLoader@{SpriteRendererLoader}!createFromJSON@{createFromJSON}}
+\index{createFromJSON@{createFromJSON}!SpriteRendererLoader@{SpriteRendererLoader}}
+\doxysubsubsection{\texorpdfstring{createFromJSON()}{createFromJSON()}}
+{\footnotesize\ttfamily \label{class_sprite_renderer_loader_ad38d15f7e5d05e63a9687ee1d4048ac4} 
+\mbox{\hyperlink{struct_sprite_renderer}{Sprite\+Renderer}} Sprite\+Renderer\+Loader\+::create\+From\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer} directamente desde JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer} creado. 
+\end{DoxyReturn}
+\Hypertarget{class_sprite_renderer_loader_ae13188737c5ecd3d0a7a7a3589865fbf}\index{SpriteRendererLoader@{SpriteRendererLoader}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!SpriteRendererLoader@{SpriteRendererLoader}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}}
+{\footnotesize\ttfamily \label{class_sprite_renderer_loader_ae13188737c5ecd3d0a7a7a3589865fbf} 
+\mbox{\hyperlink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}} Sprite\+Renderer\+Loader\+::from\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convierte un objeto JSON en una instancia de \doxylink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de \doxylink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters} generada desde JSON. 
+\end{DoxyReturn}
+\Hypertarget{class_sprite_renderer_loader_a75a740ca4c507801f277d84b28fc3a68}\index{SpriteRendererLoader@{SpriteRendererLoader}!initialize@{initialize}}
+\index{initialize@{initialize}!SpriteRendererLoader@{SpriteRendererLoader}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{class_sprite_renderer_loader_a75a740ca4c507801f277d84b28fc3a68} 
+void Sprite\+Renderer\+Loader\+::initialize (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Inicializa \doxylink{class_sprite_renderer_loader}{Sprite\+Renderer\+Loader} con un renderizador SDL. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderer} & Puntero al renderizador SDL. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Sprite\+Renderer.\+cpp\end{DoxyCompactItemize}

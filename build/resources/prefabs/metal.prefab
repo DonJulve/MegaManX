@@ -1,0 +1,103 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 100,
+            "posY": 200,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 19,
+            "scaleY": 25,
+            "isTrigger": true
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 0,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/metal/hide/hide_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "aparecer": {"type": "bool", "value": false},
+                "desaparecer": {"type": "bool", "value": false},
+                "atacar": {"type": "bool", "value": false}
+            },
+            "states": {
+                "escondido": {
+                    "looping": true,
+                    "folder": "./sprites/enemies/metal/hide",
+                    "duration": 0.06
+                },
+                "salir": {
+                    "looping": false,
+                    "folder": "./sprites/enemies/metal/aparecer",
+                    "duration": 0.1
+                },
+                "esconderse": {
+                    "looping": false,
+                    "folder": "./sprites/enemies/metal/desaparecer",
+                    "duration": 0.1
+                },
+                "atacar": {
+                    "looping": true,
+                    "folder": "./sprites/enemies/metal/caminar",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "escondido",
+                    "to": "salir",
+                    "conditions": [
+                        {"parameter": "aparecer", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "salir",
+                    "to": "esconderse",
+                    "conditions": [
+                        {"parameter": "desaparecer", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "esconderse",
+                    "to": "escondido",
+                    "conditions": [
+                        {"parameter": "desaparecer", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "salir",
+                    "to": "atacar",
+                    "conditions": [
+                        {"parameter": "atacar", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "atacar",
+                    "to": "esconderse",
+                    "conditions": [
+                        {"parameter": "desaparecer", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "escondido"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "MetalController": {
+        }
+    }
+}

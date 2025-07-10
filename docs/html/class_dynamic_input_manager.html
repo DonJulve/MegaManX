@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Referencia de la clase DynamicInputManager</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_dynamic_input_manager.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="class_dynamic_input_manager-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase DynamicInputManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase que gestiona entradas dinámicas para acciones del juego.  
+ <a href="#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_dynamic_input_manager_8h_source.html">DynamicInputManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_dynamic_input_manager_1_1_input_binding.html">InputBinding</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que define una vinculación de entrada (tecla o botón del ratón).  <a href="struct_dynamic_input_manager_1_1_input_binding.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a89525377a6059cbe3ec8b5bcfee9acbc" id="r_a89525377a6059cbe3ec8b5bcfee9acbc"><td class="memItemLeft" align="right" valign="top"><a id="a89525377a6059cbe3ec8b5bcfee9acbc" name="a89525377a6059cbe3ec8b5bcfee9acbc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DynamicInputManager</b> (const <a class="el" href="class_dynamic_input_manager.html">DynamicInputManager</a> &amp;)=delete</td></tr>
+<tr class="separator:a89525377a6059cbe3ec8b5bcfee9acbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af323274d742312320cce9a2955a18ad9" id="r_af323274d742312320cce9a2955a18ad9"><td class="memItemLeft" align="right" valign="top"><a id="af323274d742312320cce9a2955a18ad9" name="af323274d742312320cce9a2955a18ad9"></a>
+<a class="el" href="class_dynamic_input_manager.html">DynamicInputManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_dynamic_input_manager.html">DynamicInputManager</a> &amp;)=delete</td></tr>
+<tr class="separator:af323274d742312320cce9a2955a18ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492edd7569e11dfc0779d4935d40a32b" id="r_a492edd7569e11dfc0779d4935d40a32b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a492edd7569e11dfc0779d4935d40a32b">bindAction</a> (const std::string &amp;actionName, SDL_Scancode key)</td></tr>
+<tr class="memdesc:a492edd7569e11dfc0779d4935d40a32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vincula una acción a una tecla específica.  <br /></td></tr>
+<tr class="separator:a492edd7569e11dfc0779d4935d40a32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a34b93824cbb0ec25993d897d90d41" id="r_a43a34b93824cbb0ec25993d897d90d41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43a34b93824cbb0ec25993d897d90d41">bindAction</a> (const std::string &amp;actionName, Uint8 mouseButton)</td></tr>
+<tr class="memdesc:a43a34b93824cbb0ec25993d897d90d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vincula una acción a un botón del ratón específico.  <br /></td></tr>
+<tr class="separator:a43a34b93824cbb0ec25993d897d90d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88737dc4261bd45538d756f64402e349" id="r_a88737dc4261bd45538d756f64402e349"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88737dc4261bd45538d756f64402e349">isActionPressed</a> (const std::string &amp;actionName)</td></tr>
+<tr class="memdesc:a88737dc4261bd45538d756f64402e349"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una acción está siendo presionada en el frame actual.  <br /></td></tr>
+<tr class="separator:a88737dc4261bd45538d756f64402e349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac00b9e48c5eb339ac33661ce46b2304d" id="r_ac00b9e48c5eb339ac33661ce46b2304d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac00b9e48c5eb339ac33661ce46b2304d">isActionHeld</a> (const std::string &amp;actionName)</td></tr>
+<tr class="memdesc:ac00b9e48c5eb339ac33661ce46b2304d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una acción está siendo mantenida presionada.  <br /></td></tr>
+<tr class="separator:ac00b9e48c5eb339ac33661ce46b2304d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f81708c2ddae55cc35b84805ff972cb" id="r_a0f81708c2ddae55cc35b84805ff972cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f81708c2ddae55cc35b84805ff972cb">isActionReleased</a> (const std::string &amp;actionName)</td></tr>
+<tr class="memdesc:a0f81708c2ddae55cc35b84805ff972cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una acción ha sido liberada en el frame actual.  <br /></td></tr>
+<tr class="separator:a0f81708c2ddae55cc35b84805ff972cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8fc6fb6693e6f7d284d0fd6302e4cf9" id="r_aa8fc6fb6693e6f7d284d0fd6302e4cf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8fc6fb6693e6f7d284d0fd6302e4cf9">unbindAction</a> (const std::string &amp;actionName)</td></tr>
+<tr class="memdesc:aa8fc6fb6693e6f7d284d0fd6302e4cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina la vinculación de una acción específica.  <br /></td></tr>
+<tr class="separator:aa8fc6fb6693e6f7d284d0fd6302e4cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b6618a72dafecea2ca359becf7917a" id="r_a50b6618a72dafecea2ca359becf7917a"><td class="memItemLeft" align="right" valign="top"><a id="a50b6618a72dafecea2ca359becf7917a" name="a50b6618a72dafecea2ca359becf7917a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearBindings</b> ()</td></tr>
+<tr class="memdesc:a50b6618a72dafecea2ca359becf7917a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina todas las vinculaciones de entrada. <br /></td></tr>
+<tr class="separator:a50b6618a72dafecea2ca359becf7917a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c6bcecb9fbcbf6de8d07a6b3122ab4" id="r_ae0c6bcecb9fbcbf6de8d07a6b3122ab4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0c6bcecb9fbcbf6de8d07a6b3122ab4">saveToJson</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ae0c6bcecb9fbcbf6de8d07a6b3122ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda las vinculaciones actuales en un archivo JSON.  <br /></td></tr>
+<tr class="separator:ae0c6bcecb9fbcbf6de8d07a6b3122ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae216b536f1905ad2a55ac1c858d64543" id="r_ae216b536f1905ad2a55ac1c858d64543"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae216b536f1905ad2a55ac1c858d64543">loadFromJson</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:ae216b536f1905ad2a55ac1c858d64543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga vinculaciones desde un archivo JSON.  <br /></td></tr>
+<tr class="separator:ae216b536f1905ad2a55ac1c858d64543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac908105e876d3a04d2b038c365ba8bbf" id="r_ac908105e876d3a04d2b038c365ba8bbf"><td class="memItemLeft" align="right" valign="top"><a id="ac908105e876d3a04d2b038c365ba8bbf" name="ac908105e876d3a04d2b038c365ba8bbf"></a>
+SDL_Scancode&#160;</td><td class="memItemRight" valign="bottom"><b>getBind</b> (const std::string &amp;actionName)</td></tr>
+<tr class="separator:ac908105e876d3a04d2b038c365ba8bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:ac23c844a1aff2b7dfcc05a7532671b65" id="r_ac23c844a1aff2b7dfcc05a7532671b65"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_dynamic_input_manager.html">DynamicInputManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac23c844a1aff2b7dfcc05a7532671b65">getInstance</a> ()</td></tr>
+<tr class="memdesc:ac23c844a1aff2b7dfcc05a7532671b65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la instancia única de <a class="el" href="class_dynamic_input_manager.html" title="Clase que gestiona entradas dinámicas para acciones del juego.">DynamicInputManager</a> (patrón Singleton).  <br /></td></tr>
+<tr class="separator:ac23c844a1aff2b7dfcc05a7532671b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase que gestiona entradas dinámicas para acciones del juego. </p>
+<p>Permite vincular teclas y botones del ratón a acciones, verificar su estado y guardar/cargar configuraciones en JSON. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a492edd7569e11dfc0779d4935d40a32b" name="a492edd7569e11dfc0779d4935d40a32b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492edd7569e11dfc0779d4935d40a32b">&#9670;&#160;</a></span>bindAction() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DynamicInputManager::bindAction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Scancode</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vincula una acción a una tecla específica. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nombre de la acción a vincular. </td></tr>
+    <tr><td class="paramname">key</td><td>Código de la tecla SDL a asociar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43a34b93824cbb0ec25993d897d90d41" name="a43a34b93824cbb0ec25993d897d90d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a34b93824cbb0ec25993d897d90d41">&#9670;&#160;</a></span>bindAction() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DynamicInputManager::bindAction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Uint8</td>          <td class="paramname"><span class="paramname"><em>mouseButton</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vincula una acción a un botón del ratón específico. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nombre de la acción a vincular. </td></tr>
+    <tr><td class="paramname">mouseButton</td><td>Identificador del botón del ratón a asociar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac23c844a1aff2b7dfcc05a7532671b65" name="ac23c844a1aff2b7dfcc05a7532671b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23c844a1aff2b7dfcc05a7532671b65">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_dynamic_input_manager.html">DynamicInputManager</a> &amp; DynamicInputManager::getInstance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene la instancia única de <a class="el" href="class_dynamic_input_manager.html" title="Clase que gestiona entradas dinámicas para acciones del juego.">DynamicInputManager</a> (patrón Singleton). </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Referencia a la instancia única de <a class="el" href="class_dynamic_input_manager.html" title="Clase que gestiona entradas dinámicas para acciones del juego.">DynamicInputManager</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ac00b9e48c5eb339ac33661ce46b2304d" name="ac00b9e48c5eb339ac33661ce46b2304d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac00b9e48c5eb339ac33661ce46b2304d">&#9670;&#160;</a></span>isActionHeld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DynamicInputManager::isActionHeld </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si una acción está siendo mantenida presionada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nombre de la acción a verificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la acción está mantenida, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a88737dc4261bd45538d756f64402e349" name="a88737dc4261bd45538d756f64402e349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88737dc4261bd45538d756f64402e349">&#9670;&#160;</a></span>isActionPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DynamicInputManager::isActionPressed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si una acción está siendo presionada en el frame actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nombre de la acción a verificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la acción está presionada, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a0f81708c2ddae55cc35b84805ff972cb" name="a0f81708c2ddae55cc35b84805ff972cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f81708c2ddae55cc35b84805ff972cb">&#9670;&#160;</a></span>isActionReleased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DynamicInputManager::isActionReleased </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si una acción ha sido liberada en el frame actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nombre de la acción a verificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la acción ha sido liberada, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="ae216b536f1905ad2a55ac1c858d64543" name="ae216b536f1905ad2a55ac1c858d64543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae216b536f1905ad2a55ac1c858d64543">&#9670;&#160;</a></span>loadFromJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DynamicInputManager::loadFromJson </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carga vinculaciones desde un archivo JSON. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nombre del archivo desde el cual cargar las vinculaciones. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si se cargó correctamente, falso en caso de error. </dd></dl>
+
+</div>
+</div>
+<a id="ae0c6bcecb9fbcbf6de8d07a6b3122ab4" name="ae0c6bcecb9fbcbf6de8d07a6b3122ab4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c6bcecb9fbcbf6de8d07a6b3122ab4">&#9670;&#160;</a></span>saveToJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DynamicInputManager::saveToJson </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Guarda las vinculaciones actuales en un archivo JSON. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Nombre del archivo donde se guardarán las vinculaciones. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si se guardó correctamente, falso en caso de error. </dd></dl>
+
+</div>
+</div>
+<a id="aa8fc6fb6693e6f7d284d0fd6302e4cf9" name="aa8fc6fb6693e6f7d284d0fd6302e4cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8fc6fb6693e6f7d284d0fd6302e4cf9">&#9670;&#160;</a></span>unbindAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DynamicInputManager::unbindAction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>actionName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina la vinculación de una acción específica. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actionName</td><td>Nombre de la acción a desvincular. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada de los siguientes archivos:<ul>
+<li>Managers/<a class="el" href="_dynamic_input_manager_8h_source.html">DynamicInputManager.h</a></li>
+<li>Managers/<b>DynamicInputManager.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_dynamic_input_manager.html">DynamicInputManager</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

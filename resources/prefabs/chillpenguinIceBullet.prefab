@@ -1,0 +1,44 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 1.95,
+            "sizeY": 1.95,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 15,
+            "scaleY": 15,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 1,
+            "gravity": 0,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/chillPenguin/iceBullets/iceBullets_00.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "states": {
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/iceBullets",
+                    "duration": 0.15
+                }
+            },
+            "initialState": "shoot"
+        },
+        "ChillPenguinIceBulletComponent": {
+            
+        }
+    }
+}

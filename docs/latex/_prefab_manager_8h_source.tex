@@ -1,0 +1,46 @@
+\doxysection{Prefab\+Manager.\+h}
+\hypertarget{_prefab_manager_8h_source}{}\label{_prefab_manager_8h_source}\index{Managers/PrefabManager.h@{Managers/PrefabManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PREFAB\_MANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PREFAB\_MANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}EntityManager.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Scene.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{using\ }json\ =\ nlohmann::ordered\_json;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_loader}{SceneLoader}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }PrefabManager\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ PrefabManager\&\ \mbox{\hyperlink{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea}{getInstance}}()\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ PrefabManager\ instance;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_prefab_manager_a04e7d2db54a72556ca5832c6c41d598c}{loadPrefab}}(\textcolor{keyword}{const}\ std::string\&\ prefabName);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ Entity\ \mbox{\hyperlink{class_prefab_manager_ac93b21c2726e7659b7e34f5b0418fdd7}{instantiatePrefab}}(\textcolor{keyword}{const}\ std::string\&\ prefabName,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_prefab_manager_a9fbddd6ed554f756c446fb127a4a193c}{hasPrefab}}(\textcolor{keyword}{const}\ std::string\&\ prefabName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_prefab_manager}{PrefabManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_prefab_manager}{PrefabManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_prefab_manager}{PrefabManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_prefab_manager}{PrefabManager}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_prefab_manager}{PrefabManager}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \ \ \ \ std::unordered\_map<std::string,\ json>\ prefabTemplates;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ Entity\ createEntityFromPrefab(\textcolor{keyword}{const}\ json\&\ prefabData,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PREFAB\_MANAGER\_H}}
+
+\end{DoxyCode}

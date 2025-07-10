@@ -1,0 +1,35 @@
+\doxysection{Debug.\+h}
+\hypertarget{_debug_8h_source}{}\label{_debug_8h_source}\index{Utils/Debug.h@{Utils/Debug.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_debug}{Debug}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27e}{LogLevel}}\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a1c69b0423a8f8161fd8c6c203a77aeab}{Log}},\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a80846605ad3c5ed5a5385762ec4b3653}{Warning}},\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a289533cee37962e4dab1abdbbe34c6d9}{Error}}\ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b}{Log}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Warning}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd}{Error}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_ac5d597c530951c79d3ec2362d222e6aa}{EnableFileLogging}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_a93dd8afc25780886dcb1604aaa19044f}{DisableFileLogging}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ WriteLog(\textcolor{keyword}{const}\ std::string\&\ message,\ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27e}{LogLevel}}\ level);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{static}\ std::ofstream\ logFile;\ }
+\DoxyCodeLine{00059\ \};}
+
+\end{DoxyCode}

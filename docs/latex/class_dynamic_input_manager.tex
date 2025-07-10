@@ -1,0 +1,218 @@
+\doxysection{Referencia de la clase Dynamic\+Input\+Manager}
+\hypertarget{class_dynamic_input_manager}{}\label{class_dynamic_input_manager}\index{DynamicInputManager@{DynamicInputManager}}
+
+
+Clase que gestiona entradas dinámicas para acciones del juego.  
+
+
+
+
+{\ttfamily \#include $<$Dynamic\+Input\+Manager.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_dynamic_input_manager_1_1_input_binding}{Input\+Binding}}
+\begin{DoxyCompactList}\small\item\em Estructura que define una vinculación de entrada (tecla o botón del ratón). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dynamic_input_manager_a89525377a6059cbe3ec8b5bcfee9acbc}\label{class_dynamic_input_manager_a89525377a6059cbe3ec8b5bcfee9acbc} 
+{\bfseries Dynamic\+Input\+Manager} (const \mbox{\hyperlink{class_dynamic_input_manager}{Dynamic\+Input\+Manager}} \&)=delete
+\item 
+\Hypertarget{class_dynamic_input_manager_af323274d742312320cce9a2955a18ad9}\label{class_dynamic_input_manager_af323274d742312320cce9a2955a18ad9} 
+\mbox{\hyperlink{class_dynamic_input_manager}{Dynamic\+Input\+Manager}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_dynamic_input_manager}{Dynamic\+Input\+Manager}} \&)=delete
+\item 
+void \mbox{\hyperlink{class_dynamic_input_manager_a492edd7569e11dfc0779d4935d40a32b}{bind\+Action}} (const std\+::string \&action\+Name, SDL\+\_\+\+Scancode key)
+\begin{DoxyCompactList}\small\item\em Vincula una acción a una tecla específica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_input_manager_a43a34b93824cbb0ec25993d897d90d41}{bind\+Action}} (const std\+::string \&action\+Name, Uint8 mouse\+Button)
+\begin{DoxyCompactList}\small\item\em Vincula una acción a un botón del ratón específico. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dynamic_input_manager_a88737dc4261bd45538d756f64402e349}{is\+Action\+Pressed}} (const std\+::string \&action\+Name)
+\begin{DoxyCompactList}\small\item\em Verifica si una acción está siendo presionada en el frame actual. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dynamic_input_manager_ac00b9e48c5eb339ac33661ce46b2304d}{is\+Action\+Held}} (const std\+::string \&action\+Name)
+\begin{DoxyCompactList}\small\item\em Verifica si una acción está siendo mantenida presionada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dynamic_input_manager_a0f81708c2ddae55cc35b84805ff972cb}{is\+Action\+Released}} (const std\+::string \&action\+Name)
+\begin{DoxyCompactList}\small\item\em Verifica si una acción ha sido liberada en el frame actual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dynamic_input_manager_aa8fc6fb6693e6f7d284d0fd6302e4cf9}{unbind\+Action}} (const std\+::string \&action\+Name)
+\begin{DoxyCompactList}\small\item\em Elimina la vinculación de una acción específica. \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_input_manager_a50b6618a72dafecea2ca359becf7917a}\label{class_dynamic_input_manager_a50b6618a72dafecea2ca359becf7917a} 
+void {\bfseries clear\+Bindings} ()
+\begin{DoxyCompactList}\small\item\em Elimina todas las vinculaciones de entrada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dynamic_input_manager_ae0c6bcecb9fbcbf6de8d07a6b3122ab4}{save\+To\+Json}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Guarda las vinculaciones actuales en un archivo JSON. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dynamic_input_manager_ae216b536f1905ad2a55ac1c858d64543}{load\+From\+Json}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Carga vinculaciones desde un archivo JSON. \end{DoxyCompactList}\item 
+\Hypertarget{class_dynamic_input_manager_ac908105e876d3a04d2b038c365ba8bbf}\label{class_dynamic_input_manager_ac908105e876d3a04d2b038c365ba8bbf} 
+SDL\+\_\+\+Scancode {\bfseries get\+Bind} (const std\+::string \&action\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_dynamic_input_manager}{Dynamic\+Input\+Manager}} \& \mbox{\hyperlink{class_dynamic_input_manager_ac23c844a1aff2b7dfcc05a7532671b65}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia única de \doxylink{class_dynamic_input_manager}{Dynamic\+Input\+Manager} (patrón Singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase que gestiona entradas dinámicas para acciones del juego. 
+
+Permite vincular teclas y botones del ratón a acciones, verificar su estado y guardar/cargar configuraciones en JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_dynamic_input_manager_a492edd7569e11dfc0779d4935d40a32b}\index{DynamicInputManager@{DynamicInputManager}!bindAction@{bindAction}}
+\index{bindAction@{bindAction}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{bindAction()}{bindAction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_a492edd7569e11dfc0779d4935d40a32b} 
+void Dynamic\+Input\+Manager\+::bind\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action\+Name}{, }\item[{SDL\+\_\+\+Scancode}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Vincula una acción a una tecla específica. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em action\+Name} & Nombre de la acción a vincular. \\
+\hline
+{\em key} & Código de la tecla SDL a asociar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_input_manager_a43a34b93824cbb0ec25993d897d90d41}\index{DynamicInputManager@{DynamicInputManager}!bindAction@{bindAction}}
+\index{bindAction@{bindAction}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{bindAction()}{bindAction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_a43a34b93824cbb0ec25993d897d90d41} 
+void Dynamic\+Input\+Manager\+::bind\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action\+Name}{, }\item[{Uint8}]{mouse\+Button}{}\end{DoxyParamCaption})}
+
+
+
+Vincula una acción a un botón del ratón específico. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em action\+Name} & Nombre de la acción a vincular. \\
+\hline
+{\em mouse\+Button} & Identificador del botón del ratón a asociar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dynamic_input_manager_ac23c844a1aff2b7dfcc05a7532671b65}\index{DynamicInputManager@{DynamicInputManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_ac23c844a1aff2b7dfcc05a7532671b65} 
+\mbox{\hyperlink{class_dynamic_input_manager}{Dynamic\+Input\+Manager}} \& Dynamic\+Input\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtiene la instancia única de \doxylink{class_dynamic_input_manager}{Dynamic\+Input\+Manager} (patrón Singleton). 
+
+\begin{DoxyReturn}{Devuelve}
+Referencia a la instancia única de \doxylink{class_dynamic_input_manager}{Dynamic\+Input\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_input_manager_ac00b9e48c5eb339ac33661ce46b2304d}\index{DynamicInputManager@{DynamicInputManager}!isActionHeld@{isActionHeld}}
+\index{isActionHeld@{isActionHeld}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{isActionHeld()}{isActionHeld()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_ac00b9e48c5eb339ac33661ce46b2304d} 
+bool Dynamic\+Input\+Manager\+::is\+Action\+Held (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si una acción está siendo mantenida presionada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em action\+Name} & Nombre de la acción a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la acción está mantenida, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_input_manager_a88737dc4261bd45538d756f64402e349}\index{DynamicInputManager@{DynamicInputManager}!isActionPressed@{isActionPressed}}
+\index{isActionPressed@{isActionPressed}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{isActionPressed()}{isActionPressed()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_a88737dc4261bd45538d756f64402e349} 
+bool Dynamic\+Input\+Manager\+::is\+Action\+Pressed (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si una acción está siendo presionada en el frame actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em action\+Name} & Nombre de la acción a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la acción está presionada, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_input_manager_a0f81708c2ddae55cc35b84805ff972cb}\index{DynamicInputManager@{DynamicInputManager}!isActionReleased@{isActionReleased}}
+\index{isActionReleased@{isActionReleased}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{isActionReleased()}{isActionReleased()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_a0f81708c2ddae55cc35b84805ff972cb} 
+bool Dynamic\+Input\+Manager\+::is\+Action\+Released (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si una acción ha sido liberada en el frame actual. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em action\+Name} & Nombre de la acción a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la acción ha sido liberada, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_input_manager_ae216b536f1905ad2a55ac1c858d64543}\index{DynamicInputManager@{DynamicInputManager}!loadFromJson@{loadFromJson}}
+\index{loadFromJson@{loadFromJson}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{loadFromJson()}{loadFromJson()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_ae216b536f1905ad2a55ac1c858d64543} 
+bool Dynamic\+Input\+Manager\+::load\+From\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Carga vinculaciones desde un archivo JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filename} & Nombre del archivo desde el cual cargar las vinculaciones. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si se cargó correctamente, falso en caso de error. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_input_manager_ae0c6bcecb9fbcbf6de8d07a6b3122ab4}\index{DynamicInputManager@{DynamicInputManager}!saveToJson@{saveToJson}}
+\index{saveToJson@{saveToJson}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{saveToJson()}{saveToJson()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_ae0c6bcecb9fbcbf6de8d07a6b3122ab4} 
+bool Dynamic\+Input\+Manager\+::save\+To\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Guarda las vinculaciones actuales en un archivo JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filename} & Nombre del archivo donde se guardarán las vinculaciones. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si se guardó correctamente, falso en caso de error. 
+\end{DoxyReturn}
+\Hypertarget{class_dynamic_input_manager_aa8fc6fb6693e6f7d284d0fd6302e4cf9}\index{DynamicInputManager@{DynamicInputManager}!unbindAction@{unbindAction}}
+\index{unbindAction@{unbindAction}!DynamicInputManager@{DynamicInputManager}}
+\doxysubsubsection{\texorpdfstring{unbindAction()}{unbindAction()}}
+{\footnotesize\ttfamily \label{class_dynamic_input_manager_aa8fc6fb6693e6f7d284d0fd6302e4cf9} 
+void Dynamic\+Input\+Manager\+::unbind\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{action\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Elimina la vinculación de una acción específica. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em action\+Name} & Nombre de la acción a desvincular. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Dynamic\+Input\+Manager.\+h\item 
+Managers/Dynamic\+Input\+Manager.\+cpp\end{DoxyCompactItemize}

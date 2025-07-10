@@ -1,0 +1,68 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 48,
+            "scaleY": 53,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 56,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/scrap/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/scrap",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "ScrapRoboController": {
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

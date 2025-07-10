@@ -1,0 +1,130 @@
+{
+    "name": "bossSelectMenu",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0,
+                    "posY": 0,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Camera": {
+                    "zoom": 1,
+                    "windowWidth": 800,
+                    "windowHeight": 600
+                } 
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.5,
+                    "posY": 0.5,
+                    "rotZ": 0,
+                    "sizeX": 2.64,
+                    "sizeY": 2.64,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/bossSelectMenu/bossSelectBg/bossSelectBg_0.png",
+                    "anchor": "CENTER"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.51,
+                    "posY": 0.47,
+                    "rotZ": 0,
+                    "sizeX": 2.64,
+                    "sizeY": 2.64,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/bossSelectMenu/bossSelectBg2/bossSelectBg2_0.png",
+                    "anchor": "CENTER"
+                },
+                "Animator": {
+                    "states":{
+                        "idle":{
+                            "looping": false,
+                            "folder": "sprites/bossSelectMenu/bossSelectBg2",
+                            "duration": 0.2
+                        }
+                    },   
+                    "initialState": "idle"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.5,
+                    "posY": 0.5,
+                    "rotZ": 0,
+                    "sizeX": 2.64,
+                    "sizeY": 2.64,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/chillPenguin/introSelect/introSelect_0.png",
+                    "anchor": "CENTER"
+                },
+                "Animator": {
+                    "states":{
+                        "idle":{
+                            "looping": false,
+                            "folder": "sprites/chillPenguin/introSelect",
+                            "duration": 0.3
+                        }
+                    },   
+                    "initialState": "idle"
+                },
+                "BossMenu":{}
+            }
+        },{
+            "components":{
+                "Transform": {
+                    "posX": 0.5,
+                    "posY": 0.5,
+                    "rotZ": 0,
+                    "sizeX": 2.64,
+                    "sizeY": 2.64,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/flamemammoth/start/start_0.png",
+                    "anchor": "CENTER"
+                },
+                "Animator": {
+                    "states":{
+                        "idle":{
+                            "looping": false,
+                            "folder": "sprites/flamemammoth/start",
+                            "duration": 0.3
+                        }
+                    },   
+                    "initialState": "idle"
+                },
+                "FlammeMenuComponent":{}
+            }
+        }
+    ]
+}

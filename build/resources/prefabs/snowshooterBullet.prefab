@@ -1,0 +1,44 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.2,
+            "sizeY": 2.2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 10,
+            "scaleY": 10,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 1,
+            "gravity": 0,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/snowShooter/bullet/bullet_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "states": {
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/enemies/snowShooter/bullet",
+                    "duration": 0.2
+                }
+            },
+            "initialState": "shoot"
+        },
+        "SnowShooterBulletComponent": {
+            
+        }
+    }
+}

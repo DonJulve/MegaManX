@@ -1,0 +1,369 @@
+\chapter{Tutorial}
+\hypertarget{index}{}\label{index}\index{Tutorial@{Tutorial}}
+\hypertarget{index_autotoc_md0}{}\doxysection{\texorpdfstring{Tutorial}{Tutorial}}\label{index_autotoc_md0}
+Esta página te guiará paso a paso para empezar a usar Capybara \doxylink{class_engine}{Engine}.\hypertarget{index_autotoc_md1}{}\doxysubsection{\texorpdfstring{1\+: Configurar Main.\+cpp en el directorio raiz del proyecto}{1\+: Configurar Main.\+cpp en el directorio raiz del proyecto}}\label{index_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SDL\_MAIN\_HANDLED}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Game.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Engine.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ SDL\_main(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ \{}
+\DoxyCodeLine{\ \ \ \ Game\ game(\textcolor{stringliteral}{"{}Nombre\ del\ juego"{}},\ 800,\ 600);}
+\DoxyCodeLine{\ \ \ \ game.run();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md2}{}\doxysubsection{\texorpdfstring{2\+: Configurar Game.\+h de la carpeta game}{2\+: Configurar Game.\+h de la carpeta game}}\label{index_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Engine.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Systems.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}SceneLoader.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Debug.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//Esto\ es\ para\ el\ tutorial}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}ComponenteDePrueba.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }Game\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ Game(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ registro()\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ SceneLoader*\ sl\ =\ \&(\mbox{\hyperlink{class_scene_loader_a5c9e282066820821bc2b4df41e2b2f82}{SceneLoader::getInstance}}());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sl-\/>\mbox{\hyperlink{class_scene_loader_ab3624d62ad324773e0079e916d90a91f}{registerComponentLoader}}<ComponenteDePrueba,\ ComponenteDePruebaParameters>(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CDP"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ EntityManager\&\ entityManager)\ -\/>\ ComponenteDePrueba*\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ ComponenteDePrueba(ComponenteDePruebaLoader::fromJSON(j,\ entityManager));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//Por\ cada\ componente\ personalizado\ creado\ para\ el\ juego,\ repetir\ el\ proceso\ de\ arriba}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ Engine*\ engine\ =\ \mbox{\hyperlink{class_engine_a02f2e8b067be048cbc28b94eb64281c5}{Engine::getInstance}}(\textcolor{stringliteral}{"{}Nombre\ del\ juego"{}},\ 800,\ 600);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ registro();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_ac5d597c530951c79d3ec2362d222e6aa}{Debug::EnableFileLogging}}(\textcolor{stringliteral}{"{}Nombre\ del\ fichero\ de\ logs"{}});\ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Por\ cada\ escena\ a\ cargar\ de\ inicio,\ hacer\ lo\ siguiente}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ engine-\/>\mbox{\hyperlink{class_engine_a811edd23b484c60ad7d338225f135282}{getSceneManager}}()-\/>\mbox{\hyperlink{class_scene_manager_a455b3866f1911eff04b0d716e6225ce8}{addScene}}(\textcolor{stringliteral}{"{}Nombre\ de\ la\ escena"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ engine-\/>\mbox{\hyperlink{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc}{run}}();\ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a93dd8afc25780886dcb1604aaa19044f}{Debug::DisableFileLogging}}();\ \ }
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd}{Debug::Error}}(std::string(\textcolor{stringliteral}{"{}Unhandled\ Exception:\ "{}})\ +\ e.what());}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd}{Debug::Error}}(\textcolor{stringliteral}{"{}Unknown\ exception\ caught!"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md3}{}\doxysubsection{\texorpdfstring{3\+: Crear componentes personalizados (Plantilla)}{3\+: Crear componentes personalizados (Plantilla)}}\label{index_autotoc_md3}
+Si el componente a crear se llama T, se deben crear complementariamente TParameters y TLoader
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{\textcolor{comment}{//Incluir\ ficheros\ necesarios\ del\ engine\ para\ el\ componente.\ Algunos\ ejemplos:}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}InputManager.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Debug.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }TParameters\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//Parametros\ necesarios\ para\ pasar\ a\ T}}
+\DoxyCodeLine{\ \ \ \ ComponenteDePruebaParameters(Transform*\ t)\ :\ transform(t)\ \{\}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }T\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//Parametros\ necesarios\ para\ el\ componente}}
+\DoxyCodeLine{\ \ \ \ T(TParameters\ t)\ \{\}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{start}}()\textcolor{keyword}{\ override\ }\{\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\textcolor{keyword}{\ override\ }\{\ \};}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }TLoader\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ TParameters\ fromJSON(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ EntityManager\&\ entityManager)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Si\ el\ componente\ requiere\ el\ Transform\ de\ la\ entidad\ en\ la\ que\ esta}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ Transform*\ transform\ =\ entityManager.\mbox{\hyperlink{class_entity_manager_aba49a0d5c7a2cc7190914b3c2c3c90b9}{getComponent}}<Transform>(entityManager.\mbox{\hyperlink{class_entity_manager_a03aa200e5f129675eb5e208d47147ee6}{getLast}}());}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!transform)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}T\ requires\ a\ Transform\ component"{}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ TParameters\ params();}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ params;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ T\ createFromJSON(\ nlohmann::json\&\ j,\ EntityManager\&\ entityManager)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T(fromJSON(j,\ entityManager));}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \};}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{3\+: Escena de ejemplo, donde CDP y CDP2 son componentes personalizados}{3\+: Escena de ejemplo, donde CDP y CDP2 son componentes personalizados}}\label{index_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ "{}name"{}:\ "{}test"{},}
+\DoxyCodeLine{\ \ \ \ "{}entities"{}:\ }
+\DoxyCodeLine{\ \ \ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}components"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Transform"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posX"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posY"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}rotZ"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeX"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeY"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Camera"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}zoom"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}windowWidth"{}:\ 800,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}windowHeight"{}:\ 600}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}components"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Transform"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posX"{}:\ 300,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posY"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}rotZ"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeX"{}:\ 0.1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeY"{}:\ 0.1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Collider"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}scaleX"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}scaleY"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}isTrigger"{}:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Rigidbody"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}velocityX"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}velocityY"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}mass"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}gravity"{}:\ 9.8,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}drag"{}:\ 0.00,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}bounceFactor"{}:\ 0.99,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}kinematic"{}:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Sprite"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}texturePath"{}:\ "{}megaman.png"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}CDP2"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}components"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Transform"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posX"{}:\ 300,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posY"{}:\ 500,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}rotZ"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeX"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeY"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Collider"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}scaleX"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}scaleY"{}:\ 10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}isTrigger"{}:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Rigidbody"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}velocityX"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}velocityY"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}mass"{}:\ 10000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}gravity"{}:\ 9.8,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}drag"{}:\ 0.01,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}bounceFactor"{}:\ 0.01,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}kinematic"{}:\ true}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Sprite"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}texturePath"{}:\ "{}suelo.png"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}CDP"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ ]}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{4\+: Uso de prefabs}{4\+: Uso de prefabs}}\label{index_autotoc_md5}
+Puedes tener entidades predefinidas, para no tener que copiarla entera en cada escena\hypertarget{index_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Megaman prefab}{Megaman prefab}}\label{index_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ "{}components"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}Transform"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}posX"{}:\ 300,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}posY"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}rotZ"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}sizeX"{}:\ 0.1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}sizeY"{}:\ 0.1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}Collider"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}scaleX"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}scaleY"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}isTrigger"{}:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}Rigidbody"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}velocityX"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}velocityY"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}mass"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}gravity"{}:\ 9.8,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}drag"{}:\ 0.00,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}bounceFactor"{}:\ 0.99,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}kinematic"{}:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}Sprite"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}texturePath"{}:\ "{}megaman.png"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}CDP2"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{La escena del punto 3 con el prefab}{La escena del punto 3 con el prefab}}\label{index_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ "{}name"{}:\ "{}test"{},}
+\DoxyCodeLine{\ \ \ \ "{}entities"{}:\ }
+\DoxyCodeLine{\ \ \ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}components"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Transform"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posX"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posY"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}rotZ"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeX"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeY"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Camera"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}zoom"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}windowWidth"{}:\ 800,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}windowHeight"{}:\ 600}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}prefab"{}:\ "{}megaman"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}components"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Transform"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posX"{}:\ 300,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}posY"{}:\ 500,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}rotZ"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeX"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}sizeY"{}:\ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Collider"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}scaleX"{}:\ 100,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}scaleY"{}:\ 10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}isTrigger"{}:\ false}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Rigidbody"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}velocityX"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}velocityY"{}:\ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}mass"{}:\ 10000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}gravity"{}:\ 9.8,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}drag"{}:\ 0.01,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}bounceFactor"{}:\ 0.01,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}kinematic"{}:\ true}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Sprite"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}texturePath"{}:\ "{}suelo.png"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}anchor"{}:\ "{}CENTER"{}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}CDP"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ ]}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Si quieres instanciar un prefab desde el codigo de un componente (El componente necesitara la referencia del \doxylink{class_entity_manager}{Entity\+Manager} de la escena en la que este)\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea}{PrefabManager::getInstance}}().hasPrefab(\textcolor{stringliteral}{"{}NOMBRE\_DEL\_PREFAB"{}}))\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea}{PrefabManager::getInstance}}().\mbox{\hyperlink{class_prefab_manager_a04e7d2db54a72556ca5832c6c41d598c}{loadPrefab}}(\textcolor{stringliteral}{"{}NOMBRE\_DEL\_PREFAB"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{Entity\ entity\ =\ \mbox{\hyperlink{class_prefab_manager_a1abce875ef02dd8ca78bc7b1a95febea}{PrefabManager::getInstance}}().\mbox{\hyperlink{class_prefab_manager_ac93b21c2726e7659b7e34f5b0418fdd7}{instantiatePrefab}}(\textcolor{stringliteral}{"{}NOMBRE\_DEL\_PREFAB"{}},\ entityManager);}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{5\+: Ejemplo de Animator}{5\+: Ejemplo de Animator}}\label{index_autotoc_md8}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{"{}Animator"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ "{}parameters"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}isWalking"{}:\ \{"{}type"{}:\ "{}bool"{},\ "{}value"{}:\ false\}}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ "{}states"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}idle"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}looping"{}:\ true,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}folder"{}:\ "{}sprites/megaman/idle"{},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}duration"{}:\ 0.2}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ "{}run"{}:\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}looping"{}:\ true,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}folder"{}:\ "{}sprites/megaman/run"{},\ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}duration"{}:\ 0.12}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ "{}transitions"{}:\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}from"{}:\ "{}idle"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}to"{}:\ "{}run"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}conditions"{}:\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}parameter"{}:\ "{}isWalking"{},\ "{}mode"{}:\ "{}EQ"{},\ "{}value"{}:\ 1\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}from"{}:\ "{}run"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}to"{}:\ "{}idle"{},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ "{}conditions"{}:\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{"{}parameter"{}:\ "{}isWalking"{},\ "{}mode"{}:\ "{}NEQ"{},\ "{}value"{}:\ 1\}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ ],}
+\DoxyCodeLine{\ \ \ \ "{}initialState"{}:\ "{}idle"{}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

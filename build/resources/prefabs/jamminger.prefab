@@ -1,0 +1,119 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider" : {
+            "tag": "Enemy",
+            "scaleX": 35,
+            "scaleY": 35,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/jamminger/fly/fly_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters": {
+                "isLaugh": {"type": "bool", "value": false}    
+            },
+            "states":{
+                "fly":{
+                    "looping": true,
+                    "folder": "sprites/enemies/jamminger/fly",
+                    "duration": 0.2
+                },
+                "laugh":{
+                    "looping": true,
+                    "folder": "sprites/enemies/jamminger/laugh",
+                    "duration": 0.1
+                }
+            },
+            "transitions":[
+                {
+                    "from": "fly",
+                    "to": "laugh",
+                    "conditions": [
+                        {"parameter": "isLaugh", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "laugh",
+                    "to": "fly",
+                    "conditions": [
+                        {"parameter": "isLaugh", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "fly"
+        },
+        "Health": {
+            "maxHealth": 60
+        },
+        "JammingerController": {
+
+        },
+        "ClassicIA" :{
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Attack"}
+                    ]
+                },
+                {
+                    "name": "Attack",
+                    "transitions": [
+                        {"nextState": "Fly"},
+                        {"nextState": "Bye"},
+                        {"nextState": "Die"}
+                    ]
+                }, 
+                {
+                    "name": "Fly",
+                    "transitions": [
+
+                        {"nextState": "Laugh"},
+                        {"nextState": "Die"}
+                    ]
+                },
+                {
+                    "name": "Laugh",
+                    "transitions": [
+                        
+                        {"nextState": "Die"},
+                        {"nextState": "Attack"}
+                        
+                    ]
+                }, 
+                {
+                    "name": "Bye",
+                    "transitions": [
+                        
+                        {"nextState": "Die"}
+                        
+                    ]
+                },
+                {
+                    "name": "Die",
+                    "transitions": [
+                    ]
+                }
+            ]
+        }
+    }
+}

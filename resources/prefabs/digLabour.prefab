@@ -1,0 +1,125 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 200,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 28,
+            "scaleY": 35,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+            
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 10,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/digLabour/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters": {
+                "isAttacking": {"type": "bool", "value": false},
+                "isLaughing": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/digLabour/idle",
+                    "duration": 0.06
+                },
+                "attack": {
+                    "looping": false,
+                    "folder": "sprites/enemies/digLabour/attack",
+                    "duration": 0.2,
+                    "waitEndState": "idle"
+                },
+                "laugh": {
+                    "looping": true,
+                    "folder": "sprites/enemies/digLabour/laugh",
+                    "duration": 0.13
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "laugh",
+                    "conditions": [
+                        {"parameter": "isLaughing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "laugh",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isLaughing", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ]
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "DigLabour": {
+
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Attack"},
+                        {"nextState": "Laugh"},
+                        {"nextState": "Death"}
+                    ]  
+                },
+                {
+                    "name": "Attack",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Laugh",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

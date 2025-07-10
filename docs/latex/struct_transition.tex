@@ -1,0 +1,49 @@
+\doxysection{Referencia de la estructura Transition}
+\hypertarget{struct_transition}{}\label{struct_transition}\index{Transition@{Transition}}
+
+
+Estructura que define una transición entre estados en la máquina de estados.  
+
+
+
+
+{\ttfamily \#include $<$Animator\+Component.\+h$>$}
+
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_transition_1_1_condition}{Condition}}
+\begin{DoxyCompactList}\small\item\em Condición para evaluar una transición. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_transition_a02878d764857cbe088eedcefa147adf6}\label{struct_transition_a02878d764857cbe088eedcefa147adf6} 
+{\bfseries Transition} (const std\+::string \&from, const std\+::string \&to, bool keepF, bool wait\+EndS)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_transition_aadf3ae2d8fea61f2a7a4dc418340e93a}\label{struct_transition_aadf3ae2d8fea61f2a7a4dc418340e93a} 
+std\+::string {\bfseries from\+State}
+\item 
+\Hypertarget{struct_transition_a908e04793b837e3728d8299740ef7142}\label{struct_transition_a908e04793b837e3728d8299740ef7142} 
+std\+::string {\bfseries to\+State}
+\item 
+\Hypertarget{struct_transition_ad81a877ef9e8e3d224adafe3d924d070}\label{struct_transition_ad81a877ef9e8e3d224adafe3d924d070} 
+bool {\bfseries keep\+Frame} = false
+\item 
+\Hypertarget{struct_transition_a70b84c2e11a881662b7f2d77af2dd5bc}\label{struct_transition_a70b84c2e11a881662b7f2d77af2dd5bc} 
+bool {\bfseries wait\+End\+State} = false
+\item 
+\Hypertarget{struct_transition_a43e5e848b357555e364ac0c5e06268a1}\label{struct_transition_a43e5e848b357555e364ac0c5e06268a1} 
+std\+::vector$<$ \mbox{\hyperlink{struct_transition_1_1_condition}{Condition}} $>$ {\bfseries conditions}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que define una transición entre estados en la máquina de estados. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Animator\+Component.\+h\item 
+Components/Animator\+Component.\+cpp\end{DoxyCompactItemize}

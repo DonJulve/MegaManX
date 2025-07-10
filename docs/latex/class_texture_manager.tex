@@ -1,0 +1,115 @@
+\doxysection{Referencia de la clase Texture\+Manager}
+\hypertarget{class_texture_manager}{}\label{class_texture_manager}\index{TextureManager@{TextureManager}}
+
+
+Clase \doxylink{class_texture_manager}{Texture\+Manager} para gestionar la carga y almacenamiento de texturas.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_texture_manager_a001d6d74674961db79987e3222682576}\label{class_texture_manager_a001d6d74674961db79987e3222682576} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Texture\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \doxylink{class_texture_manager}{Texture\+Manager} que limpia las texturas cargadas. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_manager_a16e8a4670df13bb6fd919bd028ee43b2}{load\+BMP}} (std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Carga una textura BMP desde un archivo. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_manager_a042b8b8b0d9048f94aebc206db4b278c}{load\+PNG}} (std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Carga una textura PNG desde un archivo. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_manager_addb59b526cc581c0e5243aa8554af74e}{get\+Texture}} (std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Obtiene una textura del caché o la carga si no existe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_texture_manager_a53607b94d705e270341a5f8e7b6366f0}{get\+Instance}} (SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia única de \doxylink{class_texture_manager}{Texture\+Manager}. \end{DoxyCompactList}\item 
+\Hypertarget{class_texture_manager_ad54c51d3aa7c0d1f978cdc58cc014f09}\label{class_texture_manager_ad54c51d3aa7c0d1f978cdc58cc014f09} 
+static \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_texture_manager}{Texture\+Manager} para gestionar la carga y almacenamiento de texturas. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_texture_manager_a53607b94d705e270341a5f8e7b6366f0}\index{TextureManager@{TextureManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_texture_manager_a53607b94d705e270341a5f8e7b6366f0} 
+\mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} \texorpdfstring{$\ast$}{*} Texture\+Manager\+::get\+Instance (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Obtiene la instancia única de \doxylink{class_texture_manager}{Texture\+Manager}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em renderer} & Puntero al renderizador SDL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la instancia de \doxylink{class_texture_manager}{Texture\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_manager_addb59b526cc581c0e5243aa8554af74e}\index{TextureManager@{TextureManager}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily \label{class_texture_manager_addb59b526cc581c0e5243aa8554af74e} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} Texture\+Manager\+::get\+Texture (\begin{DoxyParamCaption}\item[{std\+::string \&}]{path}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene una textura del caché o la carga si no existe. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em path} & Ruta al archivo de la textura. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la textura SDL, o nullptr si falla. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_manager_a16e8a4670df13bb6fd919bd028ee43b2}\index{TextureManager@{TextureManager}!loadBMP@{loadBMP}}
+\index{loadBMP@{loadBMP}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{loadBMP()}{loadBMP()}}
+{\footnotesize\ttfamily \label{class_texture_manager_a16e8a4670df13bb6fd919bd028ee43b2} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} Texture\+Manager\+::load\+BMP (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Carga una textura BMP desde un archivo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+Path} & Ruta al archivo BMP. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la textura SDL cargada, o nullptr si falla. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_manager_a042b8b8b0d9048f94aebc206db4b278c}\index{TextureManager@{TextureManager}!loadPNG@{loadPNG}}
+\index{loadPNG@{loadPNG}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{loadPNG()}{loadPNG()}}
+{\footnotesize\ttfamily \label{class_texture_manager_a042b8b8b0d9048f94aebc206db4b278c} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} Texture\+Manager\+::load\+PNG (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Carga una textura PNG desde un archivo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+Path} & Ruta al archivo PNG. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la textura SDL cargada, o nullptr si falla. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Sprite\+Renderer.\+cpp\end{DoxyCompactItemize}

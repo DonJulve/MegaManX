@@ -1,0 +1,47 @@
+\doxysection{Systems.\+h}
+\hypertarget{_systems_8h_source}{}\label{_systems_8h_source}\index{Core/Systems.h@{Core/Systems.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SYSTEMS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SYSTEMS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}EntityManager.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}UIComponent.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ParallaxLayer.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}BVH.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_system_add51ae0fe33ea6c1322023499c6b7557}{update}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ manager,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }CollisionSystem\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_b_v_h}{BVH}}*\ staticEntities;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_b_v_h}{BVH}}*\ dynamicEntities;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ CollisionSystem()}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ staticEntities\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ dynamicEntities\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ResolveCollision(\mbox{\hyperlink{struct_collider}{Collider}}*\ col1,\ \mbox{\hyperlink{struct_rigidbody}{Rigidbody}}*\ rb1,\ \mbox{\hyperlink{struct_transform}{Transform}}*\ t1,\ \mbox{\hyperlink{struct_collider}{Collider}}*\ col2,\ \mbox{\hyperlink{struct_rigidbody}{Rigidbody}}*\ rb2,\ \mbox{\hyperlink{struct_transform}{Transform}}*\ t2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\&\ collisionResult);}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_collision_system_a1823cfba6a96452f89d5a9cc64aa10b4}{update}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ manager,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_render_system}{RenderSystem}}\ \{}
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_render_system_a4a5e96bfdad0f26b68139b2e3b5c7929}{render}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ manager,\ SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ largest\_4\_3\_resolution(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}*\ out\_width,\ \textcolor{keywordtype}{int}*\ out\_height,\ \textcolor{keywordtype}{int}*\ excess\_width,\ \textcolor{keywordtype}{int}*\ excess\_height);}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

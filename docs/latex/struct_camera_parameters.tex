@@ -1,0 +1,82 @@
+\doxysection{Referencia de la estructura Camera\+Parameters}
+\hypertarget{struct_camera_parameters}{}\label{struct_camera_parameters}\index{CameraParameters@{CameraParameters}}
+
+
+Estructura que contiene parámetros para el componente \doxylink{struct_camera}{Camera}.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_camera_parameters_a1092c05cb4b814682bded50ad0a96157}{Camera\+Parameters}} (\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}t=nullptr, float z=1.\+0f, int windowW=800, int windowH=600)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_camera_parameters}{Camera\+Parameters}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_camera_parameters_a807fc135d19d5d34fc24b1387f0b099c}{transform}}
+\item 
+float \mbox{\hyperlink{struct_camera_parameters_afce25dde28c49d4fe20e4848df096f56}{zoom}}
+\item 
+\Hypertarget{struct_camera_parameters_a99ed44cca7aff96ee6a3e7a5a9f320dc}\label{struct_camera_parameters_a99ed44cca7aff96ee6a3e7a5a9f320dc} 
+int {\bfseries window\+Width}
+\item 
+int \mbox{\hyperlink{struct_camera_parameters_ab081d4aacb6918cbe6828ac020493bc5}{window\+Height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que contiene parámetros para el componente \doxylink{struct_camera}{Camera}. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_camera_parameters_a1092c05cb4b814682bded50ad0a96157}\index{CameraParameters@{CameraParameters}!CameraParameters@{CameraParameters}}
+\index{CameraParameters@{CameraParameters}!CameraParameters@{CameraParameters}}
+\doxysubsubsection{\texorpdfstring{CameraParameters()}{CameraParameters()}}
+{\footnotesize\ttfamily \label{struct_camera_parameters_a1092c05cb4b814682bded50ad0a96157} 
+Camera\+Parameters\+::\+Camera\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}}]{t}{ = {\ttfamily nullptr}, }\item[{float}]{z}{ = {\ttfamily 1.0f}, }\item[{int}]{windowW}{ = {\ttfamily 800}, }\item[{int}]{windowH}{ = {\ttfamily 600}}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_camera_parameters}{Camera\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em t} & Puntero al componente \doxylink{struct_transform}{Transform} (por defecto nullptr). \\
+\hline
+{\em z} & Factor de zoom (por defecto 1.\+0). \\
+\hline
+{\em windowW} & Ancho de la ventana (por defecto 800). \\
+\hline
+{\em windowH} & Alto de la ventana (por defecto 600). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_camera_parameters_a807fc135d19d5d34fc24b1387f0b099c}\index{CameraParameters@{CameraParameters}!transform@{transform}}
+\index{transform@{transform}!CameraParameters@{CameraParameters}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \label{struct_camera_parameters_a807fc135d19d5d34fc24b1387f0b099c} 
+\mbox{\hyperlink{struct_transform}{Transform}}\texorpdfstring{$\ast$}{*} Camera\+Parameters\+::transform}
+
+Puntero al componente \doxylink{struct_transform}{Transform} asociado. \Hypertarget{struct_camera_parameters_ab081d4aacb6918cbe6828ac020493bc5}\index{CameraParameters@{CameraParameters}!windowHeight@{windowHeight}}
+\index{windowHeight@{windowHeight}!CameraParameters@{CameraParameters}}
+\doxysubsubsection{\texorpdfstring{windowHeight}{windowHeight}}
+{\footnotesize\ttfamily \label{struct_camera_parameters_ab081d4aacb6918cbe6828ac020493bc5} 
+int Camera\+Parameters\+::window\+Height}
+
+Dimensiones de la ventana. \Hypertarget{struct_camera_parameters_afce25dde28c49d4fe20e4848df096f56}\index{CameraParameters@{CameraParameters}!zoom@{zoom}}
+\index{zoom@{zoom}!CameraParameters@{CameraParameters}}
+\doxysubsubsection{\texorpdfstring{zoom}{zoom}}
+{\footnotesize\ttfamily \label{struct_camera_parameters_afce25dde28c49d4fe20e4848df096f56} 
+float Camera\+Parameters\+::zoom}
+
+Factor de zoom de la cámara. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Camera.\+cpp\end{DoxyCompactItemize}

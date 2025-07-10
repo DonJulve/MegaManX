@@ -1,0 +1,134 @@
+\doxysection{Referencia de la estructura Collider\+Parameters}
+\hypertarget{struct_collider_parameters}{}\label{struct_collider_parameters}\index{ColliderParameters@{ColliderParameters}}
+
+
+Estructura que contiene parámetros para el componente \doxylink{struct_collider}{Collider}.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_collider_parameters_a8dde51c47a0a3b2c1ecc32f95e3b1852}{Collider\+Parameters}} (\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}t, float sX=1.\+0f, float sY=1.\+0f, bool trigger=false, const std\+::string \&t\+Tag="{}Untagged"{}, const std\+::vector$<$ std\+::string $>$ \&c\+Tags=\{\}, bool cT=true, bool cL=true, bool cR=true, bool cB=true)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_collider_parameters}{Collider\+Parameters}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_collider_parameters_a45d01286742712110f9d93f6aeebb38d}{transform}}
+\item 
+\Hypertarget{struct_collider_parameters_aa0abf6090d72072daa0e972478bd8262}\label{struct_collider_parameters_aa0abf6090d72072daa0e972478bd8262} 
+float {\bfseries scaleX}
+\item 
+float \mbox{\hyperlink{struct_collider_parameters_a4bbd883a2bdc50ad68b8e9ade0fd2c8a}{scaleY}}
+\item 
+bool \mbox{\hyperlink{struct_collider_parameters_a23b9f478b39471e188555d590781abc3}{is\+Trigger}}
+\item 
+std\+::string \mbox{\hyperlink{struct_collider_parameters_abe1286d2b98aa86ada7dab3ac1d42fed}{tag}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{struct_collider_parameters_a6819db10ff9f7995050e8ca5913f7c96}{collision\+Tags}}
+\item 
+bool \mbox{\hyperlink{struct_collider_parameters_a550f81c032dd411f5e4e311f29b8a2e8}{check\+Top}}
+\item 
+bool \mbox{\hyperlink{struct_collider_parameters_a98b579b014847e8d6e60ffbfb8d62842}{check\+Left}}
+\item 
+bool \mbox{\hyperlink{struct_collider_parameters_aa99e22a79aa5fdd34b40e6066750990c}{check\+Right}}
+\item 
+bool \mbox{\hyperlink{struct_collider_parameters_a21c14ba7dab83fd551848e28e863214d}{check\+Bottom}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que contiene parámetros para el componente \doxylink{struct_collider}{Collider}. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_collider_parameters_a8dde51c47a0a3b2c1ecc32f95e3b1852}\index{ColliderParameters@{ColliderParameters}!ColliderParameters@{ColliderParameters}}
+\index{ColliderParameters@{ColliderParameters}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{ColliderParameters()}{ColliderParameters()}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a8dde51c47a0a3b2c1ecc32f95e3b1852} 
+Collider\+Parameters\+::\+Collider\+Parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}}]{t}{, }\item[{float}]{sX}{ = {\ttfamily 1.0f}, }\item[{float}]{sY}{ = {\ttfamily 1.0f}, }\item[{bool}]{trigger}{ = {\ttfamily false}, }\item[{const std\+::string \&}]{t\+Tag}{ = {\ttfamily "{}Untagged"{}}, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{c\+Tags}{ = {\ttfamily \{\}}, }\item[{bool}]{cT}{ = {\ttfamily true}, }\item[{bool}]{cL}{ = {\ttfamily true}, }\item[{bool}]{cR}{ = {\ttfamily true}, }\item[{bool}]{cB}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_collider_parameters}{Collider\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em t} & Puntero al componente \doxylink{struct_transform}{Transform} (requerido). \\
+\hline
+{\em sX} & Escala en X (por defecto 1.\+0). \\
+\hline
+{\em sY} & Escala en Y (por defecto 1.\+0). \\
+\hline
+{\em trigger} & Es disparador (por defecto false). \\
+\hline
+{\em t\+Tag} & Etiqueta del collider (por defecto "{}\+Untagged"{}). \\
+\hline
+{\em c\+Tags} & Lista de etiquetas de colisión (por defecto vacía, colisiona con todo). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_collider_parameters_a21c14ba7dab83fd551848e28e863214d}\index{ColliderParameters@{ColliderParameters}!checkBottom@{checkBottom}}
+\index{checkBottom@{checkBottom}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{checkBottom}{checkBottom}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a21c14ba7dab83fd551848e28e863214d} 
+bool Collider\+Parameters\+::check\+Bottom}
+
+Toggle for bottom triangle. \Hypertarget{struct_collider_parameters_a98b579b014847e8d6e60ffbfb8d62842}\index{ColliderParameters@{ColliderParameters}!checkLeft@{checkLeft}}
+\index{checkLeft@{checkLeft}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{checkLeft}{checkLeft}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a98b579b014847e8d6e60ffbfb8d62842} 
+bool Collider\+Parameters\+::check\+Left}
+
+Toggle for left triangle. \Hypertarget{struct_collider_parameters_aa99e22a79aa5fdd34b40e6066750990c}\index{ColliderParameters@{ColliderParameters}!checkRight@{checkRight}}
+\index{checkRight@{checkRight}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{checkRight}{checkRight}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_aa99e22a79aa5fdd34b40e6066750990c} 
+bool Collider\+Parameters\+::check\+Right}
+
+Toggle for right triangle. \Hypertarget{struct_collider_parameters_a550f81c032dd411f5e4e311f29b8a2e8}\index{ColliderParameters@{ColliderParameters}!checkTop@{checkTop}}
+\index{checkTop@{checkTop}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{checkTop}{checkTop}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a550f81c032dd411f5e4e311f29b8a2e8} 
+bool Collider\+Parameters\+::check\+Top}
+
+Toggle for top triangle. \Hypertarget{struct_collider_parameters_a6819db10ff9f7995050e8ca5913f7c96}\index{ColliderParameters@{ColliderParameters}!collisionTags@{collisionTags}}
+\index{collisionTags@{collisionTags}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{collisionTags}{collisionTags}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a6819db10ff9f7995050e8ca5913f7c96} 
+std\+::vector$<$std\+::string$>$ Collider\+Parameters\+::collision\+Tags}
+
+Lista de etiquetas con las que colisionar. \Hypertarget{struct_collider_parameters_a23b9f478b39471e188555d590781abc3}\index{ColliderParameters@{ColliderParameters}!isTrigger@{isTrigger}}
+\index{isTrigger@{isTrigger}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{isTrigger}{isTrigger}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a23b9f478b39471e188555d590781abc3} 
+bool Collider\+Parameters\+::is\+Trigger}
+
+Indica si es un disparador (trigger). \Hypertarget{struct_collider_parameters_a4bbd883a2bdc50ad68b8e9ade0fd2c8a}\index{ColliderParameters@{ColliderParameters}!scaleY@{scaleY}}
+\index{scaleY@{scaleY}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{scaleY}{scaleY}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a4bbd883a2bdc50ad68b8e9ade0fd2c8a} 
+float Collider\+Parameters\+::scaleY}
+
+Escala en X e Y. \Hypertarget{struct_collider_parameters_abe1286d2b98aa86ada7dab3ac1d42fed}\index{ColliderParameters@{ColliderParameters}!tag@{tag}}
+\index{tag@{tag}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_abe1286d2b98aa86ada7dab3ac1d42fed} 
+std\+::string Collider\+Parameters\+::tag}
+
+Etiqueta para identificar el tipo de collider. \Hypertarget{struct_collider_parameters_a45d01286742712110f9d93f6aeebb38d}\index{ColliderParameters@{ColliderParameters}!transform@{transform}}
+\index{transform@{transform}!ColliderParameters@{ColliderParameters}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \label{struct_collider_parameters_a45d01286742712110f9d93f6aeebb38d} 
+\mbox{\hyperlink{struct_transform}{Transform}}\texorpdfstring{$\ast$}{*} Collider\+Parameters\+::transform}
+
+Puntero al componente \doxylink{struct_transform}{Transform} asociado. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Collider.\+cpp\end{DoxyCompactItemize}

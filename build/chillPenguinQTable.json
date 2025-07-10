@@ -1,0 +1,34 @@
+{
+    "q_table": [
+        {
+            "action": "Stay",
+            "q_value": -299.71728515625,
+            "state": "Idle"
+        },
+        {
+            "action": "Blizzard",
+            "q_value": -299.86663818359375,
+            "state": "Idle"
+        },
+        {
+            "action": "Ice",
+            "q_value": -299.71722412109375,
+            "state": "Idle"
+        },
+        {
+            "action": "Shoot",
+            "q_value": -299.7178039550781,
+            "state": "Idle"
+        },
+        {
+            "action": "Dash",
+            "q_value": -299.92529296875,
+            "state": "Idle"
+        },
+        {
+            "action": "Jump",
+            "q_value": -299.71551513671875,
+            "state": "Idle"
+        }
+    ]
+}

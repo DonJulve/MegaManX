@@ -1,0 +1,125 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 230,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 28,
+            "scaleY": 28,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/hoganmer/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isAttacking": {"type": "bool", "value": false},
+                "isCollecting": {"type": "bool", "value": false},
+                "isCharging": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/hoganmer/idle",
+                    "duration": 0.06
+                },
+                "charge": {
+                    "looping": false,
+                    "folder": "sprites/enemies/hoganmer/charge",
+                    "duration": 0.06
+                },
+                "attack": {
+                    "looping": true,
+                    "folder": "sprites/enemies/hoganmer/attack",
+                    "duration": 0.1
+                },
+                "collect": {
+                    "looping": false,
+                    "folder": "sprites/enemies/hoganmer/collect",
+                    "duration": 0.1
+                }
+                
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "charge",
+                    "conditions": [
+                        {"parameter": "isCharging", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "charge",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "collect",
+                    "conditions": [
+                        {"parameter": "isCollecting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "collect",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isCollecting", "mode": "EQ", "value": 0},
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0},
+                        {"parameter": "isCharging", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "HoganmerController": {
+
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Attack"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Attack",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Referencia de la clase EntityManager</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_entity_manager.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="class_entity_manager-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase EntityManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestiona entidades y sus componentes asociados en el sistema ECS.  
+ <a href="#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_entity_manager_8h_source.html">EntityManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:aa8326c087e6658ab8224566738382f2e" id="r_aa8326c087e6658ab8224566738382f2e"><td class="memItemLeft" align="right" valign="top"><a id="aa8326c087e6658ab8224566738382f2e" name="aa8326c087e6658ab8224566738382f2e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityManager</b> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:aa8326c087e6658ab8224566738382f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor de <a class="el" href="class_entity_manager.html" title="Gestiona entidades y sus componentes asociados en el sistema ECS.">EntityManager</a> con name . <br /></td></tr>
+<tr class="separator:aa8326c087e6658ab8224566738382f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01d68671fe142c8b76561652ab712883" id="r_a01d68671fe142c8b76561652ab712883"><td class="memItemLeft" align="right" valign="top"><a id="a01d68671fe142c8b76561652ab712883" name="a01d68671fe142c8b76561652ab712883"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSceneManager</b> (<a class="el" href="class_scene_manager.html">SceneManager</a> *sm)</td></tr>
+<tr class="separator:a01d68671fe142c8b76561652ab712883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9b766787ba2acdd2e422e5c975dca5" id="r_a1c9b766787ba2acdd2e422e5c975dca5"><td class="memItemLeft" align="right" valign="top"><a id="a1c9b766787ba2acdd2e422e5c975dca5" name="a1c9b766787ba2acdd2e422e5c975dca5"></a>
+<a class="el" href="class_scene_manager.html">SceneManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getSceneManager</b> ()</td></tr>
+<tr class="separator:a1c9b766787ba2acdd2e422e5c975dca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7482168f0df8b2ff2570435f67b3fb0" id="r_ac7482168f0df8b2ff2570435f67b3fb0"><td class="memItemLeft" align="right" valign="top">Entity&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7482168f0df8b2ff2570435f67b3fb0">createEntity</a> ()</td></tr>
+<tr class="memdesc:ac7482168f0df8b2ff2570435f67b3fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crea una nueva entidad y devuelve su ID.  <br /></td></tr>
+<tr class="separator:ac7482168f0df8b2ff2570435f67b3fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d85e7e649dedfa373bffd939621e830" id="r_a6d85e7e649dedfa373bffd939621e830"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d85e7e649dedfa373bffd939621e830">deleteEntity</a> (Entity entity)</td></tr>
+<tr class="memdesc:a6d85e7e649dedfa373bffd939621e830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marca una entidad para eliminación al final del marco.  <br /></td></tr>
+<tr class="separator:a6d85e7e649dedfa373bffd939621e830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e877bb58e8b4f2de1125bb277792041" id="r_a4e877bb58e8b4f2de1125bb277792041"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e877bb58e8b4f2de1125bb277792041">addComponent</a> (Entity entity, std::type_index type, std::shared_ptr&lt; <a class="el" href="class_component.html">Component</a> &gt; component)</td></tr>
+<tr class="memdesc:a4e877bb58e8b4f2de1125bb277792041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega un componente a una entidad usando shared_ptr.  <br /></td></tr>
+<tr class="separator:a4e877bb58e8b4f2de1125bb277792041"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528f9bbc091b837ecf06a6ccf745dcac" id="r_a528f9bbc091b837ecf06a6ccf745dcac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a528f9bbc091b837ecf06a6ccf745dcac">addComponent</a> (Entity entity, std::type_index type, <a class="el" href="class_component.html">Component</a> *component)</td></tr>
+<tr class="memdesc:a528f9bbc091b837ecf06a6ccf745dcac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega un componente a una entidad usando punteros estandar.  <br /></td></tr>
+<tr class="separator:a528f9bbc091b837ecf06a6ccf745dcac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba49a0d5c7a2cc7190914b3c2c3c90b9" id="r_aba49a0d5c7a2cc7190914b3c2c3c90b9"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:aba49a0d5c7a2cc7190914b3c2c3c90b9"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aba49a0d5c7a2cc7190914b3c2c3c90b9">getComponent</a> (Entity entity) const</td></tr>
+<tr class="memdesc:aba49a0d5c7a2cc7190914b3c2c3c90b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene un componente de tipo T de una entidad.  <br /></td></tr>
+<tr class="separator:aba49a0d5c7a2cc7190914b3c2c3c90b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eae8db3fea614aa398481d16ed7b9f1" id="r_a7eae8db3fea614aa398481d16ed7b9f1"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a7eae8db3fea614aa398481d16ed7b9f1"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7eae8db3fea614aa398481d16ed7b9f1">getComponentShared</a> (Entity entity) const</td></tr>
+<tr class="memdesc:a7eae8db3fea614aa398481d16ed7b9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene un componente de tipo T de una entidad.  <br /></td></tr>
+<tr class="separator:a7eae8db3fea614aa398481d16ed7b9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab783404ad843bb1e682101f89747c534" id="r_ab783404ad843bb1e682101f89747c534"><td class="memItemLeft" align="right" valign="top">std::set&lt; Entity &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab783404ad843bb1e682101f89747c534">getEntities</a> ()</td></tr>
+<tr class="memdesc:ab783404ad843bb1e682101f89747c534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el conjunto de todas las entidades activas.  <br /></td></tr>
+<tr class="separator:ab783404ad843bb1e682101f89747c534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03aa200e5f129675eb5e208d47147ee6" id="r_a03aa200e5f129675eb5e208d47147ee6"><td class="memItemLeft" align="right" valign="top">Entity&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03aa200e5f129675eb5e208d47147ee6">getLast</a> () const</td></tr>
+<tr class="memdesc:a03aa200e5f129675eb5e208d47147ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el ID de la última entidad creada.  <br /></td></tr>
+<tr class="separator:a03aa200e5f129675eb5e208d47147ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d6ce5bf227e39c57a8fbb3378c3a6d" id="r_a95d6ce5bf227e39c57a8fbb3378c3a6d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::type_index, std::shared_ptr&lt; <a class="el" href="class_component.html">Component</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95d6ce5bf227e39c57a8fbb3378c3a6d">getEntityComponents</a> (Entity entity)</td></tr>
+<tr class="memdesc:a95d6ce5bf227e39c57a8fbb3378c3a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene todos los componentes asociados con una entidad.  <br /></td></tr>
+<tr class="separator:a95d6ce5bf227e39c57a8fbb3378c3a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f8d09b7585001d6100ad4f15556a1e" id="r_a55f8d09b7585001d6100ad4f15556a1e"><td class="memItemLeft" align="right" valign="top"><a id="a55f8d09b7585001d6100ad4f15556a1e" name="a55f8d09b7585001d6100ad4f15556a1e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>processDeletion</b> ()</td></tr>
+<tr class="memdesc:a55f8d09b7585001d6100ad4f15556a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina todas las entidades marcadas para eliminación al final del marco. <br /></td></tr>
+<tr class="separator:a55f8d09b7585001d6100ad4f15556a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81eeef90e3a758fcdced5db55e98bded" id="r_a81eeef90e3a758fcdced5db55e98bded"><td class="memTemplParams" colspan="2"><a id="a81eeef90e3a758fcdced5db55e98bded" name="a81eeef90e3a758fcdced5db55e98bded"></a>
+template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a81eeef90e3a758fcdced5db55e98bded"><td class="memTemplItemLeft" align="right" valign="top">Entity&#160;</td><td class="memTemplItemRight" valign="bottom"><b>findComponent</b> (std::shared_ptr&lt; T &gt; &amp;outComponent)</td></tr>
+<tr class="separator:a81eeef90e3a758fcdced5db55e98bded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c28b1840d813ff5bc7f15675b25012" id="r_ad5c28b1840d813ff5bc7f15675b25012"><td class="memItemLeft" align="right" valign="top"><a id="ad5c28b1840d813ff5bc7f15675b25012" name="ad5c28b1840d813ff5bc7f15675b25012"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasComponentPointer</b> (<a class="el" href="class_component.html">Component</a> *ptr) const</td></tr>
+<tr class="separator:ad5c28b1840d813ff5bc7f15675b25012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a3e7cb2ac7b7184bd733f928b7db6cd7c" id="r_a3e7cb2ac7b7184bd733f928b7db6cd7c"><td class="memItemLeft" align="right" valign="top"><a id="a3e7cb2ac7b7184bd733f928b7db6cd7c" name="a3e7cb2ac7b7184bd733f928b7db6cd7c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>scenaName</b></td></tr>
+<tr class="separator:a3e7cb2ac7b7184bd733f928b7db6cd7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Gestiona entidades y sus componentes asociados en el sistema ECS. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a528f9bbc091b837ecf06a6ccf745dcac" name="a528f9bbc091b837ecf06a6ccf745dcac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528f9bbc091b837ecf06a6ccf745dcac">&#9670;&#160;</a></span>addComponent() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EntityManager::addComponent </td>
+          <td>(</td>
+          <td class="paramtype">Entity</td>          <td class="paramname"><span class="paramname"><em>entity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::type_index</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_component.html">Component</a> *</td>          <td class="paramname"><span class="paramname"><em>component</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agrega un componente a una entidad usando punteros estandar. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>La entidad a la que se agrega el componente. </td></tr>
+    <tr><td class="paramname">type</td><td>El índice de tipo del componente. </td></tr>
+    <tr><td class="paramname">component</td><td>Puntero al componente a agregar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4e877bb58e8b4f2de1125bb277792041" name="a4e877bb58e8b4f2de1125bb277792041"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e877bb58e8b4f2de1125bb277792041">&#9670;&#160;</a></span>addComponent() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EntityManager::addComponent </td>
+          <td>(</td>
+          <td class="paramtype">Entity</td>          <td class="paramname"><span class="paramname"><em>entity</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::type_index</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_component.html">Component</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>component</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agrega un componente a una entidad usando shared_ptr. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>La entidad a la que se agrega el componente. </td></tr>
+    <tr><td class="paramname">type</td><td>El índice de tipo del componente. </td></tr>
+    <tr><td class="paramname">component</td><td>shared_ptr del componente a agregar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac7482168f0df8b2ff2570435f67b3fb0" name="ac7482168f0df8b2ff2570435f67b3fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7482168f0df8b2ff2570435f67b3fb0">&#9670;&#160;</a></span>createEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Entity EntityManager::createEntity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crea una nueva entidad y devuelve su ID. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>El ID de la entidad recién creada. </dd></dl>
+
+</div>
+</div>
+<a id="a6d85e7e649dedfa373bffd939621e830" name="a6d85e7e649dedfa373bffd939621e830"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d85e7e649dedfa373bffd939621e830">&#9670;&#160;</a></span>deleteEntity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EntityManager::deleteEntity </td>
+          <td>(</td>
+          <td class="paramtype">Entity</td>          <td class="paramname"><span class="paramname"><em>entity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Marca una entidad para eliminación al final del marco. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>La entidad a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba49a0d5c7a2cc7190914b3c2c3c90b9" name="aba49a0d5c7a2cc7190914b3c2c3c90b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba49a0d5c7a2cc7190914b3c2c3c90b9">&#9670;&#160;</a></span>getComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T * EntityManager::getComponent </td>
+          <td>(</td>
+          <td class="paramtype">Entity</td>          <td class="paramname"><span class="paramname"><em>entity</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene un componente de tipo T de una entidad. </p>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>El tipo de componente a recuperar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>La entidad a consultar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Puntero al componente si se encuentra, nullptr en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a7eae8db3fea614aa398481d16ed7b9f1" name="a7eae8db3fea614aa398481d16ed7b9f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eae8db3fea614aa398481d16ed7b9f1">&#9670;&#160;</a></span>getComponentShared()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; T &gt; EntityManager::getComponentShared </td>
+          <td>(</td>
+          <td class="paramtype">Entity</td>          <td class="paramname"><span class="paramname"><em>entity</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene un componente de tipo T de una entidad. </p>
+<dl class="tparams"><dt>Parámetros de plantilla</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>El tipo de componente a recuperar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>La entidad a consultar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Puntero al componente si se encuentra, nullptr en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="ab783404ad843bb1e682101f89747c534" name="ab783404ad843bb1e682101f89747c534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab783404ad843bb1e682101f89747c534">&#9670;&#160;</a></span>getEntities()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; Entity &gt; &amp; EntityManager::getEntities </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene el conjunto de todas las entidades activas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Referencia al conjunto de entidades activas. </dd></dl>
+
+</div>
+</div>
+<a id="a95d6ce5bf227e39c57a8fbb3378c3a6d" name="a95d6ce5bf227e39c57a8fbb3378c3a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d6ce5bf227e39c57a8fbb3378c3a6d">&#9670;&#160;</a></span>getEntityComponents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::type_index, std::shared_ptr&lt; <a class="el" href="class_component.html">Component</a> &gt; &gt; &amp; EntityManager::getEntityComponents </td>
+          <td>(</td>
+          <td class="paramtype">Entity</td>          <td class="paramname"><span class="paramname"><em>entity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene todos los componentes asociados con una entidad. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>La entidad a consultar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Referencia al mapa de componentes de la entidad. </dd></dl>
+
+</div>
+</div>
+<a id="a03aa200e5f129675eb5e208d47147ee6" name="a03aa200e5f129675eb5e208d47147ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03aa200e5f129675eb5e208d47147ee6">&#9670;&#160;</a></span>getLast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Entity EntityManager::getLast </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene el ID de la última entidad creada. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>El último ID de entidad. </dd></dl>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada de los siguientes archivos:<ul>
+<li>Managers/<a class="el" href="_entity_manager_8h_source.html">EntityManager.h</a></li>
+<li>Managers/<b>EntityManager.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_entity_manager.html">EntityManager</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

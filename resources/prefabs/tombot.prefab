@@ -1,0 +1,142 @@
+{
+    "components":{
+        "Transform":{
+            "posX":300,
+            "posY":250,
+            "rotZ":0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor":"CENTER"
+        },
+        "Collider":{
+            "tag":"Enemy",
+            "scaleX":40,
+            "scaleY":40,
+            "isTrigger":true
+        },
+        "Rigidbody":{
+            "velocityX":0,
+            "velocityY":0,
+            "mass":100,
+            "gravity":9.8,
+            "drag":0.00,
+            "bounceFactor":0.00,
+            "kinematic": true
+        },
+        "Sprite":{
+            "texturePath": "./sprites/enemies/tombot/fly/fly_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters":{
+                "isTurbo": {"type": "bool", "value": false},
+                "isFlying": {"type": "bool", "value": false},
+                "isTurning": {"type": "bool", "value": false},
+                "isTurning2": {"type": "bool", "value": false}
+            },
+            "states":{
+                "turbo":{
+                    "looping":true,
+                    "folder":"sprites/enemies/tombot/turbo",
+                    "duration":0.06
+                },
+                "fly":{
+                    "looping":true,
+                    "folder":"sprites/enemies/tombot/fly",
+                    "duration":0.06
+                },
+                "turn1":{
+                    "looping":true,
+                    "folder":"sprites/enemies/tombot/turn1",
+                    "duration":0.06
+                },
+                "turn2":{
+                    "looping":true,
+                    "folder":"sprites/enemies/tombot/turn2",
+                    "duration":0.06
+                }
+            },
+            "transitions":[
+                {
+                    "from":"turbo",
+                    "to":"fly",
+                    "conditions":[
+                        {"parameter":"isFlying","mode":"EQ","value":1}
+                    ]
+                },
+                {
+                    "from":"fly",
+                    "to":"turn1",
+                    "conditions":[
+                        {"parameter":"isTurning","mode":"EQ","value":1}
+                    ]
+                },
+                {
+                    "from":"turn1",
+                    "to":"turn2",
+                    "conditions":[
+                        {"parameter":"isTurning2","mode":"EQ","value":1}
+                    ]
+                },
+                {
+                    "from":"turn2",
+                    "to":"fly",
+                    "conditions":[
+                        {"parameter":"isTurning2","mode":"EQ","value":0},
+                        {"parameter":"isFlying","mode":"EQ","value":1}
+                    ]
+                }
+            ],
+            "initialState":"turbo"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "TombotController":{
+
+        },
+        "ClassicIA":{
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions":[
+                        {"nextState": "Start"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Start",
+                    "transitions":[
+                        {"nextState": "Turbo"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Turbo",
+                    "transitions":[
+                        {"nextState": "Fly"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Fly",
+                    "transitions":[
+                        {"nextState": "Turn"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Turn",
+                    "transitions":[
+                        {"nextState": "Fly"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions":[]
+                }
+            ]
+        }
+    }
+}

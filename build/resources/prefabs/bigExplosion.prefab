@@ -1,0 +1,38 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "BigExplosion",
+            "scaleX": 50,
+            "scaleY": 50,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Sprite": {
+            "texturePath": "./sprites/effects/bigExplosion/bigExplosion_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "states": {
+                "bigExplosion": {
+                    "looping": false,
+                    "folder": "sprites/effects/bigExplosion",
+                    "duration": 0.1
+                }
+            },
+            "initialState": "bigExplosion"
+        },
+        "BigExplosionComponent":{
+
+        }
+    }
+}

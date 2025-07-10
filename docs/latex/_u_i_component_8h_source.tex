@@ -1,0 +1,35 @@
+\doxysection{UIComponent.\+h}
+\hypertarget{_u_i_component_8h_source}{}\label{_u_i_component_8h_source}\index{Components/UIComponent.h@{Components/UIComponent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UI\_COMPONENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UI\_COMPONENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_u_i_parameters_a89fdd808aa8118af924fb5b88cfdb94b}{UIParameters}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_u_i_parameters_a0ff5a179c9e52bfb5d888dd1bab49c7a}{transform}};\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{struct_u_i_parameters_a89fdd808aa8118af924fb5b88cfdb94b}{UIParameters}}(\mbox{\hyperlink{struct_transform}{Transform}}*\ t)\ :\ \mbox{\hyperlink{struct_u_i_parameters_a0ff5a179c9e52bfb5d888dd1bab49c7a}{transform}}(t)\ \{\};}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_u_i_component_a27cfef330ca76524a6e3217e0314a9a4}{UIComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_u_i_component_aa744e2837d59ab4f6862eff732f3434b}{transform}};\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{struct_u_i_component_a27cfef330ca76524a6e3217e0314a9a4}{UIComponent}}(\mbox{\hyperlink{struct_u_i_parameters}{UIParameters}}\ uip)\ :\ \mbox{\hyperlink{struct_u_i_component_aa744e2837d59ab4f6862eff732f3434b}{transform}}(uip.\mbox{\hyperlink{struct_u_i_component_aa744e2837d59ab4f6862eff732f3434b}{transform}})\ \{\};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_u_i_component_a443cdf6d4213612c0fd8a3050cd5bd1e}{render}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager,\ SDL\_Renderer*\ renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_u_i_loader}{UILoader}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_u_i_parameters}{UIParameters}}\ \mbox{\hyperlink{class_u_i_loader_ab9221d1b368e0b2b4557b5165f0f9243}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_u_i_component}{UIComponent}}\ \mbox{\hyperlink{class_u_i_loader_adeacb6b4392018be92d69ec0742374e3}{createFromJSON}}(nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_COMPONENT\_H}}
+
+\end{DoxyCode}

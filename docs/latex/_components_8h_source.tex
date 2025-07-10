@@ -1,0 +1,394 @@
+\doxysection{Components.\+h}
+\hypertarget{_components_8h_source}{}\label{_components_8h_source}\index{Components/Components.h@{Components/Components.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMPONENTS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMPONENTS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}\ \ \textcolor{comment}{//\ Para\ std::shared\_ptr}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Debug.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}EntityManager.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum\ class}\ AnchorPoint\ \{\ TOP\_LEFT,\ CENTER\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ NLOHMANN\_JSON\_SERIALIZE\_ENUM(AnchorPoint,\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \{AnchorPoint::CENTER,\ \textcolor{stringliteral}{"{}CENTER"{}}\},}
+\DoxyCodeLine{00019\ \ \ \ \ \{AnchorPoint::TOP\_LEFT,\ \textcolor{stringliteral}{"{}TOP\_LEFT"{}}\}}
+\DoxyCodeLine{00020\ \});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_vector2_d}{Vector2D}}\{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ x,\ \mbox{\hyperlink{struct_vector2_d_a85215519d3f71d0e6be7d636346f3b7d}{y}};\ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_transform_parameters_ad2cce90fc38d00e37bd893c3dff74546}{TransformParameters}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{float}\ posX,\ \mbox{\hyperlink{struct_transform_parameters_a46aaa2930abc3dc7cb9e3881e7ade116}{posY}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_transform_parameters_af14748e491252c70f4ee2fa9f97d9bd0}{rotZ}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ sizeX,\ \mbox{\hyperlink{struct_transform_parameters_a467200562553cf0902e81cddc49d7a10}{sizeY}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ AnchorPoint\ \mbox{\hyperlink{struct_transform_parameters_a3d0a9653f99d78f2232a5abad78e328c}{centerMode}};\ \ \ \ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{struct_transform_parameters_ad2cce90fc38d00e37bd893c3dff74546}{TransformParameters}}(\textcolor{keywordtype}{float}\ pX\ =\ 0,\ \textcolor{keywordtype}{float}\ pY\ =\ 0,\ \textcolor{keywordtype}{float}\ rZ\ =\ 0,\ \textcolor{keywordtype}{float}\ sX\ =\ 0,\ \textcolor{keywordtype}{float}\ sY\ =\ 0,\ AnchorPoint\ aP\ =\ AnchorPoint::CENTER)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ :\ posX(pX),\ \mbox{\hyperlink{struct_transform_parameters_a46aaa2930abc3dc7cb9e3881e7ade116}{posY}}(pY),\ \mbox{\hyperlink{struct_transform_parameters_af14748e491252c70f4ee2fa9f97d9bd0}{rotZ}}(rZ),\ sizeX(sX),\ \mbox{\hyperlink{struct_transform_parameters_a467200562553cf0902e81cddc49d7a10}{sizeY}}(sY),\ \mbox{\hyperlink{struct_transform_parameters_a3d0a9653f99d78f2232a5abad78e328c}{centerMode}}(aP)\ \{\}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_transform_abe5a9687ed82e58acfaea8a07ab4740d}{Transform}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{float}\ posX,\ \mbox{\hyperlink{struct_transform_a0dcd1ac11f8ac8fe7e71d7aa8705f60f}{posY}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_transform_a07c9d3a91e43c537a23e0897174a49bf}{rotZ}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{float}\ sizeX,\ \mbox{\hyperlink{struct_transform_a42e07c362e80570d3c6eb793f2aa7ef6}{sizeY}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ AnchorPoint\ \mbox{\hyperlink{struct_transform_a892a0c7745bf2855fab9a3fd99be252c}{centerMode}};\ \ \ \ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{struct_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}}(\mbox{\hyperlink{struct_transform_parameters}{TransformParameters}}\ tp);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{struct_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_a33f87f9c76e5ff2c0979e21e5a4d76ab}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_transform_aec7a77f20db1b4d6f0dc76ce17adcac4}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transform_loader}{TransformLoader}}\ \{}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_transform_parameters}{TransformParameters}}\ \mbox{\hyperlink{class_transform_loader_aae94e967e4dedab8841a052c3dcc4187}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_transform}{Transform}}\ \mbox{\hyperlink{class_transform_loader_aaecd8272a7585fc38554f5ffa674f19c}{createFromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rigidbody_parameters_a0df97dc23b8dfe8319b9b653ee38daab}{RigidbodyParameters}}\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{float}\ velocityX,\ \mbox{\hyperlink{struct_rigidbody_parameters_a7c01da83660cb7e3ee16e239c8dec114}{velocityY}};\ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{float}\ accelerationX,\ \mbox{\hyperlink{struct_rigidbody_parameters_a28ee7a705fcf324d68594525d3e92237}{accelerationY}};\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_parameters_a0c92631d47120bef4518dee3317f61e3}{mass}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_parameters_a74e0194f60d8aa8acdf01bdb56a2cda7}{gravity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_parameters_aae7dba999eece1ee56578385b5d21eab}{drag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_parameters_a71637fff66c9d3c0dd7051911c0f64e0}{bounceFactor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_rigidbody_parameters_ad00f69a265d570fc81c755d57a89b4fd}{kinematic}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{struct_rigidbody_parameters_a0df97dc23b8dfe8319b9b653ee38daab}{RigidbodyParameters}}(\textcolor{keywordtype}{float}\ vx\ =\ 0,\ \textcolor{keywordtype}{float}\ vy\ =\ 0,\ \textcolor{keywordtype}{float}\ m\ =\ 1.0f,\ \textcolor{keywordtype}{bool}\ kin\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{float}\ g\ =\ 9.8f,\ \textcolor{keywordtype}{float}\ d\ =\ 0.01f,\ \textcolor{keywordtype}{float}\ b\ =\ 0.5f);}
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_rigidbody_aff220ffc4de55d58f4782a5615fa7f8d}{Rigidbody}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{float}\ velocityX,\ \mbox{\hyperlink{struct_rigidbody_aaf834ce370866b49baba861b94a132cb}{velocityY}};\ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{float}\ accelerationX,\ \mbox{\hyperlink{struct_rigidbody_a699ce0a80b301e7c34fc8d77e1fae5ed}{accelerationY}};\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_a0ff47d17bcd8629f60b5b36de8a5357c}{mass}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_a6d7a494de74caa68b88124ea4dc78de1}{gravity}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_a4698fce8f96262da9016222f96c1ae2a}{drag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_rigidbody_a92291a6424b65eac60564c8708641fa6}{bounceFactor}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_rigidbody_ac96d2b0119c740029ec39951cc0f5d6c}{kinematic}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{struct_rigidbody_ab8cee0caf46b950a921acdb6bee1cfe2}{Rigidbody}}(\mbox{\hyperlink{struct_rigidbody_parameters}{RigidbodyParameters}}\ rbp);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{struct_rigidbody_ab8cee0caf46b950a921acdb6bee1cfe2}{Rigidbody}}();}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_rigidbody_a230405af89fc3020f0c4deb3192a814b}{ApplyForce}}(\textcolor{keywordtype}{float}\ forceX,\ \textcolor{keywordtype}{float}\ forceY);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_rigidbody_abf24c797ee51c8e5daf17466485ad054}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_rigidbody_aaf91a8e80c803c1c5b99f5bb399d0e07}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00171\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rigidbody_loader}{RigidbodyLoader}}\ \{}
+\DoxyCodeLine{00177\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_rigidbody_parameters}{RigidbodyParameters}}\ \mbox{\hyperlink{class_rigidbody_loader_acd561bfb19dbe0f538d5967bc3d24fc6}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_rigidbody}{Rigidbody}}\ \mbox{\hyperlink{class_rigidbody_loader_a89446c2a2e135f24df674e355615a3a2}{createFromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_camera_parameters_a1092c05cb4b814682bded50ad0a96157}{CameraParameters}}\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_camera_parameters_a807fc135d19d5d34fc24b1387f0b099c}{transform}};\ \ \ \ \ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_camera_parameters_afce25dde28c49d4fe20e4848df096f56}{zoom}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{int}\ windowWidth,\ \mbox{\hyperlink{struct_camera_parameters_ab081d4aacb6918cbe6828ac020493bc5}{windowHeight}};\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{struct_camera_parameters_a1092c05cb4b814682bded50ad0a96157}{CameraParameters}}(\mbox{\hyperlink{struct_transform}{Transform}}*\ t\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{float}\ z\ =\ 1.0f,\ \textcolor{keywordtype}{int}\ windowW\ =\ 800,\ \textcolor{keywordtype}{int}\ windowH\ =\ 600);}
+\DoxyCodeLine{00211\ \};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00216\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_camera_a668023368fbf7397ee247232fae7cb6b}{Camera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_camera_a40e08b279520335b163104f9c5b247ef}{transform}};\ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_camera_a21fc9e142b104d8e94126657abaa075f}{zoom}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_camera_aa6f013fdb4560daaa5ca6ace1a846ca7}{aspectRatio}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{int}\ windowWidth,\ \mbox{\hyperlink{struct_camera_a5ff6fce1d33a6ffc542f06bbd21ab755}{windowHeight}};\ }
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{int}\ outWidth,\ \mbox{\hyperlink{struct_camera_aeab48f9a0c45ccfa2646fffe070aed74}{outHeight}};\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{int}\ excessWidth,\ \mbox{\hyperlink{struct_camera_a43d3d22369d1a03aa42af00a1d40c75a}{excessHeight}};\ }
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{struct_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}(\mbox{\hyperlink{struct_camera_parameters}{CameraParameters}}\ cp);}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{struct_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_camera_ac8521ca993bf860acb6e08471fc02b64}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_camera_a28a44ef207ad25b7d11c53da58bd707c}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_camera_a3c62c0d2e343519c4233361b0b9c63ba}{updateScaling}}(\textcolor{keywordtype}{int}\ newWindowWidth,\ \textcolor{keywordtype}{int}\ newWindowHeight);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_camera_a5bdb6874746357edbcb107f794243d68}{getPosX}}();}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_camera_ac88cee11c872e6a82d4da2e95f4ac97e}{getPosY}}();}
+\DoxyCodeLine{00259\ \};}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00264\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera_loader}{CameraLoader}}\ \{}
+\DoxyCodeLine{00265\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_camera_parameters}{CameraParameters}}\ \mbox{\hyperlink{class_camera_loader_a9a85e304520d40b3912c7b9f9e9ad1ee}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_camera}{Camera}}\ \mbox{\hyperlink{class_camera_loader_aab784e4902644e1c0f0485b97b4f654e}{createFromJSON}}(nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00281\ \};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00286\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_collider_parameters_a8dde51c47a0a3b2c1ecc32f95e3b1852}{ColliderParameters}}\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_collider_parameters_a45d01286742712110f9d93f6aeebb38d}{transform}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{float}\ scaleX,\ \mbox{\hyperlink{struct_collider_parameters_a4bbd883a2bdc50ad68b8e9ade0fd2c8a}{scaleY}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_parameters_a23b9f478b39471e188555d590781abc3}{isTrigger}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00290\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_collider_parameters_abe1286d2b98aa86ada7dab3ac1d42fed}{tag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00291\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_collider_parameters_a6819db10ff9f7995050e8ca5913f7c96}{collisionTags}};\ }
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_parameters_a550f81c032dd411f5e4e311f29b8a2e8}{checkTop}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_parameters_a98b579b014847e8d6e60ffbfb8d62842}{checkLeft}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_parameters_aa99e22a79aa5fdd34b40e6066750990c}{checkRight}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_parameters_a21c14ba7dab83fd551848e28e863214d}{checkBottom}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{struct_collider_parameters_a8dde51c47a0a3b2c1ecc32f95e3b1852}{ColliderParameters}}(\mbox{\hyperlink{struct_transform}{Transform}}*\ t,\ \textcolor{keywordtype}{float}\ sX\ =\ 1.0f,\ \textcolor{keywordtype}{float}\ sY\ =\ 1.0f,\ \textcolor{keywordtype}{bool}\ trigger\ =\ \textcolor{keyword}{false},\ }
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ tTag\ =\ \textcolor{stringliteral}{"{}Untagged"{}},\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ cTags\ =\ \{\},\ \textcolor{keywordtype}{bool}\ cT\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ cL\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ cR\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ cB\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00309\ \};}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_collision_result}{CollisionResult}}\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{bool}\ isColliding;}
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ collisionPoint;}
+\DoxyCodeLine{00314\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ normal;}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keywordtype}{float}\ penetrationDepth;}
+\DoxyCodeLine{00316\ \};}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \textcolor{keyword}{struct\ }Rect\ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{float}\ x;\ \ \ \ \textcolor{comment}{//\ x-\/coordinate\ of\ top-\/left\ corner}}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{keywordtype}{float}\ y;\ \ \ \ \textcolor{comment}{//\ y-\/coordinate\ of\ top-\/left\ corner}}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{float}\ w;\ \ \ \ \textcolor{comment}{//\ width}}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{keywordtype}{float}\ h;\ \ \ \ \textcolor{comment}{//\ height}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{comment}{//\ Default\ constructor}}
+\DoxyCodeLine{00328\ \ \ \ \ Rect()\ :\ x(0.0f),\ y(0.0f),\ w(0.0f),\ h(0.0f)\ \{\}}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{comment}{//\ Parameterized\ constructor}}
+\DoxyCodeLine{00331\ \ \ \ \ Rect(\textcolor{keywordtype}{float}\ xPos,\ \textcolor{keywordtype}{float}\ yPos,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height)\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ :\ x(xPos),\ y(yPos),\ w(width),\ h(height)\ \{\}}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ calculate\ area}}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{float}\ getArea()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ w\ *\ h;}
+\DoxyCodeLine{00337\ \ \ \ \ \}}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{comment}{//\ Method\ to\ check\ if\ a\ point\ is\ inside\ the\ rectangle}}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{bool}\ contains(\textcolor{keywordtype}{float}\ pointX,\ \textcolor{keywordtype}{float}\ pointY)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (pointX\ >=\ x\ \&\&\ pointX\ <=\ x\ +\ w\ \&\&}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pointY\ >=\ y\ \&\&\ pointY\ <=\ y\ +\ h);}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{comment}{//\ Static\ method\ to\ check\ if\ two\ rectangles\ intersect}}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ hasIntersection(\textcolor{keyword}{const}\ Rect\&\ rect1,\ \textcolor{keyword}{const}\ Rect\&\ rect2)\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Two\ rectangles\ don't\ intersect\ if\ one\ is\ to\ the\ left\ of\ the\ other}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ or\ one\ is\ above\ the\ other}}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ !(rect1.x\ +\ rect1.w\ <\ rect2.x\ ||}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect2.x\ +\ rect2.w\ <\ rect1.x\ ||}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect1.y\ +\ rect1.h\ <\ rect2.y\ ||}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rect2.y\ +\ rect2.h\ <\ rect1.y);}
+\DoxyCodeLine{00353\ \ \ \ \ \}}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{comment}{//\ Static\ method\ to\ get\ the\ intersection\ rectangle\ of\ two\ rectangles}}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keyword}{static}\ Rect\ intersectRect(\textcolor{keyword}{const}\ Rect\&\ rect1,\ \textcolor{keyword}{const}\ Rect\&\ rect2)\ \{}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ there's\ no\ intersection,\ return\ a\ zero-\/sized\ rectangle}}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!hasIntersection(rect1,\ rect2))\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect();}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Calculate\ intersection\ coordinates}}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ left\ =\ std::max(rect1.x,\ rect2.x);}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ right\ =\ std::min(rect1.x\ +\ rect1.w,\ rect2.x\ +\ rect2.w);}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ top\ =\ std::max(rect1.y,\ rect2.y);}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bottom\ =\ std::min(rect1.y\ +\ rect1.h,\ rect2.y\ +\ rect2.h);}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Rect(left,\ top,\ right\ -\/\ left,\ bottom\ -\/\ top);}
+\DoxyCodeLine{00369\ \ \ \ \ \}}
+\DoxyCodeLine{00370\ \};}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_triangle}{Triangle}}\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p1;}
+\DoxyCodeLine{00374\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p2;}
+\DoxyCodeLine{00375\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p3;}
+\DoxyCodeLine{00376\ \};}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00381\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}{Collider}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{keyword}{private}:\ }
+\DoxyCodeLine{00384\ \ \ \ \ }
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ }
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordtype}{bool}\ rectIntersectsTriangle(\mbox{\hyperlink{struct_rect}{Rect}}\ rect,\ \mbox{\hyperlink{struct_triangle}{Triangle}}\ triangle,\ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\&\ result,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2);}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00403\ \ \ \ \ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\ checkRectRectCollision(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rect}{Rect}}\&\ rect1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rect}{Rect}}\&\ rect2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2);}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00411\ \ \ \ \ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\ checkRectTrianglesCollision(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_rect}{Rect}}\&\ rect,\ \textcolor{keyword}{const}\ std::vector<Triangle>\&\ triangles,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2);}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00419\ \ \ \ \ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\ checkTrianglesTrianglesCollision(\textcolor{keyword}{const}\ std::vector<Triangle>\&\ triangles1,\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Triangle>\&\ triangles2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2);}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00428\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ normalizeVector(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{keywordtype}{bool}\ lineSegmentsIntersect(\mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p1,\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p2,\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p3,\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ p4,\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ intersection);}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00446\ \ \ \ \ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\ checkCollision(\mbox{\hyperlink{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}{Collider}}*\ other,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }PhysicsSystem;}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }CollisionSystem;}
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }RenderSystem;}
+\DoxyCodeLine{00451\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }RaycastManager;}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_aa006dad299490405ba7da671a76d4bd7}{pointInTriangle}}(\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \mbox{\hyperlink{struct_triangle}{Triangle}}\ triangle,\ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\&\ result,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2);}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \ \ \ \ \textcolor{keywordtype}{bool}\ pointInRect(\textcolor{keywordtype}{float}\ px,\ \textcolor{keywordtype}{float}\ py,\ \mbox{\hyperlink{struct_rect}{Rect}}\ rect,\ \mbox{\hyperlink{struct_collision_result}{CollisionResult}}\&\ result,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\&\ velocity2);}
+\DoxyCodeLine{00465\ \ \ \ \ }
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{struct_rect}{Rect}}\ \mbox{\hyperlink{struct_collider_af6d5db385fd94e53d453e038fe4d3bfa}{boundingBox}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00467\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_collider_a316074fce488c8c3012ba1232686aaec}{transform}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordtype}{float}\ scaleX,\ \mbox{\hyperlink{struct_collider_a6a93c664e0195559283cb64e08ce9e61}{scaleY}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_a3068bd0bbdb66fc93a3ef3063ac556fa}{isTrigger}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00470\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_collider_a47553d89c2a08d0df50e2e4934572902}{tag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00471\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_collider_a18232b491252cf08e6451363c04338dd}{collisionTags}};\ \ \ \ }
+\DoxyCodeLine{00472\ \ \ \ \ std::function<void(\mbox{\hyperlink{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}{Collider}}*,\ \mbox{\hyperlink{struct_collision_result}{CollisionResult}})>\ \mbox{\hyperlink{struct_collider_a71173a92f1d1934e7dcfd93812b7d7b3}{onCollisionEnter}};\ }
+\DoxyCodeLine{00473\ \ \ \ \ std::function<void(\mbox{\hyperlink{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}{Collider}}*,\ \mbox{\hyperlink{struct_collision_result}{CollisionResult}})>\ \mbox{\hyperlink{struct_collider_af927ff43f4f508d80c74185478a79962}{onCollisionStay}};\ \ }
+\DoxyCodeLine{00474\ \ \ \ \ std::function<void(\mbox{\hyperlink{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}{Collider}}*)>\ \mbox{\hyperlink{struct_collider_a4f67913e97bca2cf5cb4f867092266aa}{onCollisionExit}};\ \ }
+\DoxyCodeLine{00475\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_a853273ece82e4a579f9c7bce8cd5f390}{wasCollidingLastFrame}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00476\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_a6d74cd70d82b5181c7dda4838bc4f8c8}{checkTop}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00477\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_abc1ee2688db62479a7c336adeb87030c}{checkLeft}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_a57711fc9031618f91ad995fd2c3ca93b}{checkRight}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00479\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_collider_a5294df43d2281cc8825f5c4d8d6ff725}{checkBottom}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \mbox{\hyperlink{struct_triangle}{Triangle}}\ topTriangle;}
+\DoxyCodeLine{00482\ \ \ \ \ \mbox{\hyperlink{struct_triangle}{Triangle}}\ leftTriangle;}
+\DoxyCodeLine{00483\ \ \ \ \ \mbox{\hyperlink{struct_triangle}{Triangle}}\ rightTriangle;}
+\DoxyCodeLine{00484\ \ \ \ \ \mbox{\hyperlink{struct_triangle}{Triangle}}\ bottomTriangle;}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ \mbox{\hyperlink{struct_vector2_d}{Vector2D}}\ colPoint;}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \ \ \ \ std::unordered\_map<int,\ float>\ colliderTimers;\ \textcolor{comment}{//\ Timer\ for\ each\ collider}}
+\DoxyCodeLine{00489\ \ \ \ \ std::set<int>\ activeColliders;}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ COLLISION\_DIST\_THRESHOLD;\ \textcolor{comment}{//\ Threshold\ for\ collision\ distance}}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00497\ \ \ \ \ \mbox{\hyperlink{struct_collider_aa7186870221f868bbc74c3ae8609fa66}{Collider}}(\mbox{\hyperlink{struct_collider_parameters}{ColliderParameters}}\ cp);}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00502\ \ \ \ \ \mbox{\hyperlink{struct_collider_aa7186870221f868bbc74c3ae8609fa66}{Collider}}();}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_ab028249b011d3de25ec0572544e17ab2}{updateBoundingBox}}();}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_afc2cd70c2772433aaba405d1fc1a5beb}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00514\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_accd99a67e32b8c4d56f5e346c06b1530}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00515\ }
+\DoxyCodeLine{00520\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_collider_a0aa98ccd83fac57e08d64ee3c0793757}{getTag}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00526\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_a5190c84704408153719c24245f1d4e51}{setTag}}(std::string\ newTag);}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_a92183ad8d79453936f1fa8b14db93c32}{addCollisionTag}}(\textcolor{keyword}{const}\ std::string\&\ collisionTag);}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_acff638994c59987491c35ada2a41177d}{removeCollisionTag}}(\textcolor{keyword}{const}\ std::string\&\ collisionTag);}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00544\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{struct_collider_a6bac70e0e9388857708bca229eed8ca6}{getCollisionTags}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00545\ }
+\DoxyCodeLine{00551\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_a082d390f64f403509275e4c20a706ac9}{render}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager,\ SDL\_Renderer*\ renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00552\ }
+\DoxyCodeLine{00554\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_collider_ac35a4d2adca58d2e003162e42cc47d18}{setTriangleCheck}}(\textcolor{keywordtype}{bool}\ top,\ \textcolor{keywordtype}{bool}\ left,\ \textcolor{keywordtype}{bool}\ right,\ \textcolor{keywordtype}{bool}\ bottom);}
+\DoxyCodeLine{00555\ }
+\DoxyCodeLine{00556\ \ \ \ \ \mbox{\hyperlink{struct_rect}{Rect}}\ getBoundingBox()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_collider_af6d5db385fd94e53d453e038fe4d3bfa}{boundingBox}};\ \}}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTriggerCol()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_collider_a3068bd0bbdb66fc93a3ef3063ac556fa}{isTrigger}};\ \}}
+\DoxyCodeLine{00559\ \};}
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00564\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collider_loader}{ColliderLoader}}\ \{}
+\DoxyCodeLine{00565\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_collider_parameters}{ColliderParameters}}\ \mbox{\hyperlink{class_collider_loader_a43339eeb02fe17c699d83ad3f258756a}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00580\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_collider}{Collider}}\ \mbox{\hyperlink{class_collider_loader_a8249ddf74ea68b1be6c3c90c97a59ee8}{createFromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00581\ \};}
+\DoxyCodeLine{00582\ }
+\DoxyCodeLine{00586\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sprite_renderer_parameters_aa878c98d211140274db93634b6b2aaf5}{SpriteRendererParameters}}\ \{}
+\DoxyCodeLine{00587\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{struct_sprite_renderer_parameters_a8451fd5255c969929bd911a4ee555a56}{texture}};\ \ \ \ \ \ }
+\DoxyCodeLine{00588\ \ \ \ \ AnchorPoint\ \mbox{\hyperlink{struct_sprite_renderer_parameters_afc3d37d818e00c70bcaf6ac5de837ed0}{centerMode}};\ \ \ \ }
+\DoxyCodeLine{00589\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_sprite_renderer_parameters_ac6c0832f818386e69821062d92229c93}{transform}};\ \ \ \ \ \ }
+\DoxyCodeLine{00590\ \ \ \ \ \textcolor{keywordtype}{int}\ alpha;}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00598\ \ \ \ \ \mbox{\hyperlink{struct_sprite_renderer_parameters_aa878c98d211140274db93634b6b2aaf5}{SpriteRendererParameters}}(SDL\_Texture*\ tex,\ AnchorPoint\ center\ =\ AnchorPoint::CENTER,\ \mbox{\hyperlink{struct_transform}{Transform}}*\ t\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{int}\ alpha\ =\ 255);}
+\DoxyCodeLine{00599\ \};}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00604\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_sprite_renderer_abc1e5aa4e7b07bea35f7c1cb0efa1f26}{SpriteRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00605\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00606\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{struct_sprite_renderer_a88d0c2708b33ece9c9819ba7d8c85b6e}{texture}};\ \ \ \ \ \ }
+\DoxyCodeLine{00607\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{struct_sprite_renderer_ae2ccdc033327387d01461af3165ea5ab}{worldBounds}};\ \ \ \ \ \ }
+\DoxyCodeLine{00608\ \ \ \ \ \textcolor{keywordtype}{int}\ width,\ \mbox{\hyperlink{struct_sprite_renderer_a7946c386b6bc17712586f51e0634e466}{height}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00609\ \ \ \ \ AnchorPoint\ \mbox{\hyperlink{struct_sprite_renderer_a14e10a9b5ccaba15efc89cc9bbcd3f8e}{centerMode}};\ \ \ \ }
+\DoxyCodeLine{00610\ \ \ \ \ \mbox{\hyperlink{struct_transform}{Transform}}*\ \mbox{\hyperlink{struct_sprite_renderer_a8bd543b1e724c6db4a7d2afa4f3a1013}{transform}};\ \ \ \ \ \ }
+\DoxyCodeLine{00611\ \ \ \ \ SDL\_RendererFlip\ \mbox{\hyperlink{struct_sprite_renderer_a7822edbf626d572c8d91c5999c4bb80c}{flip}};\ \ \ \ \ }
+\DoxyCodeLine{00612\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_sprite_renderer_aa1f81a2d202cd9fb381e61caf115b88d}{alpha}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00613\ }
+\DoxyCodeLine{00614\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00619\ \ \ \ \ \mbox{\hyperlink{struct_sprite_renderer_a0064d27bc30985d8f02777f97e014819}{SpriteRenderer}}(\mbox{\hyperlink{struct_sprite_renderer_parameters}{SpriteRendererParameters}}\ srp);}
+\DoxyCodeLine{00620\ }
+\DoxyCodeLine{00624\ \ \ \ \ \mbox{\hyperlink{struct_sprite_renderer_a0064d27bc30985d8f02777f97e014819}{SpriteRenderer}}();}
+\DoxyCodeLine{00625\ }
+\DoxyCodeLine{00627\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_sprite_renderer_aff641050ca3902faa775f21cab759d88}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00633\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_sprite_renderer_ae3585cdb6bfe429286b662173dd2a381}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00636\ \ \ \ \ \textcolor{keywordtype}{void}\ updateBounds();}
+\DoxyCodeLine{00637\ \};}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00642\ \textcolor{keyword}{class\ }TextureManager\ \{}
+\DoxyCodeLine{00643\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00644\ \ \ \ \ SDL\_Renderer*\ renderer;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00645\ \ \ \ \ std::unordered\_map<std::string,\ SDL\_Texture*>\ textureCache;\ }
+\DoxyCodeLine{00646\ \ \ \ \ \textcolor{keyword}{static}\ TextureManager*\ instance;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00647\ }
+\DoxyCodeLine{00652\ \ \ \ \ TextureManager(SDL\_Renderer*\ r);}
+\DoxyCodeLine{00653\ }
+\DoxyCodeLine{00654\ \ \ \ \ TextureManager(\textcolor{keyword}{const}\ TextureManager\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00655\ \ \ \ \ TextureManager\&\ operator=(\textcolor{keyword}{const}\ TextureManager\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00656\ }
+\DoxyCodeLine{00657\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00659\ \ \ \ \ \mbox{\hyperlink{class_texture_manager_a001d6d74674961db79987e3222682576}{\string~TextureManager}}();}
+\DoxyCodeLine{00660\ }
+\DoxyCodeLine{00666\ \ \ \ \ \textcolor{keyword}{static}\ TextureManager*\ \mbox{\hyperlink{class_texture_manager_a53607b94d705e270341a5f8e7b6366f0}{getInstance}}(SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00667\ }
+\DoxyCodeLine{00668\ \ \ \ \ \textcolor{keyword}{static}\ TextureManager*\ \mbox{\hyperlink{class_texture_manager_a53607b94d705e270341a5f8e7b6366f0}{getInstance}}();}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00675\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{class_texture_manager_a16e8a4670df13bb6fd919bd028ee43b2}{loadBMP}}(std::string\&\ filePath);}
+\DoxyCodeLine{00676\ }
+\DoxyCodeLine{00682\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{class_texture_manager_a042b8b8b0d9048f94aebc206db4b278c}{loadPNG}}(std::string\&\ filePath);}
+\DoxyCodeLine{00683\ }
+\DoxyCodeLine{00689\ \ \ \ \ SDL\_Texture*\ \mbox{\hyperlink{class_texture_manager_addb59b526cc581c0e5243aa8554af74e}{getTexture}}(std::string\&\ path);}
+\DoxyCodeLine{00690\ \};}
+\DoxyCodeLine{00691\ }
+\DoxyCodeLine{00695\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sprite_renderer_loader}{SpriteRendererLoader}}\ \{}
+\DoxyCodeLine{00696\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00697\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_texture_manager}{TextureManager}}*\ textureManager;\ }
+\DoxyCodeLine{00698\ }
+\DoxyCodeLine{00699\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00704\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sprite_renderer_loader_a75a740ca4c507801f277d84b28fc3a68}{initialize}}(SDL\_Renderer*\ renderer);}
+\DoxyCodeLine{00705\ }
+\DoxyCodeLine{00707\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sprite_renderer_loader_a254ded1f4baba5b1d8880321c1d3a3cc}{cleanup}}();}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00715\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_sprite_renderer_parameters}{SpriteRendererParameters}}\ \mbox{\hyperlink{class_sprite_renderer_loader_ae13188737c5ecd3d0a7a7a3589865fbf}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00723\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_sprite_renderer}{SpriteRenderer}}\ \mbox{\hyperlink{class_sprite_renderer_loader_ad38d15f7e5d05e63a9687ee1d4048ac4}{createFromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00724\ \};}
+\DoxyCodeLine{00725\ }
+\DoxyCodeLine{00726\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

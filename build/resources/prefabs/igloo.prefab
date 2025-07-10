@@ -1,0 +1,142 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 200,
+            "posY": 150,
+            "rotZ": 0,
+            "sizeX": 1.5,
+            "sizeY": 1.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Igloo",
+            "scaleX": 110,
+            "scaleY": 65,
+            "isTrigger": false
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/chillPenguin/Igloo/igloo1/fort1.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isIgloo1": {"type": "bool", "value": false},
+                "isIgloo2": {"type": "bool", "value": false},
+                "isIgloo3": {"type": "bool", "value": false},
+                "isDestroyed": {"type": "bool", "value": false}
+            },
+            "states": {
+                "igloo1": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/Igloo/igloo1",
+                    "duration": 0.06
+                },
+                "igloo2": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/Igloo/igloo2",
+                    "duration": 0.06
+                },
+                "igloo3": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/Igloo/igloo3",
+                    "duration": 0.06
+                },
+                "destroyed1": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/Igloo/destroyedIgloo1",
+                    "duration": 0.06
+                },
+                "destroyed2": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/Igloo/destroyedIgloo2",
+                    "duration": 0.06
+                },
+                "destroyed3": {
+                    "looping": false,
+                    "folder": "sprites/chillPenguin/Igloo/destroyedIgloo3",
+                    "duration": 0.06
+                }
+            },
+            "transitions": [
+                {
+                    "from": "igloo1",
+                    "to": "igloo2",
+                    "conditions": [
+                        {"parameter": "isIgloo2", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo1",
+                    "to": "igloo3",
+                    "conditions": [
+                        {"parameter": "isIgloo3", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo2",
+                    "to": "igloo1",
+                    "conditions": [
+                        {"parameter": "isIgloo1", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo2",
+                    "to": "igloo3",
+                    "conditions": [
+                        {"parameter": "isIgloo3", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo3",
+                    "to": "igloo1",
+                    "conditions": [
+                        {"parameter": "isIgloo1", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo3",
+                    "to": "igloo2",
+                    "conditions": [
+                        {"parameter": "isIgloo2", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo1",
+                    "to": "destroyed1",
+                    "conditions": [
+                        {"parameter": "isDestroyed", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo2",
+                    "to": "destroyed2",
+                    "conditions": [
+                        {"parameter": "isDestroyed", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "igloo3",
+                    "to": "destroyed3",
+                    "conditions": [
+                        {"parameter": "isDestroyed", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "igloo1"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "IglooController": {
+        }
+    }
+}

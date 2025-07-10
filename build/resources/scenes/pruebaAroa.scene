@@ -1,0 +1,29 @@
+{
+    "name": "optionsMenu",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0,
+                    "posY": 0,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Camera": {
+                    "zoom": 1,
+                    "windowWidth": 800,
+                    "windowHeight": 600
+                }
+            }
+        },
+        {
+            "prefab": "lifebar"
+        },
+        {
+            "prefab": "powerupbar"
+        }
+    ]
+}

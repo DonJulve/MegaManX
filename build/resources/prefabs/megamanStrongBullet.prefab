@@ -1,0 +1,60 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 1.2,
+            "sizeY": 1.2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "megamanStrongBullet",
+            "scaleX": 15,
+            "scaleY": 15,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 1,
+            "gravity": 0,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/megaman/bullet/blue/shoot/shoot_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters" : {
+                "hasImpacted": {"type": "bool", "value": false}
+            },
+            "states": {
+                "active": {
+                    "looping": false,
+                    "folder": "sprites/megaman/bullet/blue/shoot",
+                    "duration": 0.1
+                },
+                "impact" : {
+                    "looping": false,
+                    "folder": "sprites/megaman/bullet/blue/impact",
+                    "duration": 0.1
+                }
+            },
+            "transitions" : [
+                {
+                    "from": "active",
+                    "to": "impact",
+                    "conditions": [
+                        {"parameter": "hasImpacted", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "active"
+        },
+        "MegamanStrongBulletComponent": {
+        }
+    }
+}

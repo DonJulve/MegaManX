@@ -1,0 +1,135 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 38,
+            "scaleY": 43,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 56,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/scrapRobo/fall/fall_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isAttacking": {"type": "bool", "value": false},
+                "isLanded": {"type": "bool", "value": false},
+                "isCrawling": {"type": "bool", "value": false},
+                "isCrashed": {"type": "bool", "value": false}
+            },
+            "states": {
+                "fall": {
+                    "looping": true,
+                    "folder": "sprites/enemies/scrapRobo/fall",
+                    "duration": 0.1
+                },
+                "crawl": {
+                    "looping": false,
+                    "folder": "sprites/enemies/scrapRobo/crawl",
+                    "duration": 0.4
+                },
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/scrapRobo/idle",
+                    "duration": 0.1
+                },
+                "attack": {
+                    "looping": true,
+                    "folder": "sprites/enemies/scrapRobo/shoot",
+                    "duration": 0.2
+                },
+                "crash": {
+                    "looping": true,
+                    "folder": "sprites/enemies/scrapRobo/crash",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "fall",
+                    "to": "crawl",
+                    "conditions": [
+                        {"parameter": "isLanded", "mode": "EQ", "value": 1},
+                        {"parameter": "isCrawling", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "crawl",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isCrawling", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "crash",
+                    "conditions": [
+                        {"parameter": "isCrashed", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "fall"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "ScrapRoboController": {
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Attack"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Attack",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

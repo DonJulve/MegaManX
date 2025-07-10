@@ -1,0 +1,192 @@
+\doxysection{Referencia de la estructura Camera}
+\hypertarget{struct_camera}{}\label{struct_camera}\index{Camera@{Camera}}
+
+
+Componente \doxylink{struct_camera}{Camera} que representa una cámara en el juego.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+Diagrama de herencia de Camera\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_camera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_camera_a668023368fbf7397ee247232fae7cb6b}{Camera}} (\mbox{\hyperlink{struct_camera_parameters}{Camera\+Parameters}} cp)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_camera}{Camera} con parámetros. \end{DoxyCompactList}\item 
+\Hypertarget{struct_camera_a01f94c3543f56ede7af49dc778f19331}\label{struct_camera_a01f94c3543f56ede7af49dc778f19331} 
+{\bfseries Camera} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de \doxylink{struct_camera}{Camera}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_camera_ac8521ca993bf860acb6e08471fc02b64}{start}} () override
+\begin{DoxyCompactList}\small\item\em Método de inicio del componente \doxylink{struct_camera}{Camera}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_camera_a28a44ef207ad25b7d11c53da58bd707c}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente \doxylink{struct_camera}{Camera}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_camera_a3c62c0d2e343519c4233361b0b9c63ba}{update\+Scaling}} (int new\+Window\+Width, int new\+Window\+Height)
+\begin{DoxyCompactList}\small\item\em Actualiza la escala de la cámara según las nuevas dimensiones de la ventana. \end{DoxyCompactList}\item 
+\Hypertarget{struct_camera_a5bdb6874746357edbcb107f794243d68}\label{struct_camera_a5bdb6874746357edbcb107f794243d68} 
+float {\bfseries get\+PosX} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la posición X de la cámara desde el componente \doxylink{struct_transform}{Transform}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_camera_ac88cee11c872e6a82d4da2e95f4ac97e}\label{struct_camera_ac88cee11c872e6a82d4da2e95f4ac97e} 
+float {\bfseries get\+PosY} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la posición Y de la cámara desde el componente \doxylink{struct_transform}{Transform}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_camera_a40e08b279520335b163104f9c5b247ef}{transform}}
+\item 
+float \mbox{\hyperlink{struct_camera_a21fc9e142b104d8e94126657abaa075f}{zoom}}
+\item 
+float \mbox{\hyperlink{struct_camera_aa6f013fdb4560daaa5ca6ace1a846ca7}{aspect\+Ratio}}
+\item 
+\Hypertarget{struct_camera_a3953f6855e5d12ad4c1b48b161d9c2c7}\label{struct_camera_a3953f6855e5d12ad4c1b48b161d9c2c7} 
+int {\bfseries window\+Width}
+\item 
+int \mbox{\hyperlink{struct_camera_a5ff6fce1d33a6ffc542f06bbd21ab755}{window\+Height}}
+\item 
+\Hypertarget{struct_camera_ab6c5bfd95a76912dc50601d7e43046e3}\label{struct_camera_ab6c5bfd95a76912dc50601d7e43046e3} 
+int {\bfseries out\+Width}
+\item 
+int \mbox{\hyperlink{struct_camera_aeab48f9a0c45ccfa2646fffe070aed74}{out\+Height}}
+\item 
+\Hypertarget{struct_camera_a0f640840dbda4b797d8a8817e3fbfbd8}\label{struct_camera_a0f640840dbda4b797d8a8817e3fbfbd8} 
+int {\bfseries excess\+Width}
+\item 
+int \mbox{\hyperlink{struct_camera_a43d3d22369d1a03aa42af00a1d40c75a}{excess\+Height}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente \doxylink{struct_camera}{Camera} que representa una cámara en el juego. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_camera_a668023368fbf7397ee247232fae7cb6b}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily \label{struct_camera_a668023368fbf7397ee247232fae7cb6b} 
+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_camera_parameters}{Camera\+Parameters}}}]{cp}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_camera}{Camera} con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cp} & Instancia de \doxylink{struct_camera_parameters}{Camera\+Parameters}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_camera_ac8521ca993bf860acb6e08471fc02b64}\index{Camera@{Camera}!start@{start}}
+\index{start@{start}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_camera_ac8521ca993bf860acb6e08471fc02b64} 
+void Camera\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método de inicio del componente \doxylink{struct_camera}{Camera}. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_camera_a28a44ef207ad25b7d11c53da58bd707c}\index{Camera@{Camera}!update@{update}}
+\index{update@{update}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_camera_a28a44ef207ad25b7d11c53da58bd707c} 
+void Camera\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente \doxylink{struct_camera}{Camera}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+\Hypertarget{struct_camera_a3c62c0d2e343519c4233361b0b9c63ba}\index{Camera@{Camera}!updateScaling@{updateScaling}}
+\index{updateScaling@{updateScaling}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{updateScaling()}{updateScaling()}}
+{\footnotesize\ttfamily \label{struct_camera_a3c62c0d2e343519c4233361b0b9c63ba} 
+void Camera\+::update\+Scaling (\begin{DoxyParamCaption}\item[{int}]{new\+Window\+Width}{, }\item[{int}]{new\+Window\+Height}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza la escala de la cámara según las nuevas dimensiones de la ventana. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em new\+Window\+Width} & Nuevo ancho de la ventana. \\
+\hline
+{\em new\+Window\+Height} & Nuevo alto de la ventana. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_camera_aa6f013fdb4560daaa5ca6ace1a846ca7}\index{Camera@{Camera}!aspectRatio@{aspectRatio}}
+\index{aspectRatio@{aspectRatio}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{aspectRatio}{aspectRatio}}
+{\footnotesize\ttfamily \label{struct_camera_aa6f013fdb4560daaa5ca6ace1a846ca7} 
+float Camera\+::aspect\+Ratio}
+
+Relación de aspecto para mantener la escala. \Hypertarget{struct_camera_a43d3d22369d1a03aa42af00a1d40c75a}\index{Camera@{Camera}!excessHeight@{excessHeight}}
+\index{excessHeight@{excessHeight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{excessHeight}{excessHeight}}
+{\footnotesize\ttfamily \label{struct_camera_a43d3d22369d1a03aa42af00a1d40c75a} 
+int Camera\+::excess\+Height}
+
+Dimensiones excedentes para la cámara. \Hypertarget{struct_camera_aeab48f9a0c45ccfa2646fffe070aed74}\index{Camera@{Camera}!outHeight@{outHeight}}
+\index{outHeight@{outHeight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{outHeight}{outHeight}}
+{\footnotesize\ttfamily \label{struct_camera_aeab48f9a0c45ccfa2646fffe070aed74} 
+int Camera\+::out\+Height}
+
+Dimensiones de salida para la cámara. \Hypertarget{struct_camera_a40e08b279520335b163104f9c5b247ef}\index{Camera@{Camera}!transform@{transform}}
+\index{transform@{transform}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \label{struct_camera_a40e08b279520335b163104f9c5b247ef} 
+\mbox{\hyperlink{struct_transform}{Transform}}\texorpdfstring{$\ast$}{*} Camera\+::transform}
+
+Puntero al componente \doxylink{struct_transform}{Transform} asociado. \Hypertarget{struct_camera_a5ff6fce1d33a6ffc542f06bbd21ab755}\index{Camera@{Camera}!windowHeight@{windowHeight}}
+\index{windowHeight@{windowHeight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{windowHeight}{windowHeight}}
+{\footnotesize\ttfamily \label{struct_camera_a5ff6fce1d33a6ffc542f06bbd21ab755} 
+int Camera\+::window\+Height}
+
+Dimensiones de la ventana. \Hypertarget{struct_camera_a21fc9e142b104d8e94126657abaa075f}\index{Camera@{Camera}!zoom@{zoom}}
+\index{zoom@{zoom}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{zoom}{zoom}}
+{\footnotesize\ttfamily \label{struct_camera_a21fc9e142b104d8e94126657abaa075f} 
+float Camera\+::zoom}
+
+Factor de zoom de la cámara. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Camera.\+cpp\end{DoxyCompactItemize}

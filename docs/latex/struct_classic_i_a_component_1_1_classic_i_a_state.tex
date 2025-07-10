@@ -1,0 +1,39 @@
+\doxysection{Referencia de la estructura Classic\+IAComponent\+::Classic\+IAState}
+\hypertarget{struct_classic_i_a_component_1_1_classic_i_a_state}{}\label{struct_classic_i_a_component_1_1_classic_i_a_state}\index{ClassicIAComponent::ClassicIAState@{ClassicIAComponent::ClassicIAState}}
+
+
+Estructura que define un estado en la máquina de estados de la IA.  
+
+
+
+
+{\ttfamily \#include $<$IAComponents.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_state_a60e1ee7f20fad32846ffaebaa50040ba}\label{struct_classic_i_a_component_1_1_classic_i_a_state_a60e1ee7f20fad32846ffaebaa50040ba} 
+{\bfseries Classic\+IAState} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de IAState. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_state_a959303fad676a8d48277962620bec564}\label{struct_classic_i_a_component_1_1_classic_i_a_state_a959303fad676a8d48277962620bec564} 
+std\+::string {\bfseries name}
+\begin{DoxyCompactList}\small\item\em Nombre del estado. \end{DoxyCompactList}\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_state_aae329e76646d95c7ce61181559712d0b}\label{struct_classic_i_a_component_1_1_classic_i_a_state_aae329e76646d95c7ce61181559712d0b} 
+std\+::function$<$ void(\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}, float)$>$ {\bfseries action}
+\begin{DoxyCompactList}\small\item\em Acción a ejecutar mientras está en este estado. \end{DoxyCompactList}\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_state_ade46c8edc58e973bc7883c59c057863c}\label{struct_classic_i_a_component_1_1_classic_i_a_state_ade46c8edc58e973bc7883c59c057863c} 
+std\+::vector$<$ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition}{Classic\+IATransition}} $>$ {\bfseries transitions}
+\begin{DoxyCompactList}\small\item\em Lista de transiciones posibles desde este estado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que define un estado en la máquina de estados de la IA. 
+
+Incluye el nombre del estado, una acción asociada y una lista de transiciones posibles. 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+Components/\+IA/IAComponents.\+h\end{DoxyCompactItemize}

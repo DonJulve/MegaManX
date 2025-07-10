@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Archivo de código fuente Managers/AudioManager.h</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_audio_manager_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">AudioManager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// AudioManager.h</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef AUDIO_MANAGER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define AUDIO_MANAGER_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;SDL2/SDL_mixer.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_audio_manager.html">   17</a></span><span class="keyword">class </span>AudioManager {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    AudioManager();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ~AudioManager();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    AudioManager(<span class="keyword">const</span> AudioManager&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    AudioManager&amp; operator=(<span class="keyword">const</span> AudioManager&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> AudioManager* instance;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::map&lt;std::string, Mix_Chunk*&gt; soundEffects;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::map&lt;std::string, Mix_Music*&gt; music;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> musicVolume;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">int</span> soundVolume;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::string currentMusicTrack;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">static</span> AudioManager* <a class="code hl_function" href="class_audio_manager.html#a77de22887544ce37ae13d7c4d5cf7a79">getInstance</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_audio_manager.html#a7ff772eb33ccc03e99c3b531f4907eaa">loadSound</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_audio_manager.html#ab42e7d36aef8f73c75d36f00b742fe45">loadMusic</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>, <span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_audio_manager.html#a8697d8c202dd3f7ee4ae53c43ab5aa66">playSound</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>, <span class="keywordtype">int</span> loops = 0, <span class="keywordtype">int</span> channel = -1);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_audio_manager.html#aeccad100762e564d8ef44c923171f213">playMusic</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>, <span class="keywordtype">int</span> loops = -1, <span class="keywordtype">int</span> fadeInMs = 0);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#a8afd8f3db6787f87aa55436d6c9dadf1">pauseMusic</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#a213a73d801ac409765010ba6d7a8f4f3">resumeMusic</a>();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#ad30b563ea784644d0f5916cfe07f0905">stopMusic</a>(<span class="keywordtype">int</span> fadeOutMs = 0);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_audio_manager.html#a05f39d18443b1fba4e121b89484fc2de">isMusicPlaying</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#aeaa32fef6412d0a1afb09f875f3e303c">setMusicVolume</a>(<span class="keywordtype">int</span> volume);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#a55043beaddda29abe2de43c46c6352c5">setSoundVolume</a>(<span class="keywordtype">int</span> volume);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_audio_manager.html#af207dd0e55b746f43906c728574536d7">getMusicVolume</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_audio_manager.html#a4b845a1b172a0e78d6e55c877d55ab9d">getSoundVolume</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#acdf6d43048c998db6dcf95a938d4c045">freeSound</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#a8130839e4d11323a2a9e1b607747f81f">freeMusic</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_audio_manager.html#a3c4e4cf9f1c6d86bc388d6d9e3096f0c">freeAll</a>();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> save();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>};</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#endif </span><span class="comment">// AUDIO_MANAGER_H</span></div>
+<div class="ttc" id="aclass_audio_manager_html_a05f39d18443b1fba4e121b89484fc2de"><div class="ttname"><a href="class_audio_manager.html#a05f39d18443b1fba4e121b89484fc2de">AudioManager::isMusicPlaying</a></div><div class="ttdeci">bool isMusicPlaying()</div><div class="ttdoc">Verifica si hay música reproduciéndose actualmente.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:176</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a213a73d801ac409765010ba6d7a8f4f3"><div class="ttname"><a href="class_audio_manager.html#a213a73d801ac409765010ba6d7a8f4f3">AudioManager::resumeMusic</a></div><div class="ttdeci">void resumeMusic()</div><div class="ttdoc">Reanuda la reproducción de música pausada.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:160</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a3c4e4cf9f1c6d86bc388d6d9e3096f0c"><div class="ttname"><a href="class_audio_manager.html#a3c4e4cf9f1c6d86bc388d6d9e3096f0c">AudioManager::freeAll</a></div><div class="ttdeci">void freeAll()</div><div class="ttdoc">Libera todos los recursos de audio.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:224</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a4b845a1b172a0e78d6e55c877d55ab9d"><div class="ttname"><a href="class_audio_manager.html#a4b845a1b172a0e78d6e55c877d55ab9d">AudioManager::getSoundVolume</a></div><div class="ttdeci">int getSoundVolume() const</div><div class="ttdoc">Obtiene el volumen actual de los efectos de sonido.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:200</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a55043beaddda29abe2de43c46c6352c5"><div class="ttname"><a href="class_audio_manager.html#a55043beaddda29abe2de43c46c6352c5">AudioManager::setSoundVolume</a></div><div class="ttdeci">void setSoundVolume(int volume)</div><div class="ttdoc">Establece el volumen de los efectos de sonido.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:187</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a77de22887544ce37ae13d7c4d5cf7a79"><div class="ttname"><a href="class_audio_manager.html#a77de22887544ce37ae13d7c4d5cf7a79">AudioManager::getInstance</a></div><div class="ttdeci">static AudioManager * getInstance()</div><div class="ttdoc">Obtiene la instancia única de AudioManager.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:50</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a7ff772eb33ccc03e99c3b531f4907eaa"><div class="ttname"><a href="class_audio_manager.html#a7ff772eb33ccc03e99c3b531f4907eaa">AudioManager::loadSound</a></div><div class="ttdeci">bool loadSound(const std::string &amp;id, const std::string &amp;filePath)</div><div class="ttdoc">Carga un efecto de sonido desde un archivo.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:57</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a8130839e4d11323a2a9e1b607747f81f"><div class="ttname"><a href="class_audio_manager.html#a8130839e4d11323a2a9e1b607747f81f">AudioManager::freeMusic</a></div><div class="ttdeci">void freeMusic(const std::string &amp;id)</div><div class="ttdoc">Libera una pista de música de la memoria.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:212</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a8697d8c202dd3f7ee4ae53c43ab5aa66"><div class="ttname"><a href="class_audio_manager.html#a8697d8c202dd3f7ee4ae53c43ab5aa66">AudioManager::playSound</a></div><div class="ttdeci">int playSound(const std::string &amp;id, int loops=0, int channel=-1)</div><div class="ttdoc">Reproduce un efecto de sonido.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:95</div></div>
+<div class="ttc" id="aclass_audio_manager_html_a8afd8f3db6787f87aa55436d6c9dadf1"><div class="ttname"><a href="class_audio_manager.html#a8afd8f3db6787f87aa55436d6c9dadf1">AudioManager::pauseMusic</a></div><div class="ttdeci">void pauseMusic()</div><div class="ttdoc">Pausa la reproducción de música.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:154</div></div>
+<div class="ttc" id="aclass_audio_manager_html_ab42e7d36aef8f73c75d36f00b742fe45"><div class="ttname"><a href="class_audio_manager.html#ab42e7d36aef8f73c75d36f00b742fe45">AudioManager::loadMusic</a></div><div class="ttdeci">bool loadMusic(const std::string &amp;id, const std::string &amp;filePath)</div><div class="ttdoc">Carga una pista de música desde un archivo.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:76</div></div>
+<div class="ttc" id="aclass_audio_manager_html_acdf6d43048c998db6dcf95a938d4c045"><div class="ttname"><a href="class_audio_manager.html#acdf6d43048c998db6dcf95a938d4c045">AudioManager::freeSound</a></div><div class="ttdeci">void freeSound(const std::string &amp;id)</div><div class="ttdoc">Libera un efecto de sonido de la memoria.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:204</div></div>
+<div class="ttc" id="aclass_audio_manager_html_ad30b563ea784644d0f5916cfe07f0905"><div class="ttname"><a href="class_audio_manager.html#ad30b563ea784644d0f5916cfe07f0905">AudioManager::stopMusic</a></div><div class="ttdeci">void stopMusic(int fadeOutMs=0)</div><div class="ttdoc">Detiene la reproducción de música.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:166</div></div>
+<div class="ttc" id="aclass_audio_manager_html_aeaa32fef6412d0a1afb09f875f3e303c"><div class="ttname"><a href="class_audio_manager.html#aeaa32fef6412d0a1afb09f875f3e303c">AudioManager::setMusicVolume</a></div><div class="ttdeci">void setMusicVolume(int volume)</div><div class="ttdoc">Establece el volumen de la música.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:180</div></div>
+<div class="ttc" id="aclass_audio_manager_html_aeccad100762e564d8ef44c923171f213"><div class="ttname"><a href="class_audio_manager.html#aeccad100762e564d8ef44c923171f213">AudioManager::playMusic</a></div><div class="ttdeci">bool playMusic(const std::string &amp;id, int loops=-1, int fadeInMs=0)</div><div class="ttdoc">Reproduce una pista de música.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:117</div></div>
+<div class="ttc" id="aclass_audio_manager_html_af207dd0e55b746f43906c728574536d7"><div class="ttname"><a href="class_audio_manager.html#af207dd0e55b746f43906c728574536d7">AudioManager::getMusicVolume</a></div><div class="ttdeci">int getMusicVolume() const</div><div class="ttdoc">Obtiene el volumen actual de la música.</div><div class="ttdef"><b>Definition</b> AudioManager.cpp:196</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_15a9ab385fae7ab291477cfa29e43ded.html">Managers</a></li><li class="navelem"><b>AudioManager.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

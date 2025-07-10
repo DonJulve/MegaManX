@@ -1,0 +1,48 @@
+\doxysection{Referencia de la estructura Ray}
+\hypertarget{struct_ray}{}\label{struct_ray}\index{Ray@{Ray}}
+
+
+Representa un rayo con un origen y una dirección.  
+
+
+
+
+{\ttfamily \#include $<$Raycast\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_ray_ae49790eeb4f4074617ff23f46178cd25}\label{struct_ray_ae49790eeb4f4074617ff23f46178cd25} 
+{\bfseries Ray} (const SDL\+\_\+\+FPoint \&orig, const SDL\+\_\+\+FPoint \&dir)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+FPoint \mbox{\hyperlink{struct_ray_a761c94967871c0346c1489ae8947b21e}{origin}}
+\item 
+SDL\+\_\+\+FPoint \mbox{\hyperlink{struct_ray_aca365e8c81c3bf8eb9c96c9f0bd941d3}{direction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un rayo con un origen y una dirección. 
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_ray_aca365e8c81c3bf8eb9c96c9f0bd941d3}\index{Ray@{Ray}!direction@{direction}}
+\index{direction@{direction}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily \label{struct_ray_aca365e8c81c3bf8eb9c96c9f0bd941d3} 
+SDL\+\_\+\+FPoint Ray\+::direction}
+
+Vector de dirección normalizado (x, y). \Hypertarget{struct_ray_a761c94967871c0346c1489ae8947b21e}\index{Ray@{Ray}!origin@{origin}}
+\index{origin@{origin}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily \label{struct_ray_a761c94967871c0346c1489ae8947b21e} 
+SDL\+\_\+\+FPoint Ray\+::origin}
+
+Punto de inicio del rayo (x, y). 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Raycast\+Manager.\+h\item 
+Managers/Raycast\+Manager.\+cpp\end{DoxyCompactItemize}

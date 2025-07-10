@@ -1,0 +1,34 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 100,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 28,
+            "scaleY": 28,
+            "isTrigger": true
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 30,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/digLabour/pickaxe/pickaxe_0.png",
+            "anchor": "CENTER"
+        },
+        "DigLabourPickAxe": {
+
+        }
+    }
+}

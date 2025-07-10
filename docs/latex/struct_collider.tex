@@ -1,0 +1,410 @@
+\doxysection{Referencia de la estructura Collider}
+\hypertarget{struct_collider}{}\label{struct_collider}\index{Collider@{Collider}}
+
+
+Componente \doxylink{struct_collider}{Collider} que maneja colisiones usando un rectángulo delimitador.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+Diagrama de herencia de Collider\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_collider}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_collider_aa006dad299490405ba7da671a76d4bd7}{point\+In\+Triangle}} (float px, float py, \mbox{\hyperlink{struct_triangle}{Triangle}} triangle, \mbox{\hyperlink{struct_collision_result}{Collision\+Result}} \&result, const \mbox{\hyperlink{struct_vector2_d}{Vector2D}} \&velocity1, const \mbox{\hyperlink{struct_vector2_d}{Vector2D}} \&velocity2)
+\begin{DoxyCompactList}\small\item\em Determina si un punto está dentro de un triángulo. \end{DoxyCompactList}\item 
+\Hypertarget{struct_collider_ac4a74fd44f1568a99b79e2a02367f854}\label{struct_collider_ac4a74fd44f1568a99b79e2a02367f854} 
+bool {\bfseries point\+In\+Rect} (float px, float py, \mbox{\hyperlink{struct_rect}{Rect}} rect, \mbox{\hyperlink{struct_collision_result}{Collision\+Result}} \&result, const \mbox{\hyperlink{struct_vector2_d}{Vector2D}} \&velocity1, const \mbox{\hyperlink{struct_vector2_d}{Vector2D}} \&velocity2)
+\item 
+\mbox{\hyperlink{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}{Collider}} (\mbox{\hyperlink{struct_collider_parameters}{Collider\+Parameters}} cp)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_collider}{Collider} con parámetros. \end{DoxyCompactList}\item 
+\Hypertarget{struct_collider_aa7186870221f868bbc74c3ae8609fa66}\label{struct_collider_aa7186870221f868bbc74c3ae8609fa66} 
+{\bfseries Collider} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de \doxylink{struct_collider}{Collider}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_collider_ab028249b011d3de25ec0572544e17ab2}\label{struct_collider_ab028249b011d3de25ec0572544e17ab2} 
+void {\bfseries update\+Bounding\+Box} ()
+\begin{DoxyCompactList}\small\item\em Actualiza el rectángulo delimitador basado en el componente \doxylink{struct_transform}{Transform}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_collider_afc2cd70c2772433aaba405d1fc1a5beb}{start}} () override
+\begin{DoxyCompactList}\small\item\em Método de inicio del componente \doxylink{struct_collider}{Collider}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_collider_accd99a67e32b8c4d56f5e346c06b1530}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente \doxylink{struct_collider}{Collider}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_collider_a0aa98ccd83fac57e08d64ee3c0793757}{get\+Tag}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene la etiqueta del \doxylink{struct_collider}{Collider}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_collider_a5190c84704408153719c24245f1d4e51}{set\+Tag}} (std\+::string new\+Tag)
+\begin{DoxyCompactList}\small\item\em Establece la etiqueta del \doxylink{struct_collider}{Collider}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_collider_a92183ad8d79453936f1fa8b14db93c32}{add\+Collision\+Tag}} (const std\+::string \&collision\+Tag)
+\begin{DoxyCompactList}\small\item\em Agrega una etiqueta a la lista de colisiones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_collider_acff638994c59987491c35ada2a41177d}{remove\+Collision\+Tag}} (const std\+::string \&collision\+Tag)
+\begin{DoxyCompactList}\small\item\em Elimina una etiqueta de la lista de colisiones. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{struct_collider_a6bac70e0e9388857708bca229eed8ca6}{get\+Collision\+Tags}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de etiquetas de colisión. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_collider_a082d390f64f403509275e4c20a706ac9}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer) override
+\begin{DoxyCompactList}\small\item\em Renderiza el componente \doxylink{struct_collider}{Collider}. \end{DoxyCompactList}\item 
+\Hypertarget{struct_collider_ac35a4d2adca58d2e003162e42cc47d18}\label{struct_collider_ac35a4d2adca58d2e003162e42cc47d18} 
+void {\bfseries set\+Triangle\+Check} (bool top, bool left, bool right, bool bottom)
+\begin{DoxyCompactList}\small\item\em Setter for triangle toggles with specified names. \end{DoxyCompactList}\item 
+\Hypertarget{struct_collider_ad262598a281d54271daedbf2d262d27a}\label{struct_collider_ad262598a281d54271daedbf2d262d27a} 
+\mbox{\hyperlink{struct_rect}{Rect}} {\bfseries get\+Bounding\+Box} ()
+\item 
+\Hypertarget{struct_collider_a7893a2e0e43661e9fb4c30c9ace8b9d8}\label{struct_collider_a7893a2e0e43661e9fb4c30c9ace8b9d8} 
+bool {\bfseries is\+Trigger\+Col} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_rect}{Rect}} \mbox{\hyperlink{struct_collider_af6d5db385fd94e53d453e038fe4d3bfa}{bounding\+Box}}
+\item 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_collider_a316074fce488c8c3012ba1232686aaec}{transform}}
+\item 
+\Hypertarget{struct_collider_a81b552fe23c0a2a62e8d9a16b02361b1}\label{struct_collider_a81b552fe23c0a2a62e8d9a16b02361b1} 
+float {\bfseries scaleX}
+\item 
+float \mbox{\hyperlink{struct_collider_a6a93c664e0195559283cb64e08ce9e61}{scaleY}}
+\item 
+bool \mbox{\hyperlink{struct_collider_a3068bd0bbdb66fc93a3ef3063ac556fa}{is\+Trigger}}
+\item 
+std\+::string \mbox{\hyperlink{struct_collider_a47553d89c2a08d0df50e2e4934572902}{tag}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{struct_collider_a18232b491252cf08e6451363c04338dd}{collision\+Tags}}
+\item 
+std\+::function$<$ void(\mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_collision_result}{Collision\+Result}})$>$ \mbox{\hyperlink{struct_collider_a71173a92f1d1934e7dcfd93812b7d7b3}{on\+Collision\+Enter}}
+\item 
+std\+::function$<$ void(\mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_collision_result}{Collision\+Result}})$>$ \mbox{\hyperlink{struct_collider_af927ff43f4f508d80c74185478a79962}{on\+Collision\+Stay}}
+\item 
+std\+::function$<$ void(\mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*})$>$ \mbox{\hyperlink{struct_collider_a4f67913e97bca2cf5cb4f867092266aa}{on\+Collision\+Exit}}
+\item 
+bool \mbox{\hyperlink{struct_collider_a853273ece82e4a579f9c7bce8cd5f390}{was\+Colliding\+Last\+Frame}}
+\item 
+bool \mbox{\hyperlink{struct_collider_a6d74cd70d82b5181c7dda4838bc4f8c8}{check\+Top}}
+\item 
+bool \mbox{\hyperlink{struct_collider_abc1ee2688db62479a7c336adeb87030c}{check\+Left}}
+\item 
+bool \mbox{\hyperlink{struct_collider_a57711fc9031618f91ad995fd2c3ca93b}{check\+Right}}
+\item 
+bool \mbox{\hyperlink{struct_collider_a5294df43d2281cc8825f5c4d8d6ff725}{check\+Bottom}}
+\item 
+\Hypertarget{struct_collider_aa71fa8deb632053770c2c5f5428a0bc3}\label{struct_collider_aa71fa8deb632053770c2c5f5428a0bc3} 
+\mbox{\hyperlink{struct_triangle}{Triangle}} {\bfseries top\+Triangle}
+\item 
+\Hypertarget{struct_collider_a5f22e1feef7b56291ab23682005cdfb1}\label{struct_collider_a5f22e1feef7b56291ab23682005cdfb1} 
+\mbox{\hyperlink{struct_triangle}{Triangle}} {\bfseries left\+Triangle}
+\item 
+\Hypertarget{struct_collider_ab3e7c0fc94da5529d03b4c347ba6f3e7}\label{struct_collider_ab3e7c0fc94da5529d03b4c347ba6f3e7} 
+\mbox{\hyperlink{struct_triangle}{Triangle}} {\bfseries right\+Triangle}
+\item 
+\Hypertarget{struct_collider_a59f3999005aa54a1960fd277ef6af107}\label{struct_collider_a59f3999005aa54a1960fd277ef6af107} 
+\mbox{\hyperlink{struct_triangle}{Triangle}} {\bfseries bottom\+Triangle}
+\item 
+\Hypertarget{struct_collider_a70dc93529592754b6161540302b8745b}\label{struct_collider_a70dc93529592754b6161540302b8745b} 
+\mbox{\hyperlink{struct_vector2_d}{Vector2D}} {\bfseries col\+Point}
+\item 
+\Hypertarget{struct_collider_a5ba91e1054329444774838f9824be600}\label{struct_collider_a5ba91e1054329444774838f9824be600} 
+std\+::unordered\+\_\+map$<$ int, float $>$ {\bfseries collider\+Timers}
+\item 
+\Hypertarget{struct_collider_a04dd5a9ca75fd4171f6bb0ec389fbe52}\label{struct_collider_a04dd5a9ca75fd4171f6bb0ec389fbe52} 
+std\+::set$<$ int $>$ {\bfseries active\+Colliders}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_collider_ac916ffba10d08b133c8d1d01d231f556}\label{struct_collider_ac916ffba10d08b133c8d1d01d231f556} 
+static const float {\bfseries COLLISION\+\_\+\+DIST\+\_\+\+THRESHOLD} = 0.\+001f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_collider_a6fb7520528fab4a670001f041b872bf2}\label{struct_collider_a6fb7520528fab4a670001f041b872bf2} 
+class {\bfseries Physics\+System}
+\item 
+\Hypertarget{struct_collider_adf404e756c5b9dc9e62817d6aab95559}\label{struct_collider_adf404e756c5b9dc9e62817d6aab95559} 
+class {\bfseries Collision\+System}
+\item 
+\Hypertarget{struct_collider_a06b786d8e0847dfe9cc15e1dea308fcd}\label{struct_collider_a06b786d8e0847dfe9cc15e1dea308fcd} 
+class {\bfseries Render\+System}
+\item 
+\Hypertarget{struct_collider_aec67887a9a7962e65772e760917a43dd}\label{struct_collider_aec67887a9a7962e65772e760917a43dd} 
+class {\bfseries Raycast\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente \doxylink{struct_collider}{Collider} que maneja colisiones usando un rectángulo delimitador. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1}\index{Collider@{Collider}!Collider@{Collider}}
+\index{Collider@{Collider}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{Collider()}{Collider()}}
+{\footnotesize\ttfamily \label{struct_collider_aa5e859a517ae4fdb81ac1a6fb82c6cf1} 
+Collider\+::\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_collider_parameters}{Collider\+Parameters}}}]{cp}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_collider}{Collider} con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em cp} & Instancia de \doxylink{struct_collider_parameters}{Collider\+Parameters}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_collider_a92183ad8d79453936f1fa8b14db93c32}\index{Collider@{Collider}!addCollisionTag@{addCollisionTag}}
+\index{addCollisionTag@{addCollisionTag}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{addCollisionTag()}{addCollisionTag()}}
+{\footnotesize\ttfamily \label{struct_collider_a92183ad8d79453936f1fa8b14db93c32} 
+void Collider\+::add\+Collision\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{collision\+Tag}{}\end{DoxyParamCaption})}
+
+
+
+Agrega una etiqueta a la lista de colisiones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em collision\+Tag} & Etiqueta a agregar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_collider_a6bac70e0e9388857708bca229eed8ca6}\index{Collider@{Collider}!getCollisionTags@{getCollisionTags}}
+\index{getCollisionTags@{getCollisionTags}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{getCollisionTags()}{getCollisionTags()}}
+{\footnotesize\ttfamily \label{struct_collider_a6bac70e0e9388857708bca229eed8ca6} 
+std\+::vector$<$ std\+::string $>$ Collider\+::get\+Collision\+Tags (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene la lista de etiquetas de colisión. 
+
+\begin{DoxyReturn}{Devuelve}
+Vector de etiquetas. 
+\end{DoxyReturn}
+\Hypertarget{struct_collider_a0aa98ccd83fac57e08d64ee3c0793757}\index{Collider@{Collider}!getTag@{getTag}}
+\index{getTag@{getTag}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily \label{struct_collider_a0aa98ccd83fac57e08d64ee3c0793757} 
+std\+::string Collider\+::get\+Tag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene la etiqueta del \doxylink{struct_collider}{Collider}. 
+
+\begin{DoxyReturn}{Devuelve}
+La etiqueta como string. 
+\end{DoxyReturn}
+\Hypertarget{struct_collider_aa006dad299490405ba7da671a76d4bd7}\index{Collider@{Collider}!pointInTriangle@{pointInTriangle}}
+\index{pointInTriangle@{pointInTriangle}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{pointInTriangle()}{pointInTriangle()}}
+{\footnotesize\ttfamily \label{struct_collider_aa006dad299490405ba7da671a76d4bd7} 
+bool Collider\+::point\+In\+Triangle (\begin{DoxyParamCaption}\item[{float}]{px}{, }\item[{float}]{py}{, }\item[{\mbox{\hyperlink{struct_triangle}{Triangle}}}]{triangle}{, }\item[{\mbox{\hyperlink{struct_collision_result}{Collision\+Result}} \&}]{result}{, }\item[{const \mbox{\hyperlink{struct_vector2_d}{Vector2D}} \&}]{velocity1}{, }\item[{const \mbox{\hyperlink{struct_vector2_d}{Vector2D}} \&}]{velocity2}{}\end{DoxyParamCaption})}
+
+
+
+Determina si un punto está dentro de un triángulo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em px} & Coordenada X del punto. \\
+\hline
+{\em py} & Coordenada Y del punto. \\
+\hline
+{\em triangle} & Triángulo a verificar. \\
+\hline
+{\em result} & Resultado de la colisión. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si el punto está dentro del triángulo. 
+\end{DoxyReturn}
+\Hypertarget{struct_collider_acff638994c59987491c35ada2a41177d}\index{Collider@{Collider}!removeCollisionTag@{removeCollisionTag}}
+\index{removeCollisionTag@{removeCollisionTag}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{removeCollisionTag()}{removeCollisionTag()}}
+{\footnotesize\ttfamily \label{struct_collider_acff638994c59987491c35ada2a41177d} 
+void Collider\+::remove\+Collision\+Tag (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{collision\+Tag}{}\end{DoxyParamCaption})}
+
+
+
+Elimina una etiqueta de la lista de colisiones. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em collision\+Tag} & Etiqueta a eliminar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_collider_a082d390f64f403509275e4c20a706ac9}\index{Collider@{Collider}!render@{render}}
+\index{render@{render}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{struct_collider_a082d390f64f403509275e4c20a706ac9} 
+void Collider\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renderiza el componente \doxylink{struct_collider}{Collider}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity\+Manager} & Referencia al \doxylink{class_entity_manager}{Entity\+Manager} que contiene los componentes. \\
+\hline
+{\em renderer} & Puntero al SDL\+\_\+\+Renderer usado para dibujar. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{Component}}.
+
+\Hypertarget{struct_collider_a5190c84704408153719c24245f1d4e51}\index{Collider@{Collider}!setTag@{setTag}}
+\index{setTag@{setTag}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{setTag()}{setTag()}}
+{\footnotesize\ttfamily \label{struct_collider_a5190c84704408153719c24245f1d4e51} 
+void Collider\+::set\+Tag (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Tag}{}\end{DoxyParamCaption})}
+
+
+
+Establece la etiqueta del \doxylink{struct_collider}{Collider}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em new\+Tag} & Nueva etiqueta a asignar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_collider_afc2cd70c2772433aaba405d1fc1a5beb}\index{Collider@{Collider}!start@{start}}
+\index{start@{start}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_collider_afc2cd70c2772433aaba405d1fc1a5beb} 
+void Collider\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método de inicio del componente \doxylink{struct_collider}{Collider}. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_collider_accd99a67e32b8c4d56f5e346c06b1530}\index{Collider@{Collider}!update@{update}}
+\index{update@{update}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_collider_accd99a67e32b8c4d56f5e346c06b1530} 
+void Collider\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente \doxylink{struct_collider}{Collider}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_collider_af6d5db385fd94e53d453e038fe4d3bfa}\index{Collider@{Collider}!boundingBox@{boundingBox}}
+\index{boundingBox@{boundingBox}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{boundingBox}{boundingBox}}
+{\footnotesize\ttfamily \label{struct_collider_af6d5db385fd94e53d453e038fe4d3bfa} 
+\mbox{\hyperlink{struct_rect}{Rect}} Collider\+::bounding\+Box}
+
+Rectángulo delimitador para colisiones. \Hypertarget{struct_collider_a5294df43d2281cc8825f5c4d8d6ff725}\index{Collider@{Collider}!checkBottom@{checkBottom}}
+\index{checkBottom@{checkBottom}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{checkBottom}{checkBottom}}
+{\footnotesize\ttfamily \label{struct_collider_a5294df43d2281cc8825f5c4d8d6ff725} 
+bool Collider\+::check\+Bottom}
+
+Toggle for bottom triangle. \Hypertarget{struct_collider_abc1ee2688db62479a7c336adeb87030c}\index{Collider@{Collider}!checkLeft@{checkLeft}}
+\index{checkLeft@{checkLeft}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{checkLeft}{checkLeft}}
+{\footnotesize\ttfamily \label{struct_collider_abc1ee2688db62479a7c336adeb87030c} 
+bool Collider\+::check\+Left}
+
+Toggle for left triangle. \Hypertarget{struct_collider_a57711fc9031618f91ad995fd2c3ca93b}\index{Collider@{Collider}!checkRight@{checkRight}}
+\index{checkRight@{checkRight}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{checkRight}{checkRight}}
+{\footnotesize\ttfamily \label{struct_collider_a57711fc9031618f91ad995fd2c3ca93b} 
+bool Collider\+::check\+Right}
+
+Toggle for right triangle. \Hypertarget{struct_collider_a6d74cd70d82b5181c7dda4838bc4f8c8}\index{Collider@{Collider}!checkTop@{checkTop}}
+\index{checkTop@{checkTop}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{checkTop}{checkTop}}
+{\footnotesize\ttfamily \label{struct_collider_a6d74cd70d82b5181c7dda4838bc4f8c8} 
+bool Collider\+::check\+Top}
+
+Toggle for top triangle. \Hypertarget{struct_collider_a18232b491252cf08e6451363c04338dd}\index{Collider@{Collider}!collisionTags@{collisionTags}}
+\index{collisionTags@{collisionTags}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{collisionTags}{collisionTags}}
+{\footnotesize\ttfamily \label{struct_collider_a18232b491252cf08e6451363c04338dd} 
+std\+::vector$<$std\+::string$>$ Collider\+::collision\+Tags}
+
+Lista de etiquetas con las que colisionar. \Hypertarget{struct_collider_a3068bd0bbdb66fc93a3ef3063ac556fa}\index{Collider@{Collider}!isTrigger@{isTrigger}}
+\index{isTrigger@{isTrigger}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{isTrigger}{isTrigger}}
+{\footnotesize\ttfamily \label{struct_collider_a3068bd0bbdb66fc93a3ef3063ac556fa} 
+bool Collider\+::is\+Trigger}
+
+Indica si es un disparador. \Hypertarget{struct_collider_a71173a92f1d1934e7dcfd93812b7d7b3}\index{Collider@{Collider}!onCollisionEnter@{onCollisionEnter}}
+\index{onCollisionEnter@{onCollisionEnter}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{onCollisionEnter}{onCollisionEnter}}
+{\footnotesize\ttfamily \label{struct_collider_a71173a92f1d1934e7dcfd93812b7d7b3} 
+std\+::function$<$void(\mbox{\hyperlink{struct_collider}{Collider}}\texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_collision_result}{Collision\+Result}})$>$ Collider\+::on\+Collision\+Enter}
+
+Evento al iniciar colisión. \Hypertarget{struct_collider_a4f67913e97bca2cf5cb4f867092266aa}\index{Collider@{Collider}!onCollisionExit@{onCollisionExit}}
+\index{onCollisionExit@{onCollisionExit}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{onCollisionExit}{onCollisionExit}}
+{\footnotesize\ttfamily \label{struct_collider_a4f67913e97bca2cf5cb4f867092266aa} 
+std\+::function$<$void(\mbox{\hyperlink{struct_collider}{Collider}}\texorpdfstring{$\ast$}{*})$>$ Collider\+::on\+Collision\+Exit}
+
+Evento al salir de colisión. \Hypertarget{struct_collider_af927ff43f4f508d80c74185478a79962}\index{Collider@{Collider}!onCollisionStay@{onCollisionStay}}
+\index{onCollisionStay@{onCollisionStay}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{onCollisionStay}{onCollisionStay}}
+{\footnotesize\ttfamily \label{struct_collider_af927ff43f4f508d80c74185478a79962} 
+std\+::function$<$void(\mbox{\hyperlink{struct_collider}{Collider}}\texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_collision_result}{Collision\+Result}})$>$ Collider\+::on\+Collision\+Stay}
+
+Evento mientras colisiona. \Hypertarget{struct_collider_a6a93c664e0195559283cb64e08ce9e61}\index{Collider@{Collider}!scaleY@{scaleY}}
+\index{scaleY@{scaleY}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{scaleY}{scaleY}}
+{\footnotesize\ttfamily \label{struct_collider_a6a93c664e0195559283cb64e08ce9e61} 
+float Collider\+::scaleY}
+
+Escala en X e Y. \Hypertarget{struct_collider_a47553d89c2a08d0df50e2e4934572902}\index{Collider@{Collider}!tag@{tag}}
+\index{tag@{tag}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{tag}{tag}}
+{\footnotesize\ttfamily \label{struct_collider_a47553d89c2a08d0df50e2e4934572902} 
+std\+::string Collider\+::tag}
+
+Etiqueta para identificar el tipo de collider. \Hypertarget{struct_collider_a316074fce488c8c3012ba1232686aaec}\index{Collider@{Collider}!transform@{transform}}
+\index{transform@{transform}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \label{struct_collider_a316074fce488c8c3012ba1232686aaec} 
+\mbox{\hyperlink{struct_transform}{Transform}}\texorpdfstring{$\ast$}{*} Collider\+::transform}
+
+Puntero al componente \doxylink{struct_transform}{Transform} asociado. \Hypertarget{struct_collider_a853273ece82e4a579f9c7bce8cd5f390}\index{Collider@{Collider}!wasCollidingLastFrame@{wasCollidingLastFrame}}
+\index{wasCollidingLastFrame@{wasCollidingLastFrame}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{wasCollidingLastFrame}{wasCollidingLastFrame}}
+{\footnotesize\ttfamily \label{struct_collider_a853273ece82e4a579f9c7bce8cd5f390} 
+bool Collider\+::was\+Colliding\+Last\+Frame}
+
+Estado de colisión del frame anterior. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Collider.\+cpp\end{DoxyCompactItemize}

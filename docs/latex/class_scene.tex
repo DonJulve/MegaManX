@@ -1,0 +1,160 @@
+\doxysection{Referencia de la clase Scene}
+\hypertarget{class_scene}{}\label{class_scene}\index{Scene@{Scene}}
+
+
+Clase \doxylink{class_scene}{Scene} que representa una escena en el juego.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_af11ca42551a5754a60f0f07277c0cd41}{Scene}} (const std\+::string \&scene\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{class_scene}{Scene}. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_adf671a288f878e3efa42ccbf34b0d6ed}\label{class_scene_adf671a288f878e3efa42ccbf34b0d6ed} 
+void {\bfseries activate} ()
+\begin{DoxyCompactList}\small\item\em Activa la escena. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_ad8fa30fc96100daf9f028922bb435daa}\label{class_scene_ad8fa30fc96100daf9f028922bb435daa} 
+void {\bfseries deactivate} ()
+\begin{DoxyCompactList}\small\item\em Desactiva la escena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_aac02dec89aa4d67ea4187b9decf4f772}{is\+Active}} ()
+\begin{DoxyCompactList}\small\item\em Verifica si la escena está activa. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_scene_a056dfc15c377165943f5276f477c105d}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el nombre de la escena. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \& \mbox{\hyperlink{class_scene_a10adc6cbb5e13db0c205d23c9f5b1875}{get\+Entity\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia de \doxylink{class_entity_manager}{Entity\+Manager} asociada a la escena. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_a8c02f16a6a612ce2f0568ea858f8844a}\label{class_scene_a8c02f16a6a612ce2f0568ea858f8844a} 
+void {\bfseries setup\+Static\+Colliders} (std\+::vector$<$ \mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*} $>$ colliders)
+\item 
+void \mbox{\hyperlink{class_scene_af1c55c1cd88c6665609f5cba96dff226}{start}} ()
+\begin{DoxyCompactList}\small\item\em Actualiza los sistemas de la escena. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a53f14767786af47ed73cc0c9f8f69df2}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza los sistemas de la escena. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_a4ddf2d16f371ee9533b3faf1dd5ddfb1}\label{class_scene_a4ddf2d16f371ee9533b3faf1dd5ddfb1} 
+void {\bfseries render} ()
+\begin{DoxyCompactList}\small\item\em Renderiza la escena y sus entidades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_ab37a76c92f68b5dc9e7b8178d41f0de5}{load\+From\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Carga una escena desde un archivo usando \doxylink{class_engine}{Engine}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_scene}{Scene} que representa una escena en el juego. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{class_scene_af11ca42551a5754a60f0f07277c0cd41}\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily \label{class_scene_af11ca42551a5754a60f0f07277c0cd41} 
+Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scene\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de \doxylink{class_scene}{Scene}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em scene\+Name} & Nombre de la escena. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_scene_a10adc6cbb5e13db0c205d23c9f5b1875}\index{Scene@{Scene}!getEntityManager@{getEntityManager}}
+\index{getEntityManager@{getEntityManager}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{getEntityManager()}{getEntityManager()}}
+{\footnotesize\ttfamily \label{class_scene_a10adc6cbb5e13db0c205d23c9f5b1875} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \& Scene\+::get\+Entity\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene la instancia de \doxylink{class_entity_manager}{Entity\+Manager} asociada a la escena. 
+
+\begin{DoxyReturn}{Devuelve}
+Referencia a la instancia de \doxylink{class_entity_manager}{Entity\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_a056dfc15c377165943f5276f477c105d}\index{Scene@{Scene}!getName@{getName}}
+\index{getName@{getName}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_scene_a056dfc15c377165943f5276f477c105d} 
+const std\+::string \& Scene\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el nombre de la escena. 
+
+\begin{DoxyReturn}{Devuelve}
+Referencia constante al nombre de la escena. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_aac02dec89aa4d67ea4187b9decf4f772}\index{Scene@{Scene}!isActive@{isActive}}
+\index{isActive@{isActive}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily \label{class_scene_aac02dec89aa4d67ea4187b9decf4f772} 
+bool Scene\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Verifica si la escena está activa. 
+
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la escena está activa, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_ab37a76c92f68b5dc9e7b8178d41f0de5}\index{Scene@{Scene}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \label{class_scene_ab37a76c92f68b5dc9e7b8178d41f0de5} 
+\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} Scene\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Carga una escena desde un archivo usando \doxylink{class_engine}{Engine}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filename} & Nombre del archivo de la escena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la escena cargada. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_af1c55c1cd88c6665609f5cba96dff226}\index{Scene@{Scene}!start@{start}}
+\index{start@{start}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_scene_af1c55c1cd88c6665609f5cba96dff226} 
+void Scene\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los sistemas de la escena. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_a53f14767786af47ed73cc0c9f8f69df2}\index{Scene@{Scene}!update@{update}}
+\index{update@{update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene_a53f14767786af47ed73cc0c9f8f69df2} 
+void Scene\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los sistemas de la escena. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/\+Scenes/Scene.\+h\item 
+Managers/\+Scenes/Scene.\+cpp\end{DoxyCompactItemize}

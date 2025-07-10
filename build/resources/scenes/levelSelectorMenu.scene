@@ -1,0 +1,374 @@
+{
+    "name": "levelSelectorMenu",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0,
+                    "posY": 0,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Camera": {
+                    "zoom": 1,
+                    "windowWidth": 800,
+                    "windowHeight": 600
+                },
+                "BossSelectMenu":{}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.5,
+                    "posY": 0.5,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/mainMenu/mainMenu_0.png",
+                    "anchor": "CENTER"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.345,
+                    "posY": 0.29,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuStageBg/menuStageBg_0.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "MapBgMenu":{}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.2,
+                    "posY": 0.2,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuMapSelec/menuMapSelec_1.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "Animator": {
+                    "states":{
+                        "idle":{
+                            "looping": true,
+                            "folder": "sprites/menu/menuMapSelec/",
+                            "duration": 0.1
+                        }
+                    },   
+                    "initialState": "idle"
+                },
+                "PointMapMenu": {}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.19,
+                    "posY": 0.09,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuStage/menuStage_1.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "StageMenu":{}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.35,
+                    "posY": 0.09,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBossDisable/menuBossDisable_0.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.51,
+                    "posY": 0.09,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBoss/menuBoss_1.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.67,
+                    "posY": 0.09,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuMap/menuMap_0.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "MapMenu":{}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.19,
+                    "posY": 0.30,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBossDisable/menuBossDisable_2.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.5,
+                    "posY": 0.5,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/mainMenu/mainMenu_1.png",
+                    "anchor": "CENTER"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.67,
+                    "posY": 0.30,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBoss/menuBoss_3.png",
+                    "anchor": "TOP_LEFT"
+                }
+
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.19,
+                    "posY": 0.51,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBossDisable/menuBossDisable_4.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.67,
+                    "posY": 0.51,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBossDisable/menuBossDisable_5.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.19,
+                    "posY": 0.72,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuSpec/menuSpec_0.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "SpecMenu":{}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.35,
+                    "posY": 0.72,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBossDisable/menuBossDisable_6.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.51,
+                    "posY": 0.72,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuBossDisable/menuBossDisable_7.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.67,
+                    "posY": 0.72,
+                    "rotZ": 0,
+                    "sizeX": 2.65,
+                    "sizeY": 2.65,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/menuVarios/menuVarios_0.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },               
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.19,
+                    "posY": 0.09,
+                    "rotZ": 0,
+                    "sizeX": 2.66,
+                    "sizeY": 2.66,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/menu/mainMenuSelection/mainMenuSelection_0.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "Animator": {
+                    "states":{
+                        "idle":{
+                            "looping": true,
+                            "folder": "sprites/menu/mainMenuSelection/",
+                            "duration": 0.1
+                        }
+                    },   
+                    "initialState": "idle"
+                },
+                "SelectorMenu":{}
+            }
+        }
+    ]
+}

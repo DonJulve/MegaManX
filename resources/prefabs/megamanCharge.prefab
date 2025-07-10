@@ -1,0 +1,66 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2,
+            "sizeY": 2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "particulas",
+            "scaleX": 20,
+            "scaleY": 20,
+            "isTrigger": true
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 0,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/megaman/charge/charge_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "secondCharge": {"type": "bool", "value": false}
+            },
+            "states": {
+                "charge1": {
+                    "looping": true,
+                    "folder": "./sprites/megaman/charge",
+                    "duration": 0.06
+                },
+                "charge2": {
+                    "looping": true,
+                    "folder": "./sprites/megaman/charge_2",
+                    "duration": 0.06
+                }
+            },
+            "transitions": [
+                {
+                    "from": "charge1",
+                    "to": "charge2",
+                    "conditions": [
+                        {"parameter": "secondCharge", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "charge2",
+                    "to": "charge1",
+                    "conditions": [
+                        {"parameter": "secondCharge", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "charge1"
+        },
+        "MegamanCharge": {}
+    }
+}

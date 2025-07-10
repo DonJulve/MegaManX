@@ -1,0 +1,137 @@
+\doxysection{Animator\+Component.\+h}
+\hypertarget{_animator_component_8h_source}{}\label{_animator_component_8h_source}\index{Components/AnimatorComponent.h@{Components/AnimatorComponent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ANIMATOR\_COMPONENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ANIMATOR\_COMPONENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }fs\ =\ std::filesystem;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animator_parameter}{AnimatorParameter}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_transition}{Transition}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }State;}
+\DoxyCodeLine{00019\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animator_component}{AnimatorComponent}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animator_parameters}{AnimatorParameters}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }AnimatorParameter\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{enum\ class}\ Type\ \{\ BOOL,\ INT,\ FLOAT,\ TRIGGER\ \};}
+\DoxyCodeLine{00028\ \ \ \ \ Type\ type;}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ boolValue;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ intValue;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ floatValue;}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ AnimatorParameter()\ :\ type(Type::BOOL),\ name(\textcolor{stringliteral}{"{}"{}}),\ boolValue(\textcolor{keyword}{false})\ \{\}}
+\DoxyCodeLine{00037\ \ \ \ \ AnimatorParameter(\textcolor{keyword}{const}\ std::string\&\ n,\ \textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00038\ \ \ \ \ AnimatorParameter(\textcolor{keyword}{const}\ std::string\&\ n,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00039\ \ \ \ \ AnimatorParameter(\textcolor{keyword}{const}\ std::string\&\ n,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00040\ \ \ \ \ AnimatorParameter(\textcolor{keyword}{const}\ std::string\&\ n);}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{struct\ }Transition\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ std::string\ fromState;}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ toState;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ keepFrame\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ waitEndState\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_transition_1_1_condition}{Condition}}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::string\ parameterName;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum\ class}\ Mode\ \{\ EQ,\ NEQ,\ LT,\ GT,\ LTE,\ GTE\ \};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ Mode\ mode;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ value;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ evaluate(\textcolor{keyword}{const}\ std::unordered\_map<std::string,\ AnimatorParameter>\&\ params)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ \ \ \ \ std::vector<Condition>\ conditions;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ Transition(\textcolor{keyword}{const}\ std::string\&\ from,\ \textcolor{keyword}{const}\ std::string\&\ to,\ \textcolor{keywordtype}{bool}\ keepF,\ \textcolor{keywordtype}{bool}\ waitEndS);}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{struct\ }AnimatorComponent\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{struct_sprite_renderer}{SpriteRenderer}}*\ spriteRenderer;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{struct\ }AnimationFrame\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ SDL\_Texture*\ texture;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ duration;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width,\ height;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ AnimationFrame(SDL\_Texture*\ tex\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{float}\ dur\ =\ 0.1f);}
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{struct\ }State\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ std::vector<AnimationFrame>\ frames;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::unordered\_map<int,\ std::function<void()>>\ frameTriggers;\ \ \textcolor{comment}{//\ Map\ of\ frame\ index\ to\ trigger\ function}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentFrame\ =\ 0;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ timeAccumulator\ =\ 0.0f;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isLooping\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ State()\ :\ name(\textcolor{stringliteral}{"{}"{}}),\ isLooping(\textcolor{keyword}{true})\ \{\}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ State(\textcolor{keyword}{const}\ std::string\&\ stateName,\ \textcolor{keywordtype}{bool}\ loop\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ update(\textcolor{keywordtype}{float}\ deltaTime,\ SDL\_Texture*\&\ outTexture,\ \textcolor{keywordtype}{int}\&\ outWidth,\ \textcolor{keywordtype}{int}\&\ outHeight);}
+\DoxyCodeLine{00105\ \ \ \ \ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animator_component_1_1_state_machine}{StateMachine}}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ State>\ states;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ std::string\ currentState;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ std::vector<Transition>\ transitions;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ AnimatorParameter>\ parameters;}
+\DoxyCodeLine{00116\ \ \ \ \ \}\ stateMachine;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ AnimatorComponent(\mbox{\hyperlink{struct_animator_parameters}{AnimatorParameters}}\ params);}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_animator_component_a45210bd1a25c18461aa3120217eaed36}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_animator_component_a8004bae57e4a5e752b0a438881be9231}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ setBool(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ setInt(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ setFloat(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ setTrigger(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ getBool(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ getInt(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{float}\ getFloat(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_animator_component_ad61f9a9bee7560475326c616bd02feff}{currentState}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ stateMachine.currentState;\ \}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_animator_component_a521eacef54895ab5a225c1ed8cb72977}{restart\_current\_state}}();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_animator_component_af69e98bd1c5b1228fd05d57edd398356}{addFrameTrigger}}(\textcolor{keyword}{const}\ std::string\&\ stateName,\ \textcolor{keywordtype}{int}\ frameIndex,\ std::function<\textcolor{keywordtype}{void}()>\ trigger);}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{struct\ }AnimatorParameters\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ std::unordered\_map<std::string,\ AnimatorComponent::State>\ states;}
+\DoxyCodeLine{00157\ \ \ \ \ std::vector<Transition>\ transitions;}
+\DoxyCodeLine{00158\ \ \ \ \ std::string\ initialState;}
+\DoxyCodeLine{00159\ \ \ \ \ std::unordered\_map<std::string,\ AnimatorParameter>\ parameters;}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{struct_sprite_renderer}{SpriteRenderer}}*\ spriteRenderer;}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ AnimatorParameters(}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ AnimatorComponent::State>\&\ s,}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Transition>\&\ t,}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ init\ =\ \textcolor{stringliteral}{"{}"{}},}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<std::string,\ AnimatorParameter>\&\ p\ =\ \{\},}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_sprite_renderer}{SpriteRenderer}}*\ sr\ =\ nullptr}
+\DoxyCodeLine{00168\ \ \ \ \ );}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_animator_loader}{AnimatorLoader}}\ \{}
+\DoxyCodeLine{00176\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_animator_parameters}{AnimatorParameters}}\ fromJSON(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_animator_component}{AnimatorComponent}}\ createFromJSON(nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00179\ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ANIMATOR\_COMPONENT\_H}}
+
+\end{DoxyCode}

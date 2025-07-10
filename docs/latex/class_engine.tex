@@ -1,0 +1,147 @@
+\doxysection{Referencia de la clase Engine}
+\hypertarget{class_engine}{}\label{class_engine}\index{Engine@{Engine}}
+
+
+Clase \doxylink{class_engine}{Engine} que representa el núcleo del motor del juego.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}\label{class_engine_a8ef7030a089ecb30bbfcb9e43094717a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Destructor de \doxylink{class_engine}{Engine} para liberar recursos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_ac6a125837a08cf01adcbd0be213c84cb}{init}} (const char \texorpdfstring{$\ast$}{*}title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Inicializa SDL, la ventana y el renderizador. \end{DoxyCompactList}\item 
+\Hypertarget{class_engine_ad1e8214e8ca9f436d27a7246dd908d9c}\label{class_engine_ad1e8214e8ca9f436d27a7246dd908d9c} 
+void {\bfseries handle\+Events} ()
+\begin{DoxyCompactList}\small\item\em Maneja todos los eventos SDL (teclado, ratón, ventana, etc.). \end{DoxyCompactList}\item 
+\Hypertarget{class_engine_a4d8066dd213a03f5420d1bf60f150ca7}\label{class_engine_a4d8066dd213a03f5420d1bf60f150ca7} 
+void {\bfseries start} ()
+\begin{DoxyCompactList}\small\item\em Inicia el motor del juego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a49497f4e424dcbd7f21ef6eb4ac827db}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza los sistemas (física, colisiones, etc.). \end{DoxyCompactList}\item 
+\Hypertarget{class_engine_a7960743aefd62e846e7f3cd92c18bc73}\label{class_engine_a7960743aefd62e846e7f3cd92c18bc73} 
+void {\bfseries render} ()
+\begin{DoxyCompactList}\small\item\em Renderiza todas las entidades y sistemas. \end{DoxyCompactList}\item 
+\Hypertarget{class_engine_ae77baba9282f194f49f02cfab00cb9c8}\label{class_engine_ae77baba9282f194f49f02cfab00cb9c8} 
+void {\bfseries clean\+Up} ()
+\begin{DoxyCompactList}\small\item\em Limpia los recursos SDL utilizados. \end{DoxyCompactList}\item 
+\Hypertarget{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc}\label{class_engine_a1a210cf30d6bd330b3649439ecd6d6cc} 
+void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Bucle principal del juego. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_engine_a6f00047153c2581a74c7c1912bfe5f36}{close}} ()
+\item 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_ae42b73be55ab0fa034a0f7dea156cf9c}{get\+Renderer}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el renderizador SDL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_manager}{Scene\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_a811edd23b484c60ad7d338225f135282}{get\+Scene\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el \doxylink{class_scene_manager}{Scene\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_engine}{Engine}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_engine_a02f2e8b067be048cbc28b94eb64281c5}{get\+Instance}} (const char \texorpdfstring{$\ast$}{*}title=nullptr, int width=800, int height=600)
+\begin{DoxyCompactList}\small\item\em Método estático para acceder a la instancia única de \doxylink{class_engine}{Engine} (singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_engine}{Engine} que representa el núcleo del motor del juego. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_engine_a6f00047153c2581a74c7c1912bfe5f36}\index{Engine@{Engine}!close@{close}}
+\index{close@{close}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \label{class_engine_a6f00047153c2581a74c7c1912bfe5f36} 
+void Engine\+::close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Cierra el motor del juego. \Hypertarget{class_engine_a02f2e8b067be048cbc28b94eb64281c5}\index{Engine@{Engine}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_engine_a02f2e8b067be048cbc28b94eb64281c5} 
+\mbox{\hyperlink{class_engine}{Engine}} \texorpdfstring{$\ast$}{*} Engine\+::get\+Instance (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{ = {\ttfamily nullptr}, }\item[{int}]{width}{ = {\ttfamily 800}, }\item[{int}]{height}{ = {\ttfamily 600}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método estático para acceder a la instancia única de \doxylink{class_engine}{Engine} (singleton). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em title} & Título de la ventana (por defecto nullptr). \\
+\hline
+{\em width} & Ancho de la ventana (por defecto 800). \\
+\hline
+{\em height} & Alto de la ventana (por defecto 600). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la instancia de \doxylink{class_engine}{Engine}. 
+\end{DoxyReturn}
+\Hypertarget{class_engine_ae42b73be55ab0fa034a0f7dea156cf9c}\index{Engine@{Engine}!getRenderer@{getRenderer}}
+\index{getRenderer@{getRenderer}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getRenderer()}{getRenderer()}}
+{\footnotesize\ttfamily \label{class_engine_ae42b73be55ab0fa034a0f7dea156cf9c} 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} Engine\+::get\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el renderizador SDL. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al renderizador SDL. 
+\end{DoxyReturn}
+\Hypertarget{class_engine_a811edd23b484c60ad7d338225f135282}\index{Engine@{Engine}!getSceneManager@{getSceneManager}}
+\index{getSceneManager@{getSceneManager}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{getSceneManager()}{getSceneManager()}}
+{\footnotesize\ttfamily \label{class_engine_a811edd23b484c60ad7d338225f135282} 
+\mbox{\hyperlink{class_scene_manager}{Scene\+Manager}} \texorpdfstring{$\ast$}{*} Engine\+::get\+Scene\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el \doxylink{class_scene_manager}{Scene\+Manager}. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero a la instancia de \doxylink{class_scene_manager}{Scene\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{class_engine_ac6a125837a08cf01adcbd0be213c84cb}\index{Engine@{Engine}!init@{init}}
+\index{init@{init}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_engine_ac6a125837a08cf01adcbd0be213c84cb} 
+void Engine\+::init (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Inicializa SDL, la ventana y el renderizador. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em title} & Título de la ventana. \\
+\hline
+{\em width} & Ancho de la ventana. \\
+\hline
+{\em height} & Alto de la ventana. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_engine_a49497f4e424dcbd7f21ef6eb4ac827db}\index{Engine@{Engine}!update@{update}}
+\index{update@{update}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_engine_a49497f4e424dcbd7f21ef6eb4ac827db} 
+void Engine\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza los sistemas (física, colisiones, etc.). 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Core/Engine.\+h\item 
+Core/Engine.\+cpp\end{DoxyCompactItemize}

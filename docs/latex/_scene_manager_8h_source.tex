@@ -1,0 +1,56 @@
+\doxysection{Scene\+Manager.\+h}
+\hypertarget{_scene_manager_8h_source}{}\label{_scene_manager_8h_source}\index{Managers/Scenes/SceneManager.h@{Managers/Scenes/SceneManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene}{Scene}};}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_manager}{EntityManager}};}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <future>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_manager}{SceneManager}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::unordered\_map<std::string,\ Scene*>\ scenes;\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::unordered\_map<std::string,\ bool>\ loadingFlags;\ \textcolor{comment}{//\ Tracks\ loading\ status}}
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<std::future<void>>\ pendingLoads;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stores\ active\ async\ operations}}
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<std::string>\ pendingStarts;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stores\ active\ async\ operations}}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<std::string>\ pendingRemoves;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Stores\ active\ async\ operations}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ delayInputs\ =\ 0.0f;\ \textcolor{comment}{//\ Delay\ for\ input\ processing}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{mutable}\ std::mutex\ scenesMutex;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ getSceneNameByEntityManager(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ targetEntityManager)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_manager_a455b3866f1911eff04b0d716e6225ce8}{addScene}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene_manager_a4abd40417375fe8352130a8b2b19226f}{isSceneLoaded}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene_manager_a570071115d6e085e63e1b9346213c89d}{isSceneLoading}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_manager_a41864bf4299d1dc1c16b306d06cd8116}{loadSceneAsync}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_scene}{Scene}}*\ \mbox{\hyperlink{class_scene_manager_a2142aee6058499901849534ab3409c5f}{getScene}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::unordered\_map<std::string,\ Scene*>*\ \mbox{\hyperlink{class_scene_manager_a654776433bd79a49a580e248bdce216d}{getScenes}}()\ \{\ \textcolor{keywordflow}{return}\ \&scenes;\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_manager_a36f962be20b0193b8abbfaec5b8f6697}{removeScene}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_manager_ad25c8235f6841f866a3a139927530e74}{update}}(\textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_manager_a33896fec4566d8eb3dafdb01a5bd991c}{render}}();}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

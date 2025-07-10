@@ -1,0 +1,96 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 40,
+            "scaleY": 75,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/flammingle/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isShooting": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/flammingle/idle",
+                    "duration": 1.4
+                },
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/enemies/flammingle/shoot",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "shoot",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "shoot",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "NEQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Shoot"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Shoot",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        },
+        "FlammingleController": {
+
+        }
+    }
+}

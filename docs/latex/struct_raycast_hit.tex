@@ -1,0 +1,63 @@
+\doxysection{Referencia de la estructura Raycast\+Hit}
+\hypertarget{struct_raycast_hit}{}\label{struct_raycast_hit}\index{RaycastHit@{RaycastHit}}
+
+
+Almacena información sobre una colisión con un rayo.  
+
+
+
+
+{\ttfamily \#include $<$Raycast\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_raycast_hit_a427ec92a2c30f1490aff3505e643fa30}\label{struct_raycast_hit_a427ec92a2c30f1490aff3505e643fa30} 
+{\bfseries Raycast\+Hit} (\mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*}c, const SDL\+\_\+\+FPoint \&p, float d, Entity e)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_raycast_hit_a0e6e9267aa9176de136ce76364ec347e}{collider}}
+\item 
+SDL\+\_\+\+FPoint \mbox{\hyperlink{struct_raycast_hit_a0c1eb0dfa491c933410becde3c84e0f8}{point}}
+\item 
+float \mbox{\hyperlink{struct_raycast_hit_a8657166e88eeb24b373fadd4fe5ccd68}{distance}}
+\item 
+Entity \mbox{\hyperlink{struct_raycast_hit_a969a55ce6b08682da16abc22e79d73ab}{entity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Almacena información sobre una colisión con un rayo. 
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_raycast_hit_a0e6e9267aa9176de136ce76364ec347e}\index{RaycastHit@{RaycastHit}!collider@{collider}}
+\index{collider@{collider}!RaycastHit@{RaycastHit}}
+\doxysubsubsection{\texorpdfstring{collider}{collider}}
+{\footnotesize\ttfamily \label{struct_raycast_hit_a0e6e9267aa9176de136ce76364ec347e} 
+\mbox{\hyperlink{struct_collider}{Collider}}\texorpdfstring{$\ast$}{*} Raycast\+Hit\+::collider}
+
+El \doxylink{struct_collider}{Collider} que fue impactado. \Hypertarget{struct_raycast_hit_a8657166e88eeb24b373fadd4fe5ccd68}\index{RaycastHit@{RaycastHit}!distance@{distance}}
+\index{distance@{distance}!RaycastHit@{RaycastHit}}
+\doxysubsubsection{\texorpdfstring{distance}{distance}}
+{\footnotesize\ttfamily \label{struct_raycast_hit_a8657166e88eeb24b373fadd4fe5ccd68} 
+float Raycast\+Hit\+::distance}
+
+Distancia desde el origen del rayo hasta el punto de impacto. \Hypertarget{struct_raycast_hit_a969a55ce6b08682da16abc22e79d73ab}\index{RaycastHit@{RaycastHit}!entity@{entity}}
+\index{entity@{entity}!RaycastHit@{RaycastHit}}
+\doxysubsubsection{\texorpdfstring{entity}{entity}}
+{\footnotesize\ttfamily \label{struct_raycast_hit_a969a55ce6b08682da16abc22e79d73ab} 
+Entity Raycast\+Hit\+::entity}
+
+La entidad propietaria del \doxylink{struct_collider}{Collider} impactado. \Hypertarget{struct_raycast_hit_a0c1eb0dfa491c933410becde3c84e0f8}\index{RaycastHit@{RaycastHit}!point@{point}}
+\index{point@{point}!RaycastHit@{RaycastHit}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \label{struct_raycast_hit_a0c1eb0dfa491c933410becde3c84e0f8} 
+SDL\+\_\+\+FPoint Raycast\+Hit\+::point}
+
+Punto de intersección. 
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Raycast\+Manager.\+h\end{DoxyCompactItemize}

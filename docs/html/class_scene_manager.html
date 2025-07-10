@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Referencia de la clase SceneManager</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_scene_manager.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="class_scene_manager-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase SceneManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase <a class="el" href="class_scene_manager.html" title="Clase SceneManager para gestionar las escenas del juego.">SceneManager</a> para gestionar las escenas del juego.  
+ <a href="#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a68bccd9963f47c487650706725b8f06f" id="r_a68bccd9963f47c487650706725b8f06f"><td class="memItemLeft" align="right" valign="top"><a id="a68bccd9963f47c487650706725b8f06f" name="a68bccd9963f47c487650706725b8f06f"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getSceneNameByEntityManager</b> (const <a class="el" href="class_entity_manager.html">EntityManager</a> *targetEntityManager) const</td></tr>
+<tr class="separator:a68bccd9963f47c487650706725b8f06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a455b3866f1911eff04b0d716e6225ce8" id="r_a455b3866f1911eff04b0d716e6225ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a455b3866f1911eff04b0d716e6225ce8">addScene</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a455b3866f1911eff04b0d716e6225ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega una escena al <a class="el" href="class_scene_manager.html" title="Clase SceneManager para gestionar las escenas del juego.">SceneManager</a>.  <br /></td></tr>
+<tr class="separator:a455b3866f1911eff04b0d716e6225ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4abd40417375fe8352130a8b2b19226f" id="r_a4abd40417375fe8352130a8b2b19226f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4abd40417375fe8352130a8b2b19226f">isSceneLoaded</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:a4abd40417375fe8352130a8b2b19226f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una escena ya está cargada.  <br /></td></tr>
+<tr class="separator:a4abd40417375fe8352130a8b2b19226f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570071115d6e085e63e1b9346213c89d" id="r_a570071115d6e085e63e1b9346213c89d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a570071115d6e085e63e1b9346213c89d">isSceneLoading</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:a570071115d6e085e63e1b9346213c89d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una escena está siendo cargada.  <br /></td></tr>
+<tr class="separator:a570071115d6e085e63e1b9346213c89d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41864bf4299d1dc1c16b306d06cd8116" id="r_a41864bf4299d1dc1c16b306d06cd8116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41864bf4299d1dc1c16b306d06cd8116">loadSceneAsync</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a41864bf4299d1dc1c16b306d06cd8116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga una escena de forma asíncrona.  <br /></td></tr>
+<tr class="separator:a41864bf4299d1dc1c16b306d06cd8116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2142aee6058499901849534ab3409c5f" id="r_a2142aee6058499901849534ab3409c5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene.html">Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2142aee6058499901849534ab3409c5f">getScene</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a2142aee6058499901849534ab3409c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene una escena por su nombre.  <br /></td></tr>
+<tr class="separator:a2142aee6058499901849534ab3409c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654776433bd79a49a580e248bdce216d" id="r_a654776433bd79a49a580e248bdce216d"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="class_scene.html">Scene</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a654776433bd79a49a580e248bdce216d">getScenes</a> ()</td></tr>
+<tr class="memdesc:a654776433bd79a49a580e248bdce216d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el mapa de todas las escenas cargadas.  <br /></td></tr>
+<tr class="separator:a654776433bd79a49a580e248bdce216d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f962be20b0193b8abbfaec5b8f6697" id="r_a36f962be20b0193b8abbfaec5b8f6697"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36f962be20b0193b8abbfaec5b8f6697">removeScene</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a36f962be20b0193b8abbfaec5b8f6697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elimina una escena del <a class="el" href="class_scene_manager.html" title="Clase SceneManager para gestionar las escenas del juego.">SceneManager</a>.  <br /></td></tr>
+<tr class="separator:a36f962be20b0193b8abbfaec5b8f6697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25c8235f6841f866a3a139927530e74" id="r_ad25c8235f6841f866a3a139927530e74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad25c8235f6841f866a3a139927530e74">update</a> (float deltaTime)</td></tr>
+<tr class="memdesc:ad25c8235f6841f866a3a139927530e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza todas las escenas activas.  <br /></td></tr>
+<tr class="separator:ad25c8235f6841f866a3a139927530e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33896fec4566d8eb3dafdb01a5bd991c" id="r_a33896fec4566d8eb3dafdb01a5bd991c"><td class="memItemLeft" align="right" valign="top"><a id="a33896fec4566d8eb3dafdb01a5bd991c" name="a33896fec4566d8eb3dafdb01a5bd991c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>render</b> ()</td></tr>
+<tr class="memdesc:a33896fec4566d8eb3dafdb01a5bd991c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderiza todas las escenas activas. <br /></td></tr>
+<tr class="separator:a33896fec4566d8eb3dafdb01a5bd991c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase <a class="el" href="class_scene_manager.html" title="Clase SceneManager para gestionar las escenas del juego.">SceneManager</a> para gestionar las escenas del juego. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a455b3866f1911eff04b0d716e6225ce8" name="a455b3866f1911eff04b0d716e6225ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455b3866f1911eff04b0d716e6225ce8">&#9670;&#160;</a></span>addScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneManager::addScene </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agrega una escena al <a class="el" href="class_scene_manager.html" title="Clase SceneManager para gestionar las escenas del juego.">SceneManager</a>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre de la escena a agregar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2142aee6058499901849534ab3409c5f" name="a2142aee6058499901849534ab3409c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2142aee6058499901849534ab3409c5f">&#9670;&#160;</a></span>getScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scene.html">Scene</a> * SceneManager::getScene </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtiene una escena por su nombre. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre de la escena. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Puntero a la instancia de <a class="el" href="class_scene.html" title="Clase Scene que representa una escena en el juego.">Scene</a>, o nullptr si no existe. </dd></dl>
+
+</div>
+</div>
+<a id="a654776433bd79a49a580e248bdce216d" name="a654776433bd79a49a580e248bdce216d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654776433bd79a49a580e248bdce216d">&#9670;&#160;</a></span>getScenes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; std::string, <a class="el" href="class_scene.html">Scene</a> * &gt; * SceneManager::getScenes </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene el mapa de todas las escenas cargadas. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Puntero al mapa de escenas. </dd></dl>
+
+</div>
+</div>
+<a id="a4abd40417375fe8352130a8b2b19226f" name="a4abd40417375fe8352130a8b2b19226f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4abd40417375fe8352130a8b2b19226f">&#9670;&#160;</a></span>isSceneLoaded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SceneManager::isSceneLoaded </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si una escena ya está cargada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre de la escena a verificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la escena está cargada, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a570071115d6e085e63e1b9346213c89d" name="a570071115d6e085e63e1b9346213c89d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a570071115d6e085e63e1b9346213c89d">&#9670;&#160;</a></span>isSceneLoading()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SceneManager::isSceneLoading </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica si una escena está siendo cargada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre de la escena a verificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la escena está siendo cargada, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a41864bf4299d1dc1c16b306d06cd8116" name="a41864bf4299d1dc1c16b306d06cd8116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41864bf4299d1dc1c16b306d06cd8116">&#9670;&#160;</a></span>loadSceneAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneManager::loadSceneAsync </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Carga una escena de forma asíncrona. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre de la escena a cargar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36f962be20b0193b8abbfaec5b8f6697" name="a36f962be20b0193b8abbfaec5b8f6697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36f962be20b0193b8abbfaec5b8f6697">&#9670;&#160;</a></span>removeScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneManager::removeScene </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elimina una escena del <a class="el" href="class_scene_manager.html" title="Clase SceneManager para gestionar las escenas del juego.">SceneManager</a>. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Nombre de la escena a eliminar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad25c8235f6841f866a3a139927530e74" name="ad25c8235f6841f866a3a139927530e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25c8235f6841f866a3a139927530e74">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneManager::update </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Actualiza todas las escenas activas. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Tiempo transcurrido desde la última actualización. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada de los siguientes archivos:<ul>
+<li>Managers/Scenes/<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a></li>
+<li>Managers/Scenes/<b>SceneManager.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_scene_manager.html">SceneManager</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

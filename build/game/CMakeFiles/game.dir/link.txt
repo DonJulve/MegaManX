@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc libgame.a CMakeFiles/game.dir/Game.cpp.obj CMakeFiles/game.dir/MegamanLevelsManager.cpp.obj CMakeFiles/game.dir/megaman/MegamanController.cpp.obj CMakeFiles/game.dir/megamanArmor/MegamanArmorController.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe libgame.a

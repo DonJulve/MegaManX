@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Referencia de la clase InputManager</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_input_manager.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Métodos públicos estáticos</a> &#124;
+<a href="class_input_manager-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la clase InputManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Clase <a class="el" href="class_input_manager.html" title="Clase InputManager para gestionar la entrada del usuario (teclado y ratón).">InputManager</a> para gestionar la entrada del usuario (teclado y ratón).  
+ <a href="#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_input_manager_8h_source.html">InputManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Métodos públicos estáticos</h2></td></tr>
+<tr class="memitem:af2778fb1fee0479cb7e2669a472919d1" id="r_af2778fb1fee0479cb7e2669a472919d1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2778fb1fee0479cb7e2669a472919d1">handleEvents</a> (SDL_Event &amp;event)</td></tr>
+<tr class="memdesc:af2778fb1fee0479cb7e2669a472919d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maneja eventos SDL relacionados con la entrada del ratón.  <br /></td></tr>
+<tr class="separator:af2778fb1fee0479cb7e2669a472919d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a171b4b7aed207f5f0e7cbee71a80413e" id="r_a171b4b7aed207f5f0e7cbee71a80413e"><td class="memItemLeft" align="right" valign="top"><a id="a171b4b7aed207f5f0e7cbee71a80413e" name="a171b4b7aed207f5f0e7cbee71a80413e"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>handleKeyboard</b> ()</td></tr>
+<tr class="memdesc:a171b4b7aed207f5f0e7cbee71a80413e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Procesa el estado del teclado en tiempo real. <br /></td></tr>
+<tr class="separator:a171b4b7aed207f5f0e7cbee71a80413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab10af64d90f17ea99a8f2e3f2d1d7897" id="r_ab10af64d90f17ea99a8f2e3f2d1d7897"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab10af64d90f17ea99a8f2e3f2d1d7897">isKeyPressed</a> (SDL_Scancode key)</td></tr>
+<tr class="memdesc:ab10af64d90f17ea99a8f2e3f2d1d7897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una tecla está presionada en el frame actual.  <br /></td></tr>
+<tr class="separator:ab10af64d90f17ea99a8f2e3f2d1d7897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69595cadce64e3d4763ecced740be681" id="r_a69595cadce64e3d4763ecced740be681"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69595cadce64e3d4763ecced740be681">isKeyHeld</a> (SDL_Scancode key)</td></tr>
+<tr class="memdesc:a69595cadce64e3d4763ecced740be681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una tecla está mantenida presionada.  <br /></td></tr>
+<tr class="separator:a69595cadce64e3d4763ecced740be681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316163861a12c1848d30219d2fb82acb" id="r_a316163861a12c1848d30219d2fb82acb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a316163861a12c1848d30219d2fb82acb">isKeyReleased</a> (SDL_Scancode key)</td></tr>
+<tr class="memdesc:a316163861a12c1848d30219d2fb82acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si una tecla ha sido soltada en el frame actual.  <br /></td></tr>
+<tr class="separator:a316163861a12c1848d30219d2fb82acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5faf5d48fabea11966b58cd26adcf972" id="r_a5faf5d48fabea11966b58cd26adcf972"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5faf5d48fabea11966b58cd26adcf972">isMouseButtonPressed</a> (Uint8 button)</td></tr>
+<tr class="memdesc:a5faf5d48fabea11966b58cd26adcf972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si un botón del ratón está presionado en el frame actual.  <br /></td></tr>
+<tr class="separator:a5faf5d48fabea11966b58cd26adcf972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9ca76b0637df3935f770a8738e5f2c" id="r_ada9ca76b0637df3935f770a8738e5f2c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada9ca76b0637df3935f770a8738e5f2c">isMouseButtonHeld</a> (Uint8 button)</td></tr>
+<tr class="memdesc:ada9ca76b0637df3935f770a8738e5f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si un botón del ratón está mantenido presionado.  <br /></td></tr>
+<tr class="separator:ada9ca76b0637df3935f770a8738e5f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac085d4f3b6ce68d247d73cae9689330b" id="r_ac085d4f3b6ce68d247d73cae9689330b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac085d4f3b6ce68d247d73cae9689330b">isMouseButtonReleased</a> (Uint8 button)</td></tr>
+<tr class="memdesc:ac085d4f3b6ce68d247d73cae9689330b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica si un botón del ratón ha sido soltado en el frame actual.  <br /></td></tr>
+<tr class="separator:ac085d4f3b6ce68d247d73cae9689330b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca8cb2747f0f049060a3ba37eccedde" id="r_a1ca8cb2747f0f049060a3ba37eccedde"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ca8cb2747f0f049060a3ba37eccedde">getMouseX</a> ()</td></tr>
+<tr class="memdesc:a1ca8cb2747f0f049060a3ba37eccedde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la posición X del ratón.  <br /></td></tr>
+<tr class="separator:a1ca8cb2747f0f049060a3ba37eccedde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf44f252ea8a73bbdf66078eabedebe0" id="r_aaf44f252ea8a73bbdf66078eabedebe0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf44f252ea8a73bbdf66078eabedebe0">getMouseY</a> ()</td></tr>
+<tr class="memdesc:aaf44f252ea8a73bbdf66078eabedebe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene la posición Y del ratón.  <br /></td></tr>
+<tr class="separator:aaf44f252ea8a73bbdf66078eabedebe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0651576ea046ccda4b1f1e66d224b88a" id="r_a0651576ea046ccda4b1f1e66d224b88a"><td class="memItemLeft" align="right" valign="top"><a id="a0651576ea046ccda4b1f1e66d224b88a" name="a0651576ea046ccda4b1f1e66d224b88a"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><b>getScrollWheelX</b> ()</td></tr>
+<tr class="separator:a0651576ea046ccda4b1f1e66d224b88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcbab12a1cb1070e9b61e0204b5353c2" id="r_adcbab12a1cb1070e9b61e0204b5353c2"><td class="memItemLeft" align="right" valign="top"><a id="adcbab12a1cb1070e9b61e0204b5353c2" name="adcbab12a1cb1070e9b61e0204b5353c2"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><b>getScrollWheelY</b> ()</td></tr>
+<tr class="separator:adcbab12a1cb1070e9b61e0204b5353c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c150f31ea81663570d64ef0f0853660" id="r_a3c150f31ea81663570d64ef0f0853660"><td class="memItemLeft" align="right" valign="top"><a id="a3c150f31ea81663570d64ef0f0853660" name="a3c150f31ea81663570d64ef0f0853660"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>updatePreviousState</b> ()</td></tr>
+<tr class="memdesc:a3c150f31ea81663570d64ef0f0853660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Guarda el estado previo de las entradas. <br /></td></tr>
+<tr class="separator:a3c150f31ea81663570d64ef0f0853660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad745345a450f4ed82a36f64292cd5bee" id="r_ad745345a450f4ed82a36f64292cd5bee"><td class="memItemLeft" align="right" valign="top"><a id="ad745345a450f4ed82a36f64292cd5bee" name="ad745345a450f4ed82a36f64292cd5bee"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>resetInputState</b> ()</td></tr>
+<tr class="memdesc:ad745345a450f4ed82a36f64292cd5bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reinicia el estado de las entradas. <br /></td></tr>
+<tr class="separator:ad745345a450f4ed82a36f64292cd5bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada4e57a5604f8a56a17e01206928828f" id="r_ada4e57a5604f8a56a17e01206928828f"><td class="memItemLeft" align="right" valign="top"><a id="ada4e57a5604f8a56a17e01206928828f" name="ada4e57a5604f8a56a17e01206928828f"></a>
+static SDL_FPoint&#160;</td><td class="memItemRight" valign="bottom"><b>screenToWorld</b> (float mouseX, float mouseY, <a class="el" href="struct_camera.html">Camera</a> &amp;camera)</td></tr>
+<tr class="separator:ada4e57a5604f8a56a17e01206928828f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a792690109b9c011e4372e952782c3d6f" id="r_a792690109b9c011e4372e952782c3d6f"><td class="memItemLeft" align="right" valign="top"><a id="a792690109b9c011e4372e952782c3d6f" name="a792690109b9c011e4372e952782c3d6f"></a>
+static SDL_FPoint&#160;</td><td class="memItemRight" valign="bottom"><b>worldToScreen</b> (float worldX, float worldY, <a class="el" href="struct_camera.html">Camera</a> &amp;camera)</td></tr>
+<tr class="separator:a792690109b9c011e4372e952782c3d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1537ec2dbd87e9d32b3b727566ee5543" id="r_a1537ec2dbd87e9d32b3b727566ee5543"><td class="memItemLeft" align="right" valign="top"><a id="a1537ec2dbd87e9d32b3b727566ee5543" name="a1537ec2dbd87e9d32b3b727566ee5543"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>resetLastKey</b> ()</td></tr>
+<tr class="separator:a1537ec2dbd87e9d32b3b727566ee5543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c1dd3fbf6efd83f3c99655a25042be2" id="r_a6c1dd3fbf6efd83f3c99655a25042be2"><td class="memItemLeft" align="right" valign="top"><a id="a6c1dd3fbf6efd83f3c99655a25042be2" name="a6c1dd3fbf6efd83f3c99655a25042be2"></a>
+static SDL_Scancode&#160;</td><td class="memItemRight" valign="bottom"><b>getLastKey</b> ()</td></tr>
+<tr class="separator:a6c1dd3fbf6efd83f3c99655a25042be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Clase <a class="el" href="class_input_manager.html" title="Clase InputManager para gestionar la entrada del usuario (teclado y ratón).">InputManager</a> para gestionar la entrada del usuario (teclado y ratón). </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="a1ca8cb2747f0f049060a3ba37eccedde" name="a1ca8cb2747f0f049060a3ba37eccedde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca8cb2747f0f049060a3ba37eccedde">&#9670;&#160;</a></span>getMouseX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InputManager::getMouseX </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene la posición X del ratón. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Coordenada X del ratón. </dd></dl>
+
+</div>
+</div>
+<a id="aaf44f252ea8a73bbdf66078eabedebe0" name="aaf44f252ea8a73bbdf66078eabedebe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf44f252ea8a73bbdf66078eabedebe0">&#9670;&#160;</a></span>getMouseY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InputManager::getMouseY </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene la posición Y del ratón. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Coordenada Y del ratón. </dd></dl>
+
+</div>
+</div>
+<a id="af2778fb1fee0479cb7e2669a472919d1" name="af2778fb1fee0479cb7e2669a472919d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2778fb1fee0479cb7e2669a472919d1">&#9670;&#160;</a></span>handleEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InputManager::handleEvents </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Event &amp;</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maneja eventos SDL relacionados con la entrada del ratón. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Evento SDL a procesar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a69595cadce64e3d4763ecced740be681" name="a69595cadce64e3d4763ecced740be681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69595cadce64e3d4763ecced740be681">&#9670;&#160;</a></span>isKeyHeld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputManager::isKeyHeld </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Scancode</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si una tecla está mantenida presionada. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Código de la tecla SDL (SDL_Scancode). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la tecla está mantenida, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="ab10af64d90f17ea99a8f2e3f2d1d7897" name="ab10af64d90f17ea99a8f2e3f2d1d7897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab10af64d90f17ea99a8f2e3f2d1d7897">&#9670;&#160;</a></span>isKeyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputManager::isKeyPressed </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Scancode</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si una tecla está presionada en el frame actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Código de la tecla SDL (SDL_Scancode). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la tecla está presionada, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a316163861a12c1848d30219d2fb82acb" name="a316163861a12c1848d30219d2fb82acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316163861a12c1848d30219d2fb82acb">&#9670;&#160;</a></span>isKeyReleased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputManager::isKeyReleased </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Scancode</td>          <td class="paramname"><span class="paramname"><em>key</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si una tecla ha sido soltada en el frame actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>Código de la tecla SDL (SDL_Scancode). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si la tecla fue soltada, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="ada9ca76b0637df3935f770a8738e5f2c" name="ada9ca76b0637df3935f770a8738e5f2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada9ca76b0637df3935f770a8738e5f2c">&#9670;&#160;</a></span>isMouseButtonHeld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputManager::isMouseButtonHeld </td>
+          <td>(</td>
+          <td class="paramtype">Uint8</td>          <td class="paramname"><span class="paramname"><em>button</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si un botón del ratón está mantenido presionado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>Identificador del botón del ratón (Uint8). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si el botón está mantenido, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="a5faf5d48fabea11966b58cd26adcf972" name="a5faf5d48fabea11966b58cd26adcf972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5faf5d48fabea11966b58cd26adcf972">&#9670;&#160;</a></span>isMouseButtonPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputManager::isMouseButtonPressed </td>
+          <td>(</td>
+          <td class="paramtype">Uint8</td>          <td class="paramname"><span class="paramname"><em>button</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si un botón del ratón está presionado en el frame actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>Identificador del botón del ratón (Uint8). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si el botón está presionado, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<a id="ac085d4f3b6ce68d247d73cae9689330b" name="ac085d4f3b6ce68d247d73cae9689330b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac085d4f3b6ce68d247d73cae9689330b">&#9670;&#160;</a></span>isMouseButtonReleased()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InputManager::isMouseButtonReleased </td>
+          <td>(</td>
+          <td class="paramtype">Uint8</td>          <td class="paramname"><span class="paramname"><em>button</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica si un botón del ratón ha sido soltado en el frame actual. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">button</td><td>Identificador del botón del ratón (Uint8). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Verdadero si el botón fue soltado, falso en caso contrario. </dd></dl>
+
+</div>
+</div>
+<hr/>La documentación de esta clase está generada de los siguientes archivos:<ul>
+<li>Managers/<a class="el" href="_input_manager_8h_source.html">InputManager.h</a></li>
+<li>Managers/<b>InputManager.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_input_manager.html">InputManager</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

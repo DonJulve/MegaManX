@@ -1,0 +1,48 @@
+\doxysection{Referencia de la estructura IAComponent}
+\hypertarget{struct_i_a_component}{}\label{struct_i_a_component}\index{IAComponent@{IAComponent}}
+Diagrama de herencia de IAComponent\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{struct_i_a_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_i_a_component_adfec8d879774e690a0ab9607159064d8}\label{struct_i_a_component_adfec8d879774e690a0ab9607159064d8} 
+{\bfseries IAComponent} (const std\+::string \&type)
+\item 
+\Hypertarget{struct_i_a_component_a0a5dda87fdd27807fcab2cc256a5efd6}\label{struct_i_a_component_a0a5dda87fdd27807fcab2cc256a5efd6} 
+std\+::string {\bfseries get\+IAType} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{start}} ()
+\begin{DoxyCompactList}\small\item\em Se llama cuando el componente se inicializa. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_i_a_component_aad7f40122111340c40eca605afc5207c}\label{struct_i_a_component_aad7f40122111340c40eca605afc5207c} 
+std\+::string {\bfseries ia\+Type}
+\begin{DoxyCompactList}\small\item\em Tipo de IA (para identificación o depuración) \end{DoxyCompactList}\item 
+\Hypertarget{struct_i_a_component_a6be0a729262867edeacbea534698a1c6}\label{struct_i_a_component_a6be0a729262867edeacbea534698a1c6} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries entity\+Manager}
+\begin{DoxyCompactList}\small\item\em Puntero a \doxylink{class_entity_manager}{Entity\+Manager} para acceder a otras entidades. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Otros miembros heredados}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+Components/\+IA/IAComponents.\+h\end{DoxyCompactItemize}

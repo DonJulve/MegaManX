@@ -1,0 +1,72 @@
+\doxysection{Referencia de la clase UILoader}
+\hypertarget{class_u_i_loader}{}\label{class_u_i_loader}\index{UILoader@{UILoader}}
+
+
+Clase utilitaria para cargar componentes UI desde datos JSON.  
+
+
+
+
+{\ttfamily \#include $<$UIComponent.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_u_i_parameters}{UIParameters}} \mbox{\hyperlink{class_u_i_loader_ab9221d1b368e0b2b4557b5165f0f9243}{from\+JSON}} (const nlohmann\+::json \&j, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea parámetros UI a partir de un objeto JSON. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_u_i_component}{UIComponent}} \mbox{\hyperlink{class_u_i_loader_adeacb6b4392018be92d69ec0742374e3}{create\+From\+JSON}} (nlohmann\+::json \&j, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea un componente UI a partir de un objeto JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase utilitaria para cargar componentes UI desde datos JSON. 
+
+Proporciona métodos estáticos para crear parámetros y componentes UI a partir de JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_u_i_loader_adeacb6b4392018be92d69ec0742374e3}\index{UILoader@{UILoader}!createFromJSON@{createFromJSON}}
+\index{createFromJSON@{createFromJSON}!UILoader@{UILoader}}
+\doxysubsubsection{\texorpdfstring{createFromJSON()}{createFromJSON()}}
+{\footnotesize\ttfamily \label{class_u_i_loader_adeacb6b4392018be92d69ec0742374e3} 
+\mbox{\hyperlink{struct_u_i_component}{UIComponent}} UILoader\+::create\+From\+JSON (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{j}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un componente UI a partir de un objeto JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON que contiene los datos de configuración. \\
+\hline
+{\em entity\+Manager} & Referencia al administrador de entidades para asociar el componente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxylink{struct_u_i_component}{UIComponent} creado con los datos del JSON. 
+\end{DoxyReturn}
+\Hypertarget{class_u_i_loader_ab9221d1b368e0b2b4557b5165f0f9243}\index{UILoader@{UILoader}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!UILoader@{UILoader}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}}
+{\footnotesize\ttfamily \label{class_u_i_loader_ab9221d1b368e0b2b4557b5165f0f9243} 
+\mbox{\hyperlink{struct_u_i_parameters}{UIParameters}} UILoader\+::from\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea parámetros UI a partir de un objeto JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON que contiene los datos de configuración. \\
+\hline
+{\em entity\+Manager} & Referencia al administrador de entidades para acceder a los componentes necesarios. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+\doxylink{struct_u_i_parameters}{UIParameters} con los datos extraídos del JSON. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/UIComponent.\+h\item 
+Components/UIComponent.\+cpp\end{DoxyCompactItemize}

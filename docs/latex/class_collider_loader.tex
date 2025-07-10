@@ -1,0 +1,70 @@
+\doxysection{Referencia de la clase Collider\+Loader}
+\hypertarget{class_collider_loader}{}\label{class_collider_loader}\index{ColliderLoader@{ColliderLoader}}
+
+
+Clase \doxylink{class_collider_loader}{Collider\+Loader} para cargar parámetros de \doxylink{struct_collider}{Collider} desde JSON.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_collider_parameters}{Collider\+Parameters}} \mbox{\hyperlink{class_collider_loader_a43339eeb02fe17c699d83ad3f258756a}{from\+JSON}} (const nlohmann\+::json \&j, const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Convierte un objeto JSON en una instancia de \doxylink{struct_collider_parameters}{Collider\+Parameters}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_collider}{Collider}} \mbox{\hyperlink{class_collider_loader_a8249ddf74ea68b1be6c3c90c97a59ee8}{create\+From\+JSON}} (const nlohmann\+::json \&j, const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea un componente \doxylink{struct_collider}{Collider} directamente desde JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_collider_loader}{Collider\+Loader} para cargar parámetros de \doxylink{struct_collider}{Collider} desde JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_collider_loader_a8249ddf74ea68b1be6c3c90c97a59ee8}\index{ColliderLoader@{ColliderLoader}!createFromJSON@{createFromJSON}}
+\index{createFromJSON@{createFromJSON}!ColliderLoader@{ColliderLoader}}
+\doxysubsubsection{\texorpdfstring{createFromJSON()}{createFromJSON()}}
+{\footnotesize\ttfamily \label{class_collider_loader_a8249ddf74ea68b1be6c3c90c97a59ee8} 
+\mbox{\hyperlink{struct_collider}{Collider}} Collider\+Loader\+::create\+From\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un componente \doxylink{struct_collider}{Collider} directamente desde JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Componente \doxylink{struct_collider}{Collider} creado. 
+\end{DoxyReturn}
+\Hypertarget{class_collider_loader_a43339eeb02fe17c699d83ad3f258756a}\index{ColliderLoader@{ColliderLoader}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!ColliderLoader@{ColliderLoader}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}}
+{\footnotesize\ttfamily \label{class_collider_loader_a43339eeb02fe17c699d83ad3f258756a} 
+\mbox{\hyperlink{struct_collider_parameters}{Collider\+Parameters}} Collider\+Loader\+::from\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convierte un objeto JSON en una instancia de \doxylink{struct_collider_parameters}{Collider\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de \doxylink{struct_collider_parameters}{Collider\+Parameters} generada desde JSON. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Collider.\+cpp\end{DoxyCompactItemize}

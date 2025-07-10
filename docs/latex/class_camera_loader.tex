@@ -1,0 +1,70 @@
+\doxysection{Referencia de la clase Camera\+Loader}
+\hypertarget{class_camera_loader}{}\label{class_camera_loader}\index{CameraLoader@{CameraLoader}}
+
+
+Clase \doxylink{class_camera_loader}{Camera\+Loader} para cargar parámetros de \doxylink{struct_camera}{Camera} desde JSON.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_camera_parameters}{Camera\+Parameters}} \mbox{\hyperlink{class_camera_loader_a9a85e304520d40b3912c7b9f9e9ad1ee}{from\+JSON}} (const nlohmann\+::json \&j, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Convierte un objeto JSON en una instancia de \doxylink{struct_camera_parameters}{Camera\+Parameters}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_camera}{Camera}} \mbox{\hyperlink{class_camera_loader_aab784e4902644e1c0f0485b97b4f654e}{create\+From\+JSON}} (nlohmann\+::json \&j, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea un componente \doxylink{struct_camera}{Camera} directamente desde JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_camera_loader}{Camera\+Loader} para cargar parámetros de \doxylink{struct_camera}{Camera} desde JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_camera_loader_aab784e4902644e1c0f0485b97b4f654e}\index{CameraLoader@{CameraLoader}!createFromJSON@{createFromJSON}}
+\index{createFromJSON@{createFromJSON}!CameraLoader@{CameraLoader}}
+\doxysubsubsection{\texorpdfstring{createFromJSON()}{createFromJSON()}}
+{\footnotesize\ttfamily \label{class_camera_loader_aab784e4902644e1c0f0485b97b4f654e} 
+\mbox{\hyperlink{struct_camera}{Camera}} Camera\+Loader\+::create\+From\+JSON (\begin{DoxyParamCaption}\item[{nlohmann\+::json \&}]{j}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un componente \doxylink{struct_camera}{Camera} directamente desde JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Componente \doxylink{struct_camera}{Camera} creado. 
+\end{DoxyReturn}
+\Hypertarget{class_camera_loader_a9a85e304520d40b3912c7b9f9e9ad1ee}\index{CameraLoader@{CameraLoader}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!CameraLoader@{CameraLoader}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}}
+{\footnotesize\ttfamily \label{class_camera_loader_a9a85e304520d40b3912c7b9f9e9ad1ee} 
+\mbox{\hyperlink{struct_camera_parameters}{Camera\+Parameters}} Camera\+Loader\+::from\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convierte un objeto JSON en una instancia de \doxylink{struct_camera_parameters}{Camera\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de \doxylink{struct_camera_parameters}{Camera\+Parameters} generada desde JSON. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Camera.\+cpp\end{DoxyCompactItemize}

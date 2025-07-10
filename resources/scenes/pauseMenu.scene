@@ -1,0 +1,43 @@
+{
+    "name": "mainMenu",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0,
+                    "posY": 0,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Camera": {
+                    "zoom": 1,
+                    "windowWidth": 800,
+                    "windowHeight": 600
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.5,
+                    "posY": 0.5,
+                    "rotZ": 0,
+                    "sizeX": 2.66,
+                    "sizeY": 2.66,
+                    "anchor": "CENTER"
+                },
+                "UIComponent": {
+                            
+                },
+                "Sprite": {
+                    "texturePath": "sprites/pauseMenu/bg/bg_0.png",
+                    "anchor": "CENTER"
+                },
+                "PauseMenu":{}
+            }
+        }
+    ]
+}

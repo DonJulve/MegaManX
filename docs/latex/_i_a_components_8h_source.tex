@@ -1,0 +1,88 @@
+\doxysection{IAComponents.\+h}
+\hypertarget{_i_a_components_8h_source}{}\label{_i_a_components_8h_source}\index{Components/IA/IAComponents.h@{Components/IA/IAComponents.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ IACOMPONENT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ IACOMPONENT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}\ \ \textcolor{comment}{//\ Para\ std::shared\_ptr}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Debug.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}EntityManager.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }IAComponent\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_i_a_component_aad7f40122111340c40eca605afc5207c}{iaType}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{struct_i_a_component_a6be0a729262867edeacbea534698a1c6}{entityManager}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ IAComponent(\textcolor{keyword}{const}\ std::string\&\ type)\ :\ \mbox{\hyperlink{struct_i_a_component_aad7f40122111340c40eca605afc5207c}{iaType}}(type)\ \{\}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::string\ getIAType()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{struct_i_a_component_aad7f40122111340c40eca605afc5207c}{iaType}};\ \}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~IAComponent()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }ClassicIAParameters\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ std::vector<std::string>\ states\_names;}
+\DoxyCodeLine{00030\ \ \ \ \ std::unordered\_map<std::string,std::vector<std::string>>\ transitions\_per\_state;}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ entityManager;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ ClassicIAParameters()\ \{\}}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_classic_i_a_component_ae847499c86f24bb3339cb76ef914f21e}{ClassicIAComponent}}\ :\ \textcolor{keyword}{public}\ IAComponent\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a94ab99472b7f5c250e20c55104ab6ef0}{ClassicIATransition}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a9e7cd7b76e946ace2c77abc0eddbaecd}{from}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_af0d788717bc62b58fb161a424c4929f7}{to}};\ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ std::function<bool(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*,\ \textcolor{keywordtype}{float})>\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a21005cfe93096d756a3896cf811bfaea}{conditionCallback}};\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a94ab99472b7f5c250e20c55104ab6ef0}{ClassicIATransition}}(\textcolor{keyword}{const}\ std::string\&\ f\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ t\ =\ \textcolor{stringliteral}{"{}"{}})\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a9e7cd7b76e946ace2c77abc0eddbaecd}{from}}(f),\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_af0d788717bc62b58fb161a424c4929f7}{to}}(t),\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a21005cfe93096d756a3896cf811bfaea}{conditionCallback}}(nullptr)\ \{\}}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_a60e1ee7f20fad32846ffaebaa50040ba}{ClassicIAState}}\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_a959303fad676a8d48277962620bec564}{name}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::function<void(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*,\ \textcolor{keywordtype}{float})>\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_aae329e76646d95c7ce61181559712d0b}{action}};\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::vector<ClassicIATransition>\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_ade46c8edc58e973bc7883c59c057863c}{transitions}};\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_a60e1ee7f20fad32846ffaebaa50040ba}{ClassicIAState}}()\ :\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_a959303fad676a8d48277962620bec564}{name}}(\textcolor{stringliteral}{"{}"{}}),\ \mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_state_aae329e76646d95c7ce61181559712d0b}{action}}(nullptr)\ \{\}}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ std::unordered\_map<std::string,\ ClassicIAState>\ states;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ std::string\ currentState;}
+\DoxyCodeLine{00070\ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_classic_i_a_component_ae847499c86f24bb3339cb76ef914f21e}{ClassicIAComponent}}(\mbox{\hyperlink{struct_classic_i_a_parameters}{ClassicIAParameters}}\ cIAp);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_classic_i_a_component_aa63830c8f8e0eae7dac334774dff8ac9}{start}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_classic_i_a_component_a87fba2785b91cdcf5220a6b998246ee2}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_classic_i_a_component_a2df0e7ff3711ce7a9b1ecadf329d8c4c}{render}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ \mbox{\hyperlink{struct_i_a_component_a6be0a729262867edeacbea534698a1c6}{entityManager}},\ SDL\_Renderer*\ renderer)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_classic_i_a_component_a7e2d6a361a476bf25fe30e5ef3553539}{setInitialState}}(\textcolor{keyword}{const}\ std::string\&\ state)\ \{\ currentState\ =\ state;\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_classic_i_a_component_a2846e0a5526fbe49715f611893220bee}{registerAction}}(\textcolor{keyword}{const}\ std::string\&\ name,\ std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*,\ \textcolor{keywordtype}{float})>\ callback);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_classic_i_a_component_a68598a06f9243d248a07fa80e7a5e223}{registerCondition}}(\textcolor{keyword}{const}\ std::string\&\ from,\ \textcolor{keyword}{const}\ std::string\&\ to,\ std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*,\ \textcolor{keywordtype}{float})>\ callback);}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_classic_i_a_loader}{ClassicIALoader}}\ \{}
+\DoxyCodeLine{00107\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_classic_i_a_parameters}{ClassicIAParameters}}\ \mbox{\hyperlink{class_classic_i_a_loader_a0ee8596398d203a4cd1903a6d47de9f0}{fromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{struct_classic_i_a_component}{ClassicIAComponent}}\ \mbox{\hyperlink{class_classic_i_a_loader_aa9731672371f875d48808376f0225d09}{createFromJSON}}(\textcolor{keyword}{const}\ nlohmann::json\&\ j,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !IA\_COMPONENT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\doxysection{Referencia de la estructura Animator\+Component\+::State}
+\hypertarget{struct_animator_component_1_1_state}{}\label{struct_animator_component_1_1_state}\index{AnimatorComponent::State@{AnimatorComponent::State}}
+
+
+Representa un estado en la máquina de estados de animación.  
+
+
+
+
+{\ttfamily \#include $<$Animator\+Component.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_component_1_1_state_af131e448652e9aa359a8bf04e12ab91e}\label{struct_animator_component_1_1_state_af131e448652e9aa359a8bf04e12ab91e} 
+{\bfseries State} (const std\+::string \&state\+Name, bool loop=true)
+\item 
+\Hypertarget{struct_animator_component_1_1_state_a573ff11f3bae36a101f9a2f93a680283}\label{struct_animator_component_1_1_state_a573ff11f3bae36a101f9a2f93a680283} 
+bool {\bfseries update} (float delta\+Time, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}\&out\+Texture, int \&out\+Width, int \&out\+Height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_component_1_1_state_ac86e065c784cc044c141ed070657104a}\label{struct_animator_component_1_1_state_ac86e065c784cc044c141ed070657104a} 
+std\+::string {\bfseries name}
+\item 
+\Hypertarget{struct_animator_component_1_1_state_a0b1d45c5718e1ba15afd5409a7a51b11}\label{struct_animator_component_1_1_state_a0b1d45c5718e1ba15afd5409a7a51b11} 
+std\+::vector$<$ \mbox{\hyperlink{struct_animator_component_1_1_animation_frame}{Animation\+Frame}} $>$ {\bfseries frames}
+\item 
+\Hypertarget{struct_animator_component_1_1_state_ae71979dc6730deb3464152c91df75f78}\label{struct_animator_component_1_1_state_ae71979dc6730deb3464152c91df75f78} 
+std\+::unordered\+\_\+map$<$ int, std\+::function$<$ void()$>$ $>$ {\bfseries frame\+Triggers}
+\item 
+\Hypertarget{struct_animator_component_1_1_state_ace6d5a9a3bb0f0fba85ffcc0047f8691}\label{struct_animator_component_1_1_state_ace6d5a9a3bb0f0fba85ffcc0047f8691} 
+int {\bfseries current\+Frame} = 0
+\item 
+\Hypertarget{struct_animator_component_1_1_state_af533e08ecf184915c84cc3792a8c2c83}\label{struct_animator_component_1_1_state_af533e08ecf184915c84cc3792a8c2c83} 
+float {\bfseries time\+Accumulator} = 0.\+0f
+\item 
+\Hypertarget{struct_animator_component_1_1_state_a179471b0d466d0ab6a2e59d49c0a0768}\label{struct_animator_component_1_1_state_a179471b0d466d0ab6a2e59d49c0a0768} 
+bool {\bfseries is\+Looping} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Representa un estado en la máquina de estados de animación. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Animator\+Component.\+h\item 
+Components/Animator\+Component.\+cpp\end{DoxyCompactItemize}

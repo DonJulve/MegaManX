@@ -1,0 +1,67 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "BlockAxeMax",
+            "scaleX": 26,
+            "scaleY": 18,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/axeMax/block/block_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator":{
+            "parameters": {
+                "hasSpikes": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/axeMax/block",
+                    "duration": 1
+                },
+                "piked": {
+                    "looping": true,
+                    "folder": "sprites/enemies/axeMax/spike",
+                    "duration": 1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "piked",
+                    "conditions": [
+                        {"parameter": "hasSpikes", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "BlockComponent": {
+            
+        }
+    }
+}

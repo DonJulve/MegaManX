@@ -1,0 +1,98 @@
+\doxysection{Referencia de la clase Component}
+\hypertarget{class_component}{}\label{class_component}\index{Component@{Component}}
+
+
+Clase base para todos los componentes en el sistema ECS.  
+
+
+
+
+{\ttfamily \#include $<$Entity\+Manager.\+h$>$}
+
+Diagrama de herencia de Component\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_component_ad82d7393e339c1b19cc17a0d55b5674d}\label{class_component_ad82d7393e339c1b19cc17a0d55b5674d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{start}} ()
+\begin{DoxyCompactList}\small\item\em Se llama cuando el componente se inicializa. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_component_a410bd56dfca652a5be56a4c384754845}\label{class_component_a410bd56dfca652a5be56a4c384754845} 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase base para todos los componentes en el sistema ECS. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_component_a4178a49630da72ebf6bf420e3343c7ce}\index{Component@{Component}!render@{render}}
+\index{render@{render}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_component_a4178a49630da72ebf6bf420e3343c7ce} 
+virtual void Component\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización (en segundos). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \mbox{\hyperlink{struct_classic_i_a_component_a2df0e7ff3711ce7a9b1ecadf329d8c4c}{Classic\+IAComponent}}, \mbox{\hyperlink{struct_collider_a082d390f64f403509275e4c20a706ac9}{Collider}}, \mbox{\hyperlink{struct_parallax_layer_a0627f419ed2cd3b474c4637edad47b94}{Parallax\+Layer}} y \mbox{\hyperlink{struct_u_i_component_a443cdf6d4213612c0fd8a3050cd5bd1e}{UIComponent}}.
+
+\Hypertarget{class_component_ae1ca93c773f779d0a004eec46f468560}\index{Component@{Component}!start@{start}}
+\index{start@{start}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_component_ae1ca93c773f779d0a004eec46f468560} 
+virtual void Component\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Se llama cuando el componente se inicializa. 
+
+
+
+Reimplementado en \mbox{\hyperlink{struct_animator_component_a45210bd1a25c18461aa3120217eaed36}{Animator\+Component}}, \mbox{\hyperlink{struct_camera_ac8521ca993bf860acb6e08471fc02b64}{Camera}}, \mbox{\hyperlink{struct_classic_i_a_component_aa63830c8f8e0eae7dac334774dff8ac9}{Classic\+IAComponent}}, \mbox{\hyperlink{struct_collider_afc2cd70c2772433aaba405d1fc1a5beb}{Collider}}, \mbox{\hyperlink{struct_parallax_layer_ac45b18543badca87272c331bd0232fb2}{Parallax\+Layer}}, \mbox{\hyperlink{struct_rigidbody_abf24c797ee51c8e5daf17466485ad054}{Rigidbody}}, \mbox{\hyperlink{struct_sprite_renderer_aff641050ca3902faa775f21cab759d88}{Sprite\+Renderer}} y \mbox{\hyperlink{struct_transform_a33f87f9c76e5ff2c0979e21e5a4d76ab}{Transform}}.
+
+\Hypertarget{class_component_a3b3bee5d55446124842e5f2e229e1384}\index{Component@{Component}!update@{update}}
+\index{update@{update}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_component_a3b3bee5d55446124842e5f2e229e1384} 
+virtual void Component\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización (en segundos). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado en \mbox{\hyperlink{struct_animator_component_a8004bae57e4a5e752b0a438881be9231}{Animator\+Component}}, \mbox{\hyperlink{struct_camera_a28a44ef207ad25b7d11c53da58bd707c}{Camera}}, \mbox{\hyperlink{struct_classic_i_a_component_a87fba2785b91cdcf5220a6b998246ee2}{Classic\+IAComponent}}, \mbox{\hyperlink{struct_collider_accd99a67e32b8c4d56f5e346c06b1530}{Collider}}, \mbox{\hyperlink{struct_rigidbody_aaf91a8e80c803c1c5b99f5bb399d0e07}{Rigidbody}}, \mbox{\hyperlink{struct_sprite_renderer_ae3585cdb6bfe429286b662173dd2a381}{Sprite\+Renderer}} y \mbox{\hyperlink{struct_transform_aec7a77f20db1b4d6f0dc76ce17adcac4}{Transform}}.
+
+
+
+La documentación de esta clase está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Entity\+Manager.\+h\end{DoxyCompactItemize}

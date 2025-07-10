@@ -1,0 +1,146 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 230,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 38,
+            "scaleY": 43,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/axeMax/attack/attack_2.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isAttacking": {"type": "bool", "value": false},
+                "isLaughing": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/axeMax/idle",
+                    "duration": 0.06
+                },
+                "attack": {
+                    "looping": false,
+                    "folder": "sprites/enemies/axeMax/attack",
+                    "duration": 0.1
+                },
+                "laugh": {
+                    "looping": true,
+                    "folder": "sprites/enemies/axeMax/laugh",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "laugh",
+                    "conditions": [
+                        {"parameter": "isLaughing", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "laugh",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isLaughing", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "laugh",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "laugh",
+                    "conditions": [
+                        {"parameter": "isLaughing", "mode": "EQ", "value": 1},
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "AxeMaxController": {
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions": [
+                        {"nextState": "Attack"},
+                        {"nextState": "Death"},
+                        {"nextState": "Charge"},
+                        {"nextState": "Laugh"}
+                    ]
+                },
+                {
+                    "name": "Attack",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Laugh",
+                    "transitions": [
+                        {"nextState": "Charge"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Charge",
+                    "transitions": [
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions": []
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,189 @@
+{
+    "name": "mainMenu",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0,
+                    "posY": 0,
+                    "rotZ": 0,
+                    "sizeX": 1,
+                    "sizeY": 1,
+                    "anchor": "CENTER"
+                },
+                "Camera": {
+                    "zoom": 1,
+                    "windowWidth": 800,
+                    "windowHeight": 600
+                }
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.56,
+                    "posY": 0.22,
+                    "rotZ": 0,
+                    "sizeX": 2.5,
+                    "sizeY": 2.5,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/title/X/X_0.png",
+                    "anchor": "TOP_LEFT"
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 0.2,
+                    "posY": 0.2,
+                    "rotZ": 0,
+                    "sizeX": 2.5,
+                    "sizeY": 2.5,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/title/title/title_3.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "Animator": {
+                    "states":{
+                        "idle":{
+                            "looping": false,
+                            "folder": "sprites/title/title",
+                            "duration": 0.3
+                        }
+                    },   
+                    "initialState": "idle"
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": -0.2,
+                    "posY": -0.70,
+                    "rotZ": 0,
+                    "sizeX": 2.5,
+                    "sizeY": 2.5,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/title/bullet/shoot/shoot_0.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "Animator": {
+                    "parameters": {
+                        "isCharging": {"type": "bool", "value": true},
+                        "isShooting": {"type": "bool", "value": false},
+                        "isMovShooting": {"type": "bool", "value": false}   
+                    },
+                    "states":{
+                        "charge":{
+                            "looping": false,
+                            "folder": "sprites/title/bullet/charge",
+                            "duration": 0.05
+                        },
+                        "shoot": {
+                            "looping": false,
+                            "folder": "sprites/title/bullet/shoot",
+                            "duration": 0.05
+                        },
+                        "movShoot":{
+                            "looping": true,
+                            "folder": "sprites/title/bullet/movShoot",
+                            "duration": 0.3
+                        }
+                    },
+                    "transitions": [
+                        {
+                            "from": "charge",
+                            "to": "shoot",
+                            "conditions": [
+                                {"parameter": "isCharging", "mode": "EQ", "value": 0},
+                                {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                            ]
+                        },
+                        {
+                            "from": "shoot",
+                            "to": "movShoot",
+                            "conditions": [
+                                {"parameter": "isShooting", "mode": "EQ", "value": 0},
+                                {"parameter": "isMovShooting", "mode": "EQ", "value": 1}
+                            ]
+                        }
+                    ],  
+                    "initialState": "charge"
+                },
+                "BulletMainMenu":{}
+            }
+        },
+        {
+            "components":{
+                "Transform": {
+                    "posX": 0.1,
+                    "posY": 0.65,
+                    "rotZ": 0,
+                    "sizeX": 2.5,
+                    "sizeY": 2.5,
+                    "anchor": "TOP_LEFT"
+                },
+                "UIComponent": {
+                    
+                },
+                "Sprite": {
+                    "texturePath": "sprites/title/megaman/megaman_0.png",
+                    "anchor": "TOP_LEFT"
+                },
+                "Animator": {
+                    "parameters": {
+                        "isShooting": {"type": "bool", "value": false}    
+                    },
+                    "states":{
+                        "idle":{
+                            "looping": false,
+                            "folder": "sprites/title/megaman",
+                            "duration": 0.2
+                        },
+                        "shoot":{
+                            "looping": false,
+                            "folder": "sprites/megaman/shoot",
+                            "duration": 0.6
+                        }
+                    },
+                    "transitions":[
+                        {
+                            "from": "idle",
+                            "to": "shoot",
+                            "conditions": [
+                                {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                            ]
+                        },
+                        {
+                            "from": "shoot",
+                            "to": "idle",
+                            "conditions": [
+                                {"parameter": "isShooting", "mode": "EQ", "value": 0}
+                            ]
+                        }
+                    ],
+                    "initialState": "idle"
+                },
+                "MainMenu": {},
+                "MegamanMainMenu":{}
+            }
+        }
+    ]
+}

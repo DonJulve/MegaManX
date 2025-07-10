@@ -1,0 +1,483 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Tutorial</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('index.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Tutorial </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
+Tutorial</h1>
+<p>Esta página te guiará paso a paso para empezar a usar Capybara <a class="el" href="class_engine.html" title="Clase Engine que representa el núcleo del motor del juego.">Engine</a>.</p>
+<h2><a class="anchor" id="autotoc_md1"></a>
+1: Configurar Main.cpp en el directorio raiz del proyecto</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#define SDL_MAIN_HANDLED</span></div>
+<div class="line"><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;Game.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;Engine.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> SDL_main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
+<div class="line">    Game game(<span class="stringliteral">&quot;Nombre del juego&quot;</span>, 800, 600);</div>
+<div class="line">    game.run();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
+2: Configurar Game.h de la carpeta game</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#ifndef GAME_H</span></div>
+<div class="line"><span class="preprocessor">#define GAME_H</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;Engine.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;Systems.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;Components.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;SceneLoader.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;Debug.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">//Esto es para el tutorial</span></div>
+<div class="line"><span class="preprocessor">#include &quot;ComponenteDePrueba.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>Game {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    Game(<span class="keyword">const</span> <span class="keywordtype">char</span>* title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height) {}</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> registro() {</div>
+<div class="line">        <a class="code hl_class" href="class_scene_loader.html">SceneLoader</a>* sl = &amp;(<a class="code hl_function" href="class_scene_loader.html#a5c9e282066820821bc2b4df41e2b2f82">SceneLoader::getInstance</a>());</div>
+<div class="line"> </div>
+<div class="line">        sl-&gt;<a class="code hl_function" href="class_scene_loader.html#ab3624d62ad324773e0079e916d90a91f">registerComponentLoader</a>&lt;ComponenteDePrueba, ComponenteDePruebaParameters&gt;(</div>
+<div class="line">            <span class="stringliteral">&quot;CDP&quot;</span>,</div>
+<div class="line">            [](<span class="keyword">const</span> nlohmann::json&amp; j, <a class="code hl_class" href="class_entity_manager.html">EntityManager</a>&amp; entityManager) -&gt; ComponenteDePrueba* {</div>
+<div class="line">                <span class="keywordflow">return</span> <span class="keyword">new</span> ComponenteDePrueba(ComponenteDePruebaLoader::fromJSON(j, entityManager));</div>
+<div class="line">            }</div>
+<div class="line">        );</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">//Por cada componente personalizado creado para el juego, repetir el proceso de arriba</span></div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordtype">void</span> run() {</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">try</span> {</div>
+<div class="line">            Engine* engine = <a class="code hl_function" href="class_engine.html#a02f2e8b067be048cbc28b94eb64281c5">Engine::getInstance</a>(<span class="stringliteral">&quot;Nombre del juego&quot;</span>, 800, 600);</div>
+<div class="line">            registro();</div>
+<div class="line">            <a class="code hl_function" href="class_debug.html#ac5d597c530951c79d3ec2362d222e6aa">Debug::EnableFileLogging</a>(<span class="stringliteral">&quot;Nombre del fichero de logs&quot;</span>);  </div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">//Por cada escena a cargar de inicio, hacer lo siguiente</span></div>
+<div class="line">            engine-&gt;<a class="code hl_function" href="class_engine.html#a811edd23b484c60ad7d338225f135282">getSceneManager</a>()-&gt;<a class="code hl_function" href="class_scene_manager.html#a455b3866f1911eff04b0d716e6225ce8">addScene</a>(<span class="stringliteral">&quot;Nombre de la escena&quot;</span>);</div>
+<div class="line">            </div>
+<div class="line">            engine-&gt;<a class="code hl_function" href="class_engine.html#a1a210cf30d6bd330b3649439ecd6d6cc">run</a>();  </div>
+<div class="line">            <a class="code hl_function" href="class_debug.html#a93dd8afc25780886dcb1604aaa19044f">Debug::DisableFileLogging</a>();  </div>
+<div class="line">    </div>
+<div class="line">        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line">            <a class="code hl_enumvalue" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd">Debug::Error</a>(std::string(<span class="stringliteral">&quot;Unhandled Exception: &quot;</span>) + e.what());</div>
+<div class="line">        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line">            <a class="code hl_enumvalue" href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd">Debug::Error</a>(<span class="stringliteral">&quot;Unknown exception caught!&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_debug_html_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="class_debug.html#a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd">Debug::LogLevel::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdef"><b>Definition</b> Debug.h:18</div></div>
+<div class="ttc" id="aclass_debug_html_a93dd8afc25780886dcb1604aaa19044f"><div class="ttname"><a href="class_debug.html#a93dd8afc25780886dcb1604aaa19044f">Debug::DisableFileLogging</a></div><div class="ttdeci">static void DisableFileLogging()</div><div class="ttdoc">Deshabilita el registro en archivo.</div><div class="ttdef"><b>Definition</b> Debug.cpp:29</div></div>
+<div class="ttc" id="aclass_debug_html_ac5d597c530951c79d3ec2362d222e6aa"><div class="ttname"><a href="class_debug.html#ac5d597c530951c79d3ec2362d222e6aa">Debug::EnableFileLogging</a></div><div class="ttdeci">static void EnableFileLogging(const std::string &amp;filename)</div><div class="ttdoc">Habilita el registro en un archivo.</div><div class="ttdef"><b>Definition</b> Debug.cpp:18</div></div>
+<div class="ttc" id="aclass_engine_html_a02f2e8b067be048cbc28b94eb64281c5"><div class="ttname"><a href="class_engine.html#a02f2e8b067be048cbc28b94eb64281c5">Engine::getInstance</a></div><div class="ttdeci">static Engine * getInstance(const char *title=nullptr, int width=800, int height=600)</div><div class="ttdoc">Método estático para acceder a la instancia única de Engine (singleton).</div><div class="ttdef"><b>Definition</b> Engine.cpp:202</div></div>
+<div class="ttc" id="aclass_engine_html_a1a210cf30d6bd330b3649439ecd6d6cc"><div class="ttname"><a href="class_engine.html#a1a210cf30d6bd330b3649439ecd6d6cc">Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Bucle principal del juego.</div><div class="ttdef"><b>Definition</b> Engine.cpp:166</div></div>
+<div class="ttc" id="aclass_engine_html_a811edd23b484c60ad7d338225f135282"><div class="ttname"><a href="class_engine.html#a811edd23b484c60ad7d338225f135282">Engine::getSceneManager</a></div><div class="ttdeci">SceneManager * getSceneManager()</div><div class="ttdoc">Obtiene el SceneManager.</div><div class="ttdef"><b>Definition</b> Engine.h:84</div></div>
+<div class="ttc" id="aclass_entity_manager_html"><div class="ttname"><a href="class_entity_manager.html">EntityManager</a></div><div class="ttdoc">Gestiona entidades y sus componentes asociados en el sistema ECS.</div><div class="ttdef"><b>Definition</b> EntityManager.h:47</div></div>
+<div class="ttc" id="aclass_scene_loader_html"><div class="ttname"><a href="class_scene_loader.html">SceneLoader</a></div><div class="ttdoc">Clase SceneLoader para cargar escenas desde archivos JSON.</div><div class="ttdef"><b>Definition</b> SceneLoader.h:52</div></div>
+<div class="ttc" id="aclass_scene_loader_html_a5c9e282066820821bc2b4df41e2b2f82"><div class="ttname"><a href="class_scene_loader.html#a5c9e282066820821bc2b4df41e2b2f82">SceneLoader::getInstance</a></div><div class="ttdeci">static SceneLoader &amp; getInstance()</div><div class="ttdoc">Obtiene la instancia única de SceneLoader (singleton).</div><div class="ttdef"><b>Definition</b> SceneLoader.h:61</div></div>
+<div class="ttc" id="aclass_scene_loader_html_ab3624d62ad324773e0079e916d90a91f"><div class="ttname"><a href="class_scene_loader.html#ab3624d62ad324773e0079e916d90a91f">SceneLoader::registerComponentLoader</a></div><div class="ttdeci">void registerComponentLoader(const std::string &amp;componentName, std::function&lt; Component *(const nlohmann::json &amp;, EntityManager &amp;)&gt; loaderFunc)</div><div class="ttdoc">Registra una función de carga para un componente específico.</div><div class="ttdef"><b>Definition</b> SceneLoader.h:81</div></div>
+<div class="ttc" id="aclass_scene_manager_html_a455b3866f1911eff04b0d716e6225ce8"><div class="ttname"><a href="class_scene_manager.html#a455b3866f1911eff04b0d716e6225ce8">SceneManager::addScene</a></div><div class="ttdeci">void addScene(const std::string &amp;name)</div><div class="ttdoc">Agrega una escena al SceneManager.</div><div class="ttdef"><b>Definition</b> SceneManager.cpp:15</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+3: Crear componentes personalizados (Plantilla)</h2>
+<p>Si el componente a crear se llama T, se deben crear complementariamente TParameters y TLoader</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Components.h&quot;</span></div>
+<div class="line"><span class="comment">//Incluir ficheros necesarios del engine para el componente. Algunos ejemplos:</span></div>
+<div class="line"><span class="preprocessor">#include &quot;InputManager.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;Debug.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>TParameters {</div>
+<div class="line">    <span class="comment">//Parametros necesarios para pasar a T</span></div>
+<div class="line">    ComponenteDePruebaParameters(<a class="code hl_struct" href="struct_transform.html">Transform</a>* t) : transform(t) {}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>T : <span class="keyword">public</span> <a class="code hl_class" href="class_component.html">Component</a> {</div>
+<div class="line">    <span class="comment">//Parametros necesarios para el componente</span></div>
+<div class="line">    T(TParameters t) {}</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#ae1ca93c773f779d0a004eec46f468560">start</a>()<span class="keyword"> override </span>{ }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#a3b3bee5d55446124842e5f2e229e1384">update</a>(<span class="keywordtype">float</span> deltaTime)<span class="keyword"> override </span>{ };</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>TLoader {</div>
+<div class="line">    <span class="keyword">public</span>:</div>
+<div class="line"> </div>
+<div class="line">        <span class="keyword">static</span> TParameters fromJSON(<span class="keyword">const</span> nlohmann::json&amp; j, EntityManager&amp; entityManager) {</div>
+<div class="line">            <span class="comment">//Si el componente requiere el Transform de la entidad en la que esta</span></div>
+<div class="line">            Transform* transform = entityManager.<a class="code hl_function" href="class_entity_manager.html#aba49a0d5c7a2cc7190914b3c2c3c90b9">getComponent</a>&lt;Transform&gt;(entityManager.<a class="code hl_function" href="class_entity_manager.html#a03aa200e5f129675eb5e208d47147ee6">getLast</a>());</div>
+<div class="line">            <span class="keywordflow">if</span> (!transform) {</div>
+<div class="line">                <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;T requires a Transform component&quot;</span>);</div>
+<div class="line">            }</div>
+<div class="line">    </div>
+<div class="line">            TParameters params();</div>
+<div class="line">    </div>
+<div class="line">            <span class="keywordflow">return</span> params;</div>
+<div class="line">        }</div>
+<div class="line">    </div>
+<div class="line">        <span class="keyword">static</span> T createFromJSON( nlohmann::json&amp; j, EntityManager&amp; entityManager) {</div>
+<div class="line">            <span class="keywordflow">return</span> T(fromJSON(j, entityManager));</div>
+<div class="line">        }</div>
+<div class="line">    };</div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdoc">Clase base para todos los componentes en el sistema ECS.</div><div class="ttdef"><b>Definition</b> EntityManager.h:20</div></div>
+<div class="ttc" id="aclass_component_html_a3b3bee5d55446124842e5f2e229e1384"><div class="ttname"><a href="class_component.html#a3b3bee5d55446124842e5f2e229e1384">Component::update</a></div><div class="ttdeci">virtual void update(float deltaTime)</div><div class="ttdoc">Actualiza el estado del componente.</div><div class="ttdef"><b>Definition</b> EntityManager.h:35</div></div>
+<div class="ttc" id="aclass_component_html_ae1ca93c773f779d0a004eec46f468560"><div class="ttname"><a href="class_component.html#ae1ca93c773f779d0a004eec46f468560">Component::start</a></div><div class="ttdeci">virtual void start()</div><div class="ttdoc">Se llama cuando el componente se inicializa.</div><div class="ttdef"><b>Definition</b> EntityManager.h:29</div></div>
+<div class="ttc" id="aclass_entity_manager_html_a03aa200e5f129675eb5e208d47147ee6"><div class="ttname"><a href="class_entity_manager.html#a03aa200e5f129675eb5e208d47147ee6">EntityManager::getLast</a></div><div class="ttdeci">Entity getLast() const</div><div class="ttdoc">Obtiene el ID de la última entidad creada.</div><div class="ttdef"><b>Definition</b> EntityManager.h:137</div></div>
+<div class="ttc" id="aclass_entity_manager_html_aba49a0d5c7a2cc7190914b3c2c3c90b9"><div class="ttname"><a href="class_entity_manager.html#aba49a0d5c7a2cc7190914b3c2c3c90b9">EntityManager::getComponent</a></div><div class="ttdeci">T * getComponent(Entity entity) const</div><div class="ttdoc">Obtiene un componente de tipo T de una entidad.</div><div class="ttdef"><b>Definition</b> EntityManager.h:158</div></div>
+<div class="ttc" id="astruct_transform_html"><div class="ttname"><a href="struct_transform.html">Transform</a></div><div class="ttdoc">Componente Transform que representa la posición, rotación y tamaño de una entidad.</div><div class="ttdef"><b>Definition</b> Components.h:57</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+3: Escena de ejemplo, donde CDP y CDP2 son componentes personalizados</h2>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;name&quot;: &quot;test&quot;,</div>
+<div class="line">    &quot;entities&quot;: </div>
+<div class="line">    [</div>
+<div class="line">        {</div>
+<div class="line">            &quot;components&quot;: {</div>
+<div class="line">                &quot;Transform&quot;: {</div>
+<div class="line">                    &quot;posX&quot;: 0,</div>
+<div class="line">                    &quot;posY&quot;: 0,</div>
+<div class="line">                    &quot;rotZ&quot;: 0,</div>
+<div class="line">                    &quot;sizeX&quot;: 1,</div>
+<div class="line">                    &quot;sizeY&quot;: 1,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Camera&quot;: {</div>
+<div class="line">                    &quot;zoom&quot;: 1,</div>
+<div class="line">                    &quot;windowWidth&quot;: 800,</div>
+<div class="line">                    &quot;windowHeight&quot;: 600</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            &quot;components&quot;: {</div>
+<div class="line">                &quot;Transform&quot;: {</div>
+<div class="line">                    &quot;posX&quot;: 300,</div>
+<div class="line">                    &quot;posY&quot;: 100,</div>
+<div class="line">                    &quot;rotZ&quot;: 0,</div>
+<div class="line">                    &quot;sizeX&quot;: 0.1,</div>
+<div class="line">                    &quot;sizeY&quot;: 0.1,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Collider&quot;: {</div>
+<div class="line">                    &quot;scaleX&quot;: 100,</div>
+<div class="line">                    &quot;scaleY&quot;: 100,</div>
+<div class="line">                    &quot;isTrigger&quot;: false</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Rigidbody&quot;: {</div>
+<div class="line">                    &quot;velocityX&quot;: 0,</div>
+<div class="line">                    &quot;velocityY&quot;: 0,</div>
+<div class="line">                    &quot;mass&quot;: 100,</div>
+<div class="line">                    &quot;gravity&quot;: 9.8,</div>
+<div class="line">                    &quot;drag&quot;: 0.00,</div>
+<div class="line">                    &quot;bounceFactor&quot;: 0.99,</div>
+<div class="line">                    &quot;kinematic&quot;: false</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Sprite&quot;: {</div>
+<div class="line">                    &quot;texturePath&quot;: &quot;megaman.png&quot;,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;CDP2&quot;: {</div>
+<div class="line">                    </div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            &quot;components&quot;: {</div>
+<div class="line">                &quot;Transform&quot;: {</div>
+<div class="line">                    &quot;posX&quot;: 300,</div>
+<div class="line">                    &quot;posY&quot;: 500,</div>
+<div class="line">                    &quot;rotZ&quot;: 0,</div>
+<div class="line">                    &quot;sizeX&quot;: 1,</div>
+<div class="line">                    &quot;sizeY&quot;: 1,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Collider&quot;: {</div>
+<div class="line">                    &quot;scaleX&quot;: 100,</div>
+<div class="line">                    &quot;scaleY&quot;: 10,</div>
+<div class="line">                    &quot;isTrigger&quot;: false</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Rigidbody&quot;: {</div>
+<div class="line">                    &quot;velocityX&quot;: 0,</div>
+<div class="line">                    &quot;velocityY&quot;: 0,</div>
+<div class="line">                    &quot;mass&quot;: 10000,</div>
+<div class="line">                    &quot;gravity&quot;: 9.8,</div>
+<div class="line">                    &quot;drag&quot;: 0.01,</div>
+<div class="line">                    &quot;bounceFactor&quot;: 0.01,</div>
+<div class="line">                    &quot;kinematic&quot;: true</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Sprite&quot;: {</div>
+<div class="line">                    &quot;texturePath&quot;: &quot;suelo.png&quot;,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;CDP&quot;: {</div>
+<div class="line">                    </div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    ]</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+4: Uso de prefabs</h2>
+<p>Puedes tener entidades predefinidas, para no tener que copiarla entera en cada escena</p>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Megaman prefab</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;components&quot;: {</div>
+<div class="line">        &quot;Transform&quot;: {</div>
+<div class="line">            &quot;posX&quot;: 300,</div>
+<div class="line">            &quot;posY&quot;: 100,</div>
+<div class="line">            &quot;rotZ&quot;: 0,</div>
+<div class="line">            &quot;sizeX&quot;: 0.1,</div>
+<div class="line">            &quot;sizeY&quot;: 0.1,</div>
+<div class="line">            &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">        },</div>
+<div class="line">        &quot;Collider&quot;: {</div>
+<div class="line">            &quot;scaleX&quot;: 100,</div>
+<div class="line">            &quot;scaleY&quot;: 100,</div>
+<div class="line">            &quot;isTrigger&quot;: false</div>
+<div class="line">        },</div>
+<div class="line">        &quot;Rigidbody&quot;: {</div>
+<div class="line">            &quot;velocityX&quot;: 0,</div>
+<div class="line">            &quot;velocityY&quot;: 0,</div>
+<div class="line">            &quot;mass&quot;: 100,</div>
+<div class="line">            &quot;gravity&quot;: 9.8,</div>
+<div class="line">            &quot;drag&quot;: 0.00,</div>
+<div class="line">            &quot;bounceFactor&quot;: 0.99,</div>
+<div class="line">            &quot;kinematic&quot;: false</div>
+<div class="line">        },</div>
+<div class="line">        &quot;Sprite&quot;: {</div>
+<div class="line">            &quot;texturePath&quot;: &quot;megaman.png&quot;,</div>
+<div class="line">            &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">        },</div>
+<div class="line">        &quot;CDP2&quot;: {</div>
+<div class="line">            </div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
+La escena del punto 3 con el prefab</h3>
+<div class="fragment"><div class="line">{</div>
+<div class="line">    &quot;name&quot;: &quot;test&quot;,</div>
+<div class="line">    &quot;entities&quot;: </div>
+<div class="line">    [</div>
+<div class="line">        {</div>
+<div class="line">            &quot;components&quot;: {</div>
+<div class="line">                &quot;Transform&quot;: {</div>
+<div class="line">                    &quot;posX&quot;: 0,</div>
+<div class="line">                    &quot;posY&quot;: 0,</div>
+<div class="line">                    &quot;rotZ&quot;: 0,</div>
+<div class="line">                    &quot;sizeX&quot;: 1,</div>
+<div class="line">                    &quot;sizeY&quot;: 1,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Camera&quot;: {</div>
+<div class="line">                    &quot;zoom&quot;: 1,</div>
+<div class="line">                    &quot;windowWidth&quot;: 800,</div>
+<div class="line">                    &quot;windowHeight&quot;: 600</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            &quot;prefab&quot;: &quot;megaman&quot;</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            &quot;components&quot;: {</div>
+<div class="line">                &quot;Transform&quot;: {</div>
+<div class="line">                    &quot;posX&quot;: 300,</div>
+<div class="line">                    &quot;posY&quot;: 500,</div>
+<div class="line">                    &quot;rotZ&quot;: 0,</div>
+<div class="line">                    &quot;sizeX&quot;: 1,</div>
+<div class="line">                    &quot;sizeY&quot;: 1,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Collider&quot;: {</div>
+<div class="line">                    &quot;scaleX&quot;: 100,</div>
+<div class="line">                    &quot;scaleY&quot;: 10,</div>
+<div class="line">                    &quot;isTrigger&quot;: false</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Rigidbody&quot;: {</div>
+<div class="line">                    &quot;velocityX&quot;: 0,</div>
+<div class="line">                    &quot;velocityY&quot;: 0,</div>
+<div class="line">                    &quot;mass&quot;: 10000,</div>
+<div class="line">                    &quot;gravity&quot;: 9.8,</div>
+<div class="line">                    &quot;drag&quot;: 0.01,</div>
+<div class="line">                    &quot;bounceFactor&quot;: 0.01,</div>
+<div class="line">                    &quot;kinematic&quot;: true</div>
+<div class="line">                },</div>
+<div class="line">                &quot;Sprite&quot;: {</div>
+<div class="line">                    &quot;texturePath&quot;: &quot;suelo.png&quot;,</div>
+<div class="line">                    &quot;anchor&quot;: &quot;CENTER&quot;</div>
+<div class="line">                },</div>
+<div class="line">                &quot;CDP&quot;: {</div>
+<div class="line">                    </div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    ]</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Si quieres instanciar un prefab desde el codigo de un componente (El componente necesitara la referencia del <a class="el" href="class_entity_manager.html" title="Gestiona entidades y sus componentes asociados en el sistema ECS.">EntityManager</a> de la escena en la que este):</p>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="class_prefab_manager.html#a1abce875ef02dd8ca78bc7b1a95febea">PrefabManager::getInstance</a>().hasPrefab(<span class="stringliteral">&quot;NOMBRE_DEL_PREFAB&quot;</span>)) {</div>
+<div class="line">    <a class="code hl_function" href="class_prefab_manager.html#a1abce875ef02dd8ca78bc7b1a95febea">PrefabManager::getInstance</a>().<a class="code hl_function" href="class_prefab_manager.html#a04e7d2db54a72556ca5832c6c41d598c">loadPrefab</a>(<span class="stringliteral">&quot;NOMBRE_DEL_PREFAB&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line">Entity entity = <a class="code hl_function" href="class_prefab_manager.html#a1abce875ef02dd8ca78bc7b1a95febea">PrefabManager::getInstance</a>().<a class="code hl_function" href="class_prefab_manager.html#ac93b21c2726e7659b7e34f5b0418fdd7">instantiatePrefab</a>(<span class="stringliteral">&quot;NOMBRE_DEL_PREFAB&quot;</span>, entityManager);</div>
+<div class="ttc" id="aclass_prefab_manager_html_a04e7d2db54a72556ca5832c6c41d598c"><div class="ttname"><a href="class_prefab_manager.html#a04e7d2db54a72556ca5832c6c41d598c">PrefabManager::loadPrefab</a></div><div class="ttdeci">void loadPrefab(const std::string &amp;prefabName)</div><div class="ttdoc">Carga un prefab desde un archivo.</div><div class="ttdef"><b>Definition</b> PrefabManager.cpp:7</div></div>
+<div class="ttc" id="aclass_prefab_manager_html_a1abce875ef02dd8ca78bc7b1a95febea"><div class="ttname"><a href="class_prefab_manager.html#a1abce875ef02dd8ca78bc7b1a95febea">PrefabManager::getInstance</a></div><div class="ttdeci">static PrefabManager &amp; getInstance()</div><div class="ttdoc">Obtiene la instancia única de PrefabManager (singleton).</div><div class="ttdef"><b>Definition</b> PrefabManager.h:25</div></div>
+<div class="ttc" id="aclass_prefab_manager_html_ac93b21c2726e7659b7e34f5b0418fdd7"><div class="ttname"><a href="class_prefab_manager.html#ac93b21c2726e7659b7e34f5b0418fdd7">PrefabManager::instantiatePrefab</a></div><div class="ttdeci">Entity instantiatePrefab(const std::string &amp;prefabName, EntityManager &amp;entityManager)</div><div class="ttdoc">Instancia un prefab en el EntityManager proporcionado.</div><div class="ttdef"><b>Definition</b> PrefabManager.cpp:32</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+5: Ejemplo de Animator</h2>
+<div class="fragment"><div class="line">&quot;Animator&quot;: {</div>
+<div class="line">    &quot;parameters&quot;: {</div>
+<div class="line">        &quot;isWalking&quot;: {&quot;type&quot;: &quot;bool&quot;, &quot;value&quot;: false}</div>
+<div class="line">    },</div>
+<div class="line">    &quot;states&quot;: {</div>
+<div class="line">        &quot;idle&quot;: {</div>
+<div class="line">            &quot;looping&quot;: true,</div>
+<div class="line">            &quot;folder&quot;: &quot;sprites/megaman/idle&quot;, </div>
+<div class="line">            &quot;duration&quot;: 0.2</div>
+<div class="line">        },</div>
+<div class="line">        &quot;run&quot;: {</div>
+<div class="line">            &quot;looping&quot;: true,</div>
+<div class="line">            &quot;folder&quot;: &quot;sprites/megaman/run&quot;, </div>
+<div class="line">            &quot;duration&quot;: 0.12</div>
+<div class="line">        }</div>
+<div class="line">    },</div>
+<div class="line">    &quot;transitions&quot;: [</div>
+<div class="line">        {</div>
+<div class="line">            &quot;from&quot;: &quot;idle&quot;,</div>
+<div class="line">            &quot;to&quot;: &quot;run&quot;,</div>
+<div class="line">            &quot;conditions&quot;: [</div>
+<div class="line">                {&quot;parameter&quot;: &quot;isWalking&quot;, &quot;mode&quot;: &quot;EQ&quot;, &quot;value&quot;: 1}</div>
+<div class="line">            ]</div>
+<div class="line">        },</div>
+<div class="line">        {</div>
+<div class="line">            &quot;from&quot;: &quot;run&quot;,</div>
+<div class="line">            &quot;to&quot;: &quot;idle&quot;,</div>
+<div class="line">            &quot;conditions&quot;: [</div>
+<div class="line">                {&quot;parameter&quot;: &quot;isWalking&quot;, &quot;mode&quot;: &quot;NEQ&quot;, &quot;value&quot;: 1}</div>
+<div class="line">            ]</div>
+<div class="line">        }</div>
+<div class="line">    ],</div>
+<div class="line">    &quot;initialState&quot;: &quot;idle&quot;</div>
+<div class="line">}</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

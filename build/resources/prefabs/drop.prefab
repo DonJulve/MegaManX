@@ -1,0 +1,125 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Drop",
+            "scaleX": 20,
+            "scaleY": 20,
+            "isTrigger": true
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/drops/heart/heart_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isBigLife": {"type": "bool", "value": false},
+                "isSmallLife": {"type": "bool", "value": false},
+                "isBigAmmo": {"type": "bool", "value": false},
+                "isSmallAmmo": {"type": "bool", "value": false},
+                "isExtraLife": {"type": "bool", "value": false},
+                "isHeart": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": false,
+                    "folder": "sprites/drops/heart",
+                    "duration": 0.13
+                },
+                "bigLife": {
+                    "looping": true,
+                    "folder": "sprites/drops/bigLife",
+                    "duration": 0.13
+                },
+                "smallLife": {
+                    "looping": true,
+                    "folder": "sprites/drops/smallLife",
+                    "duration": 0.13
+                },
+                "bigAmmo": {
+                    "looping": true,
+                    "folder": "sprites/drops/bigAmmo",
+                    "duration": 0.13
+                },
+                "smallAmmo": {
+                    "looping": true,
+                    "folder": "sprites/drops/smallAmmo",
+                    "duration": 0.13
+                },
+                "extraLife": {
+                    "looping": true,
+                    "folder": "sprites/drops/extraLife",
+                    "duration": 0.13
+                },
+                "heart": {
+                    "looping": true,
+                    "folder": "sprites/drops/heart",
+                    "duration": 0.13
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "bigLife",
+                    "conditions": [
+                        {"parameter": "isBigLife", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "smallLife",
+                    "conditions": [
+                        {"parameter": "isSmallLife", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "bigAmmo",
+                    "conditions": [
+                        {"parameter": "isBigAmmo", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "smallAmmo",
+                    "conditions": [
+                        {"parameter": "isSmallAmmo", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "extraLife",
+                    "conditions": [
+                        {"parameter": "isExtraLife", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "heart",
+                    "conditions": [
+                        {"parameter": "isHeart", "mode": "EQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "DropController": {
+        }
+    }
+}

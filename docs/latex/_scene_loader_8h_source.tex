@@ -1,0 +1,92 @@
+\doxysection{Scene\+Loader.\+h}
+\hypertarget{_scene_loader_8h_source}{}\label{_scene_loader_8h_source}\index{Managers/Scenes/SceneLoader.h@{Managers/Scenes/SceneLoader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENELOADER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENELOADER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene}{Scene}};}
+\DoxyCodeLine{00005\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_prefab_manager}{PrefabManager}};}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}EntityManager.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Components.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}AnimatorComponent.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}PrefabManager.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{using\ }json\ =\ nlohmann::ordered\_json;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_component_loader}{ComponentLoader}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{LoaderFunction}}\ =\ std::function<\mbox{\hyperlink{class_component}{Component}}*(\textcolor{keyword}{const}\ nlohmann::json\&,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&)>;\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_loader_aed65b07b463ff25267ff9736661b1043}{setLoaderFunction}}(\mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{LoaderFunction}}\ func);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_component}{Component}}*\ \mbox{\hyperlink{class_component_loader_a65a23ac09753bed3e400ab6bd15f13b6}{load}}(\textcolor{keyword}{const}\ nlohmann::json\&\ data,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_component_loader_a83d2d390a35e04229bea554bfacb69c1}{LoaderFunction}}\ loaderFunc;\ }
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }SceneLoader\ \{}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ SceneLoader(\textcolor{keyword}{const}\ SceneLoader\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00055\ \ \ \ \ SceneLoader\&\ operator=(\textcolor{keyword}{const}\ SceneLoader\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{static}\ SceneLoader\&\ \mbox{\hyperlink{class_scene_loader_a5c9e282066820821bc2b4df41e2b2f82}{getInstance}}()\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ SceneLoader\ instance;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_scene}{Scene}}*\ \mbox{\hyperlink{class_scene_loader_adf7e746d69f10351c2d83bf9fd30aa5c}{loadScene}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ T2>}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene_loader_ab3624d62ad324773e0079e916d90a91f}{registerComponentLoader}}(}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ componentName,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::function<\mbox{\hyperlink{class_component}{Component}}*(\textcolor{keyword}{const}\ nlohmann::json\&,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&)>\ loaderFunc)\ \{}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_component_loader}{ComponentLoader}}*\ loader\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_component_loader}{ComponentLoader}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ loader-\/>\mbox{\hyperlink{class_component_loader_aed65b07b463ff25267ff9736661b1043}{setLoaderFunction}}([loaderFunc](\textcolor{keyword}{const}\ nlohmann::json\&\ data,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em)\ -\/>\ \mbox{\hyperlink{class_component}{Component}}*\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ loaderFunc(data,\ em);\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ componentsClasses.emplace(componentName,\ std::type\_index(\textcolor{keyword}{typeid}(T)));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ componentLoaders[componentName]\ =\ loader;}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ T2,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00105\ \ \ \ \ T2*\ \mbox{\hyperlink{class_scene_loader_ac3cad3526a1add886f47e9c3fef7ec42}{loadComponent}}(\textcolor{keyword}{const}\ std::string\&\ componentName,\ \textcolor{keyword}{const}\ json\&\ componentData,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ loaderIt\ =\ componentLoaders.find(componentName);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (loaderIt\ ==\ componentLoaders.end())\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Cargador\ de\ componente\ no\ encontrado:\ "{}}\ +\ componentName);}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_component_loader}{ComponentLoader}}*\ loader\ =\ loaderIt-\/>second;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!loader)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Tipo\ de\ cargador\ de\ componente\ inválido\ para:\ "{}}\ +\ componentName);}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T2*\textcolor{keyword}{>}(loader-\/>\mbox{\hyperlink{class_component_loader_a65a23ac09753bed3e400ab6bd15f13b6}{load}}(componentData,\ std::forward<Args>(args)...));}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_prefab_manager}{PrefabManager}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_scene_loader}{SceneLoader}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::unordered\_map<std::string,\ std::type\_index>\ componentsClasses;\ }
+\DoxyCodeLine{00126\ \ \ \ \ std::unordered\_map<std::string,\ ComponentLoader*>\ componentLoaders;\ \ }
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

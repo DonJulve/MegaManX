@@ -1,0 +1,123 @@
+\doxysection{Referencia de la estructura Rigidbody\+Parameters}
+\hypertarget{struct_rigidbody_parameters}{}\label{struct_rigidbody_parameters}\index{RigidbodyParameters@{RigidbodyParameters}}
+
+
+Estructura que contiene parámetros para el componente \doxylink{struct_rigidbody}{Rigidbody}.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_rigidbody_parameters_a0df97dc23b8dfe8319b9b653ee38daab}{Rigidbody\+Parameters}} (float vx=0, float vy=0, float m=1.\+0f, bool kin=false, float g=9.\+8f, float d=0.\+01f, float b=0.\+5f)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_rigidbody_parameters}{Rigidbody\+Parameters}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_rigidbody_parameters_a2648808c7321015bc5f5914dc40759e6}\label{struct_rigidbody_parameters_a2648808c7321015bc5f5914dc40759e6} 
+float {\bfseries velocityX}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_parameters_a7c01da83660cb7e3ee16e239c8dec114}{velocityY}}
+\item 
+\Hypertarget{struct_rigidbody_parameters_a9726fde0b9a83f60759226d08f6a5e0c}\label{struct_rigidbody_parameters_a9726fde0b9a83f60759226d08f6a5e0c} 
+float {\bfseries accelerationX}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_parameters_a28ee7a705fcf324d68594525d3e92237}{accelerationY}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_parameters_a0c92631d47120bef4518dee3317f61e3}{mass}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_parameters_a74e0194f60d8aa8acdf01bdb56a2cda7}{gravity}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_parameters_aae7dba999eece1ee56578385b5d21eab}{drag}}
+\item 
+float \mbox{\hyperlink{struct_rigidbody_parameters_a71637fff66c9d3c0dd7051911c0f64e0}{bounce\+Factor}}
+\item 
+bool \mbox{\hyperlink{struct_rigidbody_parameters_ad00f69a265d570fc81c755d57a89b4fd}{kinematic}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que contiene parámetros para el componente \doxylink{struct_rigidbody}{Rigidbody}. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_rigidbody_parameters_a0df97dc23b8dfe8319b9b653ee38daab}\index{RigidbodyParameters@{RigidbodyParameters}!RigidbodyParameters@{RigidbodyParameters}}
+\index{RigidbodyParameters@{RigidbodyParameters}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{RigidbodyParameters()}{RigidbodyParameters()}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_a0df97dc23b8dfe8319b9b653ee38daab} 
+Rigidbody\+Parameters\+::\+Rigidbody\+Parameters (\begin{DoxyParamCaption}\item[{float}]{vx}{ = {\ttfamily 0}, }\item[{float}]{vy}{ = {\ttfamily 0}, }\item[{float}]{m}{ = {\ttfamily 1.0f}, }\item[{bool}]{kin}{ = {\ttfamily false}, }\item[{float}]{g}{ = {\ttfamily 9.8f}, }\item[{float}]{d}{ = {\ttfamily 0.01f}, }\item[{float}]{b}{ = {\ttfamily 0.5f}}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_rigidbody_parameters}{Rigidbody\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em vx} & Velocidad en X (por defecto 0). \\
+\hline
+{\em vy} & Velocidad en Y (por defecto 0). \\
+\hline
+{\em m} & Masa (por defecto 1.\+0). \\
+\hline
+{\em kin} & Cinemático (por defecto false). \\
+\hline
+{\em g} & Gravedad (por defecto 9.\+8). \\
+\hline
+{\em d} & Resistencia (por defecto 0.\+01). \\
+\hline
+{\em b} & Factor de rebote (por defecto 0.\+5). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_rigidbody_parameters_a28ee7a705fcf324d68594525d3e92237}\index{RigidbodyParameters@{RigidbodyParameters}!accelerationY@{accelerationY}}
+\index{accelerationY@{accelerationY}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{accelerationY}{accelerationY}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_a28ee7a705fcf324d68594525d3e92237} 
+float Rigidbody\+Parameters\+::accelerationY}
+
+Aceleración en X e Y. \Hypertarget{struct_rigidbody_parameters_a71637fff66c9d3c0dd7051911c0f64e0}\index{RigidbodyParameters@{RigidbodyParameters}!bounceFactor@{bounceFactor}}
+\index{bounceFactor@{bounceFactor}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{bounceFactor}{bounceFactor}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_a71637fff66c9d3c0dd7051911c0f64e0} 
+float Rigidbody\+Parameters\+::bounce\+Factor}
+
+Factor de rebote. \Hypertarget{struct_rigidbody_parameters_aae7dba999eece1ee56578385b5d21eab}\index{RigidbodyParameters@{RigidbodyParameters}!drag@{drag}}
+\index{drag@{drag}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{drag}{drag}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_aae7dba999eece1ee56578385b5d21eab} 
+float Rigidbody\+Parameters\+::drag}
+
+Resistencia del aire. \Hypertarget{struct_rigidbody_parameters_a74e0194f60d8aa8acdf01bdb56a2cda7}\index{RigidbodyParameters@{RigidbodyParameters}!gravity@{gravity}}
+\index{gravity@{gravity}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{gravity}{gravity}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_a74e0194f60d8aa8acdf01bdb56a2cda7} 
+float Rigidbody\+Parameters\+::gravity}
+
+Fuerza de gravedad aplicada. \Hypertarget{struct_rigidbody_parameters_ad00f69a265d570fc81c755d57a89b4fd}\index{RigidbodyParameters@{RigidbodyParameters}!kinematic@{kinematic}}
+\index{kinematic@{kinematic}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{kinematic}{kinematic}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_ad00f69a265d570fc81c755d57a89b4fd} 
+bool Rigidbody\+Parameters\+::kinematic}
+
+Indica si el objeto es cinemático. \Hypertarget{struct_rigidbody_parameters_a0c92631d47120bef4518dee3317f61e3}\index{RigidbodyParameters@{RigidbodyParameters}!mass@{mass}}
+\index{mass@{mass}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{mass}{mass}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_a0c92631d47120bef4518dee3317f61e3} 
+float Rigidbody\+Parameters\+::mass}
+
+Masa del objeto. \Hypertarget{struct_rigidbody_parameters_a7c01da83660cb7e3ee16e239c8dec114}\index{RigidbodyParameters@{RigidbodyParameters}!velocityY@{velocityY}}
+\index{velocityY@{velocityY}!RigidbodyParameters@{RigidbodyParameters}}
+\doxysubsubsection{\texorpdfstring{velocityY}{velocityY}}
+{\footnotesize\ttfamily \label{struct_rigidbody_parameters_a7c01da83660cb7e3ee16e239c8dec114} 
+float Rigidbody\+Parameters\+::velocityY}
+
+Velocidad en X e Y. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Rigidbody.\+cpp\end{DoxyCompactItemize}

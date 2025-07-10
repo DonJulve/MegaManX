@@ -1,0 +1,3 @@
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/_deps/json-subbuild/CMakeFiles/json-populate.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/_deps/json-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/_deps/json-subbuild/CMakeFiles/rebuild_cache.dir

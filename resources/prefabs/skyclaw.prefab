@@ -1,0 +1,83 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 100,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 38,
+            "scaleY": 43,
+            "isTrigger": true
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 0,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/skyclaw/attack/attack_2.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isDown": {"type": "bool", "value": false},
+                "isAttacking": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "./sprites/enemies/skyclaw/idle",
+                    "duration": 0.06
+                },
+                "bajar": {
+                    "looping": true,
+                    "folder": "./sprites/enemies/skyclaw/down",
+                    "duration": 0.1
+                },
+                "atacar": {
+                    "looping": false,
+                    "folder": "./sprites/enemies/skyclaw/attack",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "bajar",
+                    "conditions": [
+                        {"parameter": "isDown", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "bajar",
+                    "to": "atacar",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "atacar",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "SkyclawController": {
+        }
+    }
+}

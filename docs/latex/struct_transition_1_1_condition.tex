@@ -1,0 +1,52 @@
+\doxysection{Referencia de la estructura Transition\+::Condition}
+\hypertarget{struct_transition_1_1_condition}{}\label{struct_transition_1_1_condition}\index{Transition::Condition@{Transition::Condition}}
+
+
+Condición para evaluar una transición.  
+
+
+
+
+{\ttfamily \#include $<$Animator\+Component.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_transition_1_1_condition_afd7a324dc23ed63af9fc248b6b9c48ef}\label{struct_transition_1_1_condition_afd7a324dc23ed63af9fc248b6b9c48ef} 
+enum class {\bfseries Mode} \{ \newline
+{\bfseries EQ}
+, {\bfseries NEQ}
+, {\bfseries LT}
+, {\bfseries GT}
+, \newline
+{\bfseries LTE}
+, {\bfseries GTE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_transition_1_1_condition_a0333aadfbc83cc56e283c247b78bb175}\label{struct_transition_1_1_condition_a0333aadfbc83cc56e283c247b78bb175} 
+bool {\bfseries evaluate} (const std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_animator_parameter}{Animator\+Parameter}} $>$ \&params) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_transition_1_1_condition_a6897ec607ad5fc8532c33da22b73f12f}\label{struct_transition_1_1_condition_a6897ec607ad5fc8532c33da22b73f12f} 
+std\+::string {\bfseries parameter\+Name}
+\item 
+\Hypertarget{struct_transition_1_1_condition_a5b869bacafe68139a933c8a2c5dcb851}\label{struct_transition_1_1_condition_a5b869bacafe68139a933c8a2c5dcb851} 
+Mode {\bfseries mode}
+\item 
+\Hypertarget{struct_transition_1_1_condition_a13723af87b0d3d5d04a6957f0a4dc4a6}\label{struct_transition_1_1_condition_a13723af87b0d3d5d04a6957f0a4dc4a6} 
+float {\bfseries value}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Condición para evaluar una transición. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Animator\+Component.\+h\item 
+Components/Animator\+Component.\+cpp\end{DoxyCompactItemize}

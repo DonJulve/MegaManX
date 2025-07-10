@@ -1,0 +1,11 @@
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/CMakeFiles/MegaManX.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/CMakeFiles/edit_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/engine/CMakeFiles/engine.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/engine/CMakeFiles/edit_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/engine/CMakeFiles/rebuild_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/_deps/json-build/CMakeFiles/edit_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/game/CMakeFiles/game.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/game/CMakeFiles/edit_cache.dir
+C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/game/CMakeFiles/rebuild_cache.dir

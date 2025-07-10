@@ -1,0 +1,206 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 230,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 40,
+            "scaleY": 67,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 120,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/flamemammoth/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isStarting": {"type": "bool", "value": true},
+                "isJumping": {"type": "bool", "value": false},
+                "isFalling": {"type": "bool", "value": false},
+                "isShootingLava": {"type": "bool", "value": false},
+                "isShootingFire": {"type": "bool", "value": false},
+                "isChangingDirection": {"type": "bool", "value": false}
+            },
+            "states": {
+                "start": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/start",
+                    "duration": 0.2
+                },
+                "idle": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/idle",
+                    "duration": 1
+                },
+                "jump": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/jump",
+                    "duration": 0.4
+                },
+                "fall": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/fall",
+                    "duration": 0.1
+                },
+                "shootLava": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/shoot_lava",
+                    "duration": 0.1
+                },
+                "shootFire": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/shoot_fire",
+                    "duration": 0.1
+                },
+                "changeDirection": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/start",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "start",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isStarting", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isJumping", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "shootLava",
+                    "conditions": [
+                        {"parameter": "isShootingLava", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "shootLava",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isShootingLava", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "shootFire",
+                    "conditions": [
+                        {"parameter": "isShootingFire", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "shootFire",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isShootingFire", "mode": "EQ", "value": 0}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "changeDirection",
+                    "conditions": [
+                        {"parameter": "isChangingDirection", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "changeDirection",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isChangingDirection", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ],
+            "initialState": "start"
+        },
+        "Health": {
+            "maxHealth": 1500
+        },
+        "FlameMammothController":{
+
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                    "name": "Idle",
+                    "transitions":[
+                        {"nextState": "Jump"},
+                        {"nextState": "ShootLava"},
+                        {"nextState": "ShootFire"},
+                        {"nextState": "ChangeDirection"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Jump",
+                    "transitions":[
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "ShootLava",
+                    "transitions":[
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "ShootFire",
+                    "transitions":[
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "ChangeDirection",
+                    "transitions":[
+                        {"nextState": "Idle"},
+                        {"nextState": "Death"}
+                    ]
+                },
+                {
+                    "name": "Death",
+                    "transitions":[]
+                }
+            ]
+        }
+    }
+}

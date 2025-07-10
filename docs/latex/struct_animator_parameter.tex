@@ -1,0 +1,64 @@
+\doxysection{Referencia de la estructura Animator\+Parameter}
+\hypertarget{struct_animator_parameter}{}\label{struct_animator_parameter}\index{AnimatorParameter@{AnimatorParameter}}
+
+
+Estructura que representa un parámetro de animación con diferentes tipos de valores.  
+
+
+
+
+{\ttfamily \#include $<$Animator\+Component.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_parameter_a94c3cd7fa0e60c20fe2633d357523976}\label{struct_animator_parameter_a94c3cd7fa0e60c20fe2633d357523976} 
+enum class {\bfseries Type} \{ {\bfseries BOOL}
+, {\bfseries INT}
+, {\bfseries FLOAT}
+, {\bfseries TRIGGER}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_parameter_adf8edcffa7a30374b7ebadee288c0d53}\label{struct_animator_parameter_adf8edcffa7a30374b7ebadee288c0d53} 
+{\bfseries Animator\+Parameter} (const std\+::string \&n, bool value)
+\item 
+\Hypertarget{struct_animator_parameter_acbc4970b47a371c2ea6279e99d28603d}\label{struct_animator_parameter_acbc4970b47a371c2ea6279e99d28603d} 
+{\bfseries Animator\+Parameter} (const std\+::string \&n, int value)
+\item 
+\Hypertarget{struct_animator_parameter_a6298f9f0bac8337a2dabccb4e845da06}\label{struct_animator_parameter_a6298f9f0bac8337a2dabccb4e845da06} 
+{\bfseries Animator\+Parameter} (const std\+::string \&n, float value)
+\item 
+\Hypertarget{struct_animator_parameter_a5aee093b7683f69e1d48593ddd35b8aa}\label{struct_animator_parameter_a5aee093b7683f69e1d48593ddd35b8aa} 
+{\bfseries Animator\+Parameter} (const std\+::string \&n)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_parameter_a9658ea8b1c2d35d33adfb12fdd0a4a25}\label{struct_animator_parameter_a9658ea8b1c2d35d33adfb12fdd0a4a25} 
+Type {\bfseries type}
+\item 
+\Hypertarget{struct_animator_parameter_a9ab3ec56bd5b46a5e6f857bcbd3103fe}\label{struct_animator_parameter_a9ab3ec56bd5b46a5e6f857bcbd3103fe} 
+std\+::string {\bfseries name}
+\item 
+\Hypertarget{struct_animator_parameter_af557dd9a3b0b3ff24b0a4e626a0c991f}\label{struct_animator_parameter_af557dd9a3b0b3ff24b0a4e626a0c991f} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>bool {\bfseries boolValue}\\
+\>int {\bfseries intValue}\\
+\>float {\bfseries floatValue}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que representa un parámetro de animación con diferentes tipos de valores. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Animator\+Component.\+h\item 
+Components/Animator\+Component.\+cpp\end{DoxyCompactItemize}

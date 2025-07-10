@@ -1,0 +1,179 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 35,
+            "scaleY": 35,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/raybit/idle/idle_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "startingJump": {"type": "bool", "value": false},
+                "isJumping": {"type": "bool", "value": false},
+                "isFalling": {"type": "bool", "value": false},
+                "isShooting": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/raybit/idle",
+                    "duration": 0.4
+                },
+                "startingJump": {
+                    "looping": false,
+                    "folder": "sprites/enemies/raybit/startingJump",
+                    "duration": 0.2
+                },
+                "jump": {
+                    "looping": false,
+                    "folder": "sprites/enemies/raybit/jump",
+                    "duration": 0.1
+                },
+                "fall": {
+                    "looping": false,
+                    "folder": "sprites/enemies/raybit/fall",
+                    "duration": 0.3
+                },
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/enemies/raybit/shoot",
+                    "duration": 0.3
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "startingJump",
+                    "conditions": [
+                        {"parameter": "startingJump", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "idle",
+                    "to": "shoot",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "startingJump",
+                    "to": "jump",
+                    "conditions": [
+                        {"parameter": "isJumping", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "jump",
+                    "to": "fall",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "shoot",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "NEQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "fall",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isFalling", "mode": "NEQ", "value": 1}
+                    ]
+                }
+            ],
+            "initialState": "idle"
+        },
+        "Health": {
+            "maxHealth": 100
+        },
+        "RaybitController": {
+
+        },
+        "ClassicIA": {
+            "states": [
+                {
+                "name": "Idle",
+                "transitions": [
+                    {
+                    "nextState": "JumpRight"
+                    },
+                    {
+                    "nextState": "JumpLeft"
+                    },
+                    {
+                    "nextState": "Shoot"
+                    },
+                    {
+                    "nextState": "Death"
+                    }
+                ]
+                },
+                {
+                "name": "JumpRight",
+                "transitions": [
+                    {
+                    "nextState": "Idle"
+                    },
+                    {
+                    "nextState": "Death"
+                    }
+                ]
+                },
+                {
+                "name": "JumpLeft",
+                "transitions": [
+                    {
+                    "nextState": "Idle"
+                    },
+                    {
+                    "nextState": "Death"
+                    }
+                ]
+                },
+                {
+                "name": "Shoot",
+                "transitions": [
+                    {
+                    "nextState": "Idle"
+                    },
+                    {
+                    "nextState": "Death"
+                    }
+                ]
+                },
+                {
+                "name": "Death",
+                "transitions": [
+                ]
+                }
+            ]
+        }
+    }
+}

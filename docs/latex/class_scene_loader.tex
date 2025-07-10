@@ -1,0 +1,137 @@
+\doxysection{Referencia de la clase Scene\+Loader}
+\hypertarget{class_scene_loader}{}\label{class_scene_loader}\index{SceneLoader@{SceneLoader}}
+
+
+Clase \doxylink{class_scene_loader}{Scene\+Loader} para cargar escenas desde archivos JSON.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Loader.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_loader_a17ab525d6f46716efe1fc67f080d2c12}\label{class_scene_loader_a17ab525d6f46716efe1fc67f080d2c12} 
+{\bfseries Scene\+Loader} (const \mbox{\hyperlink{class_scene_loader}{Scene\+Loader}} \&)=delete
+\item 
+\Hypertarget{class_scene_loader_a2d1630a0ad75bd7ce0e33e9aca4909a4}\label{class_scene_loader_a2d1630a0ad75bd7ce0e33e9aca4909a4} 
+\mbox{\hyperlink{class_scene_loader}{Scene\+Loader}} \& {\bfseries operator=} (const \mbox{\hyperlink{class_scene_loader}{Scene\+Loader}} \&)=delete
+\item 
+\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_loader_adf7e746d69f10351c2d83bf9fd30aa5c}{load\+Scene}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Carga una escena desde un archivo. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename T2$>$ }\\void \mbox{\hyperlink{class_scene_loader_ab3624d62ad324773e0079e916d90a91f}{register\+Component\+Loader}} (const std\+::string \&component\+Name, std\+::function$<$ \mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*}(const nlohmann\+::json \&, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&)$>$ loader\+Func)
+\begin{DoxyCompactList}\small\item\em Registra una función de carga para un componente específico. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename T2, typename... Args$>$ }\\T2 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_loader_ac3cad3526a1add886f47e9c3fef7ec42}{load\+Component}} (const std\+::string \&component\+Name, const json \&component\+Data, Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Carga un componente usando su nombre y datos JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_scene_loader}{Scene\+Loader}} \& \mbox{\hyperlink{class_scene_loader_a5c9e282066820821bc2b4df41e2b2f82}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia única de \doxylink{class_scene_loader}{Scene\+Loader} (singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_loader_a8b5967f00b805681f810a40693fd7c07}\label{class_scene_loader_a8b5967f00b805681f810a40693fd7c07} 
+class {\bfseries Prefab\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_scene_loader}{Scene\+Loader} para cargar escenas desde archivos JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_scene_loader_a5c9e282066820821bc2b4df41e2b2f82}\index{SceneLoader@{SceneLoader}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_scene_loader_a5c9e282066820821bc2b4df41e2b2f82} 
+static \mbox{\hyperlink{class_scene_loader}{Scene\+Loader}} \& Scene\+Loader\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Obtiene la instancia única de \doxylink{class_scene_loader}{Scene\+Loader} (singleton). 
+
+\begin{DoxyReturn}{Devuelve}
+Referencia a la instancia de \doxylink{class_scene_loader}{Scene\+Loader}. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_loader_ac3cad3526a1add886f47e9c3fef7ec42}\index{SceneLoader@{SceneLoader}!loadComponent@{loadComponent}}
+\index{loadComponent@{loadComponent}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{loadComponent()}{loadComponent()}}
+{\footnotesize\ttfamily \label{class_scene_loader_ac3cad3526a1add886f47e9c3fef7ec42} 
+template$<$typename T, typename T2, typename... Args$>$ \\
+T2 \texorpdfstring{$\ast$}{*} Scene\+Loader\+::load\+Component (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{component\+Name}{, }\item[{const json \&}]{component\+Data}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Carga un componente usando su nombre y datos JSON. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del componente. \\
+\hline
+{\em T2} & Tipo del componente cargado. \\
+\hline
+{\em Args} & Tipos de los argumentos adicionales. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Name} & Nombre del componente. \\
+\hline
+{\em component\+Data} & Datos JSON del componente. \\
+\hline
+{\em args} & Argumentos adicionales para la carga. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia del componente cargado. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_loader_adf7e746d69f10351c2d83bf9fd30aa5c}\index{SceneLoader@{SceneLoader}!loadScene@{loadScene}}
+\index{loadScene@{loadScene}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{loadScene()}{loadScene()}}
+{\footnotesize\ttfamily \label{class_scene_loader_adf7e746d69f10351c2d83bf9fd30aa5c} 
+\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} Scene\+Loader\+::load\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Carga una escena desde un archivo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em file\+Path} & Ruta del archivo JSON de la escena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la escena cargada. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_loader_ab3624d62ad324773e0079e916d90a91f}\index{SceneLoader@{SceneLoader}!registerComponentLoader@{registerComponentLoader}}
+\index{registerComponentLoader@{registerComponentLoader}!SceneLoader@{SceneLoader}}
+\doxysubsubsection{\texorpdfstring{registerComponentLoader()}{registerComponentLoader()}}
+{\footnotesize\ttfamily \label{class_scene_loader_ab3624d62ad324773e0079e916d90a91f} 
+template$<$typename T, typename T2$>$ \\
+void Scene\+Loader\+::register\+Component\+Loader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{component\+Name}{, }\item[{std\+::function$<$ \mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*}(const nlohmann\+::json \&, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&)$>$}]{loader\+Func}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registra una función de carga para un componente específico. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & Tipo del componente. \\
+\hline
+{\em T2} & Tipo de retorno de la función de carga. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em component\+Name} & Nombre del componente. \\
+\hline
+{\em loader\+Func} & Función de carga para el componente. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/\+Scenes/Scene\+Loader.\+h\item 
+Managers/\+Scenes/Scene\+Loader.\+cpp\end{DoxyCompactItemize}

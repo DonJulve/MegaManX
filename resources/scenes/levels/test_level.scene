@@ -1,0 +1,557 @@
+{
+    "name": "test",
+    "entities": 
+    [
+        {
+            "components": {
+                "Transform": {
+                    "posX": -182.0,
+                    "posY": 55.0,
+                    "rotZ": 0.0,
+                    "sizeX": 433.0,
+                    "sizeY": 148.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 251.0,
+                    "posY": -91.0,
+                    "rotZ": 0.0,
+                    "sizeX": 187.0,
+                    "sizeY": 281.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 438.0,
+                    "posY": -91.5,
+                    "rotZ": 0.0,
+                    "sizeX": 350.0,
+                    "sizeY": 166.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 788.0,
+                    "posY": -378.0,
+                    "rotZ": 0.0,
+                    "sizeX": 149.0,
+                    "sizeY": 327.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 532.5,
+                    "posY": -567.5,
+                    "rotZ": 0.0,
+                    "sizeX": 122.0,
+                    "sizeY": 346.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 674.0,
+                    "posY": -567.5,
+                    "rotZ": 0.0,
+                    "sizeX": 560.5,
+                    "sizeY": 89.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 929.0,
+                    "posY": -49.0,
+                    "rotZ": 0.0,
+                    "sizeX": 423.0,
+                    "sizeY": 159.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 1350.0,
+                    "posY": -341.0,
+                    "rotZ": 0.0,
+                    "sizeX": 365.0,
+                    "sizeY": 292.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 1715.5,
+                    "posY": -340.0,
+                    "rotZ": 0.0,
+                    "sizeX": 640.0,
+                    "sizeY": 312.5,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 2355.0,
+                    "posY": -339.0,
+                    "rotZ": 0.0,
+                    "sizeX": 395.5,
+                    "sizeY": 338.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 2750.0,
+                    "posY": -2.5,
+                    "rotZ": 0.0,
+                    "sizeX": 621.0,
+                    "sizeY": 208.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 3370.0,
+                    "posY": -497.5,
+                    "rotZ": 0.0,
+                    "sizeX": 238.0,
+                    "sizeY": 703.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 2981.0,
+                    "posY": -697.5,
+                    "rotZ": 0.0,
+                    "sizeX": 182.0,
+                    "sizeY": 501.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 3608.0,
+                    "posY": -843.0,
+                    "rotZ": 0.0,
+                    "sizeX": 482.0,
+                    "sizeY": 347.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 4091.32470703125,
+                    "posY": -839.650146484375,
+                    "rotZ": 0.0,
+                    "sizeX": 850.0,
+                    "sizeY": 214.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 4941.32470703125,
+                    "posY": -1403.650146484375,
+                    "rotZ": 0.0,
+                    "sizeX": 258.0,
+                    "sizeY": 576.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {
+            "components": {
+                "Transform": {
+                    "posX": 4063.32470703125,
+                    "posY": -1525.650146484375,
+                    "rotZ": 0.0,
+                    "sizeX": 872.0,
+                    "sizeY": 222.0,
+                    "anchor": "TOP_LEFT"
+                },
+                "Collider": {
+                    "scaleX": 1.0,
+                    "scaleY": 1.0,
+                    "isTrigger": false,
+                    "tag": "Terrain",
+                    "checkTop": true,
+                    "checkLeft": true,
+                    "checkRight": true,
+                    "checkBottom": true
+                },
+                "Rigidbody": {
+                    "velocityX": 0.0,
+                    "velocityY": 0.0,
+                    "mass": 100.0,
+                    "gravity": 9.800000190734863,
+                    "drag": 0.009999999776482582,
+                    "bounceFactor": 0.0,
+                    "kinematic": true
+                }
+            }
+        },
+        {"prefab": "jamminger", "posX": 212.0, "posY": 31.0},
+        {"prefab": "raybit", "posX": 512.0, "posY": -113.0},
+        {"prefab": "raybit", "posX": 633.0, "posY": -113.0},
+        {"prefab": "raybit", "posX": 715.0, "posY": -113.0},
+        {"prefab": "snowshooter", "posX": 813.0, "posY": -422.0},
+        {"prefab": "battonBone", "posX": 937.0, "posY": -162.0},
+        {"prefab": "battonBone", "posX": 1037.0, "posY": -162.0},
+        {"prefab": "battonBone", "posX": 1137.0, "posY": -162.0},
+        {"prefab": "battonBone", "posX": 1237.0, "posY": -162.0},
+        {"prefab": "axeMax", "posX": 2253.0, "posY": -372.0},
+        {"prefab": "bombbeen", "posX": 2955.0, "posY": -122.0},
+        {"prefab": "bombbeen", "posX": 3055.0, "posY": -122.0},
+        {"prefab": "bombbeen", "posX": 3155.0, "posY": -122.0},
+        {"prefab": "flammingle", "posX": 3498.0, "posY": -555.0},
+        {
+            "prefab": "megaman_camera"
+        },
+        {
+            "prefab": "megaman",
+            "posY": -75
+        },
+        {
+            "prefab": "lifebar"
+        }
+    ]
+}

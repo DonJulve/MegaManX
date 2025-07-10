@@ -1,0 +1,61 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 100,
+            "rotZ": 0,
+            "sizeX": 2.2,
+            "sizeY": 2.2,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "EnemyBullet",
+            "scaleX": 20,
+            "scaleY": 20,
+            "isTrigger": true
+        },
+        "Rigidbody":{
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 1,
+            "gravity": 0,
+            "drag": 0,
+            "bounceFactor": 0,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/flammingle/bullet/bullet_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isShooting": {"type": "bool", "value": false}
+            },
+            "states": {
+                "shoot": {
+                    "looping": false,
+                    "folder": "sprites/enemies/flammingle/bullet",
+                    "duration": 0.1
+                },
+                "spin": {
+                    "looping": true,
+                    "folder": "sprites/enemies/flammingle/bullet_spin",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "shoot",
+                    "to": "spin",
+                    "conditions": [
+                        {"parameter": "isShooting", "mode": "EQ", "value": 1}
+                    ]
+                } 
+            ],
+            "initialState": "shoot"
+        },
+        "FlammingleBulletComponent": {
+            
+        }
+    }
+}

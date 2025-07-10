@@ -1,0 +1,175 @@
+\doxysection{Referencia de la clase Scene\+Manager}
+\hypertarget{class_scene_manager}{}\label{class_scene_manager}\index{SceneManager@{SceneManager}}
+
+
+Clase \doxylink{class_scene_manager}{Scene\+Manager} para gestionar las escenas del juego.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_scene_manager_a68bccd9963f47c487650706725b8f06f}\label{class_scene_manager_a68bccd9963f47c487650706725b8f06f} 
+std\+::string {\bfseries get\+Scene\+Name\+By\+Entity\+Manager} (const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}target\+Entity\+Manager) const
+\item 
+void \mbox{\hyperlink{class_scene_manager_a455b3866f1911eff04b0d716e6225ce8}{add\+Scene}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Agrega una escena al \doxylink{class_scene_manager}{Scene\+Manager}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_manager_a4abd40417375fe8352130a8b2b19226f}{is\+Scene\+Loaded}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Verifica si una escena ya está cargada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_manager_a570071115d6e085e63e1b9346213c89d}{is\+Scene\+Loading}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Verifica si una escena está siendo cargada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_manager_a41864bf4299d1dc1c16b306d06cd8116}{load\+Scene\+Async}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Carga una escena de forma asíncrona. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_manager_a2142aee6058499901849534ab3409c5f}{get\+Scene}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Obtiene una escena por su nombre. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_manager_a654776433bd79a49a580e248bdce216d}{get\+Scenes}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el mapa de todas las escenas cargadas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_manager_a36f962be20b0193b8abbfaec5b8f6697}{remove\+Scene}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Elimina una escena del \doxylink{class_scene_manager}{Scene\+Manager}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_manager_ad25c8235f6841f866a3a139927530e74}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza todas las escenas activas. \end{DoxyCompactList}\item 
+\Hypertarget{class_scene_manager_a33896fec4566d8eb3dafdb01a5bd991c}\label{class_scene_manager_a33896fec4566d8eb3dafdb01a5bd991c} 
+void {\bfseries render} ()
+\begin{DoxyCompactList}\small\item\em Renderiza todas las escenas activas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_scene_manager}{Scene\+Manager} para gestionar las escenas del juego. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_scene_manager_a455b3866f1911eff04b0d716e6225ce8}\index{SceneManager@{SceneManager}!addScene@{addScene}}
+\index{addScene@{addScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{addScene()}{addScene()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a455b3866f1911eff04b0d716e6225ce8} 
+void Scene\+Manager\+::add\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Agrega una escena al \doxylink{class_scene_manager}{Scene\+Manager}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la escena a agregar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_manager_a2142aee6058499901849534ab3409c5f}\index{SceneManager@{SceneManager}!getScene@{getScene}}
+\index{getScene@{getScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{getScene()}{getScene()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a2142aee6058499901849534ab3409c5f} 
+\mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} Scene\+Manager\+::get\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene una escena por su nombre. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la escena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero a la instancia de \doxylink{class_scene}{Scene}, o nullptr si no existe. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_manager_a654776433bd79a49a580e248bdce216d}\index{SceneManager@{SceneManager}!getScenes@{getScenes}}
+\index{getScenes@{getScenes}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{getScenes()}{getScenes()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a654776433bd79a49a580e248bdce216d} 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{class_scene}{Scene}} \texorpdfstring{$\ast$}{*} $>$ \texorpdfstring{$\ast$}{*} Scene\+Manager\+::get\+Scenes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el mapa de todas las escenas cargadas. 
+
+\begin{DoxyReturn}{Devuelve}
+Puntero al mapa de escenas. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_manager_a4abd40417375fe8352130a8b2b19226f}\index{SceneManager@{SceneManager}!isSceneLoaded@{isSceneLoaded}}
+\index{isSceneLoaded@{isSceneLoaded}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{isSceneLoaded()}{isSceneLoaded()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a4abd40417375fe8352130a8b2b19226f} 
+bool Scene\+Manager\+::is\+Scene\+Loaded (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Verifica si una escena ya está cargada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la escena a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la escena está cargada, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_manager_a570071115d6e085e63e1b9346213c89d}\index{SceneManager@{SceneManager}!isSceneLoading@{isSceneLoading}}
+\index{isSceneLoading@{isSceneLoading}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{isSceneLoading()}{isSceneLoading()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a570071115d6e085e63e1b9346213c89d} 
+bool Scene\+Manager\+::is\+Scene\+Loading (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Verifica si una escena está siendo cargada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la escena a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Verdadero si la escena está siendo cargada, falso en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_scene_manager_a41864bf4299d1dc1c16b306d06cd8116}\index{SceneManager@{SceneManager}!loadSceneAsync@{loadSceneAsync}}
+\index{loadSceneAsync@{loadSceneAsync}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{loadSceneAsync()}{loadSceneAsync()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a41864bf4299d1dc1c16b306d06cd8116} 
+void Scene\+Manager\+::load\+Scene\+Async (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Carga una escena de forma asíncrona. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la escena a cargar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_manager_a36f962be20b0193b8abbfaec5b8f6697}\index{SceneManager@{SceneManager}!removeScene@{removeScene}}
+\index{removeScene@{removeScene}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{removeScene()}{removeScene()}}
+{\footnotesize\ttfamily \label{class_scene_manager_a36f962be20b0193b8abbfaec5b8f6697} 
+void Scene\+Manager\+::remove\+Scene (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Elimina una escena del \doxylink{class_scene_manager}{Scene\+Manager}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em name} & Nombre de la escena a eliminar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_scene_manager_ad25c8235f6841f866a3a139927530e74}\index{SceneManager@{SceneManager}!update@{update}}
+\index{update@{update}!SceneManager@{SceneManager}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene_manager_ad25c8235f6841f866a3a139927530e74} 
+void Scene\+Manager\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza todas las escenas activas. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/\+Scenes/Scene\+Manager.\+h\item 
+Managers/\+Scenes/Scene\+Manager.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Archivo de código fuente Components/IA/IAComponents.h</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_i_a_components_8h_source.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">IAComponents.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IACOMPONENT_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IACOMPONENT_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;SDL2/SDL_image.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span>  <span class="comment">// Para std::shared_ptr</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;Debug.h&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;EntityManager.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_i_a_component.html">   13</a></span><span class="keyword">struct </span>IAComponent : <span class="keyword">public</span> <a class="code hl_class" href="class_component.html">Component</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_i_a_component.html#aad7f40122111340c40eca605afc5207c">   15</a></span>        std::string <a class="code hl_variable" href="struct_i_a_component.html#aad7f40122111340c40eca605afc5207c">iaType</a>; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="struct_i_a_component.html#a6be0a729262867edeacbea534698a1c6">   16</a></span>        <a class="code hl_class" href="class_entity_manager.html">EntityManager</a>* <a class="code hl_variable" href="struct_i_a_component.html#a6be0a729262867edeacbea534698a1c6">entityManager</a>; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        IAComponent(<span class="keyword">const</span> std::string&amp; type) : <a class="code hl_variable" href="struct_i_a_component.html#aad7f40122111340c40eca605afc5207c">iaType</a>(type) {}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        std::string getIAType()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_i_a_component.html#aad7f40122111340c40eca605afc5207c">iaType</a>; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keyword">virtual</span> ~IAComponent() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span></div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_classic_i_a_parameters.html">   27</a></span><span class="keyword">struct </span>ClassicIAParameters {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::vector&lt;std::string&gt; states_names;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::unordered_map&lt;std::string,std::vector&lt;std::string&gt;&gt; transitions_per_state;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="class_entity_manager.html">EntityManager</a>* entityManager;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    ClassicIAParameters() {}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component.html">   39</a></span><span class="keyword">struct </span><a class="code hl_function" href="struct_classic_i_a_component.html#ae847499c86f24bb3339cb76ef914f21e">ClassicIAComponent</a> : <span class="keyword">public</span> IAComponent {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html">   43</a></span>    <span class="keyword">struct </span><a class="code hl_function" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a94ab99472b7f5c250e20c55104ab6ef0">ClassicIATransition</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a9e7cd7b76e946ace2c77abc0eddbaecd">   44</a></span>        std::string <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a9e7cd7b76e946ace2c77abc0eddbaecd">from</a>; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#af0d788717bc62b58fb161a424c4929f7">   45</a></span>        std::string <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#af0d788717bc62b58fb161a424c4929f7">to</a>;   </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a21005cfe93096d756a3896cf811bfaea">   46</a></span>        std::function&lt;bool(<a class="code hl_class" href="class_entity_manager.html">EntityManager</a>*, <span class="keywordtype">float</span>)&gt; <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a21005cfe93096d756a3896cf811bfaea">conditionCallback</a>; </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a94ab99472b7f5c250e20c55104ab6ef0">   51</a></span>        <a class="code hl_function" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a94ab99472b7f5c250e20c55104ab6ef0">ClassicIATransition</a>(<span class="keyword">const</span> std::string&amp; f = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> std::string&amp; t = <span class="stringliteral">&quot;&quot;</span>) </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            : <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a9e7cd7b76e946ace2c77abc0eddbaecd">from</a>(f), <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#af0d788717bc62b58fb161a424c4929f7">to</a>(t), <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a21005cfe93096d756a3896cf811bfaea">conditionCallback</a>(nullptr) {}</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
+</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="};">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_state.html">   57</a></span>    <span class="keyword">struct </span><a class="code hl_function" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a60e1ee7f20fad32846ffaebaa50040ba">ClassicIAState</a> {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a959303fad676a8d48277962620bec564">   58</a></span>        std::string <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a959303fad676a8d48277962620bec564">name</a>; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#aae329e76646d95c7ce61181559712d0b">   59</a></span>        std::function&lt;void(<a class="code hl_class" href="class_entity_manager.html">EntityManager</a>*, <span class="keywordtype">float</span>)&gt; <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#aae329e76646d95c7ce61181559712d0b">action</a>; </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#ade46c8edc58e973bc7883c59c057863c">   60</a></span>        std::vector&lt;ClassicIATransition&gt; <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#ade46c8edc58e973bc7883c59c057863c">transitions</a>; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a60e1ee7f20fad32846ffaebaa50040ba">   63</a></span>        <a class="code hl_function" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a60e1ee7f20fad32846ffaebaa50040ba">ClassicIAState</a>() : <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a959303fad676a8d48277962620bec564">name</a>(<span class="stringliteral">&quot;&quot;</span>), <a class="code hl_variable" href="struct_classic_i_a_component_1_1_classic_i_a_state.html#aae329e76646d95c7ce61181559712d0b">action</a>(nullptr) {}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    };</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        std::unordered_map&lt;std::string, ClassicIAState&gt; states;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        std::string currentState;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_function" href="struct_classic_i_a_component.html#ae847499c86f24bb3339cb76ef914f21e">ClassicIAComponent</a>(<a class="code hl_struct" href="struct_classic_i_a_parameters.html">ClassicIAParameters</a> cIAp);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="struct_classic_i_a_component.html#aa63830c8f8e0eae7dac334774dff8ac9">start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="struct_classic_i_a_component.html#a87fba2785b91cdcf5220a6b998246ee2">update</a>(<span class="keywordtype">float</span> deltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="struct_classic_i_a_component.html#a2df0e7ff3711ce7a9b1ecadf329d8c4c">render</a>(<a class="code hl_class" href="class_entity_manager.html">EntityManager</a>&amp; <a class="code hl_variable" href="struct_i_a_component.html#a6be0a729262867edeacbea534698a1c6">entityManager</a>, SDL_Renderer* renderer) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_classic_i_a_component.html#a7e2d6a361a476bf25fe30e5ef3553539">   90</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="struct_classic_i_a_component.html#a7e2d6a361a476bf25fe30e5ef3553539">setInitialState</a>(<span class="keyword">const</span> std::string&amp; state) { currentState = state; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="struct_classic_i_a_component.html#a2846e0a5526fbe49715f611893220bee">registerAction</a>(<span class="keyword">const</span> std::string&amp; name, std::function&lt;<span class="keywordtype">void</span>(<a class="code hl_class" href="class_entity_manager.html">EntityManager</a>*, <span class="keywordtype">float</span>)&gt; callback);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="struct_classic_i_a_component.html#a68598a06f9243d248a07fa80e7a5e223">registerCondition</a>(<span class="keyword">const</span> std::string&amp; from, <span class="keyword">const</span> std::string&amp; to, std::function&lt;<span class="keywordtype">bool</span>(<a class="code hl_class" href="class_entity_manager.html">EntityManager</a>*, <span class="keywordtype">float</span>)&gt; callback);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="};">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_classic_i_a_loader.html">  106</a></span><span class="keyword">class </span><a class="code hl_class" href="class_classic_i_a_loader.html">ClassicIALoader</a> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">static</span> <a class="code hl_struct" href="struct_classic_i_a_parameters.html">ClassicIAParameters</a> <a class="code hl_function" href="class_classic_i_a_loader.html#a0ee8596398d203a4cd1903a6d47de9f0">fromJSON</a>(<span class="keyword">const</span> nlohmann::json&amp; j, <a class="code hl_class" href="class_entity_manager.html">EntityManager</a>&amp; entityManager);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">static</span> <a class="code hl_struct" href="struct_classic_i_a_component.html">ClassicIAComponent</a> <a class="code hl_function" href="class_classic_i_a_loader.html#aa9731672371f875d48808376f0225d09">createFromJSON</a>(<span class="keyword">const</span> nlohmann::json&amp; j, <a class="code hl_class" href="class_entity_manager.html">EntityManager</a>&amp; entityManager);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif </span><span class="comment">// !IA_COMPONENT_H</span></div>
+<div class="ttc" id="aclass_classic_i_a_loader_html"><div class="ttname"><a href="class_classic_i_a_loader.html">ClassicIALoader</a></div><div class="ttdoc">Clase utilitaria para cargar componentes de IA clásica desde JSON.</div><div class="ttdef"><b>Definition</b> IAComponents.h:106</div></div>
+<div class="ttc" id="aclass_classic_i_a_loader_html_a0ee8596398d203a4cd1903a6d47de9f0"><div class="ttname"><a href="class_classic_i_a_loader.html#a0ee8596398d203a4cd1903a6d47de9f0">ClassicIALoader::fromJSON</a></div><div class="ttdeci">static ClassicIAParameters fromJSON(const nlohmann::json &amp;j, EntityManager &amp;entityManager)</div><div class="ttdoc">Crea parámetros de IA clásica a partir de un objeto JSON.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:74</div></div>
+<div class="ttc" id="aclass_classic_i_a_loader_html_aa9731672371f875d48808376f0225d09"><div class="ttname"><a href="class_classic_i_a_loader.html#aa9731672371f875d48808376f0225d09">ClassicIALoader::createFromJSON</a></div><div class="ttdeci">static ClassicIAComponent createFromJSON(const nlohmann::json &amp;j, EntityManager &amp;entityManager)</div><div class="ttdoc">Crea un componente ClassicIAComponent directamente desde JSON.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:99</div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdoc">Clase base para todos los componentes en el sistema ECS.</div><div class="ttdef"><b>Definition</b> EntityManager.h:20</div></div>
+<div class="ttc" id="aclass_entity_manager_html"><div class="ttname"><a href="class_entity_manager.html">EntityManager</a></div><div class="ttdoc">Gestiona entidades y sus componentes asociados en el sistema ECS.</div><div class="ttdef"><b>Definition</b> EntityManager.h:47</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_state_html_a60e1ee7f20fad32846ffaebaa50040ba"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a60e1ee7f20fad32846ffaebaa50040ba">ClassicIAComponent::ClassicIAState::ClassicIAState</a></div><div class="ttdeci">ClassicIAState()</div><div class="ttdoc">Constructor por defecto de IAState.</div><div class="ttdef"><b>Definition</b> IAComponents.h:63</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_state_html_a959303fad676a8d48277962620bec564"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_state.html#a959303fad676a8d48277962620bec564">ClassicIAComponent::ClassicIAState::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Nombre del estado.</div><div class="ttdef"><b>Definition</b> IAComponents.h:58</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_state_html_aae329e76646d95c7ce61181559712d0b"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_state.html#aae329e76646d95c7ce61181559712d0b">ClassicIAComponent::ClassicIAState::action</a></div><div class="ttdeci">std::function&lt; void(EntityManager *, float)&gt; action</div><div class="ttdoc">Acción a ejecutar mientras está en este estado.</div><div class="ttdef"><b>Definition</b> IAComponents.h:59</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_state_html_ade46c8edc58e973bc7883c59c057863c"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_state.html#ade46c8edc58e973bc7883c59c057863c">ClassicIAComponent::ClassicIAState::transitions</a></div><div class="ttdeci">std::vector&lt; ClassicIATransition &gt; transitions</div><div class="ttdoc">Lista de transiciones posibles desde este estado.</div><div class="ttdef"><b>Definition</b> IAComponents.h:60</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_transition_html_a21005cfe93096d756a3896cf811bfaea"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a21005cfe93096d756a3896cf811bfaea">ClassicIAComponent::ClassicIATransition::conditionCallback</a></div><div class="ttdeci">std::function&lt; bool(EntityManager *, float)&gt; conditionCallback</div><div class="ttdoc">Callback que evalúa si se debe realizar la transición.</div><div class="ttdef"><b>Definition</b> IAComponents.h:46</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_transition_html_a94ab99472b7f5c250e20c55104ab6ef0"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a94ab99472b7f5c250e20c55104ab6ef0">ClassicIAComponent::ClassicIATransition::ClassicIATransition</a></div><div class="ttdeci">ClassicIATransition(const std::string &amp;f=&quot;&quot;, const std::string &amp;t=&quot;&quot;)</div><div class="ttdoc">Constructor de IATransition.</div><div class="ttdef"><b>Definition</b> IAComponents.h:51</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_transition_html_a9e7cd7b76e946ace2c77abc0eddbaecd"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#a9e7cd7b76e946ace2c77abc0eddbaecd">ClassicIAComponent::ClassicIATransition::from</a></div><div class="ttdeci">std::string from</div><div class="ttdoc">Estado de origen de la transición.</div><div class="ttdef"><b>Definition</b> IAComponents.h:44</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_1_1_classic_i_a_transition_html_af0d788717bc62b58fb161a424c4929f7"><div class="ttname"><a href="struct_classic_i_a_component_1_1_classic_i_a_transition.html#af0d788717bc62b58fb161a424c4929f7">ClassicIAComponent::ClassicIATransition::to</a></div><div class="ttdeci">std::string to</div><div class="ttdoc">Estado de destino de la transición.</div><div class="ttdef"><b>Definition</b> IAComponents.h:45</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html"><div class="ttname"><a href="struct_classic_i_a_component.html">ClassicIAComponent</a></div><div class="ttdoc">Componente de inteligencia artificial clásica basado en máquina de estados.</div><div class="ttdef"><b>Definition</b> IAComponents.h:39</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_a2846e0a5526fbe49715f611893220bee"><div class="ttname"><a href="struct_classic_i_a_component.html#a2846e0a5526fbe49715f611893220bee">ClassicIAComponent::registerAction</a></div><div class="ttdeci">void registerAction(const std::string &amp;name, std::function&lt; void(EntityManager *, float)&gt; callback)</div><div class="ttdoc">Registra una acción asociada a un estado.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:54</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_a2df0e7ff3711ce7a9b1ecadf329d8c4c"><div class="ttname"><a href="struct_classic_i_a_component.html#a2df0e7ff3711ce7a9b1ecadf329d8c4c">ClassicIAComponent::render</a></div><div class="ttdeci">void render(EntityManager &amp;entityManager, SDL_Renderer *renderer) override</div><div class="ttdoc">Renderiza el componente de IA (si aplica).</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:50</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_a68598a06f9243d248a07fa80e7a5e223"><div class="ttname"><a href="struct_classic_i_a_component.html#a68598a06f9243d248a07fa80e7a5e223">ClassicIAComponent::registerCondition</a></div><div class="ttdeci">void registerCondition(const std::string &amp;from, const std::string &amp;to, std::function&lt; bool(EntityManager *, float)&gt; callback)</div><div class="ttdoc">Registra una condición de transición entre dos estados.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:60</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_a7e2d6a361a476bf25fe30e5ef3553539"><div class="ttname"><a href="struct_classic_i_a_component.html#a7e2d6a361a476bf25fe30e5ef3553539">ClassicIAComponent::setInitialState</a></div><div class="ttdeci">void setInitialState(const std::string &amp;state)</div><div class="ttdoc">Establece el estado inicial de la IA.</div><div class="ttdef"><b>Definition</b> IAComponents.h:90</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_a87fba2785b91cdcf5220a6b998246ee2"><div class="ttname"><a href="struct_classic_i_a_component.html#a87fba2785b91cdcf5220a6b998246ee2">ClassicIAComponent::update</a></div><div class="ttdeci">void update(float deltaTime) override</div><div class="ttdoc">Actualiza el estado de la IA en función del tiempo transcurrido.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:29</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_aa63830c8f8e0eae7dac334774dff8ac9"><div class="ttname"><a href="struct_classic_i_a_component.html#aa63830c8f8e0eae7dac334774dff8ac9">ClassicIAComponent::start</a></div><div class="ttdeci">void start() override</div><div class="ttdoc">Inicia el componente de IA.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:25</div></div>
+<div class="ttc" id="astruct_classic_i_a_component_html_ae847499c86f24bb3339cb76ef914f21e"><div class="ttname"><a href="struct_classic_i_a_component.html#ae847499c86f24bb3339cb76ef914f21e">ClassicIAComponent::ClassicIAComponent</a></div><div class="ttdeci">ClassicIAComponent(ClassicIAParameters cIAp)</div><div class="ttdoc">Constructor de ClassicIAComponent.</div><div class="ttdef"><b>Definition</b> ClassicIA.cpp:3</div></div>
+<div class="ttc" id="astruct_classic_i_a_parameters_html"><div class="ttname"><a href="struct_classic_i_a_parameters.html">ClassicIAParameters</a></div><div class="ttdoc">Estructura que contiene parámetros para el componente ClassicIAComponent.</div><div class="ttdef"><b>Definition</b> IAComponents.h:27</div></div>
+<div class="ttc" id="astruct_i_a_component_html_a6be0a729262867edeacbea534698a1c6"><div class="ttname"><a href="struct_i_a_component.html#a6be0a729262867edeacbea534698a1c6">IAComponent::entityManager</a></div><div class="ttdeci">EntityManager * entityManager</div><div class="ttdoc">Puntero a EntityManager para acceder a otras entidades.</div><div class="ttdef"><b>Definition</b> IAComponents.h:16</div></div>
+<div class="ttc" id="astruct_i_a_component_html_aad7f40122111340c40eca605afc5207c"><div class="ttname"><a href="struct_i_a_component.html#aad7f40122111340c40eca605afc5207c">IAComponent::iaType</a></div><div class="ttdeci">std::string iaType</div><div class="ttdoc">Tipo de IA (para identificación o depuración)</div><div class="ttdef"><b>Definition</b> IAComponents.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_08f45fe6822aeb4ce2bc268e3b1361be.html">Components</a></li><li class="navelem"><a class="el" href="dir_56400b90f9c9277a3f5dd2b3cc68fb16.html">IA</a></li><li class="navelem"><b>IAComponents.h</b></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

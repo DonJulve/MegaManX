@@ -1,0 +1,226 @@
+\doxysection{Referencia de la clase Entity\+Manager}
+\hypertarget{class_entity_manager}{}\label{class_entity_manager}\index{EntityManager@{EntityManager}}
+
+
+Gestiona entidades y sus componentes asociados en el sistema ECS.  
+
+
+
+
+{\ttfamily \#include $<$Entity\+Manager.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_entity_manager_aa8326c087e6658ab8224566738382f2e}\label{class_entity_manager_aa8326c087e6658ab8224566738382f2e} 
+{\bfseries Entity\+Manager} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{class_entity_manager}{Entity\+Manager} con name . \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_manager_a01d68671fe142c8b76561652ab712883}\label{class_entity_manager_a01d68671fe142c8b76561652ab712883} 
+void {\bfseries set\+Scene\+Manager} (\mbox{\hyperlink{class_scene_manager}{Scene\+Manager}} \texorpdfstring{$\ast$}{*}sm)
+\item 
+\Hypertarget{class_entity_manager_a1c9b766787ba2acdd2e422e5c975dca5}\label{class_entity_manager_a1c9b766787ba2acdd2e422e5c975dca5} 
+\mbox{\hyperlink{class_scene_manager}{Scene\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Scene\+Manager} ()
+\item 
+Entity \mbox{\hyperlink{class_entity_manager_ac7482168f0df8b2ff2570435f67b3fb0}{create\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Crea una nueva entidad y devuelve su ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_manager_a6d85e7e649dedfa373bffd939621e830}{delete\+Entity}} (Entity entity)
+\begin{DoxyCompactList}\small\item\em Marca una entidad para eliminación al final del marco. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_manager_a4e877bb58e8b4f2de1125bb277792041}{add\+Component}} (Entity entity, std\+::type\+\_\+index type, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ component)
+\begin{DoxyCompactList}\small\item\em Agrega un componente a una entidad usando shared\+\_\+ptr. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_manager_a528f9bbc091b837ecf06a6ccf745dcac}{add\+Component}} (Entity entity, std\+::type\+\_\+index type, \mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Agrega un componente a una entidad usando punteros estandar. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_entity_manager_aba49a0d5c7a2cc7190914b3c2c3c90b9}{get\+Component}} (Entity entity) const
+\begin{DoxyCompactList}\small\item\em Obtiene un componente de tipo T de una entidad. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{class_entity_manager_a7eae8db3fea614aa398481d16ed7b9f1}{get\+Component\+Shared}} (Entity entity) const
+\begin{DoxyCompactList}\small\item\em Obtiene un componente de tipo T de una entidad. \end{DoxyCompactList}\item 
+std\+::set$<$ Entity $>$ \& \mbox{\hyperlink{class_entity_manager_ab783404ad843bb1e682101f89747c534}{get\+Entities}} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el conjunto de todas las entidades activas. \end{DoxyCompactList}\item 
+Entity \mbox{\hyperlink{class_entity_manager_a03aa200e5f129675eb5e208d47147ee6}{get\+Last}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el ID de la última entidad creada. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ $>$ \& \mbox{\hyperlink{class_entity_manager_a95d6ce5bf227e39c57a8fbb3378c3a6d}{get\+Entity\+Components}} (Entity entity)
+\begin{DoxyCompactList}\small\item\em Obtiene todos los componentes asociados con una entidad. \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_manager_a55f8d09b7585001d6100ad4f15556a1e}\label{class_entity_manager_a55f8d09b7585001d6100ad4f15556a1e} 
+void {\bfseries process\+Deletion} ()
+\begin{DoxyCompactList}\small\item\em Elimina todas las entidades marcadas para eliminación al final del marco. \end{DoxyCompactList}\item 
+\Hypertarget{class_entity_manager_a81eeef90e3a758fcdced5db55e98bded}\label{class_entity_manager_a81eeef90e3a758fcdced5db55e98bded} 
+{\footnotesize template$<$typename T$>$ }\\Entity {\bfseries find\+Component} (std\+::shared\+\_\+ptr$<$ T $>$ \&out\+Component)
+\item 
+\Hypertarget{class_entity_manager_ad5c28b1840d813ff5bc7f15675b25012}\label{class_entity_manager_ad5c28b1840d813ff5bc7f15675b25012} 
+bool {\bfseries has\+Component\+Pointer} (\mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*}ptr) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_entity_manager_a3e7cb2ac7b7184bd733f928b7db6cd7c}\label{class_entity_manager_a3e7cb2ac7b7184bd733f928b7db6cd7c} 
+std\+::string {\bfseries scena\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Gestiona entidades y sus componentes asociados en el sistema ECS. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_entity_manager_a528f9bbc091b837ecf06a6ccf745dcac}\index{EntityManager@{EntityManager}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_entity_manager_a528f9bbc091b837ecf06a6ccf745dcac} 
+void Entity\+Manager\+::add\+Component (\begin{DoxyParamCaption}\item[{Entity}]{entity}{, }\item[{std\+::type\+\_\+index}]{type}{, }\item[{\mbox{\hyperlink{class_component}{Component}} \texorpdfstring{$\ast$}{*}}]{component}{}\end{DoxyParamCaption})}
+
+
+
+Agrega un componente a una entidad usando punteros estandar. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity} & La entidad a la que se agrega el componente. \\
+\hline
+{\em type} & El índice de tipo del componente. \\
+\hline
+{\em component} & Puntero al componente a agregar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_entity_manager_a4e877bb58e8b4f2de1125bb277792041}\index{EntityManager@{EntityManager}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_entity_manager_a4e877bb58e8b4f2de1125bb277792041} 
+void Entity\+Manager\+::add\+Component (\begin{DoxyParamCaption}\item[{Entity}]{entity}{, }\item[{std\+::type\+\_\+index}]{type}{, }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$}]{component}{}\end{DoxyParamCaption})}
+
+
+
+Agrega un componente a una entidad usando shared\+\_\+ptr. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity} & La entidad a la que se agrega el componente. \\
+\hline
+{\em type} & El índice de tipo del componente. \\
+\hline
+{\em component} & shared\+\_\+ptr del componente a agregar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_entity_manager_ac7482168f0df8b2ff2570435f67b3fb0}\index{EntityManager@{EntityManager}!createEntity@{createEntity}}
+\index{createEntity@{createEntity}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{createEntity()}{createEntity()}}
+{\footnotesize\ttfamily \label{class_entity_manager_ac7482168f0df8b2ff2570435f67b3fb0} 
+Entity Entity\+Manager\+::create\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Crea una nueva entidad y devuelve su ID. 
+
+\begin{DoxyReturn}{Devuelve}
+El ID de la entidad recién creada. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_a6d85e7e649dedfa373bffd939621e830}\index{EntityManager@{EntityManager}!deleteEntity@{deleteEntity}}
+\index{deleteEntity@{deleteEntity}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{deleteEntity()}{deleteEntity()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a6d85e7e649dedfa373bffd939621e830} 
+void Entity\+Manager\+::delete\+Entity (\begin{DoxyParamCaption}\item[{Entity}]{entity}{}\end{DoxyParamCaption})}
+
+
+
+Marca una entidad para eliminación al final del marco. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity} & La entidad a eliminar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_entity_manager_aba49a0d5c7a2cc7190914b3c2c3c90b9}\index{EntityManager@{EntityManager}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily \label{class_entity_manager_aba49a0d5c7a2cc7190914b3c2c3c90b9} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} Entity\+Manager\+::get\+Component (\begin{DoxyParamCaption}\item[{Entity}]{entity}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene un componente de tipo T de una entidad. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & El tipo de componente a recuperar. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em entity} & La entidad a consultar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al componente si se encuentra, nullptr en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_a7eae8db3fea614aa398481d16ed7b9f1}\index{EntityManager@{EntityManager}!getComponentShared@{getComponentShared}}
+\index{getComponentShared@{getComponentShared}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{getComponentShared()}{getComponentShared()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a7eae8db3fea614aa398481d16ed7b9f1} 
+template$<$typename T$>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ Entity\+Manager\+::get\+Component\+Shared (\begin{DoxyParamCaption}\item[{Entity}]{entity}{}\end{DoxyParamCaption}) const}
+
+
+
+Obtiene un componente de tipo T de una entidad. 
+
+
+\begin{DoxyTemplParams}{Parámetros de plantilla}
+{\em T} & El tipo de componente a recuperar. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parámetros}
+{\em entity} & La entidad a consultar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Puntero al componente si se encuentra, nullptr en caso contrario. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_ab783404ad843bb1e682101f89747c534}\index{EntityManager@{EntityManager}!getEntities@{getEntities}}
+\index{getEntities@{getEntities}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{getEntities()}{getEntities()}}
+{\footnotesize\ttfamily \label{class_entity_manager_ab783404ad843bb1e682101f89747c534} 
+std\+::set$<$ Entity $>$ \& Entity\+Manager\+::get\+Entities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene el conjunto de todas las entidades activas. 
+
+\begin{DoxyReturn}{Devuelve}
+Referencia al conjunto de entidades activas. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_a95d6ce5bf227e39c57a8fbb3378c3a6d}\index{EntityManager@{EntityManager}!getEntityComponents@{getEntityComponents}}
+\index{getEntityComponents@{getEntityComponents}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{getEntityComponents()}{getEntityComponents()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a95d6ce5bf227e39c57a8fbb3378c3a6d} 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_component}{Component}} $>$ $>$ \& Entity\+Manager\+::get\+Entity\+Components (\begin{DoxyParamCaption}\item[{Entity}]{entity}{}\end{DoxyParamCaption})}
+
+
+
+Obtiene todos los componentes asociados con una entidad. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em entity} & La entidad a consultar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Referencia al mapa de componentes de la entidad. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_a03aa200e5f129675eb5e208d47147ee6}\index{EntityManager@{EntityManager}!getLast@{getLast}}
+\index{getLast@{getLast}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{getLast()}{getLast()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a03aa200e5f129675eb5e208d47147ee6} 
+Entity Entity\+Manager\+::get\+Last (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el ID de la última entidad creada. 
+
+\begin{DoxyReturn}{Devuelve}
+El último ID de entidad. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Managers/Entity\+Manager.\+h\item 
+Managers/Entity\+Manager.\+cpp\end{DoxyCompactItemize}

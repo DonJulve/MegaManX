@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/cmake_install.cmake",
+		"C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/engine/cmake_install.cmake",
+		"C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/_deps/json-build/cmake_install.cmake",
+		"C:/Users/Julve/OneDrive/Escritorio/MegaManX/build/game/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

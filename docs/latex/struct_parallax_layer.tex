@@ -1,0 +1,102 @@
+\doxysection{Referencia de la estructura Parallax\+Layer}
+\hypertarget{struct_parallax_layer}{}\label{struct_parallax_layer}\index{ParallaxLayer@{ParallaxLayer}}
+Diagrama de herencia de Parallax\+Layer\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_parallax_layer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_parallax_layer_aca68380bd9e231932543b921a513ef10}\label{struct_parallax_layer_aca68380bd9e231932543b921a513ef10} 
+{\bfseries Parallax\+Layer} (\mbox{\hyperlink{struct_parallax_layer_parameters}{Parallax\+Layer\+Parameters}} plp)
+\item 
+void \mbox{\hyperlink{struct_parallax_layer_ac45b18543badca87272c331bd0232fb2}{start}} () override
+\begin{DoxyCompactList}\small\item\em Se llama cuando el componente se inicializa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_parallax_layer_a0627f419ed2cd3b474c4637edad47b94}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_parallax_layer_aed7a0abaf2c61797aa7238e372d2e7d7}\label{struct_parallax_layer_aed7a0abaf2c61797aa7238e372d2e7d7} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} {\bfseries entity\+Manager}
+\item 
+\Hypertarget{struct_parallax_layer_a0efb0c1d71aba0648fad6f0c3b1a0769}\label{struct_parallax_layer_a0efb0c1d71aba0648fad6f0c3b1a0769} 
+\mbox{\hyperlink{struct_sprite_renderer}{Sprite\+Renderer}} \texorpdfstring{$\ast$}{*} {\bfseries sprite\+Renderer} = nullptr
+\item 
+\Hypertarget{struct_parallax_layer_aafbacbc64e7f6e4173468a8c4ef5bbe7}\label{struct_parallax_layer_aafbacbc64e7f6e4173468a8c4ef5bbe7} 
+float {\bfseries x} = 0.\+0f
+\item 
+\Hypertarget{struct_parallax_layer_a38c2240b1c00ab05db9c59917c30a724}\label{struct_parallax_layer_a38c2240b1c00ab05db9c59917c30a724} 
+float {\bfseries speed} = 0.\+5f
+\item 
+\Hypertarget{struct_parallax_layer_af964e10445bd6230f78c4039bf043851}\label{struct_parallax_layer_af964e10445bd6230f78c4039bf043851} 
+int {\bfseries width} = 0
+\item 
+\Hypertarget{struct_parallax_layer_ade204b51f11a3c835bcba4e2195b4112}\label{struct_parallax_layer_ade204b51f11a3c835bcba4e2195b4112} 
+int {\bfseries height} = 0
+\item 
+\Hypertarget{struct_parallax_layer_acaa9d222196ed94debf295f0b9d0ae18}\label{struct_parallax_layer_acaa9d222196ed94debf295f0b9d0ae18} 
+bool {\bfseries initialized} = false
+\item 
+\Hypertarget{struct_parallax_layer_acb03227341f69ddfcf6706f88124b912}\label{struct_parallax_layer_acb03227341f69ddfcf6706f88124b912} 
+float {\bfseries rotZ} = 0.\+0f
+\item 
+\Hypertarget{struct_parallax_layer_ad7f725cc5a4c5d01b342ecce3f74d477}\label{struct_parallax_layer_ad7f725cc5a4c5d01b342ecce3f74d477} 
+float {\bfseries current\+Offset} = 0.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_parallax_layer_a0627f419ed2cd3b474c4637edad47b94}\index{ParallaxLayer@{ParallaxLayer}!render@{render}}
+\index{render@{render}!ParallaxLayer@{ParallaxLayer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{struct_parallax_layer_a0627f419ed2cd3b474c4637edad47b94} 
+void Parallax\+Layer\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización (en segundos). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{Component}}.
+
+\Hypertarget{struct_parallax_layer_ac45b18543badca87272c331bd0232fb2}\index{ParallaxLayer@{ParallaxLayer}!start@{start}}
+\index{start@{start}!ParallaxLayer@{ParallaxLayer}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_parallax_layer_ac45b18543badca87272c331bd0232fb2} 
+void Parallax\+Layer\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Se llama cuando el componente se inicializa. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Parallax\+Layer.\+h\item 
+Components/Parallax\+Layer.\+cpp\end{DoxyCompactItemize}

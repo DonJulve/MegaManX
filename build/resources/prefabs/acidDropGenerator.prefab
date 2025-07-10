@@ -1,0 +1,68 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Enemy",
+            "scaleX": 10,
+            "scaleY": 10,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 0,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": true
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/acidDrop/generator/generator_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isAttacking": {"type": "bool", "value": false}
+            },
+            "states": {
+                "idle": {
+                    "looping": true,
+                    "folder": "sprites/enemies/acidDrop/idle",
+                    "duration": 0.06
+                },
+                "attack": {
+                    "looping": false,
+                    "folder": "sprites/enemies/acidDrop/generator",
+                    "duration": 0.1
+                }
+            },
+            "transitions": [
+                {
+                    "from": "idle",
+                    "to": "attack",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "attack",
+                    "to": "idle",
+                    "conditions": [
+                        {"parameter": "isAttacking", "mode": "EQ", "value": 0}
+                    ]
+                }
+            ]
+        },
+        "AcidDropGenerator":{}
+    }
+}

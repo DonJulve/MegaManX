@@ -1,0 +1,131 @@
+\doxysection{Entity\+Manager.\+h}
+\hypertarget{_entity_manager_8h_source}{}\label{_entity_manager_8h_source}\index{Managers/EntityManager.h@{Managers/EntityManager.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTITYMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENTITYMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}SceneManager.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }Entity\ =\ std::size\_t;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_manager}{EntityManager}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_component}{Component}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ Entity\ \mbox{\hyperlink{class_component_a410bd56dfca652a5be56a4c384754845}{parent}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_component_ad82d7393e339c1b19cc17a0d55b5674d}{\string~Component}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{start}}()\ \{\};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{\};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager,\ SDL\_Renderer*\ renderer)\ \{\};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_manager_aa8326c087e6658ab8224566738382f2e}{EntityManager}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ std::unordered\_map<Entity,\ std::unordered\_map<std::type\_index,\ std::shared\_ptr<Component>>>\ entities;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ std::set<Entity>\ activeEntities;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \ \ \ \ Entity\ nextEntity\ =\ 0;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ Entity\ lastEntity;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ std::set<Entity>\ entitiesToDelete;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_scene_manager}{SceneManager}}*\ sceneManager;}
+\DoxyCodeLine{00067\ \ \ \ \ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ scenaName;}
+\DoxyCodeLine{00072\ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_entity_manager_aa8326c087e6658ab8224566738382f2e}{EntityManager}}(\textcolor{keyword}{const}\ std::string\&\ name)\ :\ scenaName(name),\ sceneManager(nullptr)\ \{\}}
+\DoxyCodeLine{00075\ \ \ \ \ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ setSceneManager(\mbox{\hyperlink{class_scene_manager}{SceneManager}}*\ sm)\{sceneManager\ =\ sm;\}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ SceneManager*\ getSceneManager()\{\textcolor{keywordflow}{return}\ sceneManager;\}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ Entity\ \mbox{\hyperlink{class_entity_manager_ac7482168f0df8b2ff2570435f67b3fb0}{createEntity}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a6d85e7e649dedfa373bffd939621e830}{deleteEntity}}(Entity\ entity);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a4e877bb58e8b4f2de1125bb277792041}{addComponent}}(Entity\ entity,\ std::type\_index\ type,\ std::shared\_ptr<Component>\ component);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a4e877bb58e8b4f2de1125bb277792041}{addComponent}}(Entity\ entity,\ std::type\_index\ type,\ Component*\ component);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00116\ \ \ \ \ T*\ \mbox{\hyperlink{class_entity_manager_aba49a0d5c7a2cc7190914b3c2c3c90b9}{getComponent}}(Entity\ entity)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00125\ \ \ \ \ std::shared\_ptr<T>\ \mbox{\hyperlink{class_entity_manager_a7eae8db3fea614aa398481d16ed7b9f1}{getComponentShared}}(Entity\ entity)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00131\ \ \ \ \ std::set<Entity>\&\ \mbox{\hyperlink{class_entity_manager_ab783404ad843bb1e682101f89747c534}{getEntities}}();}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00137\ \ \ \ \ Entity\ \mbox{\hyperlink{class_entity_manager_a03aa200e5f129675eb5e208d47147ee6}{getLast}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ lastEntity;\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00144\ \ \ \ \ std::unordered\_map<std::type\_index,\ std::shared\_ptr<Component>>\&\ \mbox{\hyperlink{class_entity_manager_a95d6ce5bf227e39c57a8fbb3378c3a6d}{getEntityComponents}}(Entity\ entity);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a55f8d09b7585001d6100ad4f15556a1e}{processDeletion}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00152\ \ \ \ \ Entity\ findComponent(std::shared\_ptr<T>\&\ outComponent);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasComponentPointer(\mbox{\hyperlink{class_component}{Component}}*\ ptr)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00158\ T*\ \mbox{\hyperlink{class_entity_manager_aba49a0d5c7a2cc7190914b3c2c3c90b9}{EntityManager::getComponent}}(Entity\ entity)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{auto}\ entityIt\ =\ entities.find(entity);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{if}\ (entityIt\ !=\ entities.end())\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ entityComponents\ =\ entityIt-\/>second;}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ componentIt\ =\ entityComponents.find(std::type\_index(\textcolor{keyword}{typeid}(T)));}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentIt\ !=\ entityComponents.end())\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T*\textcolor{keyword}{>}(componentIt-\/>second.get());}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00171\ std::shared\_ptr<T>\ \mbox{\hyperlink{class_entity_manager_a7eae8db3fea614aa398481d16ed7b9f1}{EntityManager::getComponentShared}}(Entity\ entity)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{auto}\ entityIt\ =\ entities.find(entity);}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{if}\ (entityIt\ !=\ entities.end())\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ entityComponents\ =\ entityIt-\/>second;}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ componentIt\ =\ entityComponents.find(std::type\_index(\textcolor{keyword}{typeid}(T)));}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentIt\ !=\ entityComponents.end())\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::static\_pointer\_cast<T>(componentIt-\/>second);}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ \ \ \ \ \}}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ Implicitly\ converts\ to\ std::shared\_ptr<T>}}
+\DoxyCodeLine{00181\ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00184\ Entity\ EntityManager::findComponent(std::shared\_ptr<T>\&\ outComponent)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entity,\ components]\ :\ entities)\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ componentIt\ =\ components.find(std::type\_index(\textcolor{keyword}{typeid}(T)));}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (componentIt\ !=\ components.end())\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ outComponent\ =\ std::dynamic\_pointer\_cast<T>(componentIt-\/>second);\ \textcolor{comment}{//\ Cast\ to\ the\ correct\ type}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entity;\ \textcolor{comment}{//\ Return\ the\ entity\ that\ has\ this\ component}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ outComponent\ =\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ If\ not\ found,\ set\ to\ nullptr}}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;\ \textcolor{comment}{//\ Return\ an\ invalid\ entity\ (assuming\ 0\ is\ invalid)}}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

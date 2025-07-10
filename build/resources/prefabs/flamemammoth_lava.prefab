@@ -1,0 +1,90 @@
+{
+    "components":{
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "Lava",
+            "scaleX": 20,
+            "scaleY": 20,
+            "isTrigger": true,
+            "collisionsTags": [
+                "Terrain",
+                "EnemyBullet"
+            ]
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 100,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.99,
+            "kinematic": false
+        },
+        "Sprite": {
+            "texturePath": "./sprites/flamemammoth/lava/lava_0.png",
+            "anchor": "CENTER"
+        },
+        "Animator": {
+            "parameters": {
+                "isLanded": {"type": "bool", "value": false},
+                "staying": {"type": "bool", "value": false},
+                "isBurning": {"type": "bool", "value": false}
+            },
+            "states": {
+                "lava": {
+                    "looping": true,
+                    "folder": "sprites/flamemammoth/lava",
+                    "duration": 0.4
+                },
+                "land": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/lava_land",
+                    "duration": 0.2
+                },
+                "stay": {
+                    "looping": true,
+                    "folder": "sprites/flamemammoth/lava_stay",
+                    "duration": 0.2
+                },
+                "burn": {
+                    "looping": false,
+                    "folder": "sprites/flamemammoth/burn",
+                    "duration": 0.2
+                }
+            },
+            "transitions": [
+                {
+                    "from": "lava",
+                    "to": "land",
+                    "conditions": [
+                        {"parameter": "isLanded", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "land",
+                    "to": "stay",
+                    "conditions": [
+                        {"parameter": "staying", "mode": "EQ", "value": 1}
+                    ]
+                },
+                {
+                    "from": "stay",
+                    "to": "burn",
+                    "conditions": [
+                        {"parameter": "isBurning", "mode": "EQ", "value": 1}
+                    ]
+                }   
+            ],
+            "initialState": "lava"
+        },
+        "FlameMammothLava": {
+        }
+    }
+}

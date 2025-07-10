@@ -1,0 +1,30 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 300,
+            "posY": 230,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "FlameMammothFloor",
+            "scaleX": 500,
+            "scaleY": 10,
+            "isTrigger": true
+        },
+        "Rigidbody": {
+            "velocityX": 0,
+            "velocityY": 0,
+            "mass": 300,
+            "gravity": 9.8,
+            "drag": 0.00,
+            "bounceFactor": 0.00,
+            "kinematic": true
+        },
+        FlameMammothFloor:{
+
+        }
+    }
+}

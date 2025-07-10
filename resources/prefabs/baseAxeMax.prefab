@@ -1,0 +1,28 @@
+{
+    "components": {
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.5,
+            "sizeY": 2.5,
+            "anchor": "CENTER"
+        },
+        "Collider": {
+            "tag": "BaseAxeMax",
+            "scaleX": 26,
+            "scaleY": 18,
+            "isTrigger": false,
+            "collisionsTags": [
+                "Terrain"
+            ]
+        },
+        "Sprite": {
+            "texturePath": "./sprites/enemies/axeMax/base/base_0.png",
+            "anchor": "CENTER"
+        },
+        "BaseComponent": {
+            
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "components":{
+        "Transform": {
+            "posX": 0,
+            "posY": 0,
+            "rotZ": 0,
+            "sizeX": 2.66,
+            "sizeY": 2.66,
+            "anchor": "TOP_LEFT"
+        },
+        "UIComponent": {
+                    
+        },
+        "Sprite": {
+            "texturePath": "sprites/pauseMenu/fullBar/fullBar_0.png",
+            "anchor": "TOP_LEFT"
+        },
+        "BarMenu":{}
+    }
+}

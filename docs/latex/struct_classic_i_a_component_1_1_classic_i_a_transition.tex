@@ -1,0 +1,58 @@
+\doxysection{Referencia de la estructura Classic\+IAComponent\+::Classic\+IATransition}
+\hypertarget{struct_classic_i_a_component_1_1_classic_i_a_transition}{}\label{struct_classic_i_a_component_1_1_classic_i_a_transition}\index{ClassicIAComponent::ClassicIATransition@{ClassicIAComponent::ClassicIATransition}}
+
+
+Estructura que representa una transición entre estados en la IA clásica.  
+
+
+
+
+{\ttfamily \#include $<$IAComponents.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_classic_i_a_component_1_1_classic_i_a_transition_a94ab99472b7f5c250e20c55104ab6ef0}{Classic\+IATransition}} (const std\+::string \&f="{}"{}, const std\+::string \&t="{}"{})
+\begin{DoxyCompactList}\small\item\em Constructor de IATransition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_transition_a9e7cd7b76e946ace2c77abc0eddbaecd}\label{struct_classic_i_a_component_1_1_classic_i_a_transition_a9e7cd7b76e946ace2c77abc0eddbaecd} 
+std\+::string {\bfseries from}
+\begin{DoxyCompactList}\small\item\em Estado de origen de la transición. \end{DoxyCompactList}\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_transition_af0d788717bc62b58fb161a424c4929f7}\label{struct_classic_i_a_component_1_1_classic_i_a_transition_af0d788717bc62b58fb161a424c4929f7} 
+std\+::string {\bfseries to}
+\begin{DoxyCompactList}\small\item\em Estado de destino de la transición. \end{DoxyCompactList}\item 
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_transition_a21005cfe93096d756a3896cf811bfaea}\label{struct_classic_i_a_component_1_1_classic_i_a_transition_a21005cfe93096d756a3896cf811bfaea} 
+std\+::function$<$ bool(\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}, float)$>$ {\bfseries condition\+Callback}
+\begin{DoxyCompactList}\small\item\em Callback que evalúa si se debe realizar la transición. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que representa una transición entre estados en la IA clásica. 
+
+Contiene el estado origen, destino y una condición para realizar la transición. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_classic_i_a_component_1_1_classic_i_a_transition_a94ab99472b7f5c250e20c55104ab6ef0}\index{ClassicIAComponent::ClassicIATransition@{ClassicIAComponent::ClassicIATransition}!ClassicIATransition@{ClassicIATransition}}
+\index{ClassicIATransition@{ClassicIATransition}!ClassicIAComponent::ClassicIATransition@{ClassicIAComponent::ClassicIATransition}}
+\doxysubsubsection{\texorpdfstring{ClassicIATransition()}{ClassicIATransition()}}
+{\footnotesize\ttfamily \label{struct_classic_i_a_component_1_1_classic_i_a_transition_a94ab99472b7f5c250e20c55104ab6ef0} 
+Classic\+IAComponent\+::\+Classic\+IATransition\+::\+Classic\+IATransition (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{f}{ = {\ttfamily "{}"{}}, }\item[{const std\+::string \&}]{t}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor de IATransition. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em f} & Nombre del estado de origen (por defecto vacío). \\
+\hline
+{\em t} & Nombre del estado de destino (por defecto vacío). \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta estructura está generada del siguiente archivo\+:\begin{DoxyCompactItemize}
+\item 
+Components/\+IA/IAComponents.\+h\end{DoxyCompactItemize}

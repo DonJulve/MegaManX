@@ -1,0 +1,48 @@
+\doxysection{Referencia de la clase Render\+System}
+\hypertarget{class_render_system}{}\label{class_render_system}\index{RenderSystem@{RenderSystem}}
+
+
+Clase \doxylink{class_render_system}{Render\+System} para renderizar entidades en pantalla.  
+
+
+
+
+{\ttfamily \#include $<$Systems.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_render_system_a4a5e96bfdad0f26b68139b2e3b5c7929}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Renderiza las entidades gestionadas por \doxylink{class_entity_manager}{Entity\+Manager} usando un renderizador SDL. \end{DoxyCompactList}\item 
+\Hypertarget{class_render_system_a960a0018e0a0447651d3d80624601622}\label{class_render_system_a960a0018e0a0447651d3d80624601622} 
+void {\bfseries largest\+\_\+4\+\_\+3\+\_\+resolution} (int x, int y, int \texorpdfstring{$\ast$}{*}out\+\_\+width, int \texorpdfstring{$\ast$}{*}out\+\_\+height, int \texorpdfstring{$\ast$}{*}excess\+\_\+width, int \texorpdfstring{$\ast$}{*}excess\+\_\+height)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_render_system}{Render\+System} para renderizar entidades en pantalla. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_render_system_a4a5e96bfdad0f26b68139b2e3b5c7929}\index{RenderSystem@{RenderSystem}!render@{render}}
+\index{render@{render}!RenderSystem@{RenderSystem}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_render_system_a4a5e96bfdad0f26b68139b2e3b5c7929} 
+void Render\+System\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{manager}{, }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza las entidades gestionadas por \doxylink{class_entity_manager}{Entity\+Manager} usando un renderizador SDL. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager} con las entidades a renderizar. \\
+\hline
+{\em renderer} & Puntero al renderizador SDL. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Core/Systems.\+h\item 
+Core/Systems.\+cpp\end{DoxyCompactItemize}

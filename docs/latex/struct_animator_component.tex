@@ -1,0 +1,162 @@
+\doxysection{Referencia de la estructura Animator\+Component}
+\hypertarget{struct_animator_component}{}\label{struct_animator_component}\index{AnimatorComponent@{AnimatorComponent}}
+
+
+Componente que maneja la lógica de animación para una entidad.  
+
+
+
+
+{\ttfamily \#include $<$Animator\+Component.\+h$>$}
+
+Diagrama de herencia de Animator\+Component\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_animator_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_animator_component_1_1_animation_frame}{Animation\+Frame}}
+\begin{DoxyCompactList}\small\item\em Representa un cuadro individual en una animación. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_animator_component_1_1_state}{State}}
+\begin{DoxyCompactList}\small\item\em Representa un estado en la máquina de estados de animación. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_animator_component_1_1_state_machine}{State\+Machine}}
+\begin{DoxyCompactList}\small\item\em Máquina de estados que controla las transiciones y parámetros. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_component_a1a7a6479549dc6c6845dd6650709e790}\label{struct_animator_component_a1a7a6479549dc6c6845dd6650709e790} 
+{\bfseries Animator\+Component} (\mbox{\hyperlink{struct_animator_parameters}{Animator\+Parameters}} params)
+\item 
+void \mbox{\hyperlink{struct_animator_component_a45210bd1a25c18461aa3120217eaed36}{start}} () override
+\begin{DoxyCompactList}\small\item\em Se llama cuando el componente se inicializa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_animator_component_a8004bae57e4a5e752b0a438881be9231}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\item 
+\Hypertarget{struct_animator_component_a0e5b21f7d2ecfd31df00bbb1e12c9ce4}\label{struct_animator_component_a0e5b21f7d2ecfd31df00bbb1e12c9ce4} 
+void {\bfseries set\+Bool} (const std\+::string \&name, bool value)
+\item 
+\Hypertarget{struct_animator_component_a2747699086cdd67b11473aeaeeac94fa}\label{struct_animator_component_a2747699086cdd67b11473aeaeeac94fa} 
+void {\bfseries set\+Int} (const std\+::string \&name, int value)
+\item 
+\Hypertarget{struct_animator_component_a9959edcc8c63711c464c52d513007bf9}\label{struct_animator_component_a9959edcc8c63711c464c52d513007bf9} 
+void {\bfseries set\+Float} (const std\+::string \&name, float value)
+\item 
+\Hypertarget{struct_animator_component_a5c58840790b94a31d9503bd70ff7a197}\label{struct_animator_component_a5c58840790b94a31d9503bd70ff7a197} 
+void {\bfseries set\+Trigger} (const std\+::string \&name)
+\item 
+\Hypertarget{struct_animator_component_a1afb5676f0e0f23b42c032fce4ea5d6a}\label{struct_animator_component_a1afb5676f0e0f23b42c032fce4ea5d6a} 
+bool {\bfseries get\+Bool} (const std\+::string \&name)
+\item 
+\Hypertarget{struct_animator_component_a43f92c2b5fc599c2db45236b4cc71324}\label{struct_animator_component_a43f92c2b5fc599c2db45236b4cc71324} 
+int {\bfseries get\+Int} (const std\+::string \&name)
+\item 
+\Hypertarget{struct_animator_component_a8065f4e3e639cbfdf04fc618d76d276c}\label{struct_animator_component_a8065f4e3e639cbfdf04fc618d76d276c} 
+float {\bfseries get\+Float} (const std\+::string \&name)
+\item 
+std\+::string \mbox{\hyperlink{struct_animator_component_ad61f9a9bee7560475326c616bd02feff}{current\+State}} () const
+\begin{DoxyCompactList}\small\item\em Obtiene el nombre del estado actual. \end{DoxyCompactList}\item 
+\Hypertarget{struct_animator_component_a521eacef54895ab5a225c1ed8cb72977}\label{struct_animator_component_a521eacef54895ab5a225c1ed8cb72977} 
+void {\bfseries restart\+\_\+current\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em Resetea el estado actual a su primer frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_animator_component_af69e98bd1c5b1228fd05d57edd398356}{add\+Frame\+Trigger}} (const std\+::string \&state\+Name, int frame\+Index, std\+::function$<$ void()$>$ trigger)
+\begin{DoxyCompactList}\small\item\em Agrega una función que se triggerá cuando se alcance un frame específico en un estado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_animator_component_afde053a040a1c44b6041a892e56f82e0}\label{struct_animator_component_afde053a040a1c44b6041a892e56f82e0} 
+\mbox{\hyperlink{struct_sprite_renderer}{Sprite\+Renderer}} \texorpdfstring{$\ast$}{*} {\bfseries sprite\+Renderer}
+\item 
+\Hypertarget{struct_animator_component_ae5902a6b56a554ba2dc4b7098cd9a027}\label{struct_animator_component_ae5902a6b56a554ba2dc4b7098cd9a027} 
+struct \mbox{\hyperlink{struct_animator_component_1_1_state_machine}{Animator\+Component\+::\+State\+Machine}} {\bfseries state\+Machine}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente que maneja la lógica de animación para una entidad. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_animator_component_af69e98bd1c5b1228fd05d57edd398356}\index{AnimatorComponent@{AnimatorComponent}!addFrameTrigger@{addFrameTrigger}}
+\index{addFrameTrigger@{addFrameTrigger}!AnimatorComponent@{AnimatorComponent}}
+\doxysubsubsection{\texorpdfstring{addFrameTrigger()}{addFrameTrigger()}}
+{\footnotesize\ttfamily \label{struct_animator_component_af69e98bd1c5b1228fd05d57edd398356} 
+void Animator\+Component\+::add\+Frame\+Trigger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{state\+Name}{, }\item[{int}]{frame\+Index}{, }\item[{std\+::function$<$ void()$>$}]{trigger}{}\end{DoxyParamCaption})}
+
+
+
+Agrega una función que se triggerá cuando se alcance un frame específico en un estado. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em state\+Name} & Nombre del estado. \\
+\hline
+{\em frame\+Index} & Índice del frame. \\
+\hline
+{\em trigger} & Función a ejecutar cuando se alcance el frame. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_animator_component_ad61f9a9bee7560475326c616bd02feff}\index{AnimatorComponent@{AnimatorComponent}!currentState@{currentState}}
+\index{currentState@{currentState}!AnimatorComponent@{AnimatorComponent}}
+\doxysubsubsection{\texorpdfstring{currentState()}{currentState()}}
+{\footnotesize\ttfamily \label{struct_animator_component_ad61f9a9bee7560475326c616bd02feff} 
+std\+::string Animator\+Component\+::current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtiene el nombre del estado actual. 
+
+\begin{DoxyReturn}{Devuelve}
+Nombre del estado actual. 
+\end{DoxyReturn}
+\Hypertarget{struct_animator_component_a45210bd1a25c18461aa3120217eaed36}\index{AnimatorComponent@{AnimatorComponent}!start@{start}}
+\index{start@{start}!AnimatorComponent@{AnimatorComponent}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_animator_component_a45210bd1a25c18461aa3120217eaed36} 
+void Animator\+Component\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Se llama cuando el componente se inicializa. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_animator_component_a8004bae57e4a5e752b0a438881be9231}\index{AnimatorComponent@{AnimatorComponent}!update@{update}}
+\index{update@{update}!AnimatorComponent@{AnimatorComponent}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_animator_component_a8004bae57e4a5e752b0a438881be9231} 
+void Animator\+Component\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización (en segundos). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Animator\+Component.\+h\item 
+Components/Animator\+Component.\+cpp\end{DoxyCompactItemize}

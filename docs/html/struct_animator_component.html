@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.13.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Capybara Engine: Referencia de la estructura AnimatorComponent</title>
+<link rel="icon" href="capylogo.png" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="capylogo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Capybara Engine<span id="projectnumber">&#160;0.9.1</span>
+   </div>
+   <div id="projectbrief">The chillest way to power your 2D games—no stress, just vibes.</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.13.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('struct_animator_component.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="struct_animator_component-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la estructura AnimatorComponent</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Componente que maneja la lógica de animación para una entidad.  
+ <a href="#details">Más...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_animator_component_8h_source.html">AnimatorComponent.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencia de AnimatorComponent</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="struct_animator_component.png" usemap="#AnimatorComponent_map" alt=""/>
+  <map id="AnimatorComponent_map" name="AnimatorComponent_map">
+<area href="class_component.html" title="Clase base para todos los componentes en el sistema ECS." alt="Component" shape="rect" coords="0,0,125,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_animator_component_1_1_animation_frame.html">AnimationFrame</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa un cuadro individual en una animación.  <a href="struct_animator_component_1_1_animation_frame.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_animator_component_1_1_state.html">State</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa un estado en la máquina de estados de animación.  <a href="struct_animator_component_1_1_state.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_animator_component_1_1_state_machine.html">StateMachine</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máquina de estados que controla las transiciones y parámetros.  <a href="struct_animator_component_1_1_state_machine.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:a1a7a6479549dc6c6845dd6650709e790" id="r_a1a7a6479549dc6c6845dd6650709e790"><td class="memItemLeft" align="right" valign="top"><a id="a1a7a6479549dc6c6845dd6650709e790" name="a1a7a6479549dc6c6845dd6650709e790"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>AnimatorComponent</b> (<a class="el" href="struct_animator_parameters.html">AnimatorParameters</a> params)</td></tr>
+<tr class="separator:a1a7a6479549dc6c6845dd6650709e790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45210bd1a25c18461aa3120217eaed36" id="r_a45210bd1a25c18461aa3120217eaed36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45210bd1a25c18461aa3120217eaed36">start</a> () override</td></tr>
+<tr class="memdesc:a45210bd1a25c18461aa3120217eaed36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se llama cuando el componente se inicializa.  <br /></td></tr>
+<tr class="separator:a45210bd1a25c18461aa3120217eaed36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8004bae57e4a5e752b0a438881be9231" id="r_a8004bae57e4a5e752b0a438881be9231"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8004bae57e4a5e752b0a438881be9231">update</a> (float deltaTime) override</td></tr>
+<tr class="memdesc:a8004bae57e4a5e752b0a438881be9231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado del componente.  <br /></td></tr>
+<tr class="separator:a8004bae57e4a5e752b0a438881be9231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e5b21f7d2ecfd31df00bbb1e12c9ce4" id="r_a0e5b21f7d2ecfd31df00bbb1e12c9ce4"><td class="memItemLeft" align="right" valign="top"><a id="a0e5b21f7d2ecfd31df00bbb1e12c9ce4" name="a0e5b21f7d2ecfd31df00bbb1e12c9ce4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setBool</b> (const std::string &amp;name, bool value)</td></tr>
+<tr class="separator:a0e5b21f7d2ecfd31df00bbb1e12c9ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2747699086cdd67b11473aeaeeac94fa" id="r_a2747699086cdd67b11473aeaeeac94fa"><td class="memItemLeft" align="right" valign="top"><a id="a2747699086cdd67b11473aeaeeac94fa" name="a2747699086cdd67b11473aeaeeac94fa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setInt</b> (const std::string &amp;name, int value)</td></tr>
+<tr class="separator:a2747699086cdd67b11473aeaeeac94fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9959edcc8c63711c464c52d513007bf9" id="r_a9959edcc8c63711c464c52d513007bf9"><td class="memItemLeft" align="right" valign="top"><a id="a9959edcc8c63711c464c52d513007bf9" name="a9959edcc8c63711c464c52d513007bf9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setFloat</b> (const std::string &amp;name, float value)</td></tr>
+<tr class="separator:a9959edcc8c63711c464c52d513007bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c58840790b94a31d9503bd70ff7a197" id="r_a5c58840790b94a31d9503bd70ff7a197"><td class="memItemLeft" align="right" valign="top"><a id="a5c58840790b94a31d9503bd70ff7a197" name="a5c58840790b94a31d9503bd70ff7a197"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setTrigger</b> (const std::string &amp;name)</td></tr>
+<tr class="separator:a5c58840790b94a31d9503bd70ff7a197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1afb5676f0e0f23b42c032fce4ea5d6a" id="r_a1afb5676f0e0f23b42c032fce4ea5d6a"><td class="memItemLeft" align="right" valign="top"><a id="a1afb5676f0e0f23b42c032fce4ea5d6a" name="a1afb5676f0e0f23b42c032fce4ea5d6a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>getBool</b> (const std::string &amp;name)</td></tr>
+<tr class="separator:a1afb5676f0e0f23b42c032fce4ea5d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f92c2b5fc599c2db45236b4cc71324" id="r_a43f92c2b5fc599c2db45236b4cc71324"><td class="memItemLeft" align="right" valign="top"><a id="a43f92c2b5fc599c2db45236b4cc71324" name="a43f92c2b5fc599c2db45236b4cc71324"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getInt</b> (const std::string &amp;name)</td></tr>
+<tr class="separator:a43f92c2b5fc599c2db45236b4cc71324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8065f4e3e639cbfdf04fc618d76d276c" id="r_a8065f4e3e639cbfdf04fc618d76d276c"><td class="memItemLeft" align="right" valign="top"><a id="a8065f4e3e639cbfdf04fc618d76d276c" name="a8065f4e3e639cbfdf04fc618d76d276c"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>getFloat</b> (const std::string &amp;name)</td></tr>
+<tr class="separator:a8065f4e3e639cbfdf04fc618d76d276c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61f9a9bee7560475326c616bd02feff" id="r_ad61f9a9bee7560475326c616bd02feff"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad61f9a9bee7560475326c616bd02feff">currentState</a> () const</td></tr>
+<tr class="memdesc:ad61f9a9bee7560475326c616bd02feff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtiene el nombre del estado actual.  <br /></td></tr>
+<tr class="separator:ad61f9a9bee7560475326c616bd02feff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521eacef54895ab5a225c1ed8cb72977" id="r_a521eacef54895ab5a225c1ed8cb72977"><td class="memItemLeft" align="right" valign="top"><a id="a521eacef54895ab5a225c1ed8cb72977" name="a521eacef54895ab5a225c1ed8cb72977"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>restart_current_state</b> ()</td></tr>
+<tr class="memdesc:a521eacef54895ab5a225c1ed8cb72977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetea el estado actual a su primer frame. <br /></td></tr>
+<tr class="separator:a521eacef54895ab5a225c1ed8cb72977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af69e98bd1c5b1228fd05d57edd398356" id="r_af69e98bd1c5b1228fd05d57edd398356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af69e98bd1c5b1228fd05d57edd398356">addFrameTrigger</a> (const std::string &amp;stateName, int frameIndex, std::function&lt; void()&gt; trigger)</td></tr>
+<tr class="memdesc:af69e98bd1c5b1228fd05d57edd398356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega una función que se triggerá cuando se alcance un frame específico en un estado.  <br /></td></tr>
+<tr class="separator:af69e98bd1c5b1228fd05d57edd398356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_component')"><img src="closed.png" alt="-"/>&#160;Métodos públicos heredados de <a class="el" href="class_component.html">Component</a></td></tr>
+<tr class="memitem:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component" id="r_ad82d7393e339c1b19cc17a0d55b5674d"><td class="memItemLeft" align="right" valign="top">
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~Component</b> ()=default</td></tr>
+<tr class="memdesc:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor virtual para la limpieza adecuada de clases derivadas. <br /></td></tr>
+<tr class="separator:ad82d7393e339c1b19cc17a0d55b5674d inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4178a49630da72ebf6bf420e3343c7ce inherit pub_methods_class_component" id="r_a4178a49630da72ebf6bf420e3343c7ce"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a4178a49630da72ebf6bf420e3343c7ce">render</a> (<a class="el" href="class_entity_manager.html">EntityManager</a> &amp;entityManager, SDL_Renderer *renderer)</td></tr>
+<tr class="memdesc:a4178a49630da72ebf6bf420e3343c7ce inherit pub_methods_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actualiza el estado del componente.  <br /></td></tr>
+<tr class="separator:a4178a49630da72ebf6bf420e3343c7ce inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:afde053a040a1c44b6041a892e56f82e0" id="r_afde053a040a1c44b6041a892e56f82e0"><td class="memItemLeft" align="right" valign="top"><a id="afde053a040a1c44b6041a892e56f82e0" name="afde053a040a1c44b6041a892e56f82e0"></a>
+<a class="el" href="struct_sprite_renderer.html">SpriteRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>spriteRenderer</b></td></tr>
+<tr class="separator:afde053a040a1c44b6041a892e56f82e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5902a6b56a554ba2dc4b7098cd9a027" id="r_ae5902a6b56a554ba2dc4b7098cd9a027"><td class="memItemLeft" align="right" valign="top"><a id="ae5902a6b56a554ba2dc4b7098cd9a027" name="ae5902a6b56a554ba2dc4b7098cd9a027"></a>
+struct <a class="el" href="struct_animator_component_1_1_state_machine.html">AnimatorComponent::StateMachine</a>&#160;</td><td class="memItemRight" valign="bottom"><b>stateMachine</b></td></tr>
+<tr class="separator:ae5902a6b56a554ba2dc4b7098cd9a027"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_component"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_class_component')"><img src="closed.png" alt="-"/>&#160;Atributos públicos heredados de <a class="el" href="class_component.html">Component</a></td></tr>
+<tr class="memitem:a410bd56dfca652a5be56a4c384754845 inherit pub_attribs_class_component" id="r_a410bd56dfca652a5be56a4c384754845"><td class="memItemLeft" align="right" valign="top">
+Entity&#160;</td><td class="memItemRight" valign="bottom"><b>parent</b></td></tr>
+<tr class="memdesc:a410bd56dfca652a5be56a4c384754845 inherit pub_attribs_class_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">La entidad a la que pertenece este componente. <br /></td></tr>
+<tr class="separator:a410bd56dfca652a5be56a4c384754845 inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Componente que maneja la lógica de animación para una entidad. </p>
+</div><h2 class="groupheader">Documentación de funciones miembro</h2>
+<a id="af69e98bd1c5b1228fd05d57edd398356" name="af69e98bd1c5b1228fd05d57edd398356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af69e98bd1c5b1228fd05d57edd398356">&#9670;&#160;</a></span>addFrameTrigger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimatorComponent::addFrameTrigger </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>stateName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>frameIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void()&gt;</td>          <td class="paramname"><span class="paramname"><em>trigger</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agrega una función que se triggerá cuando se alcance un frame específico en un estado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stateName</td><td>Nombre del estado. </td></tr>
+    <tr><td class="paramname">frameIndex</td><td>Índice del frame. </td></tr>
+    <tr><td class="paramname">trigger</td><td>Función a ejecutar cuando se alcance el frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad61f9a9bee7560475326c616bd02feff" name="ad61f9a9bee7560475326c616bd02feff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61f9a9bee7560475326c616bd02feff">&#9670;&#160;</a></span>currentState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string AnimatorComponent::currentState </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtiene el nombre del estado actual. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>Nombre del estado actual. </dd></dl>
+
+</div>
+</div>
+<a id="a45210bd1a25c18461aa3120217eaed36" name="a45210bd1a25c18461aa3120217eaed36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45210bd1a25c18461aa3120217eaed36">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimatorComponent::start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Se llama cuando el componente se inicializa. </p>
+
+<p>Reimplementado de <a class="el" href="class_component.html#ae1ca93c773f779d0a004eec46f468560">Component</a>.</p>
+
+</div>
+</div>
+<a id="a8004bae57e4a5e752b0a438881be9231" name="a8004bae57e4a5e752b0a438881be9231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8004bae57e4a5e752b0a438881be9231">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimatorComponent::update </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>deltaTime</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actualiza el estado del componente. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">deltaTime</td><td>Tiempo transcurrido desde la última actualización (en segundos). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementado de <a class="el" href="class_component.html#a3b3bee5d55446124842e5f2e229e1384">Component</a>.</p>
+
+</div>
+</div>
+<hr/>La documentación de esta estructura está generada de los siguientes archivos:<ul>
+<li>Components/<a class="el" href="_animator_component_8h_source.html">AnimatorComponent.h</a></li>
+<li>Components/<b>AnimatorComponent.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="struct_animator_component.html">AnimatorComponent</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
+  </ul>
+</div>
+</body>
+</html>

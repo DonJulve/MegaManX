@@ -1,0 +1,60 @@
+\doxysection{Referencia de la clase Collision\+System}
+\hypertarget{class_collision_system}{}\label{class_collision_system}\index{CollisionSystem@{CollisionSystem}}
+
+
+Clase \doxylink{class_collision_system}{Collision\+System} para detectar y manejar colisiones entre entidades.  
+
+
+
+
+{\ttfamily \#include $<$Systems.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_collision_system_a1823cfba6a96452f89d5a9cc64aa10b4}{update}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&manager, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Actualiza las colisiones de las entidades gestionadas por \doxylink{class_entity_manager}{Entity\+Manager}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collision_system_ae36a965baeb83e09eba6063accbc7a01}\label{class_collision_system_ae36a965baeb83e09eba6063accbc7a01} 
+static void {\bfseries Resolve\+Collision} (\mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*}col1, \mbox{\hyperlink{struct_rigidbody}{Rigidbody}} \texorpdfstring{$\ast$}{*}rb1, \mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}t1, \mbox{\hyperlink{struct_collider}{Collider}} \texorpdfstring{$\ast$}{*}col2, \mbox{\hyperlink{struct_rigidbody}{Rigidbody}} \texorpdfstring{$\ast$}{*}rb2, \mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}t2, const \mbox{\hyperlink{struct_collision_result}{Collision\+Result}} \&collision\+Result)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_collision_system_a4b9f321bbb9597b0601b74a156363a45}\label{class_collision_system_a4b9f321bbb9597b0601b74a156363a45} 
+\mbox{\hyperlink{class_b_v_h}{BVH}} \texorpdfstring{$\ast$}{*} {\bfseries static\+Entities}
+\item 
+\Hypertarget{class_collision_system_a1620ba97cf2652f7974f367c25593005}\label{class_collision_system_a1620ba97cf2652f7974f367c25593005} 
+\mbox{\hyperlink{class_b_v_h}{BVH}} \texorpdfstring{$\ast$}{*} {\bfseries dynamic\+Entities}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_collision_system}{Collision\+System} para detectar y manejar colisiones entre entidades. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_collision_system_a1823cfba6a96452f89d5a9cc64aa10b4}\index{CollisionSystem@{CollisionSystem}!update@{update}}
+\index{update@{update}!CollisionSystem@{CollisionSystem}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_collision_system_a1823cfba6a96452f89d5a9cc64aa10b4} 
+void Collision\+System\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{manager}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Actualiza las colisiones de las entidades gestionadas por \doxylink{class_entity_manager}{Entity\+Manager}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager} con las entidades a verificar. \\
+\hline
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Core/Systems.\+h\item 
+Core/Systems.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,132 @@
+\doxysection{Referencia de la clase Debug}
+\hypertarget{class_debug}{}\label{class_debug}\index{Debug@{Debug}}
+
+
+Clase \doxylink{class_debug}{Debug} para gestionar mensajes de depuración y registro.  
+
+
+
+
+{\ttfamily \#include $<$Debug.\+h$>$}
+
+\doxysubsubsection*{Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27e}{Log\+Level}} \{ \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b}{Log}}
+, \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa}{Warning}}
+, \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd}{Error}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeración que define los niveles de registro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_debug_a1c69b0423a8f8161fd8c6c203a77aeab}{Log}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Registra un mensaje informativo. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_debug_a80846605ad3c5ed5a5385762ec4b3653}{Warning}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Registra un mensaje de advertencia. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_debug_a289533cee37962e4dab1abdbbe34c6d9}{Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Registra un mensaje de error. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_debug_ac5d597c530951c79d3ec2362d222e6aa}{Enable\+File\+Logging}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Habilita el registro en un archivo. \end{DoxyCompactList}\item 
+\Hypertarget{class_debug_a93dd8afc25780886dcb1604aaa19044f}\label{class_debug_a93dd8afc25780886dcb1604aaa19044f} 
+static void {\bfseries Disable\+File\+Logging} ()
+\begin{DoxyCompactList}\small\item\em Deshabilita el registro en archivo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_debug}{Debug} para gestionar mensajes de depuración y registro. 
+
+\doxysubsection{Documentación de las enumeraciones miembro de la clase}
+\Hypertarget{class_debug_a8c68d97496e49ad5e586f32421d8d27e}\index{Debug@{Debug}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{class_debug_a8c68d97496e49ad5e586f32421d8d27e} 
+enum class \mbox{\hyperlink{class_debug_a8c68d97496e49ad5e586f32421d8d27e}{Debug\+::\+Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enumeración que define los niveles de registro. 
+
+\begin{DoxyEnumFields}[2]{Valores de enumeraciones}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Log@{Log}!Debug@{Debug}}\index{Debug@{Debug}!Log@{Log}}}\Hypertarget{class_debug_a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b}\label{class_debug_a8c68d97496e49ad5e586f32421d8d27eace0be71e33226e4c1db2bcea5959f16b} 
+Log&Nivel de registro informativo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warning@{Warning}!Debug@{Debug}}\index{Debug@{Debug}!Warning@{Warning}}}\Hypertarget{class_debug_a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa}\label{class_debug_a8c68d97496e49ad5e586f32421d8d27ea0eaadb4fcb48a0a0ed7bc9868be9fbaa} 
+Warning&Nivel de registro de advertencia. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!Debug@{Debug}}\index{Debug@{Debug}!Error@{Error}}}\Hypertarget{class_debug_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd}\label{class_debug_a8c68d97496e49ad5e586f32421d8d27ea902b0d55fddef6f8d651fe1035b7d4bd} 
+Error&Nivel de registro de error. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_debug_ac5d597c530951c79d3ec2362d222e6aa}\index{Debug@{Debug}!EnableFileLogging@{EnableFileLogging}}
+\index{EnableFileLogging@{EnableFileLogging}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{EnableFileLogging()}{EnableFileLogging()}}
+{\footnotesize\ttfamily \label{class_debug_ac5d597c530951c79d3ec2362d222e6aa} 
+void Debug\+::\+Enable\+File\+Logging (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Habilita el registro en un archivo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em filename} & Nombre del archivo donde se guardarán los registros. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_debug_a289533cee37962e4dab1abdbbe34c6d9}\index{Debug@{Debug}!Error@{Error}}
+\index{Error@{Error}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily \label{class_debug_a289533cee37962e4dab1abdbbe34c6d9} 
+void Debug\+::\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Registra un mensaje de error. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & Mensaje a registrar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_debug_a1c69b0423a8f8161fd8c6c203a77aeab}\index{Debug@{Debug}!Log@{Log}}
+\index{Log@{Log}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily \label{class_debug_a1c69b0423a8f8161fd8c6c203a77aeab} 
+void Debug\+::\+Log (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Registra un mensaje informativo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & Mensaje a registrar. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_debug_a80846605ad3c5ed5a5385762ec4b3653}\index{Debug@{Debug}!Warning@{Warning}}
+\index{Warning@{Warning}!Debug@{Debug}}
+\doxysubsubsection{\texorpdfstring{Warning()}{Warning()}}
+{\footnotesize\ttfamily \label{class_debug_a80846605ad3c5ed5a5385762ec4b3653} 
+void Debug\+::\+Warning (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Registra un mensaje de advertencia. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em message} & Mensaje a registrar. \\
+\hline
+\end{DoxyParams}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Utils/Debug.\+h\item 
+Utils/Debug.\+cpp\end{DoxyCompactItemize}

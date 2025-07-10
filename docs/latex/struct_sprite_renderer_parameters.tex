@@ -1,0 +1,80 @@
+\doxysection{Referencia de la estructura Sprite\+Renderer\+Parameters}
+\hypertarget{struct_sprite_renderer_parameters}{}\label{struct_sprite_renderer_parameters}\index{SpriteRendererParameters@{SpriteRendererParameters}}
+
+
+Estructura que contiene parámetros para el componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer}.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sprite_renderer_parameters_aa878c98d211140274db93634b6b2aaf5}{Sprite\+Renderer\+Parameters}} (SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}tex, Anchor\+Point center=Anchor\+Point\+::\+CENTER, \mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}t=nullptr, int alpha=255)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_sprite_renderer_parameters_a8451fd5255c969929bd911a4ee555a56}{texture}}
+\item 
+Anchor\+Point \mbox{\hyperlink{struct_sprite_renderer_parameters_afc3d37d818e00c70bcaf6ac5de837ed0}{center\+Mode}}
+\item 
+\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_sprite_renderer_parameters_ac6c0832f818386e69821062d92229c93}{transform}}
+\item 
+\Hypertarget{struct_sprite_renderer_parameters_a461cdc92a15155fa9aeb8b7d8a5d0571}\label{struct_sprite_renderer_parameters_a461cdc92a15155fa9aeb8b7d8a5d0571} 
+int {\bfseries alpha}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Estructura que contiene parámetros para el componente \doxylink{struct_sprite_renderer}{Sprite\+Renderer}. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_sprite_renderer_parameters_aa878c98d211140274db93634b6b2aaf5}\index{SpriteRendererParameters@{SpriteRendererParameters}!SpriteRendererParameters@{SpriteRendererParameters}}
+\index{SpriteRendererParameters@{SpriteRendererParameters}!SpriteRendererParameters@{SpriteRendererParameters}}
+\doxysubsubsection{\texorpdfstring{SpriteRendererParameters()}{SpriteRendererParameters()}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_parameters_aa878c98d211140274db93634b6b2aaf5} 
+Sprite\+Renderer\+Parameters\+::\+Sprite\+Renderer\+Parameters (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{tex}{, }\item[{Anchor\+Point}]{center}{ = {\ttfamily AnchorPoint\+:\+:CENTER}, }\item[{\mbox{\hyperlink{struct_transform}{Transform}} \texorpdfstring{$\ast$}{*}}]{t}{ = {\ttfamily nullptr}, }\item[{int}]{alpha}{ = {\ttfamily 255}}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_sprite_renderer_parameters}{Sprite\+Renderer\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tex} & Puntero a la textura SDL. \\
+\hline
+{\em center} & Modo de centrado (por defecto CENTER). \\
+\hline
+{\em t} & Puntero al componente \doxylink{struct_transform}{Transform} asociado (por defecto nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_sprite_renderer_parameters_afc3d37d818e00c70bcaf6ac5de837ed0}\index{SpriteRendererParameters@{SpriteRendererParameters}!centerMode@{centerMode}}
+\index{centerMode@{centerMode}!SpriteRendererParameters@{SpriteRendererParameters}}
+\doxysubsubsection{\texorpdfstring{centerMode}{centerMode}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_parameters_afc3d37d818e00c70bcaf6ac5de837ed0} 
+Anchor\+Point Sprite\+Renderer\+Parameters\+::center\+Mode}
+
+Modo de centrado. \Hypertarget{struct_sprite_renderer_parameters_a8451fd5255c969929bd911a4ee555a56}\index{SpriteRendererParameters@{SpriteRendererParameters}!texture@{texture}}
+\index{texture@{texture}!SpriteRendererParameters@{SpriteRendererParameters}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_parameters_a8451fd5255c969929bd911a4ee555a56} 
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} Sprite\+Renderer\+Parameters\+::texture}
+
+Textura del sprite. \Hypertarget{struct_sprite_renderer_parameters_ac6c0832f818386e69821062d92229c93}\index{SpriteRendererParameters@{SpriteRendererParameters}!transform@{transform}}
+\index{transform@{transform}!SpriteRendererParameters@{SpriteRendererParameters}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily \label{struct_sprite_renderer_parameters_ac6c0832f818386e69821062d92229c93} 
+\mbox{\hyperlink{struct_transform}{Transform}}\texorpdfstring{$\ast$}{*} Sprite\+Renderer\+Parameters\+::transform}
+
+Puntero al componente \doxylink{struct_transform}{Transform} asociado. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Sprite\+Renderer.\+cpp\end{DoxyCompactItemize}

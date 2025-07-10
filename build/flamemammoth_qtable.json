@@ -1,0 +1,24 @@
+{
+    "q_table": [
+        {
+            "action": "Stay",
+            "q_value": -299.998291015625,
+            "state": "Idle"
+        },
+        {
+            "action": "ShootLava",
+            "q_value": -299.998291015625,
+            "state": "Idle"
+        },
+        {
+            "action": "ShootFire",
+            "q_value": -299.998291015625,
+            "state": "Idle"
+        },
+        {
+            "action": "Jump",
+            "q_value": -299.998291015625,
+            "state": "Idle"
+        }
+    ]
+}

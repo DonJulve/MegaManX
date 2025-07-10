@@ -1,0 +1,70 @@
+\doxysection{Referencia de la clase Rigidbody\+Loader}
+\hypertarget{class_rigidbody_loader}{}\label{class_rigidbody_loader}\index{RigidbodyLoader@{RigidbodyLoader}}
+
+
+Clase \doxylink{class_rigidbody_loader}{Rigidbody\+Loader} para cargar parámetros de \doxylink{struct_rigidbody}{Rigidbody} desde JSON.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+\doxysubsubsection*{Métodos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_rigidbody_parameters}{Rigidbody\+Parameters}} \mbox{\hyperlink{class_rigidbody_loader_acd561bfb19dbe0f538d5967bc3d24fc6}{from\+JSON}} (const nlohmann\+::json \&j, const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Convierte un objeto JSON en una instancia de \doxylink{struct_rigidbody_parameters}{Rigidbody\+Parameters}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_rigidbody}{Rigidbody}} \mbox{\hyperlink{class_rigidbody_loader_a89446c2a2e135f24df674e355615a3a2}{create\+From\+JSON}} (const nlohmann\+::json \&j, const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Crea un componente \doxylink{struct_rigidbody}{Rigidbody} directamente desde JSON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Clase \doxylink{class_rigidbody_loader}{Rigidbody\+Loader} para cargar parámetros de \doxylink{struct_rigidbody}{Rigidbody} desde JSON. 
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{class_rigidbody_loader_a89446c2a2e135f24df674e355615a3a2}\index{RigidbodyLoader@{RigidbodyLoader}!createFromJSON@{createFromJSON}}
+\index{createFromJSON@{createFromJSON}!RigidbodyLoader@{RigidbodyLoader}}
+\doxysubsubsection{\texorpdfstring{createFromJSON()}{createFromJSON()}}
+{\footnotesize\ttfamily \label{class_rigidbody_loader_a89446c2a2e135f24df674e355615a3a2} 
+\mbox{\hyperlink{struct_rigidbody}{Rigidbody}} Rigidbody\+Loader\+::create\+From\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Crea un componente \doxylink{struct_rigidbody}{Rigidbody} directamente desde JSON. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Componente \doxylink{struct_rigidbody}{Rigidbody} creado. 
+\end{DoxyReturn}
+\Hypertarget{class_rigidbody_loader_acd561bfb19dbe0f538d5967bc3d24fc6}\index{RigidbodyLoader@{RigidbodyLoader}!fromJSON@{fromJSON}}
+\index{fromJSON@{fromJSON}!RigidbodyLoader@{RigidbodyLoader}}
+\doxysubsubsection{\texorpdfstring{fromJSON()}{fromJSON()}}
+{\footnotesize\ttfamily \label{class_rigidbody_loader_acd561bfb19dbe0f538d5967bc3d24fc6} 
+\mbox{\hyperlink{struct_rigidbody_parameters}{Rigidbody\+Parameters}} Rigidbody\+Loader\+::from\+JSON (\begin{DoxyParamCaption}\item[{const nlohmann\+::json \&}]{j}{, }\item[{const \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convierte un objeto JSON en una instancia de \doxylink{struct_rigidbody_parameters}{Rigidbody\+Parameters}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em j} & Objeto JSON con los datos. \\
+\hline
+{\em entity\+Manager} & Instancia de \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Instancia de \doxylink{struct_rigidbody_parameters}{Rigidbody\+Parameters} generada desde JSON. 
+\end{DoxyReturn}
+
+
+La documentación de esta clase está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Rigidbody.\+cpp\end{DoxyCompactItemize}

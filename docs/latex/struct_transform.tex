@@ -1,0 +1,148 @@
+\doxysection{Referencia de la estructura Transform}
+\hypertarget{struct_transform}{}\label{struct_transform}\index{Transform@{Transform}}
+
+
+Componente \doxylink{struct_transform}{Transform} que representa la posición, rotación y tamaño de una entidad.  
+
+
+
+
+{\ttfamily \#include $<$Components.\+h$>$}
+
+Diagrama de herencia de Transform\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_transform}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_transform_abe5a9687ed82e58acfaea8a07ab4740d}{Transform}} (\mbox{\hyperlink{struct_transform_parameters}{Transform\+Parameters}} tp)
+\begin{DoxyCompactList}\small\item\em Constructor de \doxylink{struct_transform}{Transform} con parámetros. \end{DoxyCompactList}\item 
+\Hypertarget{struct_transform_aa08ca4266efabc768973cdeea51945ab}\label{struct_transform_aa08ca4266efabc768973cdeea51945ab} 
+{\bfseries Transform} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto de \doxylink{struct_transform}{Transform}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_transform_a33f87f9c76e5ff2c0979e21e5a4d76ab}{start}} () override
+\begin{DoxyCompactList}\small\item\em Método de inicio del componente \doxylink{struct_transform}{Transform}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_transform_aec7a77f20db1b4d6f0dc76ce17adcac4}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente \doxylink{struct_transform}{Transform}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Métodos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Component} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor virtual para la limpieza adecuada de clases derivadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_component_a4178a49630da72ebf6bf420e3343c7ce}{render}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer)
+\begin{DoxyCompactList}\small\item\em Actualiza el estado del componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_transform_a666e6654d88b6a1222a135f384e8cf0e}\label{struct_transform_a666e6654d88b6a1222a135f384e8cf0e} 
+float {\bfseries posX}
+\item 
+float \mbox{\hyperlink{struct_transform_a0dcd1ac11f8ac8fe7e71d7aa8705f60f}{posY}}
+\item 
+float \mbox{\hyperlink{struct_transform_a07c9d3a91e43c537a23e0897174a49bf}{rotZ}}
+\item 
+\Hypertarget{struct_transform_a8bdd7a2001bee29edd1f8f7a6ca1ead5}\label{struct_transform_a8bdd7a2001bee29edd1f8f7a6ca1ead5} 
+float {\bfseries sizeX}
+\item 
+float \mbox{\hyperlink{struct_transform_a42e07c362e80570d3c6eb793f2aa7ef6}{sizeY}}
+\item 
+Anchor\+Point \mbox{\hyperlink{struct_transform_a892a0c7745bf2855fab9a3fd99be252c}{center\+Mode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos públicos heredados de \mbox{\hyperlink{class_component}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity {\bfseries parent}
+\begin{DoxyCompactList}\small\item\em La entidad a la que pertenece este componente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Componente \doxylink{struct_transform}{Transform} que representa la posición, rotación y tamaño de una entidad. 
+
+\doxysubsection{Documentación de constructores y destructores}
+\Hypertarget{struct_transform_abe5a9687ed82e58acfaea8a07ab4740d}\index{Transform@{Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily \label{struct_transform_abe5a9687ed82e58acfaea8a07ab4740d} 
+Transform\+::\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_transform_parameters}{Transform\+Parameters}}}]{tp}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de \doxylink{struct_transform}{Transform} con parámetros. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tp} & Instancia de \doxylink{struct_transform_parameters}{Transform\+Parameters}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Documentación de funciones miembro}
+\Hypertarget{struct_transform_a33f87f9c76e5ff2c0979e21e5a4d76ab}\index{Transform@{Transform}!start@{start}}
+\index{start@{start}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{struct_transform_a33f87f9c76e5ff2c0979e21e5a4d76ab} 
+void Transform\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Método de inicio del componente \doxylink{struct_transform}{Transform}. 
+
+
+
+Reimplementado de \mbox{\hyperlink{class_component_ae1ca93c773f779d0a004eec46f468560}{Component}}.
+
+\Hypertarget{struct_transform_aec7a77f20db1b4d6f0dc76ce17adcac4}\index{Transform@{Transform}!update@{update}}
+\index{update@{update}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{struct_transform_aec7a77f20db1b4d6f0dc76ce17adcac4} 
+void Transform\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Actualiza el estado del componente \doxylink{struct_transform}{Transform}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em delta\+Time} & Tiempo transcurrido desde la última actualización. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplementado de \mbox{\hyperlink{class_component_a3b3bee5d55446124842e5f2e229e1384}{Component}}.
+
+
+
+\doxysubsection{Documentación de datos miembro}
+\Hypertarget{struct_transform_a892a0c7745bf2855fab9a3fd99be252c}\index{Transform@{Transform}!centerMode@{centerMode}}
+\index{centerMode@{centerMode}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{centerMode}{centerMode}}
+{\footnotesize\ttfamily \label{struct_transform_a892a0c7745bf2855fab9a3fd99be252c} 
+Anchor\+Point Transform\+::center\+Mode}
+
+Modo de centrado. \Hypertarget{struct_transform_a0dcd1ac11f8ac8fe7e71d7aa8705f60f}\index{Transform@{Transform}!posY@{posY}}
+\index{posY@{posY}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{posY}{posY}}
+{\footnotesize\ttfamily \label{struct_transform_a0dcd1ac11f8ac8fe7e71d7aa8705f60f} 
+float Transform\+::posY}
+
+Posición en X e Y. \Hypertarget{struct_transform_a07c9d3a91e43c537a23e0897174a49bf}\index{Transform@{Transform}!rotZ@{rotZ}}
+\index{rotZ@{rotZ}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{rotZ}{rotZ}}
+{\footnotesize\ttfamily \label{struct_transform_a07c9d3a91e43c537a23e0897174a49bf} 
+float Transform\+::rotZ}
+
+Rotación en el eje Z. \Hypertarget{struct_transform_a42e07c362e80570d3c6eb793f2aa7ef6}\index{Transform@{Transform}!sizeY@{sizeY}}
+\index{sizeY@{sizeY}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{sizeY}{sizeY}}
+{\footnotesize\ttfamily \label{struct_transform_a42e07c362e80570d3c6eb793f2aa7ef6} 
+float Transform\+::sizeY}
+
+Tamaño en X e Y. 
+
+La documentación de esta estructura está generada de los siguientes archivos\+:\begin{DoxyCompactItemize}
+\item 
+Components/Components.\+h\item 
+Components/Transform.\+cpp\end{DoxyCompactItemize}
