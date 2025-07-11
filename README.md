@@ -1,4 +1,4 @@
-# Bolotro
+# MegaManX
 
 Este repositorio contiene un videojuego que recrea el juego de MegamanX de SNES con un motor creado desde 0 en C++.
 
